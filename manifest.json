@@ -1,0 +1,9 @@
+{
+  "name": "Default VipaSuite Backend Theme",
+  "description": "A theme for the VipaSuite backend.",
+  "version": "1.0",
+  "theme-directory": "DefaultTheme",
+  /* Directory where files exist in: Design, Javascript, and Stylesheets */
+  "theme-uri": "theme"
+  /* Used To Resolve Resources In Design Folder. FileServer path mapped to "Design/${theme-directory}". */
+}
