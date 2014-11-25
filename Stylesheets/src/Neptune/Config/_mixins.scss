@@ -1,7 +1,4 @@
-@import "../Config/base-import";
-
 /* Based on Font Squirrel generated files */
-
 @mixin fontFace($font-name, $file-path, $file-name) {
 	$font-file-path: $path-fonts + $file-path + '/' + $file-name;
 
@@ -18,8 +15,16 @@
 	}
 }
 
-@include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
-@include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
-@include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
-@include fontFace('OpenSansItalic', '/OpenSans', 'opensans-italic-webfont');
-@include fontFace('OpenSansLight', '/OpenSans', 'opensans-light-webfont');
+@mixin resetMenu() {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+@mixin anchorUnderlineHover() {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

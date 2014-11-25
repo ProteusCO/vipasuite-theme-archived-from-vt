@@ -1,0 +1,63 @@
+@import "../Config/base-import";
+
+@include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
+@include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
+@include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
+@include fontFace('OpenSansItalic', '/OpenSans', 'opensans-italic-webfont');
+@include fontFace('OpenSansLight', '/OpenSans', 'opensans-light-webfont');
+
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}
+
+html, body, body > .page {
+	height: 100%;
+}
+
+body {
+	font-family: $font-open-sans;
+	font-size: 13px;
+	color: $color-default-font;
+	background-color: $color-dark-blue;
+}
+
+$header-width: 250px;
+.e-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: $header-width;
+	background-color: $color-dark-blue;
+}
+
+.e-content {
+	background-color: $color-almost-white;
+	margin-left: $header-width;
+	padding: 20px;
+	min-height: 100.00%;
+}
+
+.l-primary-content {
+	background-color: $color-white;
+	border: 1px solid $color-cloud-grey;
+	padding: 10px;
+}
+
+h1 {
+	font-family: $font-open-sans;
+	font-size: 32px;
+	font-weight: normal;
+	color: $color-dark-bluegrey;
+}
+
+.page-heading {
+	margin-bottom: 15px;
+
+	h1 {
+		margin: 0;
+	}
+}
+
+@import "../Components/Partials/miwt-table";
+@import "../Components/Partials/paging";

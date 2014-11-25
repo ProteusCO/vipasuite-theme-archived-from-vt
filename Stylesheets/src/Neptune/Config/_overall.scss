@@ -1,20 +1,32 @@
-$color-dark-blue: #002a5c;
-$color-rich-blue: #00529b;
-$color-light-blue: #008ab0;
-$color-blue-grey: #80a9cd;
-$color-teal: #00746d;
-$color-plum: #820053;
 $color-white: #fff;
-$color-almost-white: #f9f9f9;
-$color-cloud-grey: #e5e5e5;
+$color-almost-white: #f7f7f7;
+$color-smokey-white: #f2f2f2;
+$color-cloud-grey: #e7e7e7;
 $color-light-grey: #ddd;
 $color-grey: #aaa;
-$color-dark-grey: #636466;
+$color-dark-grey: #777;
+$color-light-charcoal: #555;
 $color-charcoal: #333;
 $color-black: #000;
-$color-red: #f00;
+
+$color-light-blue: #519ecd;
+$color-blue: #3288bd;
+$color-dark-blue: #1a608a;
+$color-light-bluegrey: #99a8b1;
+$color-bluegrey: #586771;
+$color-dark-bluegrey: #303641;
+
+$color-green: #68c266;
+$color-orange: #eda52f;
+
+$color-default-font: $color-light-charcoal;
 
 $font-arial: Arial, Verdana, sans-serif;
+$font-open-sans: OpenSans, $font-arial;
+$font-open-sans-semi-bold: OpenSansSemiBold, $font-arial;
+$font-open-sans-bold: OpenSansBold, $font-arial;
+$font-open-sans-italic: OpenSansItalic, $font-arial;
+$font-open-sans-light: OpenSansLight, $font-arial;
 
 $html-entity-nbsp: "\a0";
 

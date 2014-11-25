@@ -1,0 +1,37 @@
+@import "../../Config/base-import";
+
+/*
+	Component partial -	Paging
+*/
+
+.pager-top,
+.pager-bottom {
+	text-align: center;
+	margin: 10px 0;
+
+	.controls {
+		&.pages {
+			margin: 0 3px;
+		}
+
+		.page,
+		.control {
+			background-color: $color-light-bluegrey;
+			color: $color-white;
+			text-decoration: none;
+			display: inline-block;
+			vertical-align: middle;
+			padding: 3px 8px;
+		}
+
+		.selected-page {
+			background-color: $color-dark-blue;
+			cursor: default;
+		}
+
+		.page + .page,
+		.control + .control {
+			margin-left: 3px;
+		}
+	}
+}
