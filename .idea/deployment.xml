@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="VipaSuite Migration">
+    <serverData>
+      <paths name="VipaSuite Migration">
+        <serverdata>
+          <mappings>
+            <mapping deploy="vip.vipasuite.com\Web\Design\DefaultTheme" local="$PROJECT_DIR$/Design/DefaultTheme" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\Javascript\DefaultTheme" local="$PROJECT_DIR$/Javascript/DefaultTheme" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\Stylesheets\DefaultTheme" local="$PROJECT_DIR$/Stylesheets/build/DefaultTheme" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
