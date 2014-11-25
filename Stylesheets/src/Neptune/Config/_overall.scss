@@ -1,0 +1,29 @@
+$color-dark-blue: #002a5c;
+$color-rich-blue: #00529b;
+$color-light-blue: #008ab0;
+$color-blue-grey: #80a9cd;
+$color-teal: #00746d;
+$color-plum: #820053;
+$color-white: #fff;
+$color-almost-white: #f9f9f9;
+$color-cloud-grey: #e5e5e5;
+$color-light-grey: #ddd;
+$color-grey: #aaa;
+$color-dark-grey: #636466;
+$color-charcoal: #333;
+$color-black: #000;
+$color-red: #f00;
+
+$font-arial: Arial, Verdana, sans-serif;
+
+$html-entity-nbsp: "\a0";
+
+
+$bp-mobile-landscape: (min-width 480px);
+$bp-tablets-portrait: (min-width 768px);
+$bp-tablets-landscape: (min-width 1024px);
+$bp-desktop: (min-width 1280px);
+$bp-desktop-wide: (min-width: 1400px);
+
+$path-theme: '/theme2';
+$path-fonts: $path-theme + '/Fonts';

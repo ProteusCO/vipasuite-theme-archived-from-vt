@@ -1,0 +1,25 @@
+@import "../Config/base-import";
+
+/* Based on Font Squirrel generated files */
+
+@mixin fontFace($font-name, $file-path, $file-name) {
+	$font-file-path: $path-fonts + $file-path + '/' + $file-name;
+
+	@font-face {
+		font-family: $font-name;
+		src: url($font-file-path + '.eot');
+		src: url($font-file-path + '.eot?#iefix') format('embedded-opentype'),
+		url($font-file-path + '.woff2') format('woff2'),
+		url($font-file-path + '.woff') format('woff'),
+		url($font-file-path + '.ttf') format('truetype'),
+		url($font-file-path + '.svg#' + $font-name) format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+@include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
+@include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
+@include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
+@include fontFace('OpenSansItalic', '/OpenSans', 'opensans-italic-webfont');
+@include fontFace('OpenSansLight', '/OpenSans', 'opensans-light-webfont');
