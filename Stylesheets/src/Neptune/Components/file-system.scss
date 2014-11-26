@@ -1,0 +1,48 @@
+@import "../Config/base-import";
+
+.file_management_component {
+	.tree_file_view {
+		width: 100%;
+	}
+
+	.file_tree_container-con {
+		vertical-align: top;
+		padding: 10px;
+	}
+
+	.file_table_container-con {
+		vertical-align: top;
+	}
+
+	a.fse_file,
+	a.fse_folder {
+		text-decoration: none;
+	}
+
+	.quick-actions {
+		.btn {
+			background: none;
+			border: none;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			text-indent: -4000px;
+			width: 16px;
+			height: 16px;
+
+			&:before {
+				content: " ";
+				display: block;
+				float: left;
+				width: 16px;
+				height: 16px;
+				background-color: $color-charcoal; //FIXME
+			}
+
+			& + .btn {
+				margin-left: 2px;
+			}
+		}
+
+	}
+}

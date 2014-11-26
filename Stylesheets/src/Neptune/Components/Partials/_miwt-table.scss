@@ -27,6 +27,7 @@
 		> td {
 			background-color: $color-white;
 			padding: 5px 8px;
+			@include transition(background-color 200ms);
 		}
 
 		&.odd {
@@ -34,5 +35,12 @@
 				background-color: $color-almost-white;
 			}
 		}
+
+		&:hover {
+			> td {
+				background-color: $color-cornsilk;
+			}
+		}
+
 	}
 }
