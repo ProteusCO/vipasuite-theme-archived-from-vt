@@ -1,0 +1,45 @@
+@import "../../Config/base-import";
+
+/*
+	overall.scss partial -	Navigation
+*/
+
+.primary-nav {
+	.menu {
+		@include resetMenu;
+	}
+
+	.menuitemlabel {
+		text-decoration: none;
+		display: block;
+		padding: 5px;
+	}
+
+	.menu-t1 {
+		> .mi {
+			& + .mi {
+				border-top: 1px solid darken($color-blue, 5%);
+			}
+
+			> .menuitemlabel {
+				background-color: $color-blue;
+				color: $color-white;
+				font-family: $font-open-sans-semi-bold;
+				font-size: 15px;
+
+				&:hover {
+					background-color: $color-light-blue;
+				}
+			}
+		}
+	}
+
+	.menu-t2 {
+		background-color: $color-smokey-white;
+
+		> .mi > .menuitemlabel {
+			color: $color-default-font;
+
+		}
+	}
+}
