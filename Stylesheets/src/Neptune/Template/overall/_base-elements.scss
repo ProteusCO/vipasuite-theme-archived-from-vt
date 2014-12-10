@@ -1,0 +1,46 @@
+@import "../../Config/base-import";
+
+/*
+	overall.scss partial -	Base Elements
+*/
+
+
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}
+
+html, body, body > .page {
+	height: 100%;
+}
+
+body {
+	font-family: $font-open-sans;
+	font-size: 13px;
+	color: $color-default-font;
+	background-color: $color-almost-white;
+}
+
+
+h1 {
+	font-family: $font-open-sans;
+	font-size: 32px;
+	font-weight: normal;
+	color: $color-dark-bluegrey;
+}
+
+@mixin textLikeInputs() {
+	input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+		@content;
+	}
+}
+
+//forms
+@include textLikeInputs {
+	border: 1px solid $color-cloud-grey;
+	padding: 5px;
+
+	&:focus {
+		border-color: $color-blue;
+		@include box-shadow(0 0 5px transparentize($color-blue, 0.75));
+	}
+}

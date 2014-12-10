@@ -1,0 +1,37 @@
+@import "../../Config/base-import";
+
+/*
+	Component partial -	Workspace UI that includes task manager
+*/
+
+.uitask {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+	background-color: $color-white;
+	border: 1px solid $color-cloud-grey;
+	padding: 5px;
+
+	&.selected {
+
+	}
+
+	span.uitask-type {
+		display: none;
+	}
+
+	img.uitask-type {
+		width: auto;
+		max-height: 20px;
+		margin-right: 5px;
+	}
+
+	a.uitask-label {
+		text-decoration: none;
+		color: $color-default-font;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

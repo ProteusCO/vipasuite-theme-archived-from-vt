@@ -1,0 +1,138 @@
+@import "../../Config/base-import";
+
+/*
+	overall.scss partial -	Structure
+*/
+
+$app-controls-width: 250px;
+
+$header-height: 200px;
+$footer-height: 55px;
+
+$user-info-width: 200px;
+
+.e-app-controls {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: $app-controls-width;
+	background-color: $color-dark-blue;
+}
+
+.l-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $header-height;
+}
+
+.l-nav {
+	position: absolute;
+	top: $header-height;
+	left: 0;
+	right: 0;
+	bottom: $footer-height;
+	background-color: $color-blue;
+	overflow-y: auto;
+}
+
+.l-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: $footer-height;
+	@include clearfix;
+
+	.user-info {
+		display: table;
+		width: $user-info-width;
+		height: 100%;
+
+		.user-image {
+			display: table-cell;
+			vertical-align: middle;
+			width: 24px;
+			background-color: $color-black; //FIXME
+		}
+
+		.user-name {
+			color: $color-white;
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 10px;
+			font-size: 14px;
+		}
+	}
+
+
+	.footer-nav-con {
+		float: right;
+		width: $app-controls-width - $user-info-width;
+
+		.footer-nav {
+			display: inline-block;
+			vertical-align: middle;
+
+			.menu {
+				@include resetMenu;
+			}
+
+			.mi {
+				display: inline-block;
+			}
+
+			.menuitemlabel {
+				background-color: $color-black;
+				width: 24px;
+				height: 24px;
+				display: inline-block;
+			}
+
+			.mil {
+				display: none;
+			}
+		}
+
+		.footer-logout {
+			display: inline-block;
+			vertical-align: middle;
+
+			.username {
+				display: none;
+			}
+
+			a.logout-url {
+				//FIXME
+				background-color: $color-black;
+				width: 24px;
+				height: 24px;
+				display: inline-block;
+				text-indent: -4000px;
+			}
+		}
+	}
+}
+
+.e-app-content {
+	background-color: $color-almost-white;
+	margin-left: $app-controls-width;
+	padding: 20px;
+	min-height: 100.00%;
+}
+
+.l-primary-content {
+	background-color: $color-white;
+	border: 1px solid $color-cloud-grey;
+	padding: 15px;
+}
+
+.page-heading {
+	margin-bottom: 15px;
+
+	h1 {
+		margin: 0;
+	}
+}

@@ -1,0 +1,54 @@
+@import "../../Config/base-import";
+
+/*
+	Component partial -	Tab Containers
+*/
+
+.tab-container {
+
+	.tab-items {
+		@include resetMenu;
+		margin-bottom: -1px;
+		position: relative;
+
+		.ti {
+			display: inline-block;
+			vertical-align: bottom;
+			border: 1px solid $color-light-grey;
+			border-bottom-color: $color-cloud-grey;
+			margin-right: 5px;
+			font-family: $font-open-sans-semi-bold;
+
+			a {
+				background-color: $color-smokey-white;
+				color: $color-blue;
+				text-decoration: none;
+				display: block;
+				padding: 5px 10px;
+			}
+
+			&.tab-selected {
+				border-color: $color-cloud-grey;
+				border-bottom-color: $color-white;
+
+				a {
+					color: $color-dark-bluegrey;
+					background-color: $color-white;
+				}
+			}
+
+			&:hover {
+				a {
+					color: $color-white;
+					background-color: $color-blue;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		background-color: $color-white;
+		border: 1px solid $color-cloud-grey;
+		padding: 15px;
+	}
+}
