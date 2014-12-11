@@ -52,66 +52,35 @@ $user-info-width: 200px;
 	height: $footer-height;
 	@include clearfix;
 
-	.user-info {
+	.footer-user {
 		display: table;
-		width: $user-info-width;
 		height: 100%;
+		width: 100%;
 
 		.user-image {
-			display: table-cell;
-			vertical-align: middle;
 			width: 24px;
 			background-color: $color-black; //FIXME
 		}
 
 		.user-name {
 			color: $color-white;
-			display: table-cell;
-			vertical-align: middle;
 			padding-left: 10px;
 			font-size: 14px;
 		}
+
+		.actions {
+			white-space: nowrap;
+			width: 1%;
+		}
+
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp, 24px);
+		}
 	}
 
-
-	.footer-nav-con {
-		float: right;
-		width: $app-controls-width - $user-info-width;
-
-		.footer-nav {
-			display: inline-block;
-			vertical-align: middle;
-
-			.menu {
-				@include resetMenu;
-			}
-
-			.mi {
-				display: inline-block;
-			}
-
-			.menuitemlabel {
-				@include buttonBase;
-				@include buttonGlyphOnly($html-entity-nbsp, 24px);
-			}
-
-			.mil {
-				display: none;
-			}
-		}
-
-		.footer-logout {
-			display: inline-block;
-			vertical-align: middle;
-
-			.username {
-				display: none;
-			}
-
-			a.btn.logout-url {
-				@include buttonGlyphOnly($html-entity-nbsp, 24px);
-			}
-		}
+	.footer-user-group {
+		display: table-cell;
+		vertical-align: middle;
 	}
 }
 
