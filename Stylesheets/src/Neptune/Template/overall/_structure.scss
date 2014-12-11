@@ -18,6 +18,7 @@ $user-info-width: 200px;
 	bottom: 0;
 	width: $app-controls-width;
 	background-color: $color-dark-blue;
+	z-index: 10000;
 }
 
 .l-header {
@@ -26,6 +27,11 @@ $user-info-width: 200px;
 	left: 0;
 	right: 0;
 	height: $header-height;
+
+	.site-logo {
+		text-align: center;
+		margin: 10px 0;
+	}
 }
 
 .l-nav {
@@ -85,10 +91,8 @@ $user-info-width: 200px;
 			}
 
 			.menuitemlabel {
-				background-color: $color-black;
-				width: 24px;
-				height: 24px;
-				display: inline-block;
+				@include buttonBase;
+				@include buttonGlyphOnly($html-entity-nbsp, 24px);
 			}
 
 			.mil {
@@ -104,13 +108,8 @@ $user-info-width: 200px;
 				display: none;
 			}
 
-			a.logout-url {
-				//FIXME
-				background-color: $color-black;
-				width: 24px;
-				height: 24px;
-				display: inline-block;
-				text-indent: -4000px;
+			a.btn.logout-url {
+				@include buttonGlyphOnly($html-entity-nbsp, 24px);
 			}
 		}
 	}

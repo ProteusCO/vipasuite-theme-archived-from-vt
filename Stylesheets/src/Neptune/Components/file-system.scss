@@ -21,23 +21,7 @@
 
 	.quick-actions {
 		.btn {
-			background: none;
-			border: none;
-			margin: 0;
-			padding: 0;
-			display: inline-block;
-			text-indent: -4000px;
-			width: 16px;
-			height: 16px;
-
-			&:before {
-				content: " ";
-				display: block;
-				float: left;
-				width: 16px;
-				height: 16px;
-				background-color: $color-charcoal; //FIXME
-			}
+			@include buttonGlyphOnly($html-entity-nbsp);
 
 			& + .btn {
 				margin-left: 2px;

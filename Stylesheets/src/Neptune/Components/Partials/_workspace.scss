@@ -34,4 +34,10 @@
 			text-decoration: underline;
 		}
 	}
+
+	.uitask-actions {
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp);
+		}
+	}
 }

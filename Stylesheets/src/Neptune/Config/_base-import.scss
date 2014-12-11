@@ -1,4 +1,5 @@
 @import "overall";
 @import "compass/css3";
 @import "breakpoint";
-@import "mixins";
+@import "../Mixins/general-mixins";
+@import "../Mixins/buttons";

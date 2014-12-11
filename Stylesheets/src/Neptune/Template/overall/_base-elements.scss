@@ -3,8 +3,6 @@
 /*
 	overall.scss partial -	Base Elements
 */
-
-
 *, *:before, *:after {
 	@include box-sizing(border-box);
 }
@@ -28,16 +26,11 @@ h1 {
 	color: $color-dark-bluegrey;
 }
 
-@mixin textLikeInputs() {
-	input:not([type=checkbox]):not([type=radio]):not([type=file]) {
-		@content;
-	}
-}
-
 //forms
 @include textLikeInputs {
 	border: 1px solid $color-cloud-grey;
 	padding: 5px;
+	vertical-align: middle;
 
 	&:focus {
 		border-color: $color-blue;

@@ -1,0 +1,49 @@
+@mixin buttonColors($color-bg, $color-text: '', $change-type: 'dark') {
+	background-color: $color-bg;
+	@if $color-text != '' {
+		color: $color-text;
+	}
+
+	&:hover {
+		@if ($change-type == 'dark') {
+			background-color: darken($color-bg, 5%);
+		} @else {
+			background-color: lighten($color-bg, 5%);
+		}
+	}
+}
+
+@mixin buttonGlyphOnly($html-entity, $size: 16px) {
+	background-color: transparent;
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+	text-indent: -4000px;
+	width: $size;
+	height: $size;
+
+	&:before {
+		content: $html-entity;
+		display: block;
+		float: left;
+		width: $size;
+		height: $size;
+		background-color: $color-charcoal; //FIXME
+	}
+
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+@mixin buttonBase() {
+	display: inline-block;
+	vertical-align: middle;
+	font-family: $font-open-sans-semi-bold;
+	font-size: 12px;
+	padding: 5px 8px;
+	border: 0 none;
+	margin: 0;
+	text-decoration: none;
+	@include buttonColors($color-blue, $color-white);
+}

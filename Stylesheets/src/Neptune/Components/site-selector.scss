@@ -1,0 +1,68 @@
+@import "../Config/base-import";
+
+.old-site-selector {
+	display: none;
+}
+
+.site-selector {
+	position: relative;
+	padding: 0 10px;
+	margin: 10px 0;
+
+	&.selector-open {
+		.selector-sites-con {
+			display: block;
+		}
+	}
+
+	.current-site {
+		background-color: $color-almost-white;
+		padding: 5px;
+
+		.icon {
+			float: left;
+			margin-right: 5px;
+		}
+
+		.hostname {
+			color: $color-default-font;
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	.selector-sites-con {
+		//display: none;
+		position: absolute;
+		left: 100%;
+		top: 0;
+		width: 350px;
+		background-color: $color-white;
+		padding: 10px;
+		border: 1px solid $color-cloud-grey;
+		@include box-shadow(3px 3px 7px transparentize($color-black, 0.75));
+	}
+
+	.current-site-actions {
+		margin-top: 5px;
+
+		.btn {
+			font-size: 14px;
+			text-transform: uppercase;
+			font-family: $font-open-sans-bold;
+
+			& + .btn {
+				margin-left: 5px;
+			}
+
+			&.live-view {
+				@include buttonColors($color-green);
+			}
+			&.live-edit {
+				@include buttonColors($color-orange);
+			}
+		}
+	}
+}
