@@ -1,0 +1,54 @@
+@import "../Config/base-import";
+
+.pagemanagement {
+	.workspace {
+		width: 100%;
+	}
+
+	.selection_pane_slider-con {
+		vertical-align: top;
+
+		.controls {
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+	}
+
+	.task_view-con {
+		vertical-align: top;
+	}
+
+	.page_actions {
+		float: right;
+	}
+
+	//style and function mgmt
+	.saf-mgt {
+		.se_box {
+			& + .se_box {
+				margin-top: 20px;
+			}
+
+			.label {
+				font-family: $font-open-sans-semi-bold;
+			}
+
+			.bar {
+				width: 100%;
+				margin-bottom: 5px;
+
+				.actions-con {
+					width: 1%;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		.nde_actions {
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+	}
+}

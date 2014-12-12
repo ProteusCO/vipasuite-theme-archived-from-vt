@@ -11,10 +11,17 @@
 	> thead > tr {
 		> th {
 			background-color: $color-cloud-grey;
-			font-family: $font-open-sans-semi-bold;
-			font-size: 16px;
+			font-family: $font-open-sans-bold;
+			font-size: 14px;
 			padding: 8px 8px;
 			text-align: left;
+
+			//TODO underscore fix for HTML generation
+			&.action_column,
+			&.action-column {
+				white-space: nowrap;
+				width: 1%;
+			}
 
 			a {
 				color: $color-charcoal;
@@ -28,11 +35,26 @@
 			background-color: $color-white;
 			padding: 5px 8px;
 			@include transition(background-color 200ms);
+
+			//TODO underscore fix for HTML generation
+			&.action_column,
+			&.action-column {
+				white-space: nowrap;
+				width: 1%;
+			}
 		}
 
 		&.odd {
 			> td {
 				background-color: $color-almost-white;
+			}
+		}
+
+		&.no_data {
+			> td {
+				background-color: $color-almost-white;
+				color: $color-grey;
+				font-style: italic;
 			}
 		}
 

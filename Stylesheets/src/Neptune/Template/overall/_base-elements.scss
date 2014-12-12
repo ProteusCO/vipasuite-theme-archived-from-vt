@@ -37,3 +37,14 @@ h1 {
 		@include box-shadow(0 0 5px transparentize($color-blue, 0.75));
 	}
 }
+
+textarea {
+	border: 1px solid $color-cloud-grey;
+	padding: 4px;
+	vertical-align: middle;
+
+	&:focus {
+		border-color: $color-blue;
+		@include box-shadow(0 0 5px transparentize($color-blue, 0.75));
+	}
+}

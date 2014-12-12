@@ -1,0 +1,92 @@
+@import "../../Config/base-import";
+
+/*
+	Component partial -	Property Editor
+*/
+
+.property_editor,
+.property-editor,
+.property_viewer,
+.property-viewer,
+.property_sheet {
+	> .actions {
+		margin: 10px 0;
+
+		&.top {
+			text-align:right;
+		}
+	}
+
+	div.prop {
+		margin: .75em 0;
+	}
+
+	label {
+		display: inline-block;
+		font-family: $font-open-sans-bold;
+		margin-right: 10px;
+
+		&.tal {
+			display: block;
+			margin: .25em 0;
+		}
+
+		&.tbl {
+			padding-right: .25em;
+			margin-right: auto;
+			display: inline;
+		}
+	}
+}
+
+.property_viewer,
+.property-viewer {
+	.prop span.ta {
+		display: inline-block;
+		padding: 2px;
+		min-height: 4em;
+		min-width: 25em;
+		border: 1px solid $color-grey;
+		background-color: $color-cloud-grey;
+	}
+}
+
+.property-editor,
+.property_editor {
+	.user_entry_required {
+		> label {
+			padding-left: 7px;
+			background: transparent url(/_resources/all/docroot/cms/icons/x16/icon_required.png) no-repeat scroll left top;
+		}
+	}
+
+	.prop .instructions {
+		margin-top: 0;
+	}
+}
+
+.property_sheet {
+	margin-bottom: 1em;
+
+	div.element_editor,
+	div.entity_editor {
+		margin: .5em 1em;
+		padding: 8px;
+		@include box-shadow(0 1px 4px transparentize($color-black, 0.8));
+	}
+
+	.help-point.disabled {
+		display: none;
+	}
+}
+
+.property_sheet_breadcrumbs{
+	font-size: 1.2em;
+	font-style: italic;
+	margin-bottom: 0.5em;
+	font-weight: bold;
+	width:auto;
+}
+.property_sheet_breadcrumb_divider{
+	padding:.25em;
+}

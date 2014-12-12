@@ -4,6 +4,16 @@
 	Component partial -	Workspace UI that includes task manager
 */
 
+.workspace {
+	.uitask-manager-con {
+		margin-bottom: 15px;
+	}
+
+	.tasks {
+		margin-top: 15px;
+	}
+}
+
 .uitask {
 	display: inline-block;
 	vertical-align: top;
