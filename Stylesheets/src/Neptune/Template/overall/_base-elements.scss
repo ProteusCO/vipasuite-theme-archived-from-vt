@@ -29,7 +29,7 @@ h1 {
 //forms
 @include textLikeInputs {
 	border: 1px solid $color-cloud-grey;
-	padding: 5px;
+	padding: 4px;
 	vertical-align: middle;
 
 	&:focus {
