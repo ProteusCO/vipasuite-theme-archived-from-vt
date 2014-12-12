@@ -6,4 +6,8 @@
 
 .btn {
 	@include buttonBase;
+
+	& + .btn {
+		margin-left: $spacing-default-between-buttons;
+	}
 }

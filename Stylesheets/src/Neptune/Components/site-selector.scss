@@ -1,6 +1,7 @@
 @import "../Config/base-import";
 
 .old-site-selector {
+	//FIXME remove selector when new component is made
 	display: none;
 }
 
@@ -34,7 +35,7 @@
 	}
 
 	.selector-sites-con {
-		//display: none;
+		display: none;
 		position: absolute;
 		left: 100%;
 		top: 0;
@@ -43,6 +44,22 @@
 		padding: 10px;
 		border: 1px solid $color-cloud-grey;
 		@include box-shadow(3px 3px 7px transparentize($color-black, 0.75));
+	}
+
+	.ss-search-form {
+		margin-bottom: 15px;
+	}
+
+	.ss-site-search {
+		margin-right: 5px;
+	}
+
+	.selector-sites {
+		.heading {
+			font-family: $font-open-sans-semi-bold;
+			font-size: 14px;
+			margin: 5px 0;
+		}
 	}
 
 	.current-site-actions {
@@ -64,5 +81,10 @@
 				@include buttonColors($color-orange);
 			}
 		}
+	}
+
+	.results {
+		max-height: 300px;
+		overflow-y: auto;
 	}
 }
