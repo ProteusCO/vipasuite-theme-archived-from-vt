@@ -17,6 +17,7 @@ $footer-height: 55px;
 	width: $app-controls-width;
 	background-color: $color-dark-blue;
 	z-index: 10000;
+	@include box-shadow(0 0 5px transparentize($color-black, 0.7));
 }
 
 .l-header {
@@ -25,10 +26,11 @@ $footer-height: 55px;
 	left: 0;
 	right: 0;
 	height: $header-height;
+	padding: 10px;
 
 	.site-logo {
 		text-align: center;
-		margin: 10px 0;
+		margin: 0 0 10px;
 	}
 }
 
