@@ -17,6 +17,12 @@
 
 	.menu-t1 {
 		> .mi {
+			&.mi-open {
+				.menu-t2 {
+					display: block;
+				}
+			}
+
 			& + .mi {
 				border-top: 1px solid darken($color-blue, 5%);
 			}
@@ -35,11 +41,24 @@
 	}
 
 	.menu-t2 {
+		display: none;
 		background-color: $color-smokey-white;
 
-		> .mi > .menuitemlabel {
-			color: $color-default-font;
+		> .mi {
 
+			&.mi-active {
+				> .menuitemlabel {
+					background-color: darken($color-smokey-white, 5%);
+				}
+			}
+
+			> .menuitemlabel {
+				color: $color-default-font;
+
+				&:hover {
+					background-color: darken($color-smokey-white, 5%);
+				}
+			}
 		}
 	}
 }

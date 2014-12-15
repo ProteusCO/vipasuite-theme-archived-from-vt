@@ -1,0 +1,18 @@
+@import "../../Config/base-import";
+
+/*
+	Component partial -	Table
+*/
+.miwt-table {
+	@include style-table;
+
+	> thead > tr {
+		> th {
+			@include style-table-heading;
+		}
+	}
+
+	> tbody > tr {
+		@include style-table-data-row;
+	}
+}

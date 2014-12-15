@@ -1,0 +1,44 @@
+@import "../../Config/base-import";
+
+/*
+	overall.scss partial -	Messages
+*/
+
+
+.message-container {
+	margin: 10px 0;
+
+	&.empty {
+		display: none;
+	}
+}
+
+@mixin message($color-bg, $color-border, $color-text) {
+	background-color: $color-bg;
+	border-color: $color-border;
+	color: $color-text;
+}
+
+.message {
+	border: 1px solid #1b6592;
+	color: #1b6592;
+	background-color: #cdebfd;
+	padding: 5px;
+	font-family: $font-open-sans-semi-bold;
+
+	& + & {
+		margin-top: 5px;
+	}
+
+	&.error {
+		@include message(#fdc7cd, #d53e4f, #d53e4f);
+	}
+
+	&.success {
+		@include message(#cdf7c7, #57944f, #57944f);
+	}
+
+	&.warning {
+		@include message(#fdfdd3, #dada65, #dada65);
+	}
+}

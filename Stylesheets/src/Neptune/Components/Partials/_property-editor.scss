@@ -42,12 +42,10 @@
 .property_viewer,
 .property-viewer {
 	.prop span.ta {
+		@include style-form-input-readonly;
 		display: inline-block;
-		padding: 2px;
 		min-height: 4em;
 		min-width: 25em;
-		border: 1px solid $color-grey;
-		background-color: $color-cloud-grey;
 	}
 }
 

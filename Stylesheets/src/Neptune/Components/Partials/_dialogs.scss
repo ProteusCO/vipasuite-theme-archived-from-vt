@@ -1,0 +1,40 @@
+
+
+.miwt-form {
+	.window {
+		z-index: 20000 !important;
+		border: none;
+		padding: 0;
+		background-color: $color-white;
+		@include box-shadow(0 0 15px transparentize($color-black, 0.25));
+	}
+
+	.titlebar {
+		background-color: $color-blue;
+	}
+
+	.activewindowtitle {
+		color: $color-white;
+		text-align: left;
+		font-weight: normal;
+		font-family: $font-open-sans-semi-bold;
+		padding: 5px;
+	}
+
+	.inactivewindowtitle {
+		color: $color-light-grey;
+		text-align: left;
+		font-weight: normal;
+		font-family: $font-open-sans-semi-bold;
+		padding: 5px;
+	}
+
+	.windowcontent {
+		padding: 10px;
+		border: none;
+		background-color: $color-white;
+		top: 28px;
+		left: 0;
+		right: 0;
+	}
+}

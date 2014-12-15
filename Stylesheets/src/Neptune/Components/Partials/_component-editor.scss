@@ -1,0 +1,51 @@
+
+
+.editor {
+	.common_view {
+		background-color: $color-cloud-grey;
+		border: 1px solid $color-light-grey;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.menu_pe_options {
+		@include resetMenu;
+		margin: 10px 0;
+
+		.mi {
+			display: inline-block;
+		}
+
+		.mi-active {
+			a {
+				@include box-shadow(0 0 2px transparentize($color-black, 0.7) inset);
+				color: $color-black;
+				border-color: $color-dark-grey;
+				background-color: $color-grey;
+
+				&:hover {
+					background-color: $color-grey;
+				}
+			}
+		}
+
+
+		a {
+			text-decoration: none;
+			display: inline-block;
+			padding: 3px 6px;
+			font-size: 11px;
+			color: $color-charcoal;
+			background: $color-cloud-grey;
+			border: 1px solid $color-grey;
+
+			&:hover {
+				@include box-shadow(0 -1px 2px transparentize($color-black, 0.8) inset);
+				color: $color-black;
+				background: $color-light-grey;
+				border-color: $color-dark-grey;
+			}
+		}
+	}
+
+}

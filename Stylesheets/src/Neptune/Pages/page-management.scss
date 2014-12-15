@@ -17,14 +17,85 @@
 
 	.task_view-con {
 		vertical-align: top;
+		width: 100%;
 	}
 
 	.page_actions {
 		float: right;
 	}
 
+	.meta_info {
+		.meta_information_editor {
+			margin: 10px 0;
+		}
+	}
+
+	.standard_properties {
+		margin: 10px 0;
+
+		> tbody > tr > td {
+			padding: 3px;
+		}
+
+		.click_to_edit {
+			span.field {
+				width: 350px;
+			}
+
+			input.field,
+			textarea.field {
+				width: 350px;
+				vertical-align: top;
+			}
+		}
+
+		.wildcard {
+			margin-top: 5px;
+		}
+
+		label {
+			@include style-form-label;
+		}
+
+		.favicon > span,
+		.translation-locales {
+			margin: 0 5px;
+		}
+	}
+
+	.authorization {
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.permission,
+		.page {
+			margin: 5px 0;
+
+			> span {
+				@include style-form-input-readonly;
+			}
+		}
+	}
+
+	.alias {
+		.click_to_edit {
+			margin-top: 10px;
+
+			+ .click_to_edit {
+				margin-top: 5px;
+			}
+		}
+	}
+
 	//style and function mgmt
 	.saf-mgt {
+		.file_editor_title {
+			@include style-h2;
+			margin-right: 5px;
+		}
+
 		.se_box {
 			& + .se_box {
 				margin-top: 20px;
@@ -48,6 +119,46 @@
 		.nde_actions {
 			.btn {
 				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+
+		.file_editor_controls {
+			text-align: center;
+			margin: 10px 0;
+		}
+
+		.components {
+			@include style-table;
+			border-collapse: separate;
+			margin-top: 10px;
+
+			> tbody > tr {
+				@include style-table-data-row;
+
+				&:first-child {
+					@include style-table-heading-row;
+
+					> .name_label-con,
+					> .id_label-con,
+					> .class_label-con,
+					> .builtin_label-con,
+					> .actions_label-con {
+						@include style-table-heading;
+					}
+				}
+			}
+		}
+	}
+
+	.css_selector_data {
+		.page,
+		.page_template {
+			width: auto !important;
+			margin: 10px 0;
+
+			span.css_id {
+				@include style-form-input-readonly;
+				min-width: 150px;
 			}
 		}
 	}

@@ -1,0 +1,106 @@
+@mixin style-h1 {
+	font-family: $font-open-sans;
+	font-size: 32px;
+	font-weight: normal;
+	color: $color-dark-bluegrey;
+}
+
+@mixin style-h2 {
+	font-family: $font-open-sans-bold;
+	font-size: 18px;
+	font-weight: normal;
+	color: $color-default-font;
+}
+
+
+@mixin style-table {
+	border: 1px solid $color-cloud-grey;
+	width: 100%;
+}
+
+@mixin style-table-heading-row {
+	&:hover {
+		> th,
+		> td {
+			background-color: $color-cloud-grey;
+		}
+	}
+}
+
+@mixin style-table-heading {
+	background-color: $color-cloud-grey;
+	font-family: $font-open-sans-bold;
+	font-size: 14px;
+	padding: 8px 8px;
+	text-align: left;
+
+	//TODO underscore fix for HTML generation
+	&.action_column,
+	&.action-column {
+		white-space: nowrap;
+		width: 1%;
+	}
+
+	a {
+		color: $color-charcoal;
+		@include anchorUnderlineHover;
+	}
+}
+
+@mixin style-table-data-row {
+	> td {
+		background-color: $color-white;
+		padding: 5px 8px;
+		@include transition(background-color 200ms);
+
+		//TODO underscore fix for HTML generation
+		&.action_column,
+		&.action-column,
+		&.actions-con {
+			white-space: nowrap;
+			width: 1%;
+		}
+
+		a {
+			@include anchorUnderlineHover;
+		}
+	}
+
+	&:nth-child(even),
+	&.odd {
+		> td {
+			background-color: $color-almost-white;
+		}
+	}
+
+	&.no_data {
+		> td {
+			background-color: $color-almost-white;
+			color: $color-grey;
+			font-style: italic;
+		}
+	}
+
+	&:hover {
+		> td {
+			background-color: $color-cornsilk;
+		}
+	}
+}
+
+@mixin style-form-input-readonly {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 3px;
+	border: 1px solid $color-grey;
+	background-color: $color-cloud-grey;
+
+	&:after {
+		content: " ";
+		display: inline-block;
+	}
+}
+
+@mixin style-form-label {
+	font-family: $font-open-sans-semi-bold;
+}
