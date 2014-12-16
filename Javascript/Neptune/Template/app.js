@@ -52,8 +52,8 @@
 
 			$menuParents = $root.find('.mi-parent');
 
-			$menuParents.on('click', function(evt) {
-				toggleOpen(this);
+			$menuParents.on('click', '.menuitemlabel', function(evt) {
+				toggleOpen(this.parentNode);
 			});
 
 			loadState();
@@ -67,12 +67,15 @@
 		$('#l-nav').mCustomScrollbar({
 			scrollInertia: 0
 		});
-
-		new Menu('.primary-nav');
 	}
+
+	$(d).on('vs:init-menu', function() {
+		new Menu('.primary-nav');
+	});
 
 	$(d).ready(function() {
 		initApp();
+		$(this).trigger('vs:init-menu'); //TODO move this to end of DOM;
 	});
 
 })(jQuery, window, document);
