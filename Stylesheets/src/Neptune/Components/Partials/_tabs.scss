@@ -14,7 +14,6 @@
 			display: inline-block;
 			vertical-align: bottom;
 			border: 1px solid $color-light-grey;
-			border-bottom-color: $color-cloud-grey;
 			margin-right: 5px;
 			font-family: $font-open-sans-semi-bold;
 
@@ -27,7 +26,6 @@
 			}
 
 			&.tab-selected {
-				border-color: $color-cloud-grey;
 				border-bottom-color: $color-white;
 
 				a {
@@ -47,7 +45,7 @@
 
 	.tab-content {
 		background-color: $color-white;
-		border: 1px solid $color-cloud-grey;
+		border: 1px solid $color-light-grey;
 		padding: 15px;
 	}
 }

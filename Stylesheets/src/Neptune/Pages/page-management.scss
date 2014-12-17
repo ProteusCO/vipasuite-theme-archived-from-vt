@@ -7,8 +7,17 @@
 
 	.selection_pane_slider-con {
 		vertical-align: top;
+		padding-right: 10px;
 
 		.controls {
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+
+		.show_hide-con {
+			vertical-align: top;
+
 			.btn {
 				@include buttonGlyphOnly($html-entity-nbsp);
 			}
@@ -22,6 +31,180 @@
 
 	.page_actions {
 		float: right;
+	}
+
+	.page_layout {
+		width: 100%;
+
+		//TODO remove elements if design stays
+		.th_box_number-con,
+		.th_box-con,
+		.box_number {
+			display: none;
+		}
+
+		.box_number-con {
+			vertical-align: top;
+			padding-right: 5px;
+		}
+
+		.box_header {
+			width: 100%;
+
+			.label-con {
+				width: 100%;
+				padding: 0 5px;
+				font-family: $font-open-sans-bold;
+				font-size: 16px;
+			}
+
+			.actions-con {
+				white-space: nowrap;
+			}
+
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+
+		.contentelement_list {
+			margin-left: 40px;
+
+			.drop-spacer-con {
+				display: block;
+				height: 10px;
+
+				&.only-con {
+					margin: 5px 0;
+					height: 40px;
+					border: 2px dashed $color-light-grey;
+
+					&.dnd-target-active {
+						border-style: solid;
+						border-color: $color-grey;
+					}
+				}
+			}
+
+		}
+
+		.contentelement {
+			background-color: $color-almost-white;
+			border: 1px solid $color-light-grey;
+			width: 100%;
+			position: relative;
+
+
+			//			.contentelement_list span.dnd-target-active.last-con,
+			//			.contentelement_list span.dnd-target-active + table.contentelement,
+			//			.contentelement_list table.dnd-target-active-above
+			//TODO fix the fact this is inside the icon div because of needed HTML changes
+			&.dnd-target-active {
+				.icon:before {
+					content: " ";
+					position: absolute;
+					left: 0;
+					right: 0;
+					background-color: $color-blue;
+					height: 5px;
+				}
+			}
+
+			&.dnd-target-active-above {
+				.icon:before {
+					bottom: 100%;
+				}
+			}
+
+			&.dnd-target-active-below {
+				.icon:before {
+					top: 100%;
+				}
+			}
+
+			&.dnd-feedback {
+				max-width: 500px;
+			}
+
+
+			.icon-con,
+			.name_type-con,
+			.actions-con {
+				padding: 5px;
+			}
+
+			.icon-con {
+				padding-right: 10px;
+			}
+
+			.icon img {
+				max-height: 24px;
+				max-width: 24px;
+				display: block;
+			}
+
+			.name_type-con {
+				width: 100%;
+			}
+
+			.name {
+				display: block;
+				font-family: $font-open-sans-semi-bold;
+
+				+ .type {
+					font-size: 10px;
+				}
+			}
+
+			.type {
+				display: block;
+				font-size: 12px;
+				line-height: 1;
+			}
+
+			.actions-con {
+				white-space: nowrap;
+			}
+
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+	}
+
+	.page_selector {
+		min-width: 200px;
+
+		tr.odd > td {
+			background-color: transparent;
+		}
+
+		table.page_element_tree {
+			td {
+				padding: 0;
+
+				&.last-column {
+					border: 0 none;
+					padding: 1px 0 0 0;
+				}
+			}
+		}
+
+		.se_icon_name {
+			td.se_page_template-con,
+			td.se_page-con,
+			td.se_folder-con{
+				padding-left: 2px;
+			}
+		}
+
+		.se_selected_site_element{
+			background-color: #ffc;
+		}
+
+		a {
+			@include anchorUnderlineHover;
+		}
 	}
 
 	.meta_info {

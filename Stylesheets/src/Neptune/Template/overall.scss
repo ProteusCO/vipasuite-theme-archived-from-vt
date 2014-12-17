@@ -14,8 +14,9 @@
 @import "overall/scrollbar-overrides";
 @import "overall/messages";
 
+@import "../Components/Partials/dnd";
 @import "../Components/Partials/buttons";
-@import "../Components/Partials/tables";
+@import "../Components/Partials/_tables-trees";
 @import "../Components/Partials/paging";
 @import "../Components/Partials/tabs";
 @import "../Components/Partials/workspace";
