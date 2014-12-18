@@ -16,6 +16,22 @@
 @mixin style-table {
 	border: 1px solid $color-cloud-grey;
 	width: 100%;
+
+	.column-visibility-selector {
+		font-family: $font-open-sans;
+		font-size: 14px;
+		padding: 10px;
+		border: 1px solid $color-grey;
+		top: 100%;
+
+		ul {
+			@include resetMenu;
+		}
+
+		label {
+			margin-left: 5px;
+		}
+	}
 }
 
 @mixin style-table-heading-row {
@@ -30,6 +46,7 @@
 @mixin style-table-heading {
 	background-color: $color-cloud-grey;
 	font-family: $font-open-sans-bold;
+	font-weight: normal;
 	font-size: 14px;
 	padding: 8px 8px;
 	text-align: left;
@@ -59,6 +76,10 @@
 		&.actions-con {
 			white-space: nowrap;
 			width: 1%;
+
+			&.last-column {
+				text-align: right;
+			}
 		}
 
 		a {

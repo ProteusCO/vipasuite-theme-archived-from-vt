@@ -52,20 +52,40 @@ h2 {
 }
 
 //help points
-.help-point {
+span.help-point {
 	background-color: $color-orange;
-	color: $color-white;
 	display: inline-block;
 	text-align: center;
-	min-width: 20px;
+	width: 20px;
+	height: 20px;
 	line-height: 20px;
 	font-family: $font-open-sans-bold;
 	@include border-radius(50%);
+	overflow: hidden;
+
+	a {
+		text-decoration: none;
+		color: $color-white;
+
+		&:before {
+			content: "?";
+			float: left;
+			display: block;
+			width: 20px;
+		}
+	}
 
 	&.disabled {
 		background-color: $color-grey;
 		color: $color-light-grey;
 		cursor: default;
+
+		&:before {
+			content: "?";
+			float: left;
+			display: block;
+			width: 20px;
+		}
 	}
 }
 
