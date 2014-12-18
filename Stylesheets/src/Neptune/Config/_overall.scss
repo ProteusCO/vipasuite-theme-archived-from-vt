@@ -4,7 +4,8 @@ $color-smokey-white: #f2f2f2;
 $color-cloud-grey: #e7e7e7;
 $color-light-grey: #ddd;
 $color-grey: #aaa;
-$color-dark-grey: #777;
+$color-dark-grey: #999;
+$color-darker-grey: #777;
 $color-light-charcoal: #555;
 $color-charcoal: #333;
 $color-black: #000;
@@ -30,6 +31,15 @@ $color-gold-almost-white: #fdfdd3;
 $color-gold: #dada65;
 
 $color-orange: #eda52f;
+
+$color-success-light: $color-green-almost-white;
+$color-success-dark: $color-dark-green;
+$color-error-light: $color-red-almost-white;
+$color-error-dark: $color-red;
+$color-info-light: $color-blue-almost-white;
+$color-info-dark: $color-dark-blue;
+$color-warning-light: $color-gold-almost-white;
+$color-warning-dark: $color-gold;
 
 $color-default-font: $color-light-charcoal;
 

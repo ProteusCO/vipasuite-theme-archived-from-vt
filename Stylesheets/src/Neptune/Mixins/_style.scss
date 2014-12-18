@@ -125,3 +125,12 @@
 @mixin style-form-label {
 	font-family: $font-open-sans-semi-bold;
 }
+
+@mixin style-message($color-bg, $color-border, $color-text) {
+	background-color: $color-bg;
+	border-color: 1px solid $color-border;
+	color: $color-text;
+	padding: 5px;
+	display: block;
+	font-family: $font-open-sans-semi-bold;
+}

@@ -13,32 +13,22 @@
 	}
 }
 
-@mixin message($color-bg, $color-border, $color-text) {
-	background-color: $color-bg;
-	border-color: $color-border;
-	color: $color-text;
-}
-
 .message {
-	border: 1px solid #1b6592;
-	color: #1b6592;
-	background-color: #cdebfd;
-	padding: 5px;
-	font-family: $font-open-sans-semi-bold;
+	@include style-message($color-info-light, $color-info-dark, $color-info-dark);
 
 	& + & {
 		margin-top: 5px;
 	}
 
 	&.error {
-		@include message(#fdc7cd, #d53e4f, #d53e4f);
+		@include style-message($color-error-light, $color-error-dark, $color-error-dark);
 	}
 
 	&.success {
-		@include message(#cdf7c7, #57944f, #57944f);
+		@include style-message($color-success-light, $color-success-dark, $color-success-dark);
 	}
 
 	&.warning {
-		@include message(#fdfdd3, #dada65, #dada65);
+		@include style-message($color-warning-light, $color-warning-dark, $color-warning-dark);
 	}
 }
