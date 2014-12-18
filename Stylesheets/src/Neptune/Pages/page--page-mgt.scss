@@ -1,11 +1,5 @@
 @import "../Config/base-import";
 
-#l-primary-content {
-	background-color: transparent;
-	border: 0 none;
-	padding: 0;
-}
-
 .pagemanagement {
 	.workspace {
 		width: 100%;
@@ -95,7 +89,7 @@
 		}
 
 		.contentelement {
-			border: 1px solid $color-white;
+			border: 1px solid $color-smokey-white;
 			width: 100%;
 			position: relative;
 

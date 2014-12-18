@@ -87,8 +87,7 @@
 		}
 	}
 
-	&:nth-child(even),
-	&.odd {
+	&:nth-child(even) {
 		> td {
 			background-color: $color-almost-white;
 		}
@@ -128,7 +127,7 @@
 
 @mixin style-message($color-bg, $color-border, $color-text) {
 	background-color: $color-bg;
-	border-color: 1px solid $color-border;
+	border: 1px solid $color-border;
 	color: $color-text;
 	padding: 5px;
 	display: block;

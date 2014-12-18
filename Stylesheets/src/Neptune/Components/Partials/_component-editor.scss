@@ -4,17 +4,22 @@
 	Component partial -	Component editor
 */
 
-.editor {
+//FIXME need to fix this before launch
+.editor.task {
+	background-color: $color-white;
+	padding: 0;
+	border: 1px solid $color-light-grey;
+
 	.common_view {
 		background-color: $color-cloud-grey;
-		border: 1px solid $color-light-grey;
+		border-bottom: 2px solid $color-light-grey;
 		padding: 10px;
-		margin-bottom: 10px;
+		margin: 0;
 	}
 
 	.menu_pe_options {
 		@include resetMenu;
-		margin: 10px 0;
+		margin-top: 10px;
 
 		.mi {
 			display: inline-block;
@@ -52,12 +57,16 @@
 		}
 	}
 
+	.editor_tabs,
+	.editor_content {
+		padding: 0 15px;
+		margin: 15px 0;
+	}
 
 	div.content_history {
-		margin-top: 15px;
 		padding: 10px;
-		background-color: $color-almost-white;
-		border: 1px solid $color-light-grey;
+		margin: 0;
+		border-top: 1px solid $color-cloud-grey;
 
 		.heading {
 			margin-right: 10px;
@@ -67,6 +76,19 @@
 			max-width: none;
 			margin-left: 0;
 			display: block;
+		}
+	}
+
+	a.load_history_action {
+		margin: 5px 0 0;
+		border: 0 none;
+		max-width: 550px;
+		display: block;
+		padding: 5px;
+
+		&:hover {
+			border: 0 none;
+			background-color: $color-cornsilk;
 		}
 	}
 

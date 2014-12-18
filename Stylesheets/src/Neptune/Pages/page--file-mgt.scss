@@ -1,0 +1,15 @@
+@import "../Config/base-import";
+
+.file_tree {
+	.dnd-source {
+		&:hover {
+			td.file_tree_name_col {
+				background: none;
+			}
+		}
+
+		td.file_tree_name_col {
+			padding: 0;
+		}
+	}
+}

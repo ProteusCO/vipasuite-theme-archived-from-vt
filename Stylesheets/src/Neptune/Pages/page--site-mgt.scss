@@ -1,0 +1,126 @@
+@import "../Config/base-import";
+
+.site_editor {
+  .site_actions {
+    float: right;
+
+    .locale {
+      margin-right: 5px;
+    }
+  }
+
+  .tab-content > div > .help-point {
+    float: right;
+    margin-left: 10px;
+    margin-top: 3px;
+  }
+
+  label {
+    @include style-form-label;
+  }
+
+  .label-con {
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .pager-top {
+    display: none;
+  }
+
+  .site-general {
+    .tab-content-wrapper > tbody > tr > td {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .btn {
+      margin-left: 5px;
+    }
+  }
+
+  .rtb + .btn {
+    margin-left: 5px;
+  }
+}
+
+/*table.pager,
+table.miwt-table,
+table.site_editor_tabs{
+  width: 100%;
+  clear: both;
+}
+td.label-con {
+  text-align: right;
+  padding-right: .2em;
+}
+label {
+  font-weight: bold;
+}
+td.name-con input.name {
+  width: 98%;
+}
+div.site_actions {
+  position:absolute;
+  right: 1em;
+}
+.file_storage .entity_actions{
+ float:right;
+ margin:.25em 0;
+}
+.file_storage .editor div.actions {
+  margin:1em 0;
+}
+.site_general .tab_content_wrapper td,
+.site_error_pages table td {
+  padding: .25em;
+  line-height:1.25;
+}
+div.prop{
+ margin: .75em 0;
+}
+span.affix_option{
+ padding: 0 .75em;
+ text-transform: uppercase;
+}
+
+
+.site_actions button{
+
+}
+div.meta_information_editor{margin:.5em 0;}
+
+.hostname_view.property_wrapper .prop {
+	margin-bottom: 10px;
+	padding: 5px;
+}
+.hostname_view.property_wrapper label {
+	display: inline-block;
+	*display: inline;
+	zoom:1;
+	width: 100px;
+	text-align: right;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.hostname_view .destination_container,
+.hostname_view .security_container {
+	display: inline-block;
+}
+.hostname_view .rtb label {
+	font-weight: normal;
+	width: auto;
+	text-align: left;
+}
+.hostname_view .prop.destination label,
+.hostname_view .prop.security label {
+	vertical-align: top;
+}
+.hostname_view .favicon_container label {
+	width: auto;
+}
+.hostname_view img.favicon,
+.hostname_view .favicon img {
+	max-height: 18px;
+}
+​*/

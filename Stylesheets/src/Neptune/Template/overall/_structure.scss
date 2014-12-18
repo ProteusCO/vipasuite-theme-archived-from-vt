@@ -95,6 +95,12 @@ $footer-height: 55px;
 	background-color: $color-white;
 	border: 1px solid $color-cloud-grey;
 	padding: 15px;
+
+	#t-no-content-box & {
+		background-color: transparent;
+		border: 0 none;
+		padding: 0;
+	}
 }
 
 .page-heading {
