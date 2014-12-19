@@ -13,7 +13,7 @@ html, body, body > .page {
 
 body {
 	font-family: $font-open-sans;
-	font-size: 13px;
+	font-size: $font-default-size;
 	color: $color-default-site-font;
 	background-color: $color-default-site-bg;
 }

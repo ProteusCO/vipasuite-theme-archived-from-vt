@@ -1,0 +1,137 @@
+@import "../Config/base-import";
+
+@include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
+@include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
+@include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
+@include fontFace('OpenSansItalic', '/OpenSans', 'opensans-italic-webfont');
+@include fontFace('OpenSansLight', '/OpenSans', 'opensans-light-webfont');
+
+@import "../Libs/normalize";
+
+@import "../Components/Partials/buttons";
+@import "../Components/Partials/messages";
+
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: center center $color-dark-blue themeDesignResourceUrl('/Login/login-site-bg.jpg') no-repeat;
+	background-size: cover;
+	color: $color-blue-almost-white;
+	font-size: $font-default-size;
+}
+
+.l-primary-content {
+	width: 320px;
+	margin: 0 auto;
+
+	//fix to contain interior margins
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+}
+
+@include textLikeInputs {
+	border: 1px solid $color-cloud-grey;
+	padding: 10px;
+	padding-left: 50px;
+	margin: 0;
+}
+
+a {
+	color: $color-blue-almost-white;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.site-logo {
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+.login-process {
+	border-bottom: 1px solid $color-dark-blue;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+
+	.already-logged {
+		text-align: center;
+		padding: 10px;
+	}
+}
+
+.login {
+	.label {
+		display: none;
+	}
+
+	.field {
+		+ .field {
+			margin-top: 10px;
+		}
+
+		input {
+			width: 100%;
+		}
+	}
+}
+
+.follow,
+.downloadables {
+	display: inline-block;
+	vertical-align: top;
+
+	h2 {
+		margin: 0 0 10px;
+		font-family: $font-open-sans-bold;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+
+	ul {
+		@include resetMenu;
+	}
+}
+
+.follow {
+	text-align: left;
+	width: 30%;
+}
+
+.downloadables {
+	text-align: right;
+	width: 70%;
+
+	li + li {
+		margin-top: 5px;
+	}
+}
+
+.copyright {
+	text-align: center;
+	margin-top: 50px;
+
+	.vipasolutions {
+		width: 139px;
+		height: 31px;
+		display: inline-block;
+		vertical-align: middle;
+		background-image: themeDesignResourceUrl('/Login/vipasolutions-logo.png');
+		margin-bottom: 9px;
+
+		.text {
+			display: none;
+		}
+	}
+}
