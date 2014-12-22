@@ -18,6 +18,7 @@
 	.current-site {
 		background-color: $color-almost-white;
 		padding: 5px;
+		position: relative;
 
 		.icon {
 			float: left;
@@ -30,6 +31,16 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+
+			&:after {
+				content: " ";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 25px;
+				border-left: 1px solid $color-light-grey;
+			}
 		}
 	}
 
