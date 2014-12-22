@@ -28,7 +28,7 @@ body {
 }
 
 .l-primary-content {
-	width: 320px;
+	width: 325px;
 	margin: 0 auto;
 
 	//fix to contain interior margins
@@ -43,6 +43,7 @@ body {
 	padding: 10px;
 	padding-left: 50px;
 	margin: 0;
+	color: $color-default-site-font;
 }
 
 a {
@@ -71,6 +72,7 @@ a {
 }
 
 .login {
+	.title,
 	.label {
 		display: none;
 	}
@@ -83,6 +85,26 @@ a {
 		input {
 			width: 100%;
 		}
+	}
+
+	.message {
+		&.important {
+			@include style-message($color-error-light, $color-error-dark, $color-error-dark);
+			padding: 10px;
+		}
+	}
+
+	.retrieve-password,
+	.actions {
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	.btn {
+		@include buttonColors($color-green);
+		@include box-shadow(0 0 7px transparentize($color-dark-blue, 0.3));
+		font-size: 18px;
+		padding: 7px 50px;
 	}
 }
 
