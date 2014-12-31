@@ -13,22 +13,34 @@
 	}
 }
 
-@mixin buttonGlyphOnly($html-entity, $size: 16px) {
+@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-charcoal) {
 	background-color: transparent;
 	border: 0 none;
 	margin: 0;
 	padding: 0;
-	text-indent: -4000px;
+	font-size: 0;
 	width: $size;
 	height: $size;
 
 	&:before {
+		font-family: $font-glyph-lib;
 		content: $html-entity;
-		display: block;
-		float: left;
 		width: $size;
 		height: $size;
-		background-color: $color-charcoal; //FIXME
+		font-size: $size;
+		color: $color;
+
+		// generated from grunt task
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1;
+		font-weight: normal;
+		font-style: normal;
+		text-decoration: inherit;
+		text-transform: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	&:hover {

@@ -6,6 +6,8 @@
 @include fontFace('OpenSansItalic', '/OpenSans', 'opensans-italic-webfont');
 @include fontFace('OpenSansLight', '/OpenSans', 'opensans-light-webfont');
 
+@include fontFace('GlyphLib', '/GlyphLib', 'neptune-glyph-font');
+
 @import "../Libs/jquery.mCustomScrollbar";
 
 @import "overall/base-elements";

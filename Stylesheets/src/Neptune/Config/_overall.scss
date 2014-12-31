@@ -50,11 +50,12 @@ $font-open-sans-semi-bold: OpenSansSemiBold, $font-arial;
 $font-open-sans-bold: OpenSansBold, $font-arial;
 $font-open-sans-italic: OpenSansItalic, $font-arial;
 $font-open-sans-light: OpenSansLight, $font-arial;
+$font-glyph-lib: GlyphLib, sans-serif;
 
 $font-default-size: 13px;
 
 $html-entity-nbsp: "\a0";
-
+@import "font-glyph-entities";
 
 $bp-mobile-landscape: (min-width 480px);
 $bp-tablets-portrait: (min-width 768px);

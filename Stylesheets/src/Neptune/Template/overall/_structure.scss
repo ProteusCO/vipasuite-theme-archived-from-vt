@@ -58,13 +58,14 @@ $footer-height: 55px;
 		width: 100%;
 
 		.user-image {
-			width: 24px;
-			background-color: $color-black; //FIXME
+			width: 30px;
+			text-align: center;
 		}
 
 		.user-name {
 			color: $color-white;
-			padding-left: 10px;
+			padding-left: 5px;
+			padding-right: 5px;
 			font-size: 14px;
 		}
 
@@ -73,8 +74,21 @@ $footer-height: 55px;
 			width: 1%;
 		}
 
+		.btn-glyph {
+			&.profile {
+				@include buttonGlyphOnly($html-entity-profile, 24px, $color-white);
+			}
+		}
+
 		.btn {
-			@include buttonGlyphOnly($html-entity-nbsp, 24px);
+			&.preferences {
+				@include buttonGlyphOnly($html-entity-gear, 24px, $color-white);
+				margin-right: 5px;
+			}
+			&.logout {
+				@include buttonGlyphOnly($html-entity-logout, 24px, $color-white);
+				margin-right: 5px;
+			}
 		}
 	}
 
