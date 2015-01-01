@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 						//Replace all the extra content and change the CSS to named SCSS variables that reference the unicode content
 						content = content.replace(new RegExp('[\\s\\S]+?// Icons'), '');
 						content = content.replace(new RegExp('.icon-(.*):before\\s\\{\\S*\\s*content:(".*");\\S*\\s}', 'g'), '\$html-entity-$1: $2;');
-						return content.replace(/(\r\n|\r|\n)+/g, '$1');
+						return content.replace(/(\r\n|\r|\n)+/g, "\r\n");
 					}
 				}
 			},
