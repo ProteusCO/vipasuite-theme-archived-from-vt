@@ -171,6 +171,13 @@
 
 			.btn {
 				@include buttonGlyphOnly($html-entity-nbsp);
+
+				&.edit {
+					@include buttonGlyphOnly($html-entity-edit);
+				}
+				&.remove {
+					@include buttonGlyphOnly($html-entity-close, $color: $color-btn-close);
+				}
 			}
 		}
 	}

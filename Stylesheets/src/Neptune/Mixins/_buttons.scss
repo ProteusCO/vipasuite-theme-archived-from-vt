@@ -43,7 +43,6 @@
 @mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-charcoal) {
 	background-color: transparent;
 	border: 0 none;
-	margin: 0;
 	padding: 0;
 	font-size: 0;
 	width: $size;

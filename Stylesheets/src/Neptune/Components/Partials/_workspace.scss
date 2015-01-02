@@ -64,7 +64,12 @@
 		margin-left: 5px;
 
 		.btn {
-			@include buttonGlyphOnly($html-entity-nbsp);
+			&.info {
+				@include buttonGlyphOnly($html-entity-info, 12px, $color-btn-info);
+			}
+			&.close {
+				@include buttonGlyphOnly($html-entity-close, 12px, $color-btn-close);
+			}
 		}
 	}
 }
