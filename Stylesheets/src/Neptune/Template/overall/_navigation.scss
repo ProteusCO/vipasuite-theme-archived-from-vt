@@ -4,6 +4,13 @@
 	overall.scss partial -	Navigation
 */
 
+
+@mixin navMenuIconOverride($html-entity) {
+	> .menuitemlabel > .mil:before {
+		content: $html-entity;
+	}
+}
+
 .primary-nav {
 	.menu {
 		@include resetMenu;
@@ -36,6 +43,18 @@
 				&:hover {
 					background-color: $color-light-blue;
 				}
+
+				> .mil {
+					@include buttonGlyphAdd($html-entity-gear, 32px, $color-white);
+				}
+			}
+
+
+			&.nav-dashboard {
+				@include navMenuIconOverride($html-entity-dashboard);
+			}
+			&.nav-cms {
+				@include navMenuIconOverride($html-entity-cms);
 			}
 		}
 	}
@@ -45,7 +64,6 @@
 		background-color: $color-smokey-white;
 
 		> .mi {
-
 			&.mi-active {
 				> .menuitemlabel {
 					background-color: darken($color-smokey-white, 5%);
@@ -58,7 +76,20 @@
 				&:hover {
 					background-color: darken($color-smokey-white, 5%);
 				}
+
+				> .mil {
+					@include buttonGlyphAdd($html-entity-gear, 32px, $color-dark-grey);
+				}
 			}
+
+			&.nav-site {
+				@include navMenuIconOverride($html-entity-site);
+			}
+			&.nav-page {
+				@include navMenuIconOverride($html-entity-page);
+			}
+
 		}
 	}
 }
+

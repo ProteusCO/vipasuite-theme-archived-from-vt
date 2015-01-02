@@ -13,15 +13,7 @@
 	}
 }
 
-@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-charcoal) {
-	background-color: transparent;
-	border: 0 none;
-	margin: 0;
-	padding: 0;
-	font-size: 0;
-	width: $size;
-	height: $size;
-
+@mixin buttonGlyphAdd($html-entity, $size: 16px, $color: $color-charcoal, $spacing: 5px) {
 	&:before {
 		font-family: $font-glyph-lib;
 		content: $html-entity;
@@ -29,6 +21,7 @@
 		height: $size;
 		font-size: $size;
 		color: $color;
+		//background-color: $color-cloud-grey;
 
 		// generated from grunt task
 		display: inline-block;
@@ -41,12 +34,28 @@
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		@if ($spacing != 0) {
+			margin-right: $spacing;
+		}
 	}
+}
+
+@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-charcoal) {
+	background-color: transparent;
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	width: $size;
+	height: $size;
+
+	@include buttonGlyphAdd($html-entity, $size, $color, 0);
 
 	&:hover {
 		background-color: transparent;
 	}
 }
+
 
 @mixin buttonBase() {
 	display: inline-block;
