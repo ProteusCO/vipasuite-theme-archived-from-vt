@@ -13,27 +13,32 @@
 	}
 }
 
+@mixin glyphAdd($html-entity, $size: 16px, $color: $color-charcoal) {
+	font-family: $font-glyph-lib;
+	content: $html-entity;
+	width: $size;
+	height: $size;
+	font-size: $size;
+	color: $color;
+	//background-color: $color-cloud-grey;
+
+	// generated from grunt task
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: inherit;
+	text-transform: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 @mixin buttonGlyphAdd($html-entity, $size: 16px, $color: $color-charcoal, $spacing: 5px) {
 	&:before {
-		font-family: $font-glyph-lib;
-		content: $html-entity;
-		width: $size;
-		height: $size;
-		font-size: $size;
-		color: $color;
-		//background-color: $color-cloud-grey;
+		@include glyphAdd($html-entity, $size, $color);
 
-		// generated from grunt task
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 1;
-		font-weight: normal;
-		font-style: normal;
-		text-decoration: inherit;
-		text-transform: none;
-		text-rendering: optimizeLegibility;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 		@if ($spacing != 0) {
 			margin-right: $spacing;
 		}
@@ -52,6 +57,12 @@
 
 	&:hover {
 		background-color: transparent;
+	}
+}
+
+@mixin buttonGlyphOverride($html-entity) {
+	&:before {
+		content: $html-entity;
 	}
 }
 
