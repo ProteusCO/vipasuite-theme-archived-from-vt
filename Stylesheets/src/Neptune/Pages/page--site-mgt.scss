@@ -42,6 +42,44 @@
   .rtb + .btn {
     margin-left: 5px;
   }
+
+  .locale_selector {
+    .locale_input {
+      input {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+    }
+
+    .locales {
+      margin: 10px 0;
+    }
+  }
+
+  .prop > label.tbl {
+    @include style-form-label;
+  }
+
+  label.tbl {
+    font-family: $font-open-sans;
+  }
+
+  .hostname-view_container {
+    .destination-welcome {
+      margin-bottom: 5px;
+    }
+  }
+
+  .component_assignment_editor {
+    .btn {
+      &.configure {
+        @include buttonGlyphOnly($html-entity-gear);
+      }
+      &.remove {
+        @include buttonGlyphOnly($html-entity-delete);
+      }
+    }
+  }
 }
 
 /*table.pager,
