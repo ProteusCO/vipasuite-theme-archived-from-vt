@@ -23,7 +23,6 @@
 	font-family: $font-open-sans-semi-bold;
 	padding: 5px;
 
-
 	&.selected {
 		border-color: $color-light-grey;
 		background-color: $color-white;
@@ -70,6 +69,44 @@
 			&.close {
 				@include buttonGlyphOnly($html-entity-close, 12px, $color-btn-close);
 			}
+		}
+	}
+
+	.uitask-info {
+		position: absolute;
+		z-index: 15;
+		background-color: $color-white;
+		border: 1px solid $color-light-grey;
+		font-family: $font-open-sans;
+		font-size: 12px;
+		padding: 10px;
+		max-width: 450px;
+		@include box-shadow(0 0 5px transparentize($color-black, 0.8));
+		@include clearfix;
+
+		.pe-data {
+			@include clearfix;
+
+			+ .pe-data {
+				margin-top: 5px;
+			}
+		}
+
+		label {
+			font-family: $font-open-sans-semi-bold;
+			width: 110px;
+			margin-right: 5px;
+			float: left;
+		}
+
+		a.close {
+			float: right;
+			@include buttonBase;
+			@include buttonGlyphAdd($html-entity-close, 13px);
+		}
+
+		.l10n-btn + .l10n-btn {
+			margin-left: 5px;
 		}
 	}
 }
