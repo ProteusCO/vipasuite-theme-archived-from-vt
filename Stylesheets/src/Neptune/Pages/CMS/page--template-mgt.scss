@@ -25,13 +25,13 @@
 			@include buttonGlyphOnly($html-entity-nbsp);
 
 			&.edit {
-				@include buttonGlyphOverride($html-entity-edit, $color: $color-success-dark);
+				@include buttonStyleEditGlyph;
 			}
 			&.copy {
 				@include buttonGlyphOverride($html-entity-copy);
 			}
 			&.delete {
-				@include buttonGlyphOverride($html-entity-delete, $color: $color-error-dark);
+				@include buttonStyleDeleteGlyph;
 			}
 		}
 	}
@@ -41,9 +41,25 @@
 	> .heading {
 		display: none;
 	}
+
+	.pages {
+		.trashed {
+			td {
+				text-decoration: line-through;
+			}
+		}
+	}
 }
 
 .template_editor {
+
+	.click_to_edit {
+		.btn {
+			&.edit {
+				@include buttonGlyphAdd($html-entity-edit);
+			}
+		}
+	}
 
 	.edit_template {
 		> .click_to_edit,
@@ -118,6 +134,73 @@
 	}
 }
 
+.move_pages_wizard {
+	margin-bottom: 15px;
+
+	> .heading {
+		@include style-h2;
+	}
+
+	.template_selector {
+		margin: 10px 0;
+	}
+
+	.heading {
+		margin: 0;
+	}
+
+	.select_template {
+		> .heading {
+			@include style-h3;
+		}
+	}
+
+	.search_bar {
+		margin: 10px 0;
+	}
+
+	.box_mapping_component {
+		margin: 10px 0;
+
+		td.source-con {
+			padding-right: 10px;
+			@include style-form-label;
+		}
+
+		td.destination-con {
+			padding: 2px 0;
+		}
+	}
+
+	.override_template_content {
+		margin: 10px 0;
+	}
+
+	.confirm_template_switch {
+		margin: 10px 0;
+
+		.pager {
+			margin: 5px 0;
+		}
+	}
+
+	.btn {
+		&.back {
+			@include buttonGlyphAdd($html-entity-arrow-left);
+		}
+		&.continue {
+			@include buttonGlyphAdd($html-entity-arrow-right);
+		}
+		&.cancel {
+			@include buttonGlyphAdd($html-entity-cancel);
+		}
+		&.save,
+		&.finish {
+			@include buttonGlyphAdd($html-entity-success);
+		}
+	}
+}
+
 .create_new_template {
 	label {
 		width: 110px;
@@ -166,7 +249,52 @@
 			margin-left: 10px;
 		}
 		&.remove {
-			@include buttonGlyphOnly($html-entity-delete, $color: $color-error-dark);
+			@include buttonStyleDeleteGlyph;
 		}
+	}
+}
+
+.secondary_navigation_wizard {
+	> .box {
+		margin: 10px 0;
+	}
+
+	.editor {
+		margin: 10px 0;
+	}
+}
+
+.create_primary_menu {
+	> table {
+		width: 100%;
+	}
+
+	.heading {
+		@include style-h3;
+		margin-top: 15px;
+	}
+
+	> .heading {
+		margin-top: 0;
+	}
+
+	.pager-top {
+		display: none;
+	}
+
+	.pages {
+		th {
+			&:nth-child(1),
+			&:nth-child(2) {
+				width: 35%;
+			}
+			&.control {
+				width: 1%;
+			}
+		}
+	}
+
+	.procedure-navigation {
+		margin-top: 15px;
 	}
 }

@@ -173,10 +173,10 @@
 				@include buttonGlyphOnly($html-entity-nbsp);
 
 				&.edit {
-					@include buttonGlyphOnly($html-entity-edit);
+					@include buttonStyleEditGlyph;
 				}
 				&.remove {
-					@include buttonGlyphOnly($html-entity-close, $color: $color-btn-close);
+					@include buttonStyleRemoveGlyph;
 				}
 			}
 		}
@@ -330,7 +330,7 @@
 					@include buttonGlyphOverride($html-entity-view);
 				}
 				&.edit {
-					@include buttonGlyphOverride($html-entity-edit);
+					@include buttonStyleEditGlyph;
 				}
 				&.rename {
 					@include buttonGlyphOverride($html-entity-rename);
@@ -342,7 +342,7 @@
 					@include buttonGlyphOverride($html-entity-arrow-down);
 				}
 				&.remove {
-					@include buttonGlyphOverride($html-entity-remove);
+					@include buttonStyleRemoveGlyph;
 				}
 			}
 		}

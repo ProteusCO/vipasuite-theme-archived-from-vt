@@ -10,4 +10,9 @@
 	& + .btn {
 		margin-left: $spacing-default-between-buttons;
 	}
+
+	&[disabled] {
+		@include buttonColors($color-grey, $color-light-grey, 'none');
+
+	}
 }

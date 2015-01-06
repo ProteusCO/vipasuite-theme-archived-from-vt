@@ -73,7 +73,7 @@
         @include buttonGlyphOnly($html-entity-gear);
       }
       &.remove {
-        @include buttonGlyphOnly($html-entity-remove);
+        @include buttonStyleRemoveGlyph;
       }
     }
   }

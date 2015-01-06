@@ -7,6 +7,8 @@
 	&:hover {
 		@if ($change-type == 'dark') {
 			background-color: darken($color-bg, 5%);
+		} @else if ($change-type == 'none') {
+			background-color: $color-bg;
 		} @else {
 			background-color: lighten($color-bg, 5%);
 		}
@@ -48,7 +50,7 @@
 	}
 }
 
-@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-charcoal) {
+@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-light-charcoal) {
 	background-color: transparent;
 	border: 0 none;
 	padding: 0;
@@ -88,4 +90,20 @@
 	margin: 0;
 	text-decoration: none;
 	@include buttonColors($color-blue, $color-white);
+}
+
+@mixin buttonStyleDeleteGlyph($size: 16px) {
+	@include buttonGlyphOnly($html-entity-delete, $size: $size, $color: $color-error-dark);
+}
+
+@mixin buttonStyleEditGlyph($size: 16px) {
+	@include buttonGlyphOnly($html-entity-edit, $size: $size, $color: $color-success-dark);
+}
+
+@mixin buttonStyleRemoveGlyph($size: 16px) {
+	@include buttonGlyphOnly($html-entity-remove, $size: $size, $color: $color-error-dark);
+}
+
+@mixin buttonStyleCloseGlyph($size: 16px) {
+	@include buttonGlyphOnly($html-entity-close, $size: $size);
 }
