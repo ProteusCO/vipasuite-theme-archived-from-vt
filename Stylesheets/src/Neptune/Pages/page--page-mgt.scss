@@ -185,11 +185,20 @@
 	.page_selector {
 		min-width: 200px;
 
-		tr.odd > td {
-			background-color: transparent;
+		tbody {
+			> tr.odd,
+			> tr.even {
+				td {
+					background-color: transparent;
+				}
+			}
 		}
 
+
 		table.page_element_tree {
+			border: 0 none;
+			margin-top: 10px;
+
 			td {
 				padding: 0;
 
