@@ -1,6 +1,6 @@
 @mixin buttonColors($color-bg, $color-text: '', $change-type: 'dark') {
 	background-color: $color-bg;
-	@if $color-text != '' {
+	@if ($color-text != '') {
 		color: $color-text;
 	}
 
@@ -13,13 +13,16 @@
 	}
 }
 
-@mixin glyphAdd($html-entity, $size: 16px, $color: $color-charcoal) {
+@mixin glyphAdd($html-entity, $size: 16px, $color: '') {
 	font-family: $font-glyph-lib;
 	content: $html-entity;
 	width: $size;
 	height: $size;
 	font-size: $size;
-	color: $color;
+
+	@if ($color != '') {
+		color: $color;
+	}
 	//background-color: $color-cloud-grey;
 
 	// generated from grunt task
@@ -35,7 +38,7 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-@mixin buttonGlyphAdd($html-entity, $size: 16px, $color: $color-charcoal, $spacing: 5px) {
+@mixin buttonGlyphAdd($html-entity, $size: 16px, $color: "", $spacing: 5px) {
 	&:before {
 		@include glyphAdd($html-entity, $size, $color);
 
