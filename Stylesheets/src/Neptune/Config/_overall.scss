@@ -59,7 +59,7 @@ $font-monospace: "Courier New", monospace;
 $font-default-size: 13px;
 
 $html-entity-nbsp: "\a0";
-@import "font-glyph-entities";
+@import "font-glyph-entity-aliases";
 
 $bp-mobile-landscape: (min-width 480px);
 $bp-tablets-portrait: (min-width 768px);

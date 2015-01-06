@@ -86,7 +86,7 @@
         @include buttonGlyphOnly($html-entity-gear);
       }
       &.remove {
-        @include buttonGlyphOnly($html-entity-delete);
+        @include buttonGlyphOnly($html-entity-remove);
       }
     }
   }

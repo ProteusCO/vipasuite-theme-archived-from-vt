@@ -325,6 +325,25 @@
 		.nde_actions {
 			.btn {
 				@include buttonGlyphOnly($html-entity-nbsp);
+
+				&.view {
+					@include buttonGlyphOverride($html-entity-view);
+				}
+				&.edit {
+					@include buttonGlyphOverride($html-entity-edit);
+				}
+				&.rename {
+					@include buttonGlyphOverride($html-entity-rename);
+				}
+				&.action-up {
+					@include buttonGlyphOverride($html-entity-arrow-up);
+				}
+				&.action-down {
+					@include buttonGlyphOverride($html-entity-arrow-down);
+				}
+				&.remove {
+					@include buttonGlyphOverride($html-entity-remove);
+				}
 			}
 		}
 
