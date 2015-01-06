@@ -17,6 +17,14 @@
 
   label {
     @include style-form-label;
+
+    &.tbl {
+      font-family: $font-open-sans;
+    }
+  }
+
+  .prop > label.tbl {
+    @include style-form-label;
   }
 
   .label-con {
@@ -56,14 +64,6 @@
     }
   }
 
-  .prop > label.tbl {
-    @include style-form-label;
-  }
-
-  label.tbl {
-    font-family: $font-open-sans;
-  }
-
   .hostname-view_container {
     .destination-welcome {
       margin-bottom: 5px;
@@ -71,6 +71,16 @@
   }
 
   .component_assignment_editor {
+    .header-title {
+      h1 {
+        margin: 0;
+      }
+
+      h2 {
+        margin: 0;
+      }
+    }
+
     .btn {
       &.configure {
         @include buttonGlyphOnly($html-entity-gear);
@@ -78,6 +88,23 @@
       &.remove {
         @include buttonGlyphOnly($html-entity-delete);
       }
+    }
+  }
+
+  .html_expression {
+
+    .expression_type {
+      @include style-form-label;
+    }
+
+    .file-editor {
+      @include style-form-input-readonly;
+      font-family: $font-monospace;
+      white-space: pre;
+      max-height: 300px;
+      overflow: auto;
+      display: block;
+      margin-bottom: 10px;
     }
   }
 }

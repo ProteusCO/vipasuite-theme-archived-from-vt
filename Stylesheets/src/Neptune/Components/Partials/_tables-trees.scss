@@ -20,6 +20,18 @@
 /* MIWT Trees. */
 
 .miwt-tree {
+	@include style-table;
+
+	> thead > tr {
+		> th {
+			@include style-table-heading;
+		}
+	}
+
+	> tbody > tr {
+		@include style-table-data-row;
+	}
+
 	.parent-sibling-following,
 	.last-sibling,
 	.sibling-following {
