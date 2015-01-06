@@ -88,6 +88,24 @@
 			&.nav-page {
 				@include navMenuIconOverride($html-entity-page);
 			}
+			&.nav-template {
+				@include navMenuIconOverride($html-entity-template);
+			}
+			&.nav-layout {
+				@include navMenuIconOverride($html-entity-layout);
+			}
+			&.nav-article {
+				@include navMenuIconOverride($html-entity-article);
+			}
+			&.nav-photo-album {
+				@include navMenuIconOverride($html-entity-photos);
+			}
+			&.nav-file-system {
+				@include navMenuIconOverride($html-entity-file-system);
+			}
+			&.nav-component {
+				@include navMenuIconOverride($html-entity-component);
+			}
 
 		}
 	}
