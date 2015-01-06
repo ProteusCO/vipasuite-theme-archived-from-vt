@@ -1,0 +1,172 @@
+@import "../../Config/base-import";
+
+.template_management {
+	.entity_actions {
+		.btn {
+			&.add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
+
+	.heading {
+		margin-top: 0;
+	}
+
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+}
+
+.templates_table {
+	.actions {
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp);
+
+			&.edit {
+				@include buttonGlyphOverride($html-entity-edit, $color: $color-success-dark);
+			}
+			&.copy {
+				@include buttonGlyphOverride($html-entity-copy);
+			}
+			&.delete {
+				@include buttonGlyphOverride($html-entity-delete, $color: $color-error-dark);
+			}
+		}
+	}
+}
+
+.template_properties_editor {
+	> .heading {
+		display: none;
+	}
+}
+
+.template_editor {
+
+	.edit_template {
+		> .click_to_edit,
+		> .available-locales,
+		> .inherited-locales,
+		> .layout {
+			margin: 5px 0;
+		}
+
+		.name,
+		.css_id {
+			label {
+				display: inline-block;
+				width: 60px;
+			}
+
+			.field {
+				width: 250px;
+			}
+		}
+
+		.inherited-locales {
+			a[data-features=submit] {
+				margin-left: 10px;
+			}
+		}
+
+		> .layout {
+			float: right;
+			margin-top: -26px; //FIXME I really don't want to do this, but time and HTML makes me set float this way
+
+			label {
+				display: none;
+			}
+
+			.field {
+				margin-right: 5px;
+			}
+		}
+
+		> .template_tabs {
+			margin: 15px 0;
+		}
+
+		.pages {
+			.page_actions {
+				float: right;
+			}
+
+			.pager-top {
+				display: none;
+			}
+
+			> .actions {
+				margin-bottom: 5px;
+			}
+
+			.btn {
+				&.create_pages {
+					@include buttonGlyphAdd($html-entity-add);
+				}
+			}
+		}
+	}
+}
+
+.switch_layout_wizard {
+	margin: 15px 0;
+
+	.layout_selector {
+		margin: 15px 0;
+	}
+}
+
+.create_new_template {
+	label {
+		width: 110px;
+		display: inline-block;
+	}
+
+	input[type=text] {
+		width: 300px;
+	}
+
+	> .name,
+	> .css_id,
+	> .select_layout {
+		margin: 5px 0;
+	}
+
+	> .actions {
+		margin-top: 15px;
+	}
+}
+
+.create_pages {
+	margin-bottom: 15px;
+
+	.heading {
+		@include style-h2;
+		margin-bottom: 15px;
+	}
+
+	.new_pages {
+		margin-bottom: 10px;
+	}
+
+	.example {
+		margin: 10px 0;
+	}
+
+	input.prop_name,
+	input.prop_value {
+		width: 100%;
+	}
+
+	.btn {
+		&.add {
+			@include buttonGlyphAdd($html-entity-add);
+			margin-left: 10px;
+		}
+		&.remove {
+			@include buttonGlyphOnly($html-entity-delete, $color: $color-error-dark);
+		}
+	}
+}

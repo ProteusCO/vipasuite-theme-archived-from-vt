@@ -13,7 +13,7 @@
 	}
 }
 
-@mixin glyphAdd($html-entity, $size: 16px, $color: '') {
+@mixin glyphAdd($html-entity, $size: 13px, $color: '') {
 	font-family: $font-glyph-lib;
 	content: $html-entity;
 	width: $size;
@@ -38,7 +38,7 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-@mixin buttonGlyphAdd($html-entity, $size: 16px, $color: "", $spacing: 5px) {
+@mixin buttonGlyphAdd($html-entity, $size: 13px, $color: "", $spacing: 5px) {
 	&:before {
 		@include glyphAdd($html-entity, $size, $color);
 
@@ -63,9 +63,17 @@
 	}
 }
 
-@mixin buttonGlyphOverride($html-entity) {
+@mixin buttonGlyphOverride($html-entity, $size: '', $color: '') {
 	&:before {
 		content: $html-entity;
+		@if ($size != '') {
+			width: $size;
+			height: $size;
+			font-size: $size;
+		}
+		@if ($color != '') {
+			color: $color;
+		}
 	}
 }
 

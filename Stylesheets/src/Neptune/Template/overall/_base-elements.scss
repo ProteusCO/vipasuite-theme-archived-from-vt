@@ -27,6 +27,10 @@ h2 {
 	@include style-h2;
 }
 
+h3 {
+	@include style-h3;
+}
+
 //click to edit
 .click_to_edit {
 	span.field {
@@ -87,6 +91,20 @@ span.help-point {
 			display: block;
 			width: 20px;
 		}
+	}
+}
+
+//locale selector
+.locale_selector {
+	.locale_input {
+		input {
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	}
+
+	.locales {
+		margin: 10px 0;
 	}
 }
 

@@ -1,3 +1,5 @@
 @import "font-glyph-entities";
 
-$html-entity-remove: $html-entity-trashcan;
+$html-entity-remove: $html-entity-close;
+$html-entity-copy: $html-entity-page;
+$html-entity-delete: $html-entity-trashcan;

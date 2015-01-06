@@ -1,4 +1,4 @@
-@import "../Config/base-import";
+@import "../../Config/base-import";
 
 .site_editor {
   .site_actions {
@@ -49,19 +49,6 @@
 
   .rtb + .btn {
     margin-left: 5px;
-  }
-
-  .locale_selector {
-    .locale_input {
-      input {
-        margin-right: 5px;
-        margin-left: 5px;
-      }
-    }
-
-    .locales {
-      margin: 10px 0;
-    }
   }
 
   .hostname-view_container {
