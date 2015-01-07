@@ -24,7 +24,7 @@
 	padding: 5px;
 
 	&.selected {
-		border-color: $color-light-grey;
+		border-color: $color-lighter-grey;
 		background-color: $color-white;
 		@include box-shadow(0 0 2px transparentize($color-black, 0.8));
 
@@ -76,7 +76,7 @@
 		position: absolute;
 		z-index: 15;
 		background-color: $color-white;
-		border: 1px solid $color-light-grey;
+		border: 1px solid $color-lighter-grey;
 		font-family: $font-open-sans;
 		font-size: 12px;
 		padding: 10px;

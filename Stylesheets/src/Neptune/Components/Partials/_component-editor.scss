@@ -10,11 +10,11 @@
 	.editor {
 		background-color: $color-white;
 		padding: 0;
-		border: 1px solid $color-light-grey;
+		border: 1px solid $color-lighter-grey;
 
 		.common_view {
 			background-color: $color-cloud-grey;
-			border-bottom: 2px solid $color-light-grey;
+			border-bottom: 2px solid $color-lighter-grey;
 			padding: 10px;
 			margin: 0;
 		}
@@ -53,7 +53,7 @@
 				&:hover {
 					@include box-shadow(0 -1px 2px transparentize($color-black, 0.8) inset);
 					color: $color-black;
-					background: $color-light-grey;
+					background: $color-lighter-grey;
 					border-color: $color-darker-grey;
 				}
 			}
@@ -96,7 +96,7 @@
 
 		table.content_history {
 			margin-top: 5px;
-			border: 1px solid $color-light-grey;
+			border: 1px solid $color-lighter-grey;
 		}
 
 		.current_version {

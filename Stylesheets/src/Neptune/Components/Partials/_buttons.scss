@@ -12,7 +12,7 @@
 	}
 
 	&[disabled] {
-		@include buttonColors($color-grey, $color-light-grey, 'none');
+		@include buttonColors($color-grey, $color-lighter-grey, 'none');
 
 	}
 }

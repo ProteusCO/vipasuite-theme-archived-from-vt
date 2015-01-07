@@ -82,7 +82,7 @@ span.help-point {
 
 	&.disabled {
 		background-color: $color-grey;
-		color: $color-light-grey;
+		color: $color-lighter-grey;
 		cursor: default;
 
 		&:before {
@@ -110,7 +110,7 @@ span.help-point {
 
 //forms
 @include textLikeInputs {
-	border: 1px solid $color-light-grey;
+	border: 1px solid $color-lighter-grey;
 	padding: 4px;
 	vertical-align: middle;
 
@@ -122,7 +122,7 @@ span.help-point {
 
 select,
 textarea {
-	border: 1px solid $color-light-grey;
+	border: 1px solid $color-lighter-grey;
 	padding: 4px;
 	vertical-align: middle;
 
@@ -133,7 +133,7 @@ textarea {
 }
 
 fieldset {
-	border-color: $color-light-grey;
+	border-color: $color-lighter-grey;
 }
 
 legend {

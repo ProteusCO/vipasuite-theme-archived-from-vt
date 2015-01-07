@@ -132,7 +132,7 @@
 				display: block;
 				padding: 8px 5px;
 				background-color: $color-almost-white;
-				border: 1px solid $color-light-grey;
+				border: 1px solid $color-lighter-grey;
 				color: $color-blue;
 				font-family: $font-open-sans-semi-bold;
 
@@ -174,7 +174,7 @@
 
 		&:hover {
 			background-color: $color-almost-white;
-			border-color: $color-light-grey;
+			border-color: $color-lighter-grey;
 		}
 
 		&.dnd-feedback {
@@ -283,7 +283,7 @@
 				&.only-con {
 					margin: 5px 0;
 					height: 40px;
-					border: 2px dashed $color-light-grey;
+					border: 2px dashed $color-lighter-grey;
 
 					&.dnd-target-active {
 						border-style: solid;
@@ -301,7 +301,7 @@
 
 			&:hover {
 				background-color: $color-almost-white;
-				border-color: $color-light-grey;
+				border-color: $color-lighter-grey;
 			}
 
 			//TODO fix the fact this is inside the icon div because of needed HTML changes
@@ -331,7 +331,7 @@
 			&.dnd-feedback {
 				max-width: 500px;
 				background-color: $color-white;
-				border-color: $color-light-grey;
+				border-color: $color-lighter-grey;
 				@include box-shadow(0 0 4px transparentize($color-black, 0.8));
 			}
 
@@ -422,7 +422,7 @@
 			margin-left: 10px;
 
 			.delegate_purpose {
-				border: 1px solid $color-light-grey;
+				border: 1px solid $color-lighter-grey;
 				padding: 0 5px 5px;
 
 				.title {
