@@ -107,3 +107,7 @@
 @mixin buttonStyleCloseGlyph($size: 16px) {
 	@include buttonGlyphOnly($html-entity-close, $size: $size);
 }
+
+@mixin buttonStyleCopyGlyph($size: 16px) {
+	@include buttonGlyphOnly($html-entity-copy, $size: $size);
+}
