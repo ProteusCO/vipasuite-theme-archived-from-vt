@@ -1,0 +1,16 @@
+@import "../Config/base-import";
+
+.dashboard-coming {
+	background: center center $color-dark-blue themeDesignResourceUrl('/Dashboard/dashboard-noanalytics-bg.jpg') no-repeat;
+	background-size: cover;
+	height: 375px;
+
+	.coming-text {
+		color: $color-white;
+		font-size: 24px;
+		text-align: center;
+		padding-top: 150px;
+		font-family: $font-open-sans-bold;
+		text-shadow: 0 0 3px transparentize($color-black, 0.8);
+	}
+}
