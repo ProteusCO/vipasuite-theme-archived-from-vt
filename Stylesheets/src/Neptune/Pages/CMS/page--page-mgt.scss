@@ -219,6 +219,24 @@
 .page_editor {
 	.page_actions {
 		float: right;
+		margin-top: 4px;
+
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp, $size: 20px);
+
+			&.pagetemplate {
+				@include buttonGlyphOverride($html-entity-template);
+			}
+			&.live-view {
+				@include buttonGlyphOverride($html-entity-preview);
+			}
+			&.live-edit {
+				@include buttonGlyphOverride($html-entity-live-edit);
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph($size: 20px);
+			}
+		}
 	}
 
 	.page_layout {
