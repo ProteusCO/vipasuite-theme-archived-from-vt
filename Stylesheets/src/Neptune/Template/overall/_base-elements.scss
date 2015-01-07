@@ -60,12 +60,12 @@ h3 {
 span.help-point {
 	background-color: $color-orange;
 	display: inline-block;
+	vertical-align: middle;
 	text-align: center;
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
+	width: 16px;
+	height: 16px;
 	font-family: $font-open-sans-bold;
-	@include border-radius(50%);
+	font-size: 11px;
 	overflow: hidden;
 
 	a {
@@ -76,7 +76,7 @@ span.help-point {
 			content: "?";
 			float: left;
 			display: block;
-			width: 20px;
+			width: 16px;
 		}
 	}
 
@@ -89,7 +89,7 @@ span.help-point {
 			content: "?";
 			float: left;
 			display: block;
-			width: 20px;
+			width: 16px;
 		}
 	}
 }
