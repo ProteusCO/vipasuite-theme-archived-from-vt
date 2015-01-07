@@ -89,6 +89,15 @@
 			}
 		}
 
+		&.control {
+			width: 1%;
+			white-space: nowrap;
+
+			input[type=checkbox] {
+				display: block;
+			}
+		}
+
 		a {
 			@include anchorUnderlineHover;
 		}
