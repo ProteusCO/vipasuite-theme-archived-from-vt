@@ -12,6 +12,22 @@
 			padding: 0;
 		}
 	}
+
+	td.file_tree_name_col {
+		white-space: nowrap;
+	}
+
+	a.fse_selected_folder {
+		background-color: $color-cornsilk;
+	}
+
+	.fse_icon_name {
+		.btn-image {
+			margin-left: 2px;
+			margin-right: 5px;
+			vertical-align: middle;
+		}
+	}
 }
 
 .file_tree_action_toolbar  {
@@ -48,6 +64,21 @@
 
 	input[type=text] {
 		margin-right: 5px;
+	}
+}
+
+.file_table {
+	tr {
+		td.control {
+			padding-right: 5px;
+		}
+	}
+
+	.fse_icon_name {
+		.btn-image {
+			margin-right: 5px;
+			vertical-align: middle;
+		}
 	}
 }
 

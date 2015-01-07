@@ -5,9 +5,14 @@
 		width: 100%;
 	}
 
+	.directory_name {
+		@include style-h3;
+	}
+
 	.file_tree_container-con {
 		vertical-align: top;
-		padding: 10px;
+		padding: 0 10px;
+		width: 1%;
 	}
 
 	table.file_tree {
@@ -32,5 +37,66 @@
 			}
 		}
 
+	}
+
+	.fse_preview,
+	.fse_table {
+		display: inline-block;
+		width: 50%;
+		vertical-align: top;
+	}
+
+	.fse_preview {
+		textarea.file_preview_text {
+			@include style-form-input-readonly;
+			width: 100%;
+			height: 350px;
+			font-family: $font-monospace;
+		}
+	}
+
+	.fse_details_title {
+		@include style-h3;
+	}
+
+	.file_info_label {
+		@include style-form-label;
+		padding-right: 15px;
+	}
+
+	.content_type_selector {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.btn {
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+	}
+
+	div.fsmd_table,
+	div.version_table {
+		margin-top: 15px;
+
+		.title {
+			@include style-form-label;
+			margin-bottom: 5px;
+			display: block;
+		}
+	}
+
+}
+
+.file_info_heading {
+	@include clearfix;
+	margin-bottom: 10px;
+
+	.title {
+		@include style-h2;
+	}
+
+	.button_back {
+		float: right;
 	}
 }
