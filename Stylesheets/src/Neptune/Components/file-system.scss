@@ -10,6 +10,10 @@
 		padding: 10px;
 	}
 
+	table.file_tree {
+		@include style-miwt-tree-norows;
+	}
+
 	.file_table_container-con {
 		vertical-align: top;
 	}

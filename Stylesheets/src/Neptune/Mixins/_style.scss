@@ -115,6 +115,29 @@
 	}
 }
 
+@mixin style-miwt-tree-norows {
+	border: 0 none;
+	margin-top: 10px;
+
+	tbody {
+		> tr.odd,
+		> tr.even {
+			td {
+				background-color: transparent;
+			}
+		}
+	}
+
+	td {
+		padding: 0;
+
+		&.last-column {
+			border: 0 none;
+			padding: 1px 0 0 0;
+		}
+	}
+}
+
 @mixin style-form-input-readonly {
 	display: inline-block;
 	vertical-align: middle;

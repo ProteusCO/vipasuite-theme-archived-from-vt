@@ -29,6 +29,194 @@
 		width: 100%;
 	}
 
+	.page_selector {
+		min-width: 200px;
+
+		table.page_element_tree {
+			@include style-miwt-tree-norows;
+		}
+
+		.se_icon_name {
+			td.se_page_template-con,
+			td.se_page-con,
+			td.se_folder-con{
+				padding-left: 2px;
+			}
+		}
+
+		.se_icon-con {
+			vertical-align: top;
+		}
+
+		.se_selected_site_element{
+			background-color: $color-cornsilk;
+		}
+
+		a {
+			@include anchorUnderlineHover;
+		}
+	}
+
+
+	.component_selector {
+		&.tab-content {
+			min-width: 250px;
+		}
+
+		&,
+		.new-components,
+		.existing-components {
+			&.tab-content {
+				padding: 10px 5px 5px;
+			}
+		}
+
+		div.search {
+			margin-bottom: 10px;
+			text-align: right;
+
+			input {
+				margin: 0 5px;
+			}
+
+			.type_field {
+				width: 120px;
+			}
+
+			.name_field {
+				width: 110px;
+			}
+		}
+
+		.search-options {
+			.option {
+				&:first-child {
+					margin-top: 5px;
+				}
+
+				+ .option {
+					margin-top: 5px;
+				}
+
+				label {
+					width: 75px;
+					display: inline-block;
+					vertical-align: middle;
+					font-size: 12px;
+				}
+
+				.val {
+					width: 145px;
+				}
+			}
+		}
+
+		.info {
+			@include style-message($color-info-light, $color-info-dark, $color-info-dark);
+
+			&.no-results {
+				margin-top: 5px;
+			}
+		}
+
+		.miwt-collapsable {
+
+			+ .miwt-collapsable {
+				.trigger {
+					margin-top: -1px;
+				}
+			}
+
+			.trigger {
+				text-decoration: none;
+				display: block;
+				padding: 8px 5px;
+				background-color: $color-almost-white;
+				border: 1px solid $color-light-grey;
+				color: $color-blue;
+				font-family: $font-open-sans-semi-bold;
+
+				&:hover {
+					color: $color-white;
+					background-color: $color-blue;
+				}
+			}
+
+			&.shown {
+				.trigger {
+					color: $color-white;
+					background-color: $color-dark-grey;
+					border-color: $color-darker-grey;
+				}
+			}
+		}
+
+		.richlist {
+			max-height: 400px;
+			overflow-y: auto;
+			margin: 5px 0;
+
+			.element {
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+		}
+	}
+
+
+	.element {
+		border: 1px solid $color-white;
+		font-size: 13px;
+
+		+ .element {
+			margin-top: 2px;
+		}
+
+		&:hover {
+			background-color: $color-almost-white;
+			border-color: $color-light-grey;
+		}
+
+		&.dnd-feedback {
+			@include box-shadow(0 0 3px transparentize($color-black, 0.75));
+			border: 1px solid $color-grey;
+		}
+
+		.contentelement {
+			margin: 5px 0;
+			width: 100%;
+		}
+
+		.help-point.disabled,
+		.selector {
+			display: none;
+		}
+
+		.icon-con {
+			padding-left: 5px;
+		}
+
+		.icon {
+			max-width: 24px;
+			max-height: 24px;
+			display: block;
+		}
+
+		.name_type-con {
+			padding: 0 5px;
+			width: 100%;
+			font-size: 12px;
+		}
+
+		.help-con {
+			text-align: right;
+			padding-right: 5px;
+		}
+	}
+}
+
+
+.page_editor {
 	.page_actions {
 		float: right;
 	}
@@ -232,53 +420,6 @@
 		}
 	}
 
-	.page_selector {
-		min-width: 200px;
-
-		tbody {
-			> tr.odd,
-			> tr.even {
-				td {
-					background-color: transparent;
-				}
-			}
-		}
-
-
-		table.page_element_tree {
-			border: 0 none;
-			margin-top: 10px;
-
-			td {
-				padding: 0;
-
-				&.last-column {
-					border: 0 none;
-					padding: 1px 0 0 0;
-				}
-			}
-		}
-
-		.se_icon_name {
-			td.se_page_template-con,
-			td.se_page-con,
-			td.se_folder-con{
-				padding-left: 2px;
-			}
-		}
-
-		.se_icon-con {
-			vertical-align: top;
-		}
-
-		.se_selected_site_element{
-			background-color: $color-cornsilk;
-		}
-
-		a {
-			@include anchorUnderlineHover;
-		}
-	}
 
 	.meta_info {
 		.meta_information_editor {
@@ -438,159 +579,4 @@
 		}
 	}
 
-	.component_selector {
-		&.tab-content {
-			min-width: 250px;
-		}
-
-		&,
-		.new-components,
-		.existing-components {
-			&.tab-content {
-				padding: 10px 5px 5px;
-			}
-		}
-
-		div.search {
-			margin-bottom: 10px;
-			text-align: right;
-
-			input {
-				margin: 0 5px;
-			}
-
-			.type_field {
-				width: 120px;
-			}
-
-			.name_field {
-				width: 110px;
-			}
-		}
-
-		.search-options {
-			.option {
-				&:first-child {
-					margin-top: 5px;
-				}
-
-				+ .option {
-					margin-top: 5px;
-				}
-
-				label {
-					width: 75px;
-					display: inline-block;
-					vertical-align: middle;
-					font-size: 12px;
-				}
-
-				.val {
-					width: 145px;
-				}
-			}
-		}
-
-		.info {
-			@include style-message($color-info-light, $color-info-dark, $color-info-dark);
-
-			&.no-results {
-				margin-top: 5px;
-			}
-		}
-
-		.miwt-collapsable {
-
-			+ .miwt-collapsable {
-				.trigger {
-					margin-top: -1px;
-				}
-			}
-
-			.trigger {
-				text-decoration: none;
-				display: block;
-				padding: 8px 5px;
-				background-color: $color-almost-white;
-				border: 1px solid $color-light-grey;
-				color: $color-blue;
-				font-family: $font-open-sans-semi-bold;
-
-				&:hover {
-					color: $color-white;
-					background-color: $color-blue;
-				}
-			}
-
-			&.shown {
-				.trigger {
-					color: $color-white;
-					background-color: $color-dark-grey;
-					border-color: $color-darker-grey;
-				}
-			}
-		}
-
-		.richlist {
-			max-height: 400px;
-			overflow-y: auto;
-			margin: 5px 0;
-
-			.element {
-				margin-left: 5px;
-				margin-right: 5px;
-			}
-		}
-	}
-
-
-	.element {
-		border: 1px solid $color-white;
-		font-size: 13px;
-
-		+ .element {
-			margin-top: 2px;
-		}
-
-		&:hover {
-			background-color: $color-almost-white;
-			border-color: $color-light-grey;
-		}
-
-		&.dnd-feedback {
-			@include box-shadow(0 0 3px transparentize($color-black, 0.75));
-			border: 1px solid $color-grey;
-		}
-
-		.contentelement {
-			margin: 5px 0;
-			width: 100%;
-		}
-
-		.help-point.disabled,
-		.selector {
-			display: none;
-		}
-
-		.icon-con {
-			padding-left: 5px;
-		}
-
-		.icon {
-			max-width: 24px;
-			max-height: 24px;
-			display: block;
-		}
-
-		.name_type-con {
-			padding: 0 5px;
-			width: 100%;
-			font-size: 12px;
-		}
-
-		.help-con {
-			text-align: right;
-			padding-right: 5px;
-		}
-	}
 }
