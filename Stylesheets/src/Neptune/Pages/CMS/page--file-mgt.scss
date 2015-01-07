@@ -13,3 +13,87 @@
 		}
 	}
 }
+
+.file_tree_action_toolbar  {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 5px;
+	margin-right: 15px;
+
+	.btn {
+		&.action_updir {
+			@include buttonGlyphAdd($html-entity-folder-up);
+		}
+		&.action_upload {
+			@include buttonGlyphAdd($html-entity-upload);
+		}
+		&.action_download {
+			@include buttonGlyphAdd($html-entity-download);
+			margin-right: 5px;
+		}
+	}
+}
+
+.file_tree_extra_toolbar {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 5px;
+
+	.label {
+		@include style-form-label;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+
+	input[type=text] {
+		margin-right: 5px;
+	}
+}
+
+.change_storage {
+	.title {
+		@include style-h2;
+		margin-bottom: 15px;
+	}
+
+	.button_container {
+		margin-top: 10px;
+	}
+}
+
+.file_rename_container {
+	.file_rename_title {
+		@include style-h2;
+		display: block;
+		margin-bottom: 15px;
+	}
+
+	.file_rename_entry {
+		margin: 5px 0;
+
+		.label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.rc_existing_name-con {
+			padding-right: 20px;
+			min-width: 150px;
+		}
+
+		.rc_existing_name {
+			@include style-form-input-readonly;
+		}
+
+		.rc_new_name-con {
+			input {
+				width: 200px;
+			}
+		}
+	}
+
+	.button_container {
+		margin-top: 10px;
+	}
+}
