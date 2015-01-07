@@ -129,6 +129,31 @@
 				@include box-shadow(0 0 4px transparentize($color-black, 0.8));
 			}
 
+			&.cs-pending span.type {
+				color: $color-green;
+			}
+
+			&.unpublished,
+			&.cs-draft {
+				span.type {
+					color: $color-red;
+				}
+			}
+			&.deprecated span.type{
+				color: $color-grey;
+				text-decoration: line-through;
+			}
+			&.conditional span.type{
+				color: $color-light-blue;
+			}
+			&.unconfigured div.name_type{
+				color: $color-orange;
+			}
+			&.configured_fallback span.type{
+				color: $color-default-site-font;
+			}
+
+
 
 			.icon-con,
 			.name_type-con,
