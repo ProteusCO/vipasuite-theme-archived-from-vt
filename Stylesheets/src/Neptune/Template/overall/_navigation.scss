@@ -53,7 +53,7 @@
 			&.nav-dashboard {
 				@include navMenuIconOverride($html-entity-dashboard);
 			}
-			&.nav-cms {
+			&.nav-cms-group {
 				@include navMenuIconOverride($html-entity-cms);
 			}
 		}
