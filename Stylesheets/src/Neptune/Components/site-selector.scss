@@ -1,10 +1,5 @@
 @import "../Config/base-import";
 
-.old-site-selector {
-	//FIXME remove selector when new component is made
-	display: none;
-}
-
 .site-selector {
 	position: relative;
 	margin: 10px 0;
@@ -16,21 +11,27 @@
 	}
 
 	.current-site {
-		background-color: $color-almost-white;
-		padding: 5px;
-		position: relative;
 
-		.icon {
-			float: left;
-			margin-right: 5px;
-		}
-
-		.hostname {
-			color: $color-default-site-font;
+		a.hostname {
+			background-color: $color-almost-white;
+			padding: 5px;
+			position: relative;
+			text-decoration: none;
 			display: block;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
+			margin-bottom: 5px;
+
+			span.hostname {
+				color: $color-default-site-font;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.favicon {
+				float: left;
+				margin-right: 5px;
+			}
 
 			&:after {
 				@include glyphAdd($html-entity-arrow-right, $size: 20px, $color: $color-grey);
@@ -45,19 +46,50 @@
 				border-left: 1px solid $color-lighter-grey;
 			}
 		}
+
+		.site-actions {
+			margin-top: 5px;
+
+			.btn {
+				font-size: 14px;
+				text-transform: uppercase;
+				font-family: $font-open-sans-bold;
+				text-align: center;
+
+				& + .btn {
+					margin-left: 5px;
+				}
+
+				&.live-view {
+					@include buttonColors($color-green);
+					@include buttonGlyphAdd($html-entity-preview, $size: 16px);
+					width: 112px;
+				}
+				&.live-edit {
+					@include buttonColors($color-orange);
+					@include buttonGlyphAdd($html-entity-live-edit, $size: 16px);
+					width: 113px;
+				}
+			}
+		}
+	}
+
+	input[type=search] {
+		width: 160px;
 	}
 
 	.selector-sites-con {
 		display: none;
 		position: absolute;
+		z-index: 5000;
 		left: 100%;
-		top: 0;
+		top: -12px;
 		width: 350px;
-		margin-left: 10px;
+		margin-left: 5px;
 		padding: 10px;
 		background-color: $color-white;
 		border: 1px solid $color-cloud-grey;
-		@include box-shadow(3px 3px 7px transparentize($color-black, 0.75));
+		@include box-shadow(3px 3px 10px transparentize($color-black, 0.55));
 	}
 
 	.ss-search-form {
@@ -68,42 +100,43 @@
 		margin-right: 5px;
 	}
 
+	.ssg-site-btn {
+		text-decoration: none;
+	}
+
 	.selector-sites {
 		.heading {
 			font-family: $font-open-sans-semi-bold;
 			font-size: 14px;
 			margin: 5px 0;
 		}
-	}
 
-	.current-site-actions {
-		margin-top: 5px;
-
-		.btn {
-			font-size: 14px;
-			text-transform: uppercase;
-			font-family: $font-open-sans-bold;
-			text-align: center;
-
-			& + .btn {
-				margin-left: 5px;
-			}
-
-			&.live-view {
-				@include buttonColors($color-green);
-				@include buttonGlyphAdd($html-entity-preview, $size: 16px);
-				width: 112px;
-			}
-			&.live-edit {
-				@include buttonColors($color-orange);
-				@include buttonGlyphAdd($html-entity-live-edit, $size: 16px);
-				width: 113px;
-			}
+		hr {
+			display: none;
 		}
 	}
 
 	.results {
 		max-height: 300px;
 		overflow-y: auto;
+	}
+
+	.site-info {
+		.favicon {
+			vertical-align: middle;
+		}
+
+		.site-actions {
+			margin-left: 5px;
+		}
+
+		.btn {
+			&.live-view {
+				@include buttonGlyphOnly($html-entity-preview);
+			}
+			&.live-edit {
+				@include buttonGlyphOnly($html-entity-live-edit);
+			}
+		}
 	}
 }
