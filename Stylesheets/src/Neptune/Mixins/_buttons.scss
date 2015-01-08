@@ -50,6 +50,12 @@
 	}
 }
 
+@mixin buttonGlyphRemove() {
+	&:before {
+		display: none;
+	}
+}
+
 @mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-light-charcoal) {
 	background-color: transparent;
 	border: 0 none;
