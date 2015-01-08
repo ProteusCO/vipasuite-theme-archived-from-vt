@@ -108,6 +108,20 @@ span.help-point {
 	}
 }
 
+//label management pager
+.pager-labels {
+	.search_results {
+		.btn {
+			&.rename {
+				@include buttonGlyphOnly($html-entity-rename);
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
+
 //forms
 @include textLikeInputs {
 	border: 1px solid $color-lighter-grey;
