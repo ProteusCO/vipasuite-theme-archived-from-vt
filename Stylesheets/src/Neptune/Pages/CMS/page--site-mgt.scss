@@ -18,7 +18,18 @@
     }
   }
 
-  .tab-content > div > .help-point {
+  //fixme make this consistent across tabs
+  .entity_actions,
+  .entity-actions {
+    .btn {
+      &.add {
+        @include buttonGlyphAdd($html-entity-add);
+      }
+    }
+  }
+
+  .tab-content > div > .help-point,
+  .current_branding > .help-point {
     float: right;
     margin-left: 10px;
     margin-top: 3px;
@@ -45,21 +56,41 @@
     display: none;
   }
 
+  .rtb + .btn {
+    margin-left: 5px;
+  }
+
+  .btn {
+    &.ok,
+    &.save {
+      @include buttonGlyphAdd($html-entity-success);
+    }
+    &.cancel {
+      @include buttonGlyphAdd($html-entity-cancel);
+    }
+  }
+
+  // general tab
   .site-general {
     .tab-content-wrapper > tbody > tr > td {
       padding-top: 5px;
       padding-bottom: 5px;
     }
 
+    label.tbl {
+      @include style-form-label;
+    }
+
     .btn {
       margin-left: 5px;
+
+      &.edit {
+        @include buttonStyleEditGlyph();
+      }
     }
   }
 
-  .rtb + .btn {
-    margin-left: 5px;
-  }
-
+  //hostname tab
   .hostname-view_container {
     .destination-welcome {
       margin-bottom: 5px;
@@ -79,18 +110,47 @@
     }
   }
 
+  //component assignment tab
   .component_assignment_editor {
-    .header-title {
-      h1 {
-        margin: 0;
-      }
+    h1 {
+      @include style-h2;
+      margin: 0;
+    }
 
+    > hgroup,
+    > .actions.top {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    > hgroup {
+      margin-right: 5px;
+    }
+
+    .header-title {
       h2 {
         margin: 0;
       }
     }
 
+    .contentelement {
+      .icon-con {
+        img {
+          max-width: 24px;
+          max-height: 24px;
+          display: block;
+        }
+      }
+
+      .name_type-con {
+        padding: 0 5px;
+      }
+    }
+
     .btn {
+      &.add {
+        @include buttonGlyphAdd($html-entity-add);
+      }
       &.configure {
         @include buttonGlyphOnly($html-entity-gear);
       }
@@ -116,85 +176,156 @@
       margin-bottom: 10px;
     }
   }
-}
 
-/*table.pager,
-table.miwt-table,
-table.site_editor_tabs{
-  width: 100%;
-  clear: both;
-}
-td.label-con {
-  text-align: right;
-  padding-right: .2em;
-}
-label {
-  font-weight: bold;
-}
-td.name-con input.name {
-  width: 98%;
-}
-div.site_actions {
-  position:absolute;
-  right: 1em;
-}
-.file_storage .entity_actions{
- float:right;
- margin:.25em 0;
-}
-.file_storage .editor div.actions {
-  margin:1em 0;
-}
-.site_general .tab_content_wrapper td,
-.site_error_pages table td {
-  padding: .25em;
-  line-height:1.25;
-}
-div.prop{
- margin: .75em 0;
-}
-span.affix_option{
- padding: 0 .75em;
- text-transform: uppercase;
-}
+  //error pages tab
+  .site_error_pages {
+    .resource-not-found-con,
+    .cms-error-con,
+    .general-error-con {
+      padding: 3px 0;
+    }
 
+    .btn {
+      &.edit {
+        @include buttonGlyphAdd($html-entity-edit);
+      }
+    }
 
-.site_actions button{
+    .actions-con {
+      padding-left: 175px;
+      padding-top: 5px;
+    }
 
-}
-div.meta_information_editor{margin:.5em 0;}
+    .save-con {
+      padding-right: 2px;
+    }
+  }
 
-.hostname_view.property_wrapper .prop {
-	margin-bottom: 10px;
-	padding: 5px;
+  //file storage tab
+  .file-storage {
+    .entity_actions {
+      padding-top: 5px;
+      margin-bottom: 5px;
+      text-align: right;
+      clear: both;
+
+      .btn {
+        @include buttonGlyphAdd($html-entity-nbsp);
+
+        &.add {
+          @include buttonGlyphOverride($html-entity-add);
+        }
+        &.edit {
+          @include buttonGlyphOverride($html-entity-edit);
+          margin-left: 10px;
+        }
+        &.remove {
+          @include buttonGlyphOverride($html-entity-remove);
+        }
+      }
+    }
+
+    .add_file_storage {
+      float: left;
+    }
+
+    //fixme update the classname so it doesnt collide with component editor
+    .editor {
+      border: 0 none;
+
+      .content-con {
+        padding: 3px 0;
+      }
+
+      .actions {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  //analytics tab
+  .site-analytics {
+    span.val {
+      margin-right: 5px;
+    }
+
+    .btn {
+      &.edit {
+        @include buttonStyleEditGlyph();
+      }
+    }
+  }
+
+  //SEO/Meta data tab
+  .site_meta_data {
+    .btn {
+      &.add {
+        @include buttonGlyphAdd($html-entity-add);
+      }
+      &.delete {
+        @include buttonStyleDeleteGlyph();
+      }
+    }
+
+    .metadata {
+      .items {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  //branding tab
+  .branding_config {
+    .heading {
+      @include style-h2;
+      margin-bottom: 15px;
+    }
+
+    .prop.name {
+      margin: 10px 0;
+
+      label {
+        margin-right: 5px;
+      }
+    }
+
+    .logo_section {
+      h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      .prop {
+        margin: 5px 0;
+
+        label {
+          width: 70px;
+          display: inline-block;
+        }
+      }
+    }
+
+    fieldset {
+      margin: 10px 0;
+    }
+
+    .css_section {
+      textarea {
+        width: 100%;
+        font-family: $font-monospace;
+      }
+    }
+  }
+
+  .current_branding {
+    label {
+      margin-right: 10px;
+    }
+
+    .actions {
+      margin-left: 5px;
+    }
+
+    //fixme add classes to buttons
+  }
 }
-.hostname_view.property_wrapper label {
-	display: inline-block;
-	*display: inline;
-	zoom:1;
-	width: 100px;
-	text-align: right;
-	margin-right: 10px;
-	font-weight: bold;
-}
-.hostname_view .destination_container,
-.hostname_view .security_container {
-	display: inline-block;
-}
-.hostname_view .rtb label {
-	font-weight: normal;
-	width: auto;
-	text-align: left;
-}
-.hostname_view .prop.destination label,
-.hostname_view .prop.security label {
-	vertical-align: top;
-}
-.hostname_view .favicon_container label {
-	width: auto;
-}
-.hostname_view img.favicon,
-.hostname_view .favicon img {
-	max-height: 18px;
-}
-​*/
