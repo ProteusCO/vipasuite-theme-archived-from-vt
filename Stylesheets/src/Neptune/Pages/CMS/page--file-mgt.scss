@@ -1,5 +1,9 @@
 @import "../../Config/base-import";
 
+.file_tree_container {
+	min-width: 200px;
+}
+
 .file_tree {
 	.dnd-source {
 		&:hover {
@@ -126,5 +130,289 @@
 
 	.button_container {
 		margin-top: 10px;
+	}
+}
+
+
+
+div.file_upload_container {
+	position: relative;
+}
+
+span.file_upload_title {
+	@include style-h2;
+	display: block;
+	margin-bottom: 30px;
+
+	&:before {
+		@include glyphAdd($html-entity-upload, 28px);
+		margin-right: 5px;
+	}
+}
+
+div.file_upload {
+	margin-right: 340px;
+}
+
+div.file_upload_data {
+	label {
+		display: none;
+	}
+}
+
+div.upload_options {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 320px;
+	border-left: 1px dashed $color-lighter-grey;
+	padding: 0 20px;
+
+	&:before {
+		content: "Upload Options";
+		display: block;
+		@include style-h3;
+		margin-bottom: 10px;
+	}
+
+	.ctb {
+		margin-bottom: 5px;
+		display: block;
+
+		input[type=checkbox] {
+			float: left;
+		}
+
+		.tbl {
+			margin-left: 25px;
+			display: block;
+		}
+	}
+}
+
+div.upload_actions {
+	margin: 30px 340px 0 0;
+	text-align: center;
+
+	.btn {
+		&.button_continue {
+			@include buttonGlyphAdd($html-entity-success);
+		}
+		&.button_abort {
+			@include buttonGlyphAdd($html-entity-cancel);
+		}
+	}
+}
+
+input.file-upload-browse {
+	display: block;
+	margin: 0 auto;
+}
+
+.file-upload-drop-zone {
+	border: 2px dashed $color-light-grey;
+	background-color: $color-cloud-grey;
+	position: relative;
+	font-style: italic;
+	font-family: $font-georgia;
+	text-align: center;
+	color: $color-grey;
+	max-height: 500px;
+	max-width: 600px;
+	padding: 20px;
+	margin: 15px auto 40px;
+	overflow: hidden;
+	@include transition(all 250ms, max-height 500ms 250ms);
+
+	.file-upload-browse.has-files & {
+		max-height: 90px;
+	}
+
+	&.zone-active {
+		background-color: $color-lighter-grey;
+		border: 2px solid $color-dark-grey;
+		color: $color-charcoal;
+
+		.drop-zone-text-inactive {
+			display: none;
+		}
+
+		.drop-zone-text-active {
+			display: block;
+		}
+	}
+
+	> span {
+		pointer-events: none; /* fix for dragleave bug when hovering child elements */
+	}
+
+	.drop-zone-text {
+		display: none;
+	}
+
+	.drop-zone-text-inactive {
+		display: block;
+	}
+}
+
+.drop-zone-option-title:before {
+	display: block;
+	content: "- or -";
+	text-align: center;
+	font-style: italic;
+	font-family: $font-georgia;
+	margin: 10px 0 15px;
+}
+
+.drop-zone-file-con {
+	display: block;
+	position: relative;
+	width: 200px;
+	height: 120px;
+	margin: 20px auto 5px;
+}
+
+.drop-zone-file {
+	display: block;
+	width: 90px;
+	height: 120px;
+	background-color: $color-white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	@include box-shadow(0 0 3px transparentize($color-black, 0.8));
+	@include border-radius(2px);
+	@include translate(-50%, -50%);
+	@include transition(all 200ms);
+}
+
+.drop-zone-file1 {
+	@include transform(translateX(-50%) translateY(-50%) rotateZ(-10deg));
+}
+
+.drop-zone-file3 {
+	@include transform(translateX(-50%) translateY(-50%) rotateZ(7deg));
+}
+
+.file-upload-drop-zone.zone-active {
+	.drop-zone-file {
+		@include box-shadow(1px 1px 5px transparentize($color-black, 0.6));
+	}
+
+	.drop-zone-file1 {
+		@include transform(translateX(-85%) translateY(-45%) rotateZ(-5deg));
+	}
+
+	.drop-zone-file3 {
+		@include transform(translateX(-15%) translateY(-50%) rotateZ(10deg));
+	}
+}
+
+.file-upload-list-heading {
+	display: none;
+	margin-bottom: 10px;
+
+	.file-upload-browse.has-files & {
+		display: block;
+	}
+}
+
+.file-upload-list {
+	display: none;
+	width: 100%;
+	border-bottom: 1px dotted $color-lighter-grey;
+
+	.file-upload-browse.has-files & {
+		display: table;
+	}
+
+	.file-upload {
+		position: relative;
+		display: table-row;
+	}
+}
+
+.file-upload {
+	.file-upload-part {
+		display: table-cell;
+		vertical-align: middle;
+		border-top: 1px dotted $color-lighter-grey;
+	}
+
+	.file-preview {
+		width: 50px;
+		position: relative;
+
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	.file-preview-link {
+		width: 50px;
+		display: block;
+	}
+
+	&.nopreview .file-preview-link {
+		height: 37px;
+		width: 29px;
+		margin: 0 auto;
+		@include box-shadow(1px 1px 2px transparentize($color-black, 0.85));
+		border-radius: 2px;
+		border: 1px solid $color-lighter-grey;
+		border-bottom-color: $color-grey;
+		border-right-color: $color-grey;
+		background: center center $color-almost-white no-repeat;
+	}
+
+	.file-info {
+		padding: 0 10px;
+	}
+
+	.file-name {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 5px;
+	}
+
+	.file-size {
+		font-size: 12px;
+		color: $color-dark-grey;
+		font-style: italic;
+		display: inline-block;
+	}
+
+	.file-modified {
+		display: block;
+		font-size: 12px;
+		color: $color-dark-grey;
+		clear: left;
+	}
+
+	.file-actions {
+		width: 1%;
+		white-space: nowrap;
+		height: 50px;
+		padding-left: 5px;
+		padding-right: 5px;
+		position: relative;
+
+		.btn.remove {
+			//@include buttonGlyphAdd($html-entity-delete);
+			@include buttonStyleDeleteGlyph(20px);
+		}
+	}
+
+	&:hover {
+		.file-upload-part {
+			background-color: $color-cornsilk;
+		}
+
+		.file-modified,
+		.file-size {
+			color: $color-gold;
+		}
 	}
 }
