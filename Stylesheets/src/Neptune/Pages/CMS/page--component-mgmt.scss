@@ -74,3 +74,36 @@
 		}
 	}
 }
+
+.uitask-manager-con {
+	margin: 10px 0;
+}
+
+.request_path_editor {
+	.title {
+		margin-top: 0;
+		margin-bottom: 5px;
+		float: left;
+		@include style-h3;
+	}
+
+	.entity_actions {
+		margin-bottom: 5px;
+	}
+
+	> .search {
+		margin-top: 10px;
+	}
+
+	.btn {
+		&.add {
+			@include buttonGlyphAdd($html-entity-add);
+		}
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete {
+			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
