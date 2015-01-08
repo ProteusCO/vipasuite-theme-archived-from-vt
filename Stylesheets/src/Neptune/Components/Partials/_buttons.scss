@@ -15,4 +15,8 @@
 		@include buttonColors($color-grey, $color-lighter-grey, 'none');
 
 	}
+
+	.miwt-table & {
+		@include buttonStyleSmall;
+	}
 }

@@ -98,6 +98,11 @@
 	@include buttonColors($color-blue, $color-white);
 }
 
+@mixin buttonStyleSmall() {
+	font-size: 11px;
+	padding: 4px 6px;
+}
+
 @mixin buttonStyleDeleteGlyph($size: 16px) {
 	@include buttonGlyphOnly($html-entity-delete, $size: $size, $color: $color-error-dark);
 }
