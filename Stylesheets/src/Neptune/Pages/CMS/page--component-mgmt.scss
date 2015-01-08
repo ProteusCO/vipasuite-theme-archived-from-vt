@@ -1,0 +1,76 @@
+@import "../../Config/base-import";
+
+.pe-mgt {
+
+	.entity-actions {
+		float: none;
+		margin-bottom: 5px;
+	}
+
+	.add-pe-button {
+		> .menu_item {
+			//fixme add class of btn to this thing
+			@include buttonBase;
+			@include buttonGlyphAdd($html-entity-add);
+		}
+
+		img {
+			height: 16px;
+			width: 16px;
+			vertical-align: top;
+			padding-right: 3px;
+			margin-top: -1px;
+		}
+
+		ul.menu_items {
+			background-color: $color-white;
+			@include box-shadow(1px 1px 4px transparentize($color-black, 0.7));
+			padding: 10px 0;
+			top: 100%;
+			border: 1px solid $color-light-grey;
+
+			ul.menu_items {
+				max-height: 300px;
+				overflow-y: auto;
+			}
+		}
+
+		li.menu {
+			a.menu_item,
+			span.menu_item {
+				display: block;
+				width: auto;
+				padding: 5px 20px;
+				color: $color-default-site-font;
+
+			}
+
+			&:hover {
+				> a.menu_item,
+				> span.menu_item {
+					background-color: $color-cloud-grey;
+				}
+			}
+		}
+
+		ul {
+			li.menu {
+				white-space: nowrap;
+				width: auto;
+			}
+		}
+
+		li.deprecated {
+			text-decoration:line-through;
+		}
+	}
+
+	.pager-search-results {
+
+		.btn {
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
