@@ -7,6 +7,15 @@
     .locale {
       margin-right: 5px;
     }
+
+    .btn {
+      &.action_reload {
+        @include buttonGlyphAdd($html-entity-refresh);
+      }
+      &.delete {
+        @include buttonGlyphAdd($html-entity-delete);
+      }
+    }
   }
 
   .tab-content > div > .help-point {
@@ -54,6 +63,19 @@
   .hostname-view_container {
     .destination-welcome {
       margin-bottom: 5px;
+    }
+  }
+
+  .site-hostnames {
+    .pager-search-results {
+      .btn {
+        &.edit {
+          @include buttonStyleEditGlyph();
+        }
+        &.delete {
+          @include buttonStyleDeleteGlyph();
+        }
+      }
     }
   }
 
