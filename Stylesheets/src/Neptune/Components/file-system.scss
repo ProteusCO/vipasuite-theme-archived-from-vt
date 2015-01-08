@@ -32,11 +32,23 @@
 		.btn {
 			@include buttonGlyphOnly($html-entity-nbsp);
 
-			& + .btn {
-				margin-left: 2px;
+			&.download-action {
+				@include buttonGlyphOverride($html-entity-download);
+			}
+			&.delete-action {
+				@include buttonStyleDeleteGlyph();
+			}
+			&.rename-action {
+				@include buttonGlyphOverride($html-entity-rename);
+			}
+			&.info-action {
+				@include buttonGlyphOverride($html-entity-info);
+			}
+			&.change-permissions-action {
+				//FIXME need icon
+				//@include buttonGlyphOverride($html-entity-view)
 			}
 		}
-
 	}
 
 	.fse_preview,

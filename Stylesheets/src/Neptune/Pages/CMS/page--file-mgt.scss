@@ -166,6 +166,53 @@
 	}
 }
 
+/* file security UI */
+.fsec_editor_title {
+	@include style-h2;
+	margin-top: 0;
+}
+
+.user_search,
+.group_search {
+	margin: 10px 0;
+
+	.entity_actions {
+		//fixme really need to fix this HTML
+		margin-bottom: -20px;
+	}
+
+	.btn {
+		&.action_add {
+			@include buttonGlyphAdd($html-entity-add);
+		}
+	}
+
+	caption {
+		@include style-h3;
+		text-align: left;
+	}
+}
+
+.protection_actions {
+	.btn {
+		&:nth-child(2) {
+			//fixme get a class added
+			@include buttonGlyphAdd($html-entity-delete);
+		}
+		&.close {
+			@include buttonGlyphRemove;
+		}
+	}
+}
+
+.explanation {
+	margin: 10px 0;
+
+	a {
+		margin-left: 5px;
+	}
+}
+
 
 /* file upload UI */
 div.file_upload_container {
