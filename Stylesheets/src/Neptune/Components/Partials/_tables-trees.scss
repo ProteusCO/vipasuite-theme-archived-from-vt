@@ -42,7 +42,9 @@
 
 	td.parent-sibling-following,
 	td.sibling-following {
-		background: transparent url(/_resources/all/docroot/cms/icons/tree/vline.gif) no-repeat 50% 0%;
+		background-image: url(/_resources/all/docroot/cms/icons/tree/vline.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
 		border: 0 none;
 		padding: 0;
 	}
@@ -59,13 +61,17 @@
 	}
 
 	td.sibling-following.leaf {
-		background: transparent url(/_resources/all/docroot/cms/icons/tree/tn.gif) no-repeat 50% 0%;
+		background-image: url(/_resources/all/docroot/cms/icons/tree/tn.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
 		border: 0 none;
 		padding: 0;
 	}
 
 	td.last-sibling {
-		background: transparent url(/_resources/all/docroot/cms/icons/tree/ln.gif) no-repeat 50% 0%;
+		background-image: url(/_resources/all/docroot/cms/icons/tree/ln.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
 		border: 0 none;
 		padding: 0;
 	}
