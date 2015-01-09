@@ -163,6 +163,11 @@
       }
       &.configure {
         @include buttonGlyphOnly($html-entity-gear);
+
+        //fixme get class added
+        &:nth-child(1) {
+          @include buttonGlyphOverride($html-entity-search);
+        }
       }
       &.remove {
         @include buttonStyleRemoveGlyph;
