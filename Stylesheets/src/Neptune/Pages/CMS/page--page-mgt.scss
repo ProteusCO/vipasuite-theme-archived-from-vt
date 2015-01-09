@@ -68,8 +68,27 @@
 		.show_hide-con {
 			vertical-align: top;
 
+			&.show-con {
+				border-left: 5px solid $color-light-grey;
+				height: 300px;
+				padding-left: 5px;
+				padding-right: 10px;
+			}
+
 			.btn {
 				@include buttonGlyphOnly($html-entity-nbsp);
+
+				&.show_hide {
+					margin-top: 12px;
+
+					&.hide {
+						@include buttonGlyphOverride($html-entity-arrow-left);
+						margin-left: -15px;
+					}
+					&.show {
+						@include buttonGlyphOverride($html-entity-arrow-right);
+					}
+				}
 			}
 		}
 	}
@@ -552,11 +571,27 @@
 		}
 	}
 
-	//style and function mgmt
+	//style and function management
 	.saf-mgt {
 		.file_editor_title {
 			@include style-h2;
 			margin-right: 5px;
+		}
+
+		.file_editor_controls {
+			.btn {
+
+				&.action_save,
+				&.action_save_exit {
+					@include buttonGlyphAdd($html-entity-success);
+				}
+				&.action_save {
+					margin-left: 5px;
+				}
+				&.action_exit {
+					@include buttonGlyphAdd($html-entity-cancel);
+				}
+			}
 		}
 
 		.se_box {
@@ -576,6 +611,43 @@
 					width: 1%;
 					white-space: nowrap;
 				}
+
+				.btn {
+					@include buttonGlyphAdd($html-entity-nbsp);
+
+					&.action_upload {
+						@include buttonGlyphOverride($html-entity-upload);
+					}
+					&.new_file_button {
+						@include buttonGlyphOverride($html-entity-add);
+						margin-right: 10px;
+					}
+					&.collapse {
+						@include buttonGlyphOnly($html-entity-collapse, $size: 18px);
+					}
+					&.expand {
+						@include buttonGlyphOnly($html-entity-expand, $size: 18px);
+					}
+				}
+			}
+
+			//fixme revisit html
+			.bbl {
+				margin: 10px 0;
+
+				.se_box {
+					padding: 10px 10px 10px 20px;
+
+					+ .se_box {
+						margin-top: 0;
+					}
+				}
+			}
+
+			.bbl_button {
+				display: block;
+				width: 100%;
+				text-align: left;
 			}
 		}
 
