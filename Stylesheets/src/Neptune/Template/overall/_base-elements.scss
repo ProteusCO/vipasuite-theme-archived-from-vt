@@ -48,6 +48,18 @@ h3 {
 	textarea.field {
 		margin-right: 5px;
 	}
+
+	.btn {
+		&.edit {
+			@include buttonGlyphAdd($html-entity-edit);
+		}
+		&.save {
+			@include buttonGlyphAdd($html-entity-success);
+		}
+		&.cancel {
+			@include buttonGlyphAdd($html-entity-cancel);
+		}
+	}
 }
 
 //code mirror
