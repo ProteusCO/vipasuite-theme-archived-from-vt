@@ -56,13 +56,13 @@
 	}
 }
 
-@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-light-charcoal) {
+@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-light-charcoal, $padding: 0) {
 	background-color: transparent;
 	border: 0 none;
-	padding: 0;
+	padding: $padding;
 	font-size: 0;
-	width: $size;
-	height: $size;
+	width: $size + $padding + $padding;
+	height: $size + $padding + $padding;
 
 	@include buttonGlyphAdd($html-entity, $size, $color, 0);
 
@@ -71,9 +71,11 @@
 	}
 }
 
-@mixin buttonGlyphOverride($html-entity, $size: '', $color: '') {
+@mixin buttonGlyphOverride($html-entity: '', $size: '', $color: '') {
 	&:before {
-		content: $html-entity;
+		@if ($html-entity != '') {
+			content: $html-entity;
+		}
 		@if ($size != '') {
 			width: $size;
 			height: $size;

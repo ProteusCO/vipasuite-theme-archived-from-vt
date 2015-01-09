@@ -9,9 +9,59 @@
 		vertical-align: top;
 		padding-right: 10px;
 
+		.control_bar {
+
+			.search {
+				position: relative;
+				padding-right: 35px;
+
+				input {
+					width: 100%;
+				}
+
+				.btn {
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+			}
+		}
+
 		.controls {
+			text-align: center;
+			margin-bottom: 10px;
+
 			.btn {
-				@include buttonGlyphOnly($html-entity-nbsp);
+				@include buttonGlyphOnly($html-entity-nbsp, $size: 20px, $padding: 5px);
+
+				+ .btn {
+					margin-left: 5px;
+				}
+
+				&.show_hide_search {
+					@include buttonGlyphOverride($html-entity-search, $color: $color-light-grey);
+				}
+				&.show_hide_templates {
+					@include buttonGlyphOverride($html-entity-template, $color: $color-light-grey);
+				}
+				&.collapse_all {
+					margin-left: 30px;
+					@include buttonGlyphOverride($html-entity-branch-close);
+				}
+				&.expand_all {
+					@include buttonGlyphOverride($html-entity-branch-open);
+				}
+
+				&:hover {
+					@include buttonGlyphOverride($color: $color-default-site-font);
+				}
+
+				&.selected {
+					@include buttonGlyphOverride($color: $color-default-site-font);
+					background-color: $color-almost-white;
+					border: 1px solid $color-lighter-grey;
+					@include box-shadow(0 0 2px transparentize($color-black, 0.85) inset);
+				}
 			}
 		}
 
@@ -50,6 +100,8 @@
 
 		a {
 			@include anchorUnderlineHover;
+			line-height: 1.1;
+			display: inline-block;
 		}
 	}
 
