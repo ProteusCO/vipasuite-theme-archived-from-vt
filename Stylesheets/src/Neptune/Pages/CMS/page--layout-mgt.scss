@@ -1,5 +1,15 @@
 @import "../../Config/base-import";
 
+.layout_mgt_main {
+	.entity_actions {
+		.btn {
+			&.action_add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
+}
+
 .layoutmanagement {
 	.entity_actions {
 		.btn{
@@ -27,6 +37,18 @@
 	}
 }
 
+.add_layout {
+	.heading {
+		@include style-h2;
+		margin-bottom: 15px;
+		display: block;
+	}
+
+	.continue-con {
+		padding-right: 2px;
+	}
+}
+
 .layout_editor_view {
 	position: relative;
 
@@ -47,6 +69,12 @@
 
 	.le_preview {
 		padding-right: 20px;
+
+		span.help-point {
+			float: right;
+			margin-top: 5px;
+			margin-right: 5px;
+		}
 	}
 
 	.le_control {
@@ -54,6 +82,10 @@
 		border: 1px solid $color-lighter-grey;
 		padding: 10px;
 		margin-bottom: 10px;
+
+		#le_layout_name {
+			width: 300px;
+		}
 
 		.box_list {
 			display: block;
@@ -63,7 +95,6 @@
 		#le_layout_height100percent-con {
 			margin-left: 10px;
 		}
-
 	}
 }
 
@@ -150,6 +181,46 @@
 			+ .action {
 				margin-left: 3px;
 			}
+		}
+	}
+}
+
+.layout_image_editor {
+	h2 {
+		margin-top: 0;
+	}
+
+	.pager-top {
+		display: none;
+	}
+
+	.richlist {
+		text-align: center;
+	}
+
+	.element {
+		display: inline-block;
+		vertical-align: top;
+		min-height: 230px;
+		margin-right: 20px;
+
+		.no_preview_image {
+			line-height: 230px;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+	}
+
+	.download_template,
+	.upload {
+		margin: 15px 0;
+	}
+
+	.download_template {
+		a {
+			margin-left: 5px;
 		}
 	}
 }
