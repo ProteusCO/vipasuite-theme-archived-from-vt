@@ -131,7 +131,7 @@
 	}
 
 	.instructions {
-		@include style-message($color-info-light, $color-info-dark, $color-info-dark);
+		@include style-message-info;
 		margin: 10px 0;
 	}
 

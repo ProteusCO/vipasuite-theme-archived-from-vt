@@ -19,6 +19,12 @@
 	color: $color-default-site-font;
 }
 
+@mixin style-h4 {
+	font-family: $font-open-sans-bold;
+	font-size: 14px;
+	font-weight: normal;
+	color: $color-default-site-font;
+}
 
 @mixin style-table {
 	border: 1px solid $color-cloud-grey;
@@ -192,4 +198,20 @@
 	a {
 		color: $color-text;
 	}
+}
+
+@mixin style-message-info() {
+	@include style-message($color-info-light, $color-info-dark, $color-info-dark);
+}
+
+@mixin style-message-error() {
+	@include style-message($color-error-light, $color-error-dark, $color-error-dark);
+}
+
+@mixin style-message-success() {
+	@include style-message($color-success-light, $color-success-dark, $color-success-dark);
+}
+
+@mixin style-message-warning() {
+	@include style-message($color-warning-light, $color-warning-dark, $color-warning-dark);
 }

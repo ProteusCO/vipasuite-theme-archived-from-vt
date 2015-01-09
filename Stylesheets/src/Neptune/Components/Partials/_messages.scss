@@ -4,7 +4,6 @@
 	Partial -	Messages
 */
 
-
 .message-container {
 	margin: 10px 0;
 
@@ -14,21 +13,21 @@
 }
 
 .message {
-	@include style-message($color-info-light, $color-info-dark, $color-info-dark);
+  @include style-message-info;
 
 	& + & {
 		margin-top: 5px;
 	}
 
 	&.error {
-		@include style-message($color-error-light, $color-error-dark, $color-error-dark);
+		@include style-message-error;
 	}
 
 	&.success {
-		@include style-message($color-success-light, $color-success-dark, $color-success-dark);
+		@include style-message-success;
 	}
 
 	&.warning {
-		@include style-message($color-warning-light, $color-warning-dark, $color-warning-dark);
+		@include style-message-warning;
 	}
 }

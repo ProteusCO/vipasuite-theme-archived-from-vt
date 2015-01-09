@@ -112,6 +112,8 @@
 
   //component assignment tab
   .component_assignment_editor {
+    position: relative;
+
     h1 {
       @include style-h2;
       margin: 0;
@@ -128,9 +130,17 @@
     }
 
     .header-title {
+      margin-bottom: 10px;
       h2 {
         margin: 0;
+        @include style-h3;
       }
+    }
+
+    .top.actions {
+      position: absolute;
+      right: 10px;
+      top: 10px;
     }
 
     .contentelement {
@@ -158,12 +168,161 @@
         @include buttonStyleRemoveGlyph;
       }
     }
+
+    //fixme get classes added to wrapper
+    fieldset {
+      margin: 10px 0;
+
+      legend {
+        @include style-h3;
+      }
+
+      .btn {
+        &.edit {
+          float: right;
+          margin-bottom: 5px;
+          @include buttonGlyphAdd($html-entity-edit);
+        }
+      }
+    }
+
+    //fixme get classes added to wrapper for field editor
+    .prop-editor {
+      .prop-header-actions {
+        display: none;
+      }
+
+      .prop-body {
+        margin: 10px 0;
+      }
+    }
+
+    .prop {
+      margin: 5px 0;
+
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+
+      &.name,
+      &.programmatic_name {
+        input {
+          width: 250px;
+        }
+      }
+
+      &.icon {
+        .actions {
+          margin-left: 5px;
+        }
+      }
+
+      &.fields {
+        .title {
+          @include style-h3;
+        }
+
+        .type-long {
+          width: 1%;
+        }
+
+        .entity_actions {
+          margin-bottom: 5px;
+        }
+
+        .type-localized-object-key {
+          width: 280px;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //component config
+  .model-definition-editor {
+
+    .prop-footer-actions {
+      margin-top: 10px;
+    }
+
+    .available_fields {
+      h1 {
+        @include style-h3;
+      }
+
+      .type-int {
+        width: 1%;
+      }
+
+      .actions {
+        text-align: right;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .search-configuration-editor {
+    .search-constraints,
+    .search-columns {
+      @include clearfix;
+      margin: 10px 0;
+
+      label {
+        @include style-h3;
+        display: block;
+      }
+    }
+
+    .available,
+    .selected {
+      label {
+        @include style-h4;
+        display: block;
+        margin-bottom: 2px;
+      }
+    }
+
+    .available {
+      float: left;
+      width: 190px;
+    }
+
+    .selected {
+      margin-left: 200px;
+    }
+
+    .element {
+      margin: 2px 0;
+      padding: 3px;
+      border: 1px solid $color-cloud-grey;
+      background-color: $color-almost-white;
+
+      &:hover {
+        background-color: $color-lighter-grey;
+        border-color: $color-grey;
+      }
+
+      .selector {
+        display: none;
+      }
+    }
+
+    .paging-size {
+      .val {
+        margin-left: 5px;
+      }
+    }
   }
 
   .html_expression {
 
     .expression_type {
       @include style-form-label;
+      margin-bottom: 5px;
     }
 
     .file-editor {
@@ -174,6 +333,35 @@
       overflow: auto;
       display: block;
       margin-bottom: 10px;
+
+      //fixme output normal html
+      &:empty {
+        padding: 10px;
+        font-family: $font-open-sans-italic;
+        background-color: $color-almost-white;
+        color: $color-grey;
+
+        &::before {
+          content: "No Template Content Defined";
+        }
+      }
+    }
+
+    .domain_model_tree {
+      margin: 10px 0;
+
+      .show_deprecated {
+        text-align: right;
+        display: block;
+
+        label {
+          width: auto;
+        }
+      }
+    }
+
+    .instructions {
+      @include style-message-info;
     }
   }
 

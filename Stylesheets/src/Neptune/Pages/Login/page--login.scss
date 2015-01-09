@@ -41,7 +41,7 @@
 
 	.message {
 		&.important {
-			@include style-message($color-error-light, $color-error-dark, $color-error-dark);
+			@include style-message-error;
 			padding: 10px;
 		}
 	}
