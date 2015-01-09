@@ -79,7 +79,7 @@
 				@include buttonGlyphOnly($html-entity-nbsp);
 
 				&.show_hide {
-					margin-top: 12px;
+					margin-top: 21px;
 
 					&.hide {
 						@include buttonGlyphOverride($html-entity-arrow-left);
@@ -283,6 +283,405 @@
 }
 
 
+.page_layout {
+	width: 100%;
+
+	//TODO remove elements if design stays
+	.th_box_number-con,
+	.th_box-con,
+	.box_number {
+		display: none;
+	}
+
+	.box_number-con {
+		vertical-align: top;
+		padding-right: 5px;
+	}
+
+	.box_header {
+		width: 100%;
+
+		.label-con {
+			width: 100%;
+			padding: 0 5px;
+			font-family: $font-open-sans-bold;
+			font-size: 16px;
+		}
+
+		.actions-con {
+			white-space: nowrap;
+		}
+
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp);
+		}
+	}
+
+	.contentelement_list {
+		margin-left: 20px;
+
+		.drop-spacer-con {
+			display: block;
+			height: 6px;
+
+			&.only-con {
+				margin: 5px 0;
+				height: 40px;
+				border: 2px dashed $color-lighter-grey;
+
+				&.dnd-target-active {
+					border-style: solid;
+					border-color: $color-blue;
+				}
+			}
+		}
+
+	}
+
+	.contentelement {
+		border: 1px solid $color-smokey-white;
+		width: 100%;
+		position: relative;
+
+		&:hover {
+			background-color: $color-almost-white;
+			border-color: $color-lighter-grey;
+		}
+
+		//TODO fix the fact this is inside the icon div because of needed HTML changes
+		&.dnd-target-active {
+			.icon:before {
+				content: " ";
+				position: absolute;
+				left: 0;
+				right: 0;
+				background-color: $color-blue;
+				height: 7px;
+			}
+		}
+
+		&.dnd-target-active-above {
+			.icon:before {
+				bottom: 100%;
+			}
+		}
+
+		&.dnd-target-active-below {
+			.icon:before {
+				top: 100%;
+			}
+		}
+
+		&.dnd-feedback {
+			max-width: 500px;
+			background-color: $color-white;
+			border-color: $color-lighter-grey;
+			@include box-shadow(0 0 4px transparentize($color-black, 0.8));
+		}
+
+		&.cs-pending span.type {
+			color: $color-green;
+		}
+
+		&.unpublished,
+		&.cs-draft {
+			span.type {
+				color: $color-red;
+			}
+		}
+		&.deprecated span.type{
+			color: $color-grey;
+			text-decoration: line-through;
+		}
+		&.conditional span.type{
+			color: $color-light-blue;
+		}
+		&.unconfigured div.name_type{
+			color: $color-orange;
+		}
+		&.configured_fallback span.type{
+			color: $color-default-site-font;
+		}
+
+
+
+		.icon-con,
+		.name_type-con,
+		.actions-con {
+			padding: 5px;
+		}
+
+		.icon-con {
+			padding-right: 10px;
+		}
+
+		.icon img {
+			max-height: 24px;
+			max-width: 24px;
+			display: block;
+		}
+
+		.name_type-con {
+			width: 100%;
+		}
+
+		.name {
+			display: block;
+			font-family: $font-open-sans-semi-bold;
+
+			+ .type {
+				font-size: 10px;
+			}
+		}
+
+		.type {
+			display: block;
+			font-size: 12px;
+			line-height: 1;
+		}
+
+		.actions-con {
+			white-space: nowrap;
+		}
+
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp);
+
+			&.edit {
+				@include buttonStyleEditGlyph;
+			}
+			&.remove {
+				@include buttonStyleRemoveGlyph;
+			}
+			&.expand {
+				@include buttonGlyphOverride($html-entity-expand);
+			}
+			&.collapse {
+				@include buttonGlyphOverride($html-entity-collapse);
+			}
+		}
+	}
+
+	.contentelement_delegates {
+		margin-left: 10px;
+
+		.delegate_purpose {
+			border: 1px solid $color-lighter-grey;
+			padding: 0 5px 5px;
+
+			.title {
+				font-family: $font-open-sans-semi-bold;
+				color: $color-white;
+				background-color: $color-dark-grey;
+				padding: 2px 10px;
+				margin-left: -5px;
+				margin-right: -5px;
+			}
+		}
+
+	}
+}
+
+
+.meta_info {
+	.meta_information_editor {
+		margin: 10px 0;
+	}
+}
+
+.standard_properties {
+	margin: 10px 0;
+
+	> tbody > tr > td {
+		padding: 3px;
+	}
+
+	.click_to_edit {
+		span.field {
+			width: 350px;
+		}
+
+		input.field,
+		textarea.field {
+			width: 350px;
+			vertical-align: top;
+		}
+	}
+
+	.wildcard {
+		margin-top: 5px;
+	}
+
+	label {
+		@include style-form-label;
+	}
+
+	.favicon > span,
+	.translation-locales {
+		margin: 0 5px;
+	}
+}
+
+.authorization {
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.permission,
+	.page {
+		margin: 5px 0;
+
+		> span {
+			@include style-form-input-readonly;
+		}
+	}
+}
+
+.alias {
+	.click_to_edit {
+		margin-top: 10px;
+
+		+ .click_to_edit {
+			margin-top: 5px;
+		}
+	}
+}
+
+//style and function management
+.saf-mgt {
+	.file_editor_title {
+		@include style-h2;
+		margin-right: 5px;
+	}
+
+	.file_editor_controls {
+		.btn {
+
+			&.action_save,
+			&.action_save_exit {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.action_save {
+				margin-left: 5px;
+			}
+			&.action_exit {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+
+	.se_box {
+		& + .se_box {
+			margin-top: 20px;
+		}
+
+		.label {
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.bar {
+			width: 100%;
+			margin-bottom: 5px;
+
+			.actions-con {
+				width: 1%;
+				white-space: nowrap;
+			}
+
+			.btn {
+				@include buttonGlyphAdd($html-entity-nbsp);
+
+				&.action_upload {
+					@include buttonGlyphOverride($html-entity-upload);
+				}
+				&.new_file_button {
+					@include buttonGlyphOverride($html-entity-add);
+					margin-right: 10px;
+				}
+				&.collapse {
+					@include buttonGlyphOnly($html-entity-collapse, $size: 18px);
+				}
+				&.expand {
+					@include buttonGlyphOnly($html-entity-expand, $size: 18px);
+				}
+			}
+		}
+
+		//fixme revisit html
+		.bbl {
+			margin: 10px 0;
+
+			.se_box {
+				padding: 10px 10px 10px 20px;
+
+				+ .se_box {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.bbl_button {
+			display: block;
+			width: 100%;
+			text-align: left;
+		}
+	}
+
+	.nde_actions {
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp);
+
+			&.view {
+				@include buttonGlyphOverride($html-entity-view);
+			}
+			&.edit {
+				@include buttonStyleEditGlyph;
+			}
+			&.rename {
+				@include buttonGlyphOverride($html-entity-rename);
+			}
+			&.action-up {
+				@include buttonGlyphOverride($html-entity-arrow-up);
+			}
+			&.action-down {
+				@include buttonGlyphOverride($html-entity-arrow-down);
+			}
+			&.remove {
+				@include buttonStyleRemoveGlyph;
+			}
+		}
+	}
+
+	.file_editor_controls {
+		text-align: center;
+		margin: 10px 0;
+	}
+
+	.components {
+		@include style-table;
+		border-collapse: separate;
+		margin-top: 10px;
+
+		> tbody > tr {
+			@include style-table-data-row;
+
+			&:first-child {
+				@include style-table-heading-row;
+
+				> .name_label-con,
+				> .id_label-con,
+				> .class_label-con,
+				> .builtin_label-con,
+				> .actions_label-con {
+					@include style-table-heading;
+				}
+			}
+		}
+	}
+}
+
+
 .page_editor {
 	.page_actions {
 		float: right;
@@ -306,404 +705,6 @@
 		}
 	}
 
-	.page_layout {
-		width: 100%;
-
-		//TODO remove elements if design stays
-		.th_box_number-con,
-		.th_box-con,
-		.box_number {
-			display: none;
-		}
-
-		.box_number-con {
-			vertical-align: top;
-			padding-right: 5px;
-		}
-
-		.box_header {
-			width: 100%;
-
-			.label-con {
-				width: 100%;
-				padding: 0 5px;
-				font-family: $font-open-sans-bold;
-				font-size: 16px;
-			}
-
-			.actions-con {
-				white-space: nowrap;
-			}
-
-			.btn {
-				@include buttonGlyphOnly($html-entity-nbsp);
-			}
-		}
-
-		.contentelement_list {
-			margin-left: 20px;
-
-			.drop-spacer-con {
-				display: block;
-				height: 6px;
-
-				&.only-con {
-					margin: 5px 0;
-					height: 40px;
-					border: 2px dashed $color-lighter-grey;
-
-					&.dnd-target-active {
-						border-style: solid;
-						border-color: $color-blue;
-					}
-				}
-			}
-
-		}
-
-		.contentelement {
-			border: 1px solid $color-smokey-white;
-			width: 100%;
-			position: relative;
-
-			&:hover {
-				background-color: $color-almost-white;
-				border-color: $color-lighter-grey;
-			}
-
-			//TODO fix the fact this is inside the icon div because of needed HTML changes
-			&.dnd-target-active {
-				.icon:before {
-					content: " ";
-					position: absolute;
-					left: 0;
-					right: 0;
-					background-color: $color-blue;
-					height: 7px;
-				}
-			}
-
-			&.dnd-target-active-above {
-				.icon:before {
-					bottom: 100%;
-				}
-			}
-
-			&.dnd-target-active-below {
-				.icon:before {
-					top: 100%;
-				}
-			}
-
-			&.dnd-feedback {
-				max-width: 500px;
-				background-color: $color-white;
-				border-color: $color-lighter-grey;
-				@include box-shadow(0 0 4px transparentize($color-black, 0.8));
-			}
-
-			&.cs-pending span.type {
-				color: $color-green;
-			}
-
-			&.unpublished,
-			&.cs-draft {
-				span.type {
-					color: $color-red;
-				}
-			}
-			&.deprecated span.type{
-				color: $color-grey;
-				text-decoration: line-through;
-			}
-			&.conditional span.type{
-				color: $color-light-blue;
-			}
-			&.unconfigured div.name_type{
-				color: $color-orange;
-			}
-			&.configured_fallback span.type{
-				color: $color-default-site-font;
-			}
-
-
-
-			.icon-con,
-			.name_type-con,
-			.actions-con {
-				padding: 5px;
-			}
-
-			.icon-con {
-				padding-right: 10px;
-			}
-
-			.icon img {
-				max-height: 24px;
-				max-width: 24px;
-				display: block;
-			}
-
-			.name_type-con {
-				width: 100%;
-			}
-
-			.name {
-				display: block;
-				font-family: $font-open-sans-semi-bold;
-
-				+ .type {
-					font-size: 10px;
-				}
-			}
-
-			.type {
-				display: block;
-				font-size: 12px;
-				line-height: 1;
-			}
-
-			.actions-con {
-				white-space: nowrap;
-			}
-
-			.btn {
-				@include buttonGlyphOnly($html-entity-nbsp);
-
-				&.edit {
-					@include buttonStyleEditGlyph;
-				}
-				&.remove {
-					@include buttonStyleRemoveGlyph;
-				}
-				&.expand {
-					@include buttonGlyphOverride($html-entity-expand);
-				}
-				&.collapse {
-					@include buttonGlyphOverride($html-entity-collapse);
-				}
-			}
-		}
-
-		.contentelement_delegates {
-			margin-left: 10px;
-
-			.delegate_purpose {
-				border: 1px solid $color-lighter-grey;
-				padding: 0 5px 5px;
-
-				.title {
-					font-family: $font-open-sans-semi-bold;
-					color: $color-white;
-					background-color: $color-dark-grey;
-					padding: 2px 10px;
-					margin-left: -5px;
-					margin-right: -5px;
-				}
-			}
-
-		}
-	}
-
-
-	.meta_info {
-		.meta_information_editor {
-			margin: 10px 0;
-		}
-	}
-
-	.standard_properties {
-		margin: 10px 0;
-
-		> tbody > tr > td {
-			padding: 3px;
-		}
-
-		.click_to_edit {
-			span.field {
-				width: 350px;
-			}
-
-			input.field,
-			textarea.field {
-				width: 350px;
-				vertical-align: top;
-			}
-		}
-
-		.wildcard {
-			margin-top: 5px;
-		}
-
-		label {
-			@include style-form-label;
-		}
-
-		.favicon > span,
-		.translation-locales {
-			margin: 0 5px;
-		}
-	}
-
-	.authorization {
-		label {
-			@include style-form-label;
-			margin-right: 5px;
-		}
-
-		.permission,
-		.page {
-			margin: 5px 0;
-
-			> span {
-				@include style-form-input-readonly;
-			}
-		}
-	}
-
-	.alias {
-		.click_to_edit {
-			margin-top: 10px;
-
-			+ .click_to_edit {
-				margin-top: 5px;
-			}
-		}
-	}
-
-	//style and function management
-	.saf-mgt {
-		.file_editor_title {
-			@include style-h2;
-			margin-right: 5px;
-		}
-
-		.file_editor_controls {
-			.btn {
-
-				&.action_save,
-				&.action_save_exit {
-					@include buttonGlyphAdd($html-entity-success);
-				}
-				&.action_save {
-					margin-left: 5px;
-				}
-				&.action_exit {
-					@include buttonGlyphAdd($html-entity-cancel);
-				}
-			}
-		}
-
-		.se_box {
-			& + .se_box {
-				margin-top: 20px;
-			}
-
-			.label {
-				font-family: $font-open-sans-semi-bold;
-			}
-
-			.bar {
-				width: 100%;
-				margin-bottom: 5px;
-
-				.actions-con {
-					width: 1%;
-					white-space: nowrap;
-				}
-
-				.btn {
-					@include buttonGlyphAdd($html-entity-nbsp);
-
-					&.action_upload {
-						@include buttonGlyphOverride($html-entity-upload);
-					}
-					&.new_file_button {
-						@include buttonGlyphOverride($html-entity-add);
-						margin-right: 10px;
-					}
-					&.collapse {
-						@include buttonGlyphOnly($html-entity-collapse, $size: 18px);
-					}
-					&.expand {
-						@include buttonGlyphOnly($html-entity-expand, $size: 18px);
-					}
-				}
-			}
-
-			//fixme revisit html
-			.bbl {
-				margin: 10px 0;
-
-				.se_box {
-					padding: 10px 10px 10px 20px;
-
-					+ .se_box {
-						margin-top: 0;
-					}
-				}
-			}
-
-			.bbl_button {
-				display: block;
-				width: 100%;
-				text-align: left;
-			}
-		}
-
-		.nde_actions {
-			.btn {
-				@include buttonGlyphOnly($html-entity-nbsp);
-
-				&.view {
-					@include buttonGlyphOverride($html-entity-view);
-				}
-				&.edit {
-					@include buttonStyleEditGlyph;
-				}
-				&.rename {
-					@include buttonGlyphOverride($html-entity-rename);
-				}
-				&.action-up {
-					@include buttonGlyphOverride($html-entity-arrow-up);
-				}
-				&.action-down {
-					@include buttonGlyphOverride($html-entity-arrow-down);
-				}
-				&.remove {
-					@include buttonStyleRemoveGlyph;
-				}
-			}
-		}
-
-		.file_editor_controls {
-			text-align: center;
-			margin: 10px 0;
-		}
-
-		.components {
-			@include style-table;
-			border-collapse: separate;
-			margin-top: 10px;
-
-			> tbody > tr {
-				@include style-table-data-row;
-
-				&:first-child {
-					@include style-table-heading-row;
-
-					> .name_label-con,
-					> .id_label-con,
-					> .class_label-con,
-					> .builtin_label-con,
-					> .actions_label-con {
-						@include style-table-heading;
-					}
-				}
-			}
-		}
-	}
-
 	.css_selector_data {
 		.page,
 		.page_template {
@@ -717,4 +718,107 @@
 		}
 	}
 
+
+	//file upload
+	.file_upload_container {
+		.file_upload_title {
+			@include style-h2;
+			margin-bottom: 15px;
+		}
+
+		.file_upload {
+			margin: 15px 0;
+		}
+
+		label {
+			@include style-form-label;
+		}
+
+		.file_upload_data {
+			margin: 10px 0;
+
+			label {
+				display: inline-block;
+				width: 120px;
+			}
+
+			.directory,
+			.file-upload-browse,
+			.filename,
+			.file_name{
+				margin: 5px 0;
+			}
+
+			.filename,
+			.file_name {
+				input {
+					width: 250px;
+				}
+			}
+		}
+
+		.sen_attachment_info {
+			@include style-form-label;
+		}
+
+		.upload_options {
+			margin: 15px 0;
+
+			.media_type {
+				label {
+					margin-right: 10px;
+				}
+			}
+
+			.option_overwrite,
+			.media_type {
+				margin: 5px 0;
+			}
+		}
+
+		.btn {
+			&.button_continue {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+
+	.attach-ui {
+		.heading {
+			@include style-h2;
+			margin-bottom: 15px;
+
+			//fixme get a real class added to this
+			+ div {
+				margin: 10px 0;
+			}
+		}
+
+		.constraint {
+			margin-right: 5px;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+
+		.pager-top {
+			display: none;
+		}
+
+		> .actions {
+			margin-top: 10px;
+		}
+
+		.btn {
+			&.add,
+			&.attach_nde {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
 }
