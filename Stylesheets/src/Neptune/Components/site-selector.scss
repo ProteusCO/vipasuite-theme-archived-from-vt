@@ -8,12 +8,22 @@
 		.selector-sites-con {
 			display: block;
 		}
+
+		.current-site {
+			a.hostname {
+				background-color: $color-light-grey;
+
+				span.hostname {
+					color: $color-dark-grey;
+				}
+			}
+		}
 	}
 
 	.current-site {
-
 		a.hostname {
 			background-color: $color-almost-white;
+			height: 28px;
 			padding: 5px;
 			position: relative;
 			text-decoration: none;
@@ -33,7 +43,7 @@
 				margin-right: 5px;
 			}
 
-			&:after {
+			&::after {
 				@include glyphAdd($html-entity-arrow-right, $size: 20px, $color: $color-grey);
 				position: absolute;
 				top: 0;
@@ -44,6 +54,10 @@
 				line-height: 28px;
 				text-align: center;
 				border-left: 1px solid $color-lighter-grey;
+			}
+
+			&:hover::after {
+				color: $color-light-charcoal;
 			}
 		}
 
@@ -102,6 +116,12 @@
 
 	.ssg-site-btn {
 		text-decoration: none;
+
+		&:hover {
+			span.hostname {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	.selector-sites {
