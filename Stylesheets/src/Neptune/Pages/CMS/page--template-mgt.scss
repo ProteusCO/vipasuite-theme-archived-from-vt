@@ -126,14 +126,7 @@
 	}
 }
 
-.switch_layout_wizard {
-	margin: 15px 0;
-
-	.layout_selector {
-		margin: 15px 0;
-	}
-}
-
+.switch_layout_wizard,
 .move_pages_wizard {
 	margin-bottom: 15px;
 
@@ -141,6 +134,7 @@
 		@include style-h2;
 	}
 
+	.layout_selector,
 	.template_selector {
 		margin: 10px 0;
 	}
@@ -176,6 +170,7 @@
 		margin: 10px 0;
 	}
 
+	.confirm_layout_switch,
 	.confirm_template_switch {
 		margin: 10px 0;
 
