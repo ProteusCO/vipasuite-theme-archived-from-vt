@@ -23,6 +23,13 @@
 		vertical-align: top;
 	}
 
+	.dnd-target-active {
+		a.fse_file,
+		a.fse_folder {
+			font-family: $font-open-sans-bold;
+		}
+	}
+
 	a.fse_file,
 	a.fse_folder {
 		text-decoration: none;
