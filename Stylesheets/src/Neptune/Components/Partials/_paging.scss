@@ -22,11 +22,19 @@
 			display: inline-block;
 			vertical-align: middle;
 			padding: 3px 8px;
+
+			&:hover {
+				background-color: darken($color-light-bluegrey, 10%);
+			}
 		}
 
 		.selected-page {
 			background-color: $color-dark-blue;
 			cursor: default;
+
+			&:hover {
+				background-color: $color-dark-blue;
+			}
 		}
 
 		.page + .page,
