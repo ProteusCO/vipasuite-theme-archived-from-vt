@@ -7,6 +7,7 @@
 		margin-bottom: 5px;
 	}
 
+	//add component menu
 	.add-pe-button {
 		> .menu_item {
 			//fixme add class of btn to this thing
@@ -75,6 +76,49 @@
 	}
 }
 
+.workspace-actions {
+	margin-bottom: 5px;
+
+	.btn {
+		&.show-hide-btn {
+			@include buttonGlyphAdd($html-entity-branch-open);
+
+			&.shown {
+				@include buttonGlyphOverride($html-entity-branch-close);
+			}
+		}
+	}
+}
+
+.search {
+	.entity-actions {
+		.btn {
+			&.import {
+				@include buttonGlyphAdd($html-entity-upload);
+			}
+			&.add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
+
+	.search-bar {
+		margin: 10px 0;
+	}
+
+	.action-column {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			//fixme need class on delete button
+			&:nth-child(2) {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
+
 .uitask-manager-con {
 	margin: 10px 0;
 }
@@ -104,6 +148,67 @@
 		}
 		&.delete {
 			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
+
+.data-import-settings {
+	@include style-inline-box();
+
+	.help-point.cms-component {
+		float: right;
+	}
+
+	.import-title {
+		@include style-h2;
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	.instructions {
+		@include style-message-warning;
+	}
+
+	.supported-columns {
+		margin: 10px 0;
+	}
+
+	.prop,
+	.fail-import-on-error,
+	.component-name-expression,
+	.csv-file {
+		margin: 5px 0;
+	}
+
+	label {
+		@include style-form-label;
+		display: inline-block;
+		width: 200px;
+	}
+
+	.component-name-expression {
+		input {
+			width: 350px;
+		}
+	}
+
+	.destination-directory {
+		.actions {
+			margin-left: 5px;
+		}
+	}
+
+	> .actions {
+		margin-top: 15px;
+
+		.btn {
+			//fixme get class added
+			&:first-child {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
 		}
 	}
 }

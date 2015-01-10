@@ -106,9 +106,7 @@ $footer-height: 55px;
 }
 
 .l-primary-content {
-	background-color: $color-white;
-	border: 1px solid $color-cloud-grey;
-	padding: 15px;
+	@include style-inline-box();
 
 	#t-no-content-styles & {
 		background-color: transparent;

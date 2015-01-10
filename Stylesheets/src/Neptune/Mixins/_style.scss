@@ -86,6 +86,12 @@
 		input[type=checkbox] {
 			display: block;
 		}
+
+		.column-visibility {
+			input[type=checkbox] {
+				display: inline-block;
+			}
+		}
 	}
 
 	a {
@@ -119,6 +125,10 @@
 			input[type=checkbox] {
 				display: block;
 			}
+		}
+
+		input[type=checkbox] {
+			vertical-align: middle;
 		}
 
 		a {
@@ -221,4 +231,10 @@
 	background-color: $color-white;
 	border: 1px solid $color-cloud-grey;
 	@include box-shadow(3px 3px 10px transparentize($color-black, 0.55));
+}
+
+@mixin style-inline-box($padding: 15px) {
+	background-color: $color-white;
+	border: 1px solid $color-cloud-grey;
+	padding: $padding;
 }
