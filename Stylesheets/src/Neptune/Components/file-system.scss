@@ -52,8 +52,7 @@
 				@include buttonGlyphOverride($html-entity-info);
 			}
 			&.change-permissions-action {
-				//FIXME need icon
-				//@include buttonGlyphOverride($html-entity-view)
+				@include buttonGlyphOverride($html-entity-fixme);
 			}
 		}
 	}

@@ -41,6 +41,8 @@
 }
 
 @mixin buttonGlyphAdd($html-entity, $size: 13px, $color: "", $spacing: 5px) {
+	white-space: nowrap;
+
 	&:before {
 		@include glyphAdd($html-entity, $size, $color);
 

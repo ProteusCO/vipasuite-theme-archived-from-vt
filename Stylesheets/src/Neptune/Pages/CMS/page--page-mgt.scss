@@ -550,27 +550,6 @@
 
 //style and function management
 .saf-mgt {
-	.file_editor_title {
-		@include style-h2;
-		margin-right: 5px;
-	}
-
-	.file_editor_controls {
-		.btn {
-
-			&.action_save,
-			&.action_save_exit {
-				@include buttonGlyphAdd($html-entity-success);
-			}
-			&.action_save {
-				margin-left: 5px;
-			}
-			&.action_exit {
-				@include buttonGlyphAdd($html-entity-cancel);
-			}
-		}
-	}
-
 	.se_box {
 		& + .se_box {
 			margin-top: 20px;
@@ -598,6 +577,9 @@
 				&.new_file_button {
 					@include buttonGlyphOverride($html-entity-add);
 					margin-right: 10px;
+				}
+				&.attach_file_button {
+					@include buttonGlyphOverride($html-entity-fixme);
 				}
 				&.collapse {
 					@include buttonGlyphOnly($html-entity-collapse, $size: 18px);
@@ -638,6 +620,9 @@
 			&.edit {
 				@include buttonStyleEditGlyph;
 			}
+			&.dependency_button {
+				@include buttonGlyphOverride($html-entity-fixme);
+			}
 			&.rename {
 				@include buttonGlyphOverride($html-entity-rename);
 			}
@@ -653,9 +638,90 @@
 		}
 	}
 
+	.has_dependency {
+		.btn {
+			&.dependency_button {
+				@include buttonGlyphOverride($html-entity-fixme, $color: $color-gold);
+			}
+		}
+	}
+
+	//nde and file editors
+	.nde_editor {
+		> .nde_editor_Title_Editor,
+		> .title {
+			@include style-h2;
+		}
+	}
+
+	.file_editor_title {
+		margin-right: 5px;
+	}
+
 	.file_editor_controls {
 		text-align: center;
 		margin: 10px 0;
+
+		.btn {
+
+			&.action_save,
+			&.action_save_exit {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.action_save {
+				margin-left: 5px;
+			}
+			&.action_exit {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+
+	.saf_history {
+		table.rename {
+			.rename_title-con {
+				@include style-h2;
+			}
+
+			.filename {
+				margin: 10px 0;
+
+				.existing_name {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+
+				.new_name {
+					width: 250px;
+				}
+			}
+		}
+	}
+
+	.dep_editor {
+		width: 100%;
+
+		.heading {
+			@include style-h2;
+		}
+
+		.deps {
+			margin: 10px 0;
+		}
+
+		.ok-con {
+			padding-right: 2px;
+			width: 1px;
+		}
+
+		.btn {
+			&.ok {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
 	}
 
 	.components {
