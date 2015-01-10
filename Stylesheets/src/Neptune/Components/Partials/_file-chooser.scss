@@ -43,6 +43,18 @@
 		color: $color-default-link;
 	}
 
+	.fse_icon_name {
+		.btn {
+			&.add {
+				margin-right: 3px;
+			}
+		}
+	}
+
+	.btn-image {
+		vertical-align: middle;
+	}
+
 	.fse_icon {
 		padding-right: 3px;
 	}
