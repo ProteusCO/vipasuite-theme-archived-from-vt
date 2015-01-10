@@ -1,0 +1,11 @@
+@import "../../Config/base-import";
+
+
+//article containers tab table
+.pager-articlecontainer_table {
+
+	.action_edit {
+		@include buttonBase;
+		@include buttonStyleEditGlyph();
+	}
+}
