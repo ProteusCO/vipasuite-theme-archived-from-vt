@@ -1,0 +1,62 @@
+@import "../../Config/base-import";
+
+/*
+	Component partial -	File chooser popup
+*/
+
+.file_chooser {
+	width: 100%;
+
+	td {
+		vertical-align: middle;
+
+		&.sibling_directories-con,
+		&.cwd-con,
+		&.pager-con,
+		&.actions-con {
+			vertical-align: top;
+		}
+
+		&.pager-con {
+			height: 100%;
+		}
+
+		&.sibling_directories-con {
+			min-width: 250px;
+		}
+
+		&.actions-con {
+			div.actions {
+				margin: 5px 0;
+			}
+			label {
+				@include style-form-label;
+				width: 220px;
+				display: inline-block;
+			}
+		}
+	}
+
+	.fse_file,
+	.fse_folder {
+		text-decoration: none;
+		color: $color-default-link;
+	}
+
+	.fse_icon {
+		padding-right: 3px;
+	}
+
+	.element input.selector {
+		display: none;
+	}
+
+	div.sibling_directories {
+		padding-right: 10px;
+	}
+
+	div.cwd {
+		@include style-h3;
+		margin-bottom: 10px;
+	}
+}
