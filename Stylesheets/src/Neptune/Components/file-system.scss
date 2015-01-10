@@ -79,6 +79,22 @@
 	.content_type_selector {
 		display: inline-block;
 		vertical-align: middle;
+
+		.select_existing {
+			position: absolute;
+			@include style-popup-box;
+
+			> label {
+				@include style-form-label;
+			}
+
+			.richlist {
+				min-width: 200px;
+				max-height: 250px;
+				overflow-y: auto;
+				margin: 10px 0;
+			}
+		}
 	}
 
 	.btn {

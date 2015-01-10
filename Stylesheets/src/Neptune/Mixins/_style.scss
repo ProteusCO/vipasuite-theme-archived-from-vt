@@ -215,3 +215,10 @@
 @mixin style-message-warning() {
 	@include style-message($color-warning-light, $color-warning-dark, $color-warning-dark);
 }
+
+@mixin style-popup-box($padding: 10px) {
+	padding: $padding;
+	background-color: $color-white;
+	border: 1px solid $color-cloud-grey;
+	@include box-shadow(3px 3px 10px transparentize($color-black, 0.55));
+}
