@@ -47,5 +47,9 @@
 			content: " ";
 			display: table;
 		}
+
+		> .actions:last-child {
+			margin-top: 10px;
+		}
 	}
 }
