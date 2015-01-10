@@ -52,7 +52,27 @@
 				@include buttonGlyphOverride($html-entity-info);
 			}
 			&.change-permissions-action {
-				@include buttonGlyphOverride($html-entity-fixme);
+				@include buttonGlyphOverride($html-entity-fixme, $color: $color-grey);
+			}
+		}
+	}
+
+	.protected {
+		.quick-actions {
+			.btn {
+				&.change-permissions-action {
+					@include buttonGlyphOverride($html-entity-fixme, $color: $color-gold);
+				}
+			}
+		}
+	}
+
+	.children_unprotected {
+		.quick-actions {
+			.btn {
+				&.change-permissions-action {
+					@include buttonGlyphOverride($html-entity-fixme, $color: $color-blue);
+				}
 			}
 		}
 	}
