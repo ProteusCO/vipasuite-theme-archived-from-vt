@@ -166,3 +166,16 @@ legend {
 	@include style-form-label;
 }
 
+//calendar input
+.miwt-calendar {
+	button {
+		&.clear {
+			display: none;
+		}
+		&.open {
+			@include buttonBase;
+			@include buttonGlyphOnly($html-entity-fixme);
+			margin-left: 4px;
+		}
+	}
+}
