@@ -24,7 +24,7 @@
 		a.hostname {
 			background-color: $color-almost-white;
 			height: 28px;
-			padding: 5px;
+			padding: 5px 30px 5px 25px;
 			position: relative;
 			text-decoration: none;
 			display: block;
@@ -39,8 +39,9 @@
 			}
 
 			.favicon {
-				float: left;
-				margin-right: 5px;
+				position: absolute;
+				left: 5px;
+				top: 6px;
 			}
 
 			&::after {
