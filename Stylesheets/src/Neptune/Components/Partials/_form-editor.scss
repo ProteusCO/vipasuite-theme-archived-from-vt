@@ -1,0 +1,832 @@
+@import "../../Config/base-import";
+
+.rich_dynaform_editor {
+	.help-point.disabled {
+		display: none;
+	}
+
+	span.revision_num{
+		padding: 0 5px;
+	}
+
+	.view_style,
+	.form_settings,
+	.advanced,
+	.generator_editor,
+	.template_editor,
+	.step,
+	.question_content,
+	.section {
+		label {
+			display: block;
+		}
+	}
+
+	.tab-content {
+		label {
+			&.key,
+			&.keys,
+			&.tbl {
+				display: inline;
+			}
+		}
+	}
+
+	.instructions {
+		@include style-message-warning;
+	}
+
+	//header area
+	div.form_status {
+		position: relative;
+		margin-bottom: 10px;
+	}
+
+	.status_actions {
+		.btn {
+			&.create_draft {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	span.form_actions {
+		position: absolute;
+		right: 0;
+	}
+
+	.properties_and_views {
+		margin: 10px 0;
+		padding: 10px;
+		border: 1px solid $color-cloud-grey;
+		@include clearfix;
+
+		.properties {
+			float: left;
+
+			.name {
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+				input {
+					width: 250px;
+				}
+			}
+		}
+
+		.views {
+			float: right;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+	}
+
+	// tabs floating to the right
+	.tab-items {
+		.ti {
+			a {
+				padding: 4px 7px;
+				font-size: 12px;
+			}
+		}
+
+		li.form_settings,
+		li.advanced,
+		li.site_assignment,
+		li.generators,
+		li.security,
+		li.reports,
+		li.revisions {
+			float: right;
+		}
+	}
+
+	.form_condition_settings,
+	.form_structure_actions {
+		.btn {
+			&[disabled] {
+				display: none;
+			}
+		}
+	}
+
+	.form_structure_actions {
+		margin-bottom: 10px;
+	}
+
+	.prop{
+		margin: 5px 0;
+
+		&.userentryrequired {
+			input[type=text] {
+				width: 300px;
+			}
+		}
+	}
+
+
+	.dnd-target-active {
+		&:before {
+			content: " ";
+			position: absolute;
+			left: 0;
+			right: 0;
+			background-color: $color-blue;
+			height: 3px;
+		}
+	}
+
+	.dnd-target-active-above {
+		&:before {
+			bottom: 100%;
+		}
+	}
+
+	.dnd-target-active-below {
+		&:before {
+			top: 100%;
+		}
+	}
+
+	.dnd-feedback {
+		max-width: 500px;
+		@include box-shadow(1px 1px 4px transparentize($color-black, 0.6));
+
+		.actions {
+			display: none;
+		}
+	}
+
+	// tabs content
+	div.menu {
+		padding: 5px 10px;
+		position: relative;
+		@include clearfix;
+
+		&.dnd-feedback {
+			padding: 5px 10px !important;
+		}
+
+		span.name {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			display: block;
+			margin-right: 90px;
+		}
+
+		div.actions {
+			position: absolute;
+			right: 10px;
+			top: 4px;
+
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp, $color: $color-white);
+
+				&[disabled] {
+					display: none;
+				}
+
+				&.add {
+					@include buttonGlyphOverride($html-entity-add);
+				}
+				&.edit {
+					@include buttonGlyphOverride($html-entity-edit);
+				}
+				&.delete {
+					@include buttonGlyphOverride($html-entity-delete);
+				}
+				&.expanded {
+					@include buttonGlyphOverride($html-entity-branch-close);
+				}
+				&.collapsed {
+					@include buttonGlyphOverride($html-entity-branch-open);
+				}
+			}
+		}
+	}
+
+	div.section {
+		border: 1px solid $color-light-grey;
+
+		+ .section {
+			margin-top: 5px;
+		}
+
+		> div.menu {
+			background-color: $color-bluegrey;
+			color: $color-white;
+
+			&:hover {
+				background-color: $color-dark-bluegrey;
+			}
+
+			> .name {
+				@include text-shadow(1px 1px 1px transparentize($color-black, 0.5));
+			}
+		}
+	}
+
+	.steps {
+		padding: 5px;
+	}
+
+	div.step {
+		border: 1px solid $color-light-grey;
+
+		+ .step {
+			margin-top: 5px;
+		}
+
+		> div.menu {
+			background-color: $color-grey;
+			color: $color-white;
+
+			&:hover{
+				background-color: $color-darker-grey;
+			}
+
+			> .name {
+				@include text-shadow(1px 1px 1px transparentize($color-black, 0.5));
+			}
+		}
+	}
+
+	.questions {
+		padding: 5px;
+	}
+
+	div.question {
+		+ .question {
+			margin-top: 5px;
+		}
+
+		&.expanded {
+			> div.menu {
+				border-color: $color-light-grey;
+				background-color: $color-lighter-grey;
+			}
+		}
+
+		> div.menu {
+			border: 1px solid $color-lighter-grey;
+			color: $color-default-site-font;
+			background-color: $color-cloud-grey;
+
+			&:hover{
+				background-color: $color-light-grey;
+				border-color: $color-grey;
+			}
+
+			div.actions {
+				.btn {
+					@include buttonGlyphOverride($color: $color-default-site-font);
+				}
+			}
+		}
+	}
+
+	div.extras {
+		margin: 8px 0;
+	}
+
+	.question_preview {
+		border: 1px solid $color-cloud-grey;
+		border-top: 0 none;
+
+		div.question {
+			border: 0;
+		}
+
+		div.preview_element {
+			padding: 10px;
+			overflow: hidden;
+		}
+	}
+
+	div.menu_component {
+		//fixme this
+		&.add_question > .menu_item {
+			color: $color-white;
+			margin-right: 10px;
+			text-decoration: none;
+			@include text-shadow(1px 1px 1px transparentize($color-black, 0.5));
+
+			&:before {
+				@include glyphAdd($html-entity-add);
+			}
+
+			&:after {
+				content: "...";
+			}
+		}
+
+		ul.menu_items {
+			border: 1px solid $color-lighter-grey;
+			right: 0;
+			left: auto;
+		}
+
+		li.menu{
+			width: 150px;
+		}
+
+		a.menu_item {
+			width: auto;
+		}
+	}
+
+	//section and step properties
+	.menu + .properties {
+		padding: 10px;
+	}
+
+	.properties {
+		.btn {
+			&.close {
+				float: right;
+			}
+		}
+
+		.prop {
+			margin: 5px 0;
+
+			label {
+				@include style-form-label;
+			}
+		}
+	}
+
+	.enabled_condition,
+	.preserve_answer_condition,
+	.visibility_condition {
+		.condition_name {
+			@include style-form-input-readonly;
+			margin-right: 5px;
+		}
+	}
+
+	// question content
+	.question_content {
+		position: relative;
+
+		.question_actions {
+			position: absolute;
+			right: 0;
+
+			.btn {
+				@include buttonStyleSmall;
+			}
+		}
+
+		.content {
+			> .name {
+				label {
+					@include style-form-label;
+				}
+				input {
+					width: 350px;
+				}
+			}
+		}
+
+		.btn {
+			&[disabled] {
+				display: none;
+			}
+		}
+
+		.field {
+			margin-top: 10px;
+			position: relative;
+
+			.btn {
+				&.delete {
+					@include buttonStyleDeleteGlyph($size: 20px);
+					float: right;
+				}
+			}
+		}
+
+		.prop {
+			margin: 5px 0;
+
+			label {
+				@include style-form-label;
+			}
+		}
+
+		.name_parts {
+			h3 {
+				margin-bottom: 0;
+			}
+		}
+
+		.available_elements_list {
+			.available_elements {
+				margin: 5px 0;
+			}
+		}
+	}
+
+	// breadcrumb
+	div.form_editing_path {
+		margin-bottom: 15px;
+
+		label.bc {
+			@include style-h2;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		ul.path {
+			@include resetMenu;
+		}
+
+		li.bc {
+			display: inline-block;
+			vertical-align: top;
+			font-size: 12px;
+
+			+ .bc {
+				margin-left: 10px;
+
+				&:before {
+					//fixme get icon for this
+					content: ">";
+					margin-right: 10px;
+				}
+			}
+
+			&.question {
+				font-family: $font-open-sans-semi-bold;
+			}
+		}
+	}
+
+	.field_properties {
+		.prompt {
+			input {
+				width: 100%;
+			}
+		}
+	}
+
+	.element_properties {
+		.ti {
+			border-bottom-color: $color-light-grey;
+
+			&.tab-selected {
+				border-color: $color-light-grey;
+				border-bottom-color: $color-white;
+			}
+		}
+		.tab-content {
+			border-color: $color-light-grey;
+		}
+	}
+
+	.settings {
+		.options {
+			.userentryrequired {
+				input[type=text] {
+					margin-left: 5px;
+				}
+			}
+
+			> .ctb {
+				display: block;
+				margin: 5px 0;
+			}
+		}
+	}
+
+	//view settings tab
+	.view_settings {
+		label {
+			margin-right: 5px;
+		}
+	}
+
+	.view_style {
+		> .sequence,
+		> .template {
+			margin-top: 15px;
+		}
+
+		.actions {
+			.btn {
+				&.delete {
+					@include buttonStyleDeleteGlyph();
+				}
+			}
+		}
+	}
+
+	// Style tab
+	.sequence {
+		div.layout_area {
+			position: relative;
+			border: 1px solid $color-lighter-grey;
+			padding: 5px 15px;
+			background-color: $color-cloud-grey;
+			@include clearfix;
+
+			+ .layout_area {
+				margin-top: 15px;
+			}
+
+			&:hover{
+				background-color: $color-light-grey;
+			}
+
+			input[type=checkbox],
+			label.tbl{
+				vertical-align: middle;
+			}
+
+			span.name {
+				float: left;
+				vertical-align: middle;
+			}
+
+			div.actions{
+				float: right;
+			}
+
+			&.dnd-feedback {
+				padding: 5px 15px !important;
+			}
+		}
+	}
+
+	//email tab
+	.tab-content.emails {
+		.entity-actions {
+			margin-bottom: 5px;
+
+			.btn {
+				&.add {
+					@include buttonGlyphAdd($html-entity-add);
+				}
+			}
+		}
+	}
+
+	//data templates
+	.data_templates {
+		.btn {
+			&[disabled] {
+				display: none;
+			}
+		}
+
+		> .add {
+			margin-top: 10px;
+			text-align: right;
+		}
+	}
+
+	//revisions tab
+	.tab-content.revisions {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+
+	//reports tab
+	.operational_report_view {
+		.operational_report_listing {
+			> .btn.add {
+				@include buttonGlyphAdd($html-entity-add);
+				float: right;
+				margin-bottom: 5px;
+			}
+		}
+
+		.action-column {
+			.btn {
+				&.remove {
+					@include buttonStyleRemoveGlyph();
+				}
+			}
+		}
+	}
+
+	//generators tab
+	.tab-content.generators {
+		.btn {
+			&[disabled] {
+				display: none;
+			}
+		}
+	}
+
+	//site assignment tab
+	.site_assignment {
+		.all_table_title,
+		.set_table_title {
+			@include style-form-label;
+		}
+
+		.btn {
+			&.add {
+				@include buttonStyleAddGlyph();
+			}
+			&.remove {
+				@include buttonStyleRemoveGlyph();
+			}
+		}
+	}
+
+	//advanced tab
+	.tab-content.advanced {
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.custom_status {
+			margin-bottom: 10px;
+		}
+	}
+
+	// psuedo-popup windows
+	//fixme for the love of god fix this
+	div.entity_editor {
+		position: fixed;
+		@include style-popup-box();
+		top: 10%;
+		max-height:75%;
+		left: 25%;
+		right: 25%;
+		overflow: auto;
+
+		> table {
+			width: 100%;
+		}
+	}
+}
+
+//condition popup
+.new_condition,
+.select_existing_condition {
+	h2 {
+		@include style-h4;
+		margin-top: 0;
+	}
+
+	.condition_types {
+		.rtb {
+			display: block;
+			margin: 5px 0;
+		}
+	}
+}
+
+
+.selected_capacity_list {
+	.selection .capacity_list_name {
+		display: inline-block;
+		padding: 5px 10px;
+	}
+	.entity_actions {
+		display: inline-block;
+	}
+}
+
+/*
+.title{
+ font-size: 1.2em;
+ font-weight: bold;
+ font-style: italic;
+ color: #555;
+ display: block;
+ text-align: left;
+}
+.rich_dynaform_editor div.copy_data_source,
+.rich_dynaform_editor div.prop{
+ margin-top:.5em;
+}
+.prop div.element_editor .prop div.prop,
+.rich_dynaform_editor div.prop div.prop{
+   margin-top:.25em;
+   margin-left:2em;
+ }
+.prop div.element_editor div.prop,
+.rich_dynaform_editor .prop .prop_editor > div.prop{
+	margin-left:0;
+}
+.title,
+div.data_template_actions,
+.question_properties div.field,
+.rich_dynaform_editor .content div.prop{
+	margin-top:.75em;
+}
+
+
+
+// hiding help points
+.element_editor div.disabled,
+.sheet_view div.disabled{
+	display: none;
+}
+// tables
+table.wizard,
+table.pager,
+table.miwt_table{
+	width: 99%;
+	clear: both;
+}
+table.procedure_navigation_bottom{
+	float: right;
+}
+// second level tabs
+.fields div.tab-content{
+	border: 1px #ccc solid;
+	background: #f5f5f5;
+}
+.fields .tab-items li.ti{
+	background: url(/theme/Menu/menu_active.gif) repeat-x left top;
+	border: 1px #ccc solid;
+	border-width: 1px 1px 0px;
+}
+.fields .tab-items a.miwt_submit{
+	color:#fff;
+}
+.fields .tab-items a.miwt_submit:hover{
+	color: #4e4026;
+}
+.fields ul.tab-items li.tab-selected{
+	color: #4e4026;
+	border-bottom: 1px #f5f5f5 solid;
+	background: white url(/theme/Menu/menu_inactive.gif) repeat-x left top;
+}
+.fields .tab-items .tab-selected a.miwt_submit{
+	color:#4e4026;
+}
+
+
+div.report_name_prompt{
+	text-align:center;
+	line-height:1.5em;
+}
+// Generator
+.expression .results span.result{
+	display:block;
+	color:#85016D;
+}
+.expression .results span.function{
+	color:#0000BF;
+}
+// Field Editors.
+label.tal{
+	display:block;
+}
+.prop input.offset{
+	width:5em;
+}
+.prop span.start_offset,
+.prop span.end_offset{
+	display:block;
+	margin-top:.75em;
+}
+.data_templates div.template_editor,
+.prop div.element_editor{
+	margin:.5em 1em;
+	border: 1px #b9b196 solid;
+	background: #fff;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	padding:8px;
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+.form_content h2 {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 1em 0;
+}
+.form_content p {
+	margin-bottom: 1em;
+}
+.fields .prop textarea{
+	width:100%;
+}
+
+.fields .prompt input.val {
+	min-width: 300px;
+	width: 50%;
+}
+
+*/

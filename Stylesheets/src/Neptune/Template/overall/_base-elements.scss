@@ -136,7 +136,7 @@ span.help-point {
 
 //forms
 @include textLikeInputs {
-	border: 1px solid $color-lighter-grey;
+	border: 1px solid $color-light-grey;
 	padding: 4px;
 	vertical-align: middle;
 
@@ -148,7 +148,7 @@ span.help-point {
 
 select,
 textarea {
-	border: 1px solid $color-lighter-grey;
+	border: 1px solid $color-light-grey;
 	padding: 4px;
 	vertical-align: middle;
 

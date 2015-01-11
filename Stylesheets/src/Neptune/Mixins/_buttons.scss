@@ -130,3 +130,7 @@
 @mixin buttonStyleCopyGlyph($size: 16px) {
 	@include buttonGlyphOnly($html-entity-copy, $size: $size);
 }
+
+@mixin buttonStyleAddGlyph($size: 16px) {
+	@include buttonGlyphOnly($html-entity-add, $size: $size, $color: $color-green);
+}

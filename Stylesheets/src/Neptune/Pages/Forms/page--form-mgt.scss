@@ -1,0 +1,36 @@
+@import "../../Config/base-import";
+
+@import "../../Components/Partials/form-editor";
+
+.help-point.form-mgt {
+	float: right;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+.entity_actions {
+	.btn {
+		&.add {
+			@include buttonGlyphAdd($html-entity-add);
+		}
+	}
+}
+
+.search_results {
+	.action-column {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.details {
+				@include buttonGlyphOnly($html-entity-view);
+			}
+			&.copy {
+				@include buttonGlyphOnly($html-entity-copy);
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
