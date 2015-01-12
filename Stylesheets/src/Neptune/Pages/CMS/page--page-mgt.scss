@@ -579,7 +579,7 @@
 					margin-right: 10px;
 				}
 				&.attach_file_button {
-					@include buttonGlyphOverride($html-entity-fixme);
+					@include buttonGlyphOverride($html-entity-attachment);
 				}
 				&.collapse {
 					@include buttonGlyphOnly($html-entity-collapse, $size: 18px);

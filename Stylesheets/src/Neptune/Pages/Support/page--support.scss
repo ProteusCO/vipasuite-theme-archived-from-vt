@@ -391,7 +391,8 @@ div.note {
 			font-family: $font-open-sans-semi-bold;
 
 			&:before {
-				@include glyphAdd($html-entity-fixme);
+				@include glyphAdd($html-entity-attachment, $size: 20px);
+				margin-right: 5px;
 			}
 		}
 
