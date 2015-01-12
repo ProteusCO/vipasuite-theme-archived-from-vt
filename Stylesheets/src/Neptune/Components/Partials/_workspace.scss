@@ -84,14 +84,6 @@
 		@include box-shadow(0 0 5px transparentize($color-black, 0.8));
 		@include clearfix;
 
-		.pe-data {
-			@include clearfix;
-
-			+ .pe-data {
-				margin-top: 5px;
-			}
-		}
-
 		label {
 			font-family: $font-open-sans-semi-bold;
 			width: 110px;
@@ -107,6 +99,15 @@
 
 		.l10n-btn + .l10n-btn {
 			margin-left: 5px;
+		}
+
+		//fixme fix it so it has a class for the containers of the labels
+		> div {
+			@include clearfix;
+
+			+ div {
+				margin-top: 5px;
+			}
 		}
 	}
 }
