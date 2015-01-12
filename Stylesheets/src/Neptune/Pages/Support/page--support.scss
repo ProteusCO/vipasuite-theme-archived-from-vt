@@ -1,0 +1,713 @@
+@import "../../Config/base-import";
+
+.support_welcome,
+.status_legend {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/*link lists */
+.support_welcome {
+	ul {
+		@include resetMenu;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	a {
+		display: block;
+		//fixme fix the background reference
+		background: url("/resources/dyn/files/984063zedebc696/_fn/support-icons.png") no-repeat left top transparent;
+		width: 230px;
+		font-size: 12px;
+		margin-bottom: 10px;
+		opacity: 0.7;
+		padding: 3px 0 5px 33px;
+		text-decoration: none;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.faqs {
+			background-position: left -89px;
+		}
+		&.videos {
+			background-position: left -180px;
+		}
+		.download a {
+			background-position: left -265px;
+		}
+	}
+}
+
+/* status legend */
+.status_legend {
+	h3 {
+		margin: 0;
+		padding: 5px 10px;
+		background-color: $color-bluegrey;
+		color: $color-white;
+	}
+
+	table {
+		width: 100%;
+		border: 1px solid $color-bluegrey;
+
+		td {
+			padding: 5px 10px;
+			vertical-align: top;
+			font-size: 12px;
+			line-height: 1.2;
+
+			+ td {
+				border-left: 1px solid $color-grey;
+			}
+
+			&.status_pending {
+				background-color:#FFA0A0;
+			}
+			&.status_feedback {
+				background-color:#FF50A8;
+			}
+			&.status_review {
+				background-color:#CCAFB0;
+			}
+			&.status_resolved {
+				background-color: #CED;
+			}
+			&.status_assigned {
+				background-color:#C8C8FF;
+			}
+			&.status_acknowledged {
+				background-color: #FFD850;
+			}
+			&.status_wo {
+				background-color: #FFFFB0;
+			}
+
+		}
+
+		.title {
+			display: block;
+			font-family: $font-open-sans-bold;
+			font-size: 14px;
+		}
+	}
+}
+
+.search_results {
+	> tbody {
+		> tr > td {
+			color: $color-charcoal;
+		}
+		> tr.status_new > td { background-color:#FFA0A0; }
+		> tr.status_feedback > td { background-color:#CCAFB0; }
+		> tr.status_resolved > td { background-color:#CED; }
+		> tr.status_assigned > td { background-color:#C8C8FF; }
+		> tr.status_pending > td { background-color: #FFD850; }
+		> tr.status_wo > td { background-color: #FFFFB0; }
+		> tr.status_client_feedback > td { background-color: #FF50A8; }
+	}
+}
+
+/*Required styles*/
+.property_editor {
+	.people_group {
+		.field_contactname,
+		.field_contactemail,
+		.field_contactphone {
+			label {
+				&:before {
+					content: "*";
+					color: $color-red;
+				}
+			}
+		}
+	}
+
+	.problem_group {
+		.field_summary,
+		.field_description,
+		.field_additionalinformation,
+		.field_thirdpartyid2 {
+			label {
+				&:before {
+					content: "*";
+					color: $color-red;
+				}
+			}
+		}
+	}
+
+	.disposition_group {
+		.field_category {
+			label {
+				&:before {
+					content: "*";
+					color: $color-red;
+				}
+			}
+		}
+	}
+}
+
+.workspace_actions {
+	float: right;
+}
+
+.entity_actions  {
+	.btn {
+		&.add {
+			@include buttonGlyphAdd($html-entity-add);
+		}
+	}
+}
+
+.project_actions {
+	text-align: right;
+	margin-bottom: 5px;
+
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+}
+
+.uitask-manager-con {
+	margin: 10px 0;
+}
+
+.task-container {
+	margin: 10px 0;
+	@include style-inline-box();
+}
+
+/* Send Message UI */
+.send_message {
+	border: 5px solid $color-lighter-grey;
+	padding: 15px;
+	margin-bottom: 20px;
+
+	.heading {
+		@include style-h3;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	label {
+		@include style-form-label;
+	}
+
+	.issue_message {
+		@include clearfix;
+
+		> .fields {
+			margin-top: 25px;
+		}
+
+		.field_editor {
+			margin-top: 5px;
+		}
+
+		.file_upload {
+			margin-top: 5px;
+		}
+	}
+
+	div.message_line {
+		margin-top: 8px;
+	}
+
+	.header_to,
+	.email_template {
+		label {
+			display: inline-block;
+			width: 85px;
+		}
+	}
+
+	.header_to {
+		label {
+			margin-bottom: 5px;
+			display: inline-block;
+		}
+
+		.recipient {
+			display: inline-block;
+			padding: 3px 5px;
+			border: 1px solid $color-cloud-grey;
+			background-color: $color-almost-white;
+			margin-bottom: 5px;
+
+			+ .recipient {
+				margin-left: 10px;
+			}
+		}
+		.address {
+			font-style: $font-open-sans-italic;
+			margin-left: 5px;
+		}
+
+		.btn {
+			&.remove {
+				margin-left: 3px;
+				@include buttonStyleRemoveGlyph(14px);
+			}
+		}
+	}
+
+	.template {
+		&.preview div.val{
+			background-color: $color-almost-white;
+			margin-bottom: 5px;
+			resize: both;
+			height: 350px;
+			overflow: auto;
+		}
+
+		.val {
+			padding: 2px;
+			border: 1px solid $color-light-charcoal;
+		}
+	}
+
+	.header_subject {
+		label {
+			display: block;
+		}
+
+		span.val {
+			display: inline-block;
+			overflow-x: auto;
+		}
+
+		span.val,
+		input {
+			width: 100%;
+		}
+	}
+
+	.csr_text {
+		label{
+			float: left;
+		}
+
+		textarea {
+			width: 100%;
+		}
+	}
+
+	.message_body {
+		textarea {
+			width: 100%;
+			height: 200px;
+		}
+	}
+
+	span.update_preview {
+		float: right;
+	}
+
+	div.csr_text,
+	div.message_body {
+		float: left;
+		width: 60%;
+		padding-right: 15px;
+	}
+
+	.send_message_actions {
+		margin-top: 15px;
+	}
+}
+
+.file_upload {
+	.btn {
+		&.remove {
+			@include buttonStyleRemoveGlyph();
+			margin-right: 5px;
+		}
+	}
+}
+
+/** notes */
+div.note {
+	border: 1px solid $color-grey;
+	margin: 5px 0;
+	position: relative;
+
+	&.note_selected{
+		background-color: $color-cornsilk;
+	}
+
+	&.my_note {
+		border-left: 10px solid $color-dark-bluegrey;
+	}
+
+	div.content {
+		padding: 15px;
+
+		textarea {
+			margin-top: 15px;
+			width: 100%;
+		}
+	}
+
+	div.files {
+		background-color: $color-cloud-grey;
+		padding: 10px;
+		border-top: 1px solid $color-lighter-grey;
+
+		ul.files {
+			@include resetMenu;
+			padding-left: 15px;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		li.file {
+			display: inline-block;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			padding: 5px 10px;
+			background-color: $color-white;
+			border: 1px solid $color-light-grey;
+
+			a {
+				margin-right: 8px;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		span.label {
+			display: inline-block;
+			font-family: $font-open-sans-semi-bold;
+
+			&:before {
+				@include glyphAdd($html-entity-fixme);
+			}
+		}
+
+		.btn {
+			&.delete_file {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+
+	.note-actions {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+
+		.btn {
+			@include buttonColors($color-bluegrey, $color-white);
+
+			&.edit {
+				@include buttonGlyphAdd($html-entity-edit);
+			}
+			&.delete {
+				@include buttonGlyphAdd($html-entity-delete);
+			}
+			&.save {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+}
+
+.note_properties {
+	padding: 10px 15px;
+	font-size: 12px;
+	background-color: $color-bluegrey;
+	border-bottom: 1px solid $color-dark-bluegrey;
+
+	.meta {
+		color: $color-white;
+
+		.principal {
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.login {
+			margin-left: 5px;
+		}
+
+		.sep_at,
+		.create_time {
+			padding-left: 5px;
+		}
+
+		.modified_time {
+			font-family: $font-open-sans-semi-bold;
+			background-color: $color-blue-almost-white;
+			color: $color-dark-blue;
+			border: 1px solid $color-dark-bluegrey;
+			padding: 1px 7px;
+			margin-left: 5px;
+		}
+
+		.permission {
+			font-family: $font-open-sans-semi-bold;
+			background-color: $color-gold-almost-white;
+			color: $color-red;
+			border: 1px solid $color-dark-bluegrey;
+			padding: 1px 7px;
+			margin-left: 5px;
+
+			.bracket {
+				display: none;
+			}
+		}
+	}
+
+	span.note_related {
+		font-size: 10px;
+		color: $color-cloud-grey;
+		margin-right: 5px;
+		padding-right: 5px;
+		border-right: 1px solid $color-light-bluegrey;
+
+		a[href] {
+			color: $color-blue-almost-white;
+		}
+	}
+}
+
+.note_body {
+	font-size: 12px;
+}
+
+//issue view
+.issue_view {
+	div.action_group {
+		float: right;
+		width: 120px;
+
+		div.issue_actions {
+			border-top: 1px dashed $color-lighter-grey;
+			margin-top: 5px;
+			padding-top: 5px;
+		}
+
+		.btn {
+			@include buttonGlyphAdd($html-entity-nbsp);
+			display: block;
+			width: 100%;
+			margin: 2px 0;
+			text-align: left;
+
+			&.edit {
+				@include buttonGlyphOverride($html-entity-edit);
+			}
+			&.cancel {
+				@include buttonGlyphOverride($html-entity-cancel);
+			}
+			&.save {
+				@include buttonGlyphOverride($html-entity-success);
+			}
+			&.action_send_message {
+				@include buttonGlyphOverride($html-entity-fixme);
+			}
+			&.action_history {
+				@include buttonGlyphOverride($html-entity-fixme);
+			}
+			&.action_delete {
+				@include buttonGlyphOverride($html-entity-delete);
+			}
+		}
+	}
+
+	.field_REPORTER {
+		a {
+			@include buttonBase;
+			@include buttonStyleEditGlyph();
+		}
+	}
+
+	div.people_group,
+	div.disposition_group {
+		display: inline-block;
+		vertical-align: top;
+		min-width: 400px;
+		max-width: 42%;
+		margin-right: 15px;
+	}
+
+	div.issue_field {
+		display: table-row;
+
+		label.field_name {
+			display: table-cell;
+			white-space: nowrap;
+			padding: 3px;
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.field_value {
+			display: table-cell;
+			padding: 3px;
+		}
+	}
+
+	.problem_group {
+		div.issue_field {
+			display: block;
+			margin-top: 10px;
+
+			//fixme get classes added
+			.field_value,
+			&.field_ADDITIONALINFORMATION > div,
+			&.field_DESCRIPTION > div {
+				display: block;
+				margin-left: 30px;
+				width: 80%;
+			}
+
+			&.field_DESCRIPTION > div {
+				padding: 10px;
+				border: 1px solid $color-light-grey;
+				background-color: $color-smokey-white;
+				max-height: 500px;
+				overflow-y: auto;
+			}
+		}
+
+		.instructions {
+			@include style-message-info;
+			display: block;
+			margin: 5px 0;
+			margin-left: 30px;
+			width: 80%;
+
+			//really don't want to do this but need to since I won't change HTML til later
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	.add_note {
+		label {
+			padding: 3px;
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.note_content > div,
+		.file_upload .multi_file_upload {
+			margin: 5px 0;
+			margin-left: 30px;
+			width: 80%;
+		}
+	}
+}
+
+div.reply_note_component {
+	@include style-inline-box();
+	margin: 10px;
+
+	.reply_note_title {
+		@include style-h3;
+		margin: 0;
+	}
+
+	label {
+		display: block;
+	}
+
+	//fixme have to override since i dont have classes to tell me enough
+	.add_note {
+		.note_content > div,
+		.file_upload .multi_file_upload {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	.fields,
+	.file_upload,
+	.required_permission,
+	.field_editor {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 10px;
+	}
+
+	.fields {
+		margin-right: 0;
+	}
+
+	.field_editor {
+		select {
+			max-width: 200px;
+		}
+	}
+}
+
+div.issue_add_note_component {
+	border: 1px solid $color-cloud-grey;
+	margin: 15px 0;
+	padding: 10px;
+	position: relative;
+
+	.add_note_title {
+		margin: 0;
+	}
+
+	label {
+		@include style-form-label;
+		display: block;
+	}
+
+	.note_content {
+		margin-bottom: 10px;
+	}
+
+	//fixme have to override since i dont have classes to tell me enough
+	.add_note {
+		.note_content > div,
+		.file_upload .multi_file_upload {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	.fields,
+	.file_upload,
+	.required_permission,
+	.field_editor {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 10px;
+	}
+
+	.fields {
+		margin-right: 0;
+	}
+
+	.field_editor {
+		select {
+			max-width: 200px;
+		}
+	}
+
+	.note-actions {
+		margin-top: 10px;
+
+		.btn {
+			&.submit_btn {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+		}
+	}
+}
