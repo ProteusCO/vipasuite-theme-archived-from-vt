@@ -15,10 +15,11 @@
 	.selector {
 		display: none;
 		position: absolute;
+		z-index: 5000;
 		left: 100%;
-		top: 0;
+		top: -10px;
+		margin-left: 5px;
 		width: 350px;
-		margin-left: 10px;
 		padding: 10px;
 		background-color: $color-white;
 		border: 1px solid $color-cloud-grey;
