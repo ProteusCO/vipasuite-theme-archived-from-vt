@@ -31,4 +31,10 @@
 	&.warning {
 		@include style-message-warning;
 	}
+
+	.miwt-collapsable-content {
+		@include style-popup-box();
+		overflow-y: auto;
+		max-height: 500px;
+	}
 }
