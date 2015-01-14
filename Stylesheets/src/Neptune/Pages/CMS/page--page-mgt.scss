@@ -888,3 +888,63 @@
 		}
 	}
 }
+
+
+
+.folder_editor {
+	@include style-inline-box();
+
+	.instructions {
+		@include style-message-warning;
+		margin-bottom: 10px;
+	}
+
+	.add_new_page {
+		margin: 10px 0 5px;
+
+		.btn {
+			&.action_add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
+
+	.new_page {
+		@include style-inline-box($bgcolor: $color-almost-white);
+		margin: 10px 0;
+
+
+		table.properties {
+			margin-bottom: 10px;
+
+			td {
+				padding: 5px 8px;
+			}
+
+			label {
+				@include style-form-label;
+			}
+		}
+
+		.actions {
+			.btn {
+				//fixme add class names
+				&:nth-child(1) {
+					@include buttonGlyphAdd($html-entity-success);
+				}
+				&.cancel {
+					@include buttonGlyphAdd($html-entity-cancel);
+				}
+			}
+		}
+	}
+
+	.existing_pages {
+		.result_actions {
+			.btn {
+				//fixme add class to btn
+				@include buttonGlyphAdd($html-entity-delete);
+			}
+		}
+	}
+}
