@@ -33,6 +33,10 @@ h3 {
 
 //click to edit
 .click_to_edit {
+	> label {
+		margin-right: 5px;
+	}
+
 	span.field {
 		@include style-form-input-readonly;
 		vertical-align: top;
