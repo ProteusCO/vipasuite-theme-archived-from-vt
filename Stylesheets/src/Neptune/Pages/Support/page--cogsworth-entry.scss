@@ -4,9 +4,9 @@
 
 	.get_to_work {
 		padding: 10px;
-		background-color: #f5f5f5;
+		background-color: $color-almost-white;
 		margin: 20px 0 0;
-		border: 1px solid #d0d0d0;
+		border: 1px solid $color-lighter-grey;
 	}
 
 	.time_entry_component {
@@ -35,7 +35,7 @@
 
 	a.project_link {
 		text-decoration: none;
-		color: #333;
+		color: $color-charcoal;
 		display: inline-block;
 		line-height: 16px;
 
@@ -67,7 +67,7 @@
 		&:hover {
 			border-color: #ccc;
 			box-shadow: 1px 1px 3px rgba(100,100,100,0.3);
-			background-color: #fcfcfc;
+			background-color: $color-smokey-white;
 
 			> .header {
 				.extras {
@@ -108,8 +108,8 @@
 			}
 
 			.site-name {
-				background-color: #f5f5f5;
-				border: 1px solid #eaeaea;
+				background-color: $color-almost-white;
+				border: 1px solid $color-cloud-grey;
 				padding: 5px 10px;
 				vertical-align: middle;
 				display: inline-block;
@@ -123,7 +123,7 @@
 
 				a {
 					text-decoration: none;
-					color: #333;
+					color: $color-charcoal;
 
 					&:hover {
 						text-decoration: underline;
@@ -169,21 +169,9 @@
 
 			a.add_button {
 				text-decoration: none;
-				color: #333;
+				color: $color-charcoal;
 
-				&:before {
-					content: " ";
-					text-align: left;
-					display: inline-block;
-					vertical-align: top;
-					width: 16px;
-					height: 16px;
-					margin-right: 2px;
-					background-position: 0 0;
-					background-repeat: no-repeat;
-					background-color: transparent;
-					background-image: url(/theme/Actions/16/add.png);
-				}
+				@include buttonGlyphAdd($html-entity-add);
 			}
 		}
 
@@ -213,7 +201,7 @@
 		.time_entry {
 			&:hover {
 				.time_entry_part {
-					background-color: #ffffdd;
+					background-color: $color-cornsilk;
 				}
 			}
 
@@ -223,39 +211,31 @@
 			}
 
 			a.miwt_submit {
-				display: inline-block;
-				vertical-align: middle;
-				width: 16px;
-				height: 16px;
-				text-indent: -4000em;
-				background-position: 0 0;
-				background-repeat: no-repeat;
-				background-color: transparent;
-				margin: 0 3px;
+				@include buttonGlyphOnly($html-entity-nbsp);
 			}
 
 			a.edit_button {
-				background-image: url(/resources/all/docroot/cms/icons/x16/pencil_icon.png);
+				@include buttonStyleEditGlyph();
 			}
 
 			a.delete_button {
-				background-image: url(/theme/Support/16/delete.png);
+				@include buttonStyleDeleteGlyph();
 			}
 
 			a.save_button {
-				background-image: url(/theme/Actions/16/disk_save.png);
+				@include buttonGlyphOverride($html-entity-success);
 			}
 
 			a.cancel_button {
-				background-image: url(/theme/Actions/16/cancel.png);
+				@include buttonGlyphOverride($html-entity-cancel);
 			}
 
 			a.add_button {
-				background-image: url(/theme/Actions/16/add.png);
+				@include buttonStyleAddGlyph();
 			}
 
 			a.start_button {
-				background-image: url(/theme/Actions/16/start-timer.png?1);
+				@include buttonGlyphOverride($html-entity-fixme);
 			}
 
 			.time_range_entry {
@@ -303,7 +283,7 @@
 			}
 
 			.time_range_duration {
-				border-top: 1px solid #ccc;
+				border-top: 1px solid $color-light-grey;
 				padding: 5px 5px;
 
 				label {
@@ -332,9 +312,9 @@
 
 		.header_part {
 			font-size: 13px;
-			border-bottom: 1px solid #aaa;
+			border-bottom: 1px solid $color-grey;
 			font-weight: bold;
-			color: #333;
+			color: $color-charcoal;
 
 			&.actions {
 				text-align: right;
@@ -342,8 +322,8 @@
 		}
 
 		.time_entry_part {
-			border-bottom: 1px dotted #d0d0d0;
-			color: #777;
+			border-bottom: 1px dotted $color-light-grey;
+			color: $color-darker-grey;
 
 			&.date {
 				width: 120px;
@@ -365,7 +345,7 @@
 		select,
 		textarea,
 		input {
-			border: 1px solid #d0d0d0;
+			border: 1px solid $color-light-grey;
 			padding: 5px;
 			margin: 0;
 		}
@@ -403,7 +383,7 @@
 	.select2-container .select2-choice  {
 		height: 28px;
 		line-height: 30px;
-		border: 1px solid #d0d0d0;
+		border: 1px solid $color-light-grey;
 		border-radius: 3px;
 	}
 
@@ -412,7 +392,7 @@
 		border-radius: 0 4px 4px 0;
 		background: none;
 		filter: none;
-		border-left: 1px solid #c7c7c7;
+		border-left: 1px solid $color-light-grey;
 	}
 
 	.select2-dropdown-open .select2-choice {
@@ -421,7 +401,7 @@
 	}
 
 	.select2-drop-active {
-		border: 1px solid #c7c7c7;
+		border: 1px solid $color-light-grey;
 	}
 
 	.select2-results {
@@ -430,7 +410,7 @@
 	}
 
 	.select2-results li + li {
-		border-top: 1px solid #c7c7c7;
+		border-top: 1px solid $color-light-grey;
 	}
 
 	.select2-results .select2-result-label {
@@ -438,7 +418,7 @@
 	}
 
 	.select2-results .select2-highlighted {
-		background-color: #046380;
+		background-color: $color-blue;
 	}
 
 	.select2-search {
@@ -447,7 +427,7 @@
 
 	.select2-container-active .select2-choice,
 	.select2-container-active .select2-choices {
-		border: 1px solid #5897fb;
+		border: 1px solid $color-blue;
 		outline: -webkit-focus-ring-color auto 5px;
 		box-shadow: none;
 	}
