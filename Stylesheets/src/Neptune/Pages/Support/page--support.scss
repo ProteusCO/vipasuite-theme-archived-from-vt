@@ -99,6 +99,16 @@
 	}
 }
 
+.search_bar {
+	.constraint {
+		label {
+			display: block;
+			margin-right: 0;
+			margin-bottom: 5px;
+		}
+	}
+}
+
 .search_results {
 	> tbody {
 		> tr > td {
