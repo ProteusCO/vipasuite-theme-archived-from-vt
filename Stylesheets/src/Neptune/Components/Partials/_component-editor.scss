@@ -327,4 +327,78 @@
 			}
 		}
 	}
+
+	&.library_editor {
+		.miwt-form & {
+			@include style-inline-box();
+		}
+
+		.editor_title {
+			@include style-h2;
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		.file_editor {
+			> .title {
+				@include style-h3;
+				display: block;
+				margin: 15px 0 5px;
+			}
+
+			> .help-point.disabled {
+				display: none;
+			}
+		}
+
+		div.prop {
+			margin: 5px 0;
+		}
+
+		.prop {
+
+			&.description {
+				margin-lefT: 10px;
+			}
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+
+		.btn {
+			//fixme add classes to buttons
+			&.test_button {
+				@include buttonGlyphAdd($html-entity-play);
+				margin-left: 2px;
+			}
+		}
+
+		.file.field {
+			.actions {
+				margin-left: 5px;
+			}
+		}
+
+		.file_editor_controls {
+			margin: 10px 0;
+			text-align: center;
+
+			.btn {
+				&.action_save {
+					@include buttonGlyphAdd($html-entity-success);
+					margin-left: 10px;
+				}
+			}
+		}
+
+		.version_table {
+			.title {
+				@include style-h3;
+				display: block;
+				margin-top: 15px;
+			}
+		}
+	}
 }
