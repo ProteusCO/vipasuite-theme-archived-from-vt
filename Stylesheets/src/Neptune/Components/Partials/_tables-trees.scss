@@ -32,6 +32,18 @@
 		@include style-table-data-row;
 	}
 
+	tr.dnd-source {
+		td.first-column {
+			padding: 5px 8px;
+		}
+
+		&:hover {
+			td.first-column {
+				background-image: none;
+			}
+		}
+	}
+
 	.parent-sibling-following,
 	.last-sibling,
 	.sibling-following {
@@ -47,6 +59,10 @@
 		background-position: 50% 0;
 		border: 0 none;
 		padding: 0;
+	}
+
+	td.first {
+		width: 1px;
 	}
 
 	.last-sibling,

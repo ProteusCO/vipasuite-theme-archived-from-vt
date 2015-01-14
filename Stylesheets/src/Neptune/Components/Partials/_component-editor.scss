@@ -16,9 +16,51 @@
 	.editor {
 		.common_view {
 			background-color: $color-cloud-grey;
-			border-bottom: 2px solid $color-lighter-grey;
+			border-bottom: 1px solid $color-lighter-grey;
 			padding: 10px;
 			margin: 0;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			.workflow_state {
+				margin-left: 10px;
+
+				.separator {
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.editor_actions {
+			span.help-point {
+				margin-right: 5px;
+				font-size: 12px;
+				width: auto;
+				height: auto;
+
+				&.disabled {
+					display: none;
+				}
+
+				a {
+					padding: 5px 8px;
+					display: block;
+					font-family: $font-open-sans-semi-bold;
+				}
+			}
+
+			.btn {
+				&.action_save,
+				&.action_save_exit {
+					@include buttonGlyphAdd($html-entity-success);
+				}
+				&.action_cancel {
+					@include buttonGlyphAdd($html-entity-cancel);
+				}
+			}
 		}
 
 		.menu_pe_options {
@@ -58,6 +100,92 @@
 					background: $color-lighter-grey;
 					border-color: $color-darker-grey;
 				}
+			}
+		}
+
+		.pe_option_view {
+			margin: -1px -10px -10px;
+			padding: 10px;
+			background-color: $color-smokey-white;
+			border-top: 1px solid $color-light-grey;
+
+			.css {
+				.prop {
+					margin-right: 10px;
+				}
+			}
+
+			.breadcrumb {
+				@include resetMenu;
+
+				li {
+					&.be {
+						display: inline-block;
+						margin: 2px 4px;
+					}
+					&:after {
+						content: $html-entity-rarr;
+						padding-left: 8px;
+					}
+					&.last:after {
+						content: "";
+						padding-left: 0;
+					}
+				}
+
+				a {
+					text-decoration:none;
+				}
+				.last span {
+					font-family: $font-open-sans-bold;
+				}
+			}
+			/* Visibility Conditions */
+			div.visibility_builtin {
+				position: relative;
+
+				div.vc_editor {
+					padding: 15px 0;
+				}
+				div.configuration_description {
+					clear: both;
+					padding-top: 10px;
+					margin-top: 10px;
+					border-top: 1px solid $color-light-grey;
+
+					> h3 {
+						margin: 0 0 5px;
+					}
+				}
+				.standard_props span.prop {
+					display: block;
+					margin: 5px 0;
+				}
+
+				.btn {
+					&.edit {
+						@include buttonStyleEditGlyph();
+					}
+					//fixme fix class name
+					&.remove {
+						@include buttonStyleDeleteGlyph();
+					}
+				}
+			}
+			.pg_condition_editor {
+				select.labels,
+				select.principal_groups {
+					max-width: 35%;
+				}
+			}
+			.logic_editor div.add > a.menu_item {
+				@include buttonBase;
+				@include buttonGlyphAdd($html-entity-add);
+			}
+			.lc_editor-con span.close_button {
+				display: inline-block;
+				margin-bottom: 15px;
+				padding-left: 5px;
 			}
 		}
 
@@ -104,6 +232,51 @@
 		.current_version {
 			font-weight: normal;
 			font-family: $font-open-sans-bold;
+		}
+	}
+}
+
+.editor {
+	&.MenuBean_editor {
+		table.menu_editor {
+			width: 100%;
+		}
+
+		.sorting {
+			margin-left: 10px;
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+			}
+		}
+
+		.action-column {
+			.btn {
+				&.action_addchild,
+				&.action_addsibling {
+					@include buttonStyleSmall;
+					@include buttonGlyphAdd($html-entity-add);
+				}
+				&.edit {
+					@include buttonStyleEditGlyph();
+					margin-left: 10px;
+				}
+				&.remove {
+					@include buttonStyleRemoveGlyph();
+				}
+				&.action-top {
+					@include buttonGlyphOverride($html-entity-move-top);
+				}
+				&.action-up {
+					@include buttonGlyphOverride($html-entity-move-up);
+				}
+				&.action-down {
+					@include buttonGlyphOverride($html-entity-move-down);
+				}
+				&.action-bottom {
+					@include buttonGlyphOverride($html-entity-move-bottom);
+				}
+
+			}
 		}
 	}
 }
