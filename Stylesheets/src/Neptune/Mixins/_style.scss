@@ -233,8 +233,8 @@
 	@include box-shadow(3px 3px 10px transparentize($color-black, 0.55));
 }
 
-@mixin style-inline-box($padding: 15px) {
-	background-color: $color-white;
+@mixin style-inline-box($padding: 15px, $bgcolor: $color-white) {
+	background-color: $bgcolor;
 	border: 1px solid $color-cloud-grey;
 	padding: $padding;
 }

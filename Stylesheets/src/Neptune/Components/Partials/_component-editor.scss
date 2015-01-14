@@ -8,15 +8,14 @@
 .miwt-form {
 
 	div.editor {
-		background-color: $color-white;
 		padding: 0;
-		border: 1px solid $color-lighter-grey;
 	}
 
 	.editor {
 		.common_view {
 			background-color: $color-cloud-grey;
-			border-bottom: 1px solid $color-lighter-grey;
+			border: 1px solid $color-lighter-grey;
+			border-bottom-color: $color-lighter-grey;
 			padding: 10px;
 			margin: 0;
 
@@ -189,8 +188,7 @@
 			}
 		}
 
-		.editor_tabs,
-		.editor_content {
+		.editor_tabs {
 			padding: 0 15px;
 			margin: 15px 0;
 		}
@@ -198,7 +196,9 @@
 		div.content_history {
 			padding: 10px;
 			margin: 0;
-			border-top: 1px solid $color-cloud-grey;
+			border: 1px solid $color-cloud-grey;
+			border-top: 0 none;
+			background-color: $color-white;
 
 			.heading {
 				margin-right: 10px;
@@ -232,6 +232,54 @@
 		.current_version {
 			font-weight: normal;
 			font-family: $font-open-sans-bold;
+		}
+	}
+}
+
+.editor_content {
+	background-color: $color-white;
+	border: 1px solid $color-lighter-grey;
+	border-top: 0 none;
+	padding: 15px;
+
+	.prop {
+		+ .prop {
+			margin-top: 5px;
+		}
+
+		label {
+			font-family: $font-open-sans-semi-bold;
+			margin-right: 5px;
+
+			&.tbl {
+				display: block;
+				margin-right: 0;
+				margin-bottom: 5px;
+			}
+		}
+
+		.ctb {
+			label {
+				display: inline;
+				margin-right: 5px;
+				margin-bottom: 0;
+			}
+		}
+
+		@include textLikeInputs {
+			width: 300px;
+		}
+	}
+
+	.instructions {
+		@include style-message-warning;
+		margin: 10px 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:first-child {
+			margin-top: 0;
 		}
 	}
 }
