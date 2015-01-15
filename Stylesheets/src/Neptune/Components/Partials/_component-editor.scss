@@ -410,5 +410,18 @@
 				margin-top: 15px;
 			}
 		}
+
+		.selected_sites {
+			caption {
+				@include style-h3;
+				text-align: left;
+				margin-bottom: 5px;
+			}
+
+		}
+
+		.pager-selected_sites + .instructions {
+			@include style-message-warning;
+		}
 	}
 }
