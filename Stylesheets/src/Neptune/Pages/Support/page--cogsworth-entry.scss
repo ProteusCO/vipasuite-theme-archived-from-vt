@@ -26,7 +26,7 @@
 				min-width: 200px;
 			}
 
-			.search_button {
+			.search {
 				float: right;
 				margin-right: 10px;
 			}
@@ -96,6 +96,8 @@
 			.header_title {
 				display: inline-block;
 				vertical-align: middle;
+				font-family: $font-open-sans-semi-bold;
+				margin: 0;
 			}
 
 			.extras {
@@ -108,6 +110,7 @@
 			}
 
 			.site-name {
+				font-size: 12px;
 				background-color: $color-almost-white;
 				border: 1px solid $color-cloud-grey;
 				padding: 5px 10px;
@@ -167,10 +170,8 @@
 			opacity: 0;
 			margin: 5px 0;
 
-			a.add_button {
-				text-decoration: none;
-				color: $color-charcoal;
-
+			a.add {
+				@include buttonBase;
 				@include buttonGlyphAdd($html-entity-add);
 			}
 		}
@@ -194,7 +195,7 @@
 		.header_part,
 		.time_entry_part {
 			display: table-cell;
-			vertical-align: top;
+			vertical-align: middle;
 			padding: 5px 10px;
 		}
 
@@ -208,34 +209,35 @@
 			.actions {
 				white-space: nowrap;
 				opacity: 0.3;
+
 			}
 
-			a.miwt_submit {
-				@include buttonGlyphOnly($html-entity-nbsp);
-			}
+			a {
+				@include buttonBase;
+				@include buttonGlyphOnly($html-entity-nbsp, $size: 20px);
 
-			a.edit_button {
-				@include buttonStyleEditGlyph();
-			}
+				+ a {
+					margin-left: 5px;
+				}
 
-			a.delete_button {
-				@include buttonStyleDeleteGlyph();
-			}
-
-			a.save_button {
-				@include buttonGlyphOverride($html-entity-success);
-			}
-
-			a.cancel_button {
-				@include buttonGlyphOverride($html-entity-cancel);
-			}
-
-			a.add_button {
-				@include buttonStyleAddGlyph();
-			}
-
-			a.start_button {
-				@include buttonGlyphOverride($html-entity-fixme);
+				&.edit {
+					@include buttonStyleEditGlyph();
+				}
+				&.delete {
+					@include buttonStyleDeleteGlyph();
+				}
+				&.save {
+					@include buttonGlyphOverride($html-entity-success, $color: $color-dark-green);
+				}
+				&.cancel {
+					@include buttonGlyphOverride($html-entity-cancel);
+				}
+				&.add {
+					@include buttonStyleAddGlyph();
+				}
+				&.start {
+					@include buttonGlyphOverride($html-entity-fixme);
+				}
 			}
 
 			.time_range_entry {
@@ -313,7 +315,7 @@
 		.header_part {
 			font-size: 13px;
 			border-bottom: 1px solid $color-grey;
-			font-weight: bold;
+			font-family: $font-open-sans-semi-bold;
 			color: $color-charcoal;
 
 			&.actions {
