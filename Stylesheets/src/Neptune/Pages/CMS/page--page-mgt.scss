@@ -1,5 +1,7 @@
 @import "../../Config/base-import";
 
+@import "../../Components/Partials/file-editor";
+
 .pagemanagement {
 	.workspace {
 		width: 100%;
@@ -652,29 +654,6 @@
 		> .nde_editor_Title_Editor,
 		> .title {
 			@include style-h2;
-		}
-	}
-
-	.file_editor_title {
-		margin-right: 5px;
-	}
-
-	.file_editor_controls {
-		text-align: center;
-		margin: 10px 0;
-
-		.btn {
-
-			&.action_save,
-			&.action_save_exit {
-				@include buttonGlyphAdd($html-entity-success);
-			}
-			&.action_save {
-				margin-left: 5px;
-			}
-			&.action_exit {
-				@include buttonGlyphAdd($html-entity-cancel);
-			}
 		}
 	}
 
