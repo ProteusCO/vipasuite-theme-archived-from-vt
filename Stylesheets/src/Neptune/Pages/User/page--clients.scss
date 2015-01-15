@@ -1,0 +1,557 @@
+@import "../../Config/base-import";
+
+@import "../../Components/Partials/file-editor";
+
+//fixme update UIs to not use this
+.desktop_component {
+	.desktop_navigation_buttons,
+	.desktop_navigation_button {
+		display: none;
+	}
+
+	.desktop_navigation_area {
+		@include style-inline-box();
+	}
+
+	.search_results {
+		.btn {
+			&.view {
+				@include buttonGlyphOnly($html-entity-view);
+			}
+		}
+	}
+
+	.desktop_breadcrumbs {
+		margin: 15px 0;
+
+		.desktop_breadcrumb {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 10px;
+			background-color: $color-almost-white;
+			border: 1px solid $color-cloud-grey;
+			font-family: $font-open-sans-semi-bold;
+			padding: 5px;
+
+			&.desktop_breadcrumb_active {
+				border-color: $color-lighter-grey;
+				background-color: $color-white;
+				@include box-shadow(0 0 2px transparentize($color-black, 0.8));
+			}
+
+			.btn {
+				&.close_button {
+					@include buttonStyleCloseGlyph();
+					margin-right: 5px;
+				}
+			}
+
+
+			a.breadcrumb_node_button {
+				text-decoration: none;
+				color: $color-blue;
+				font-size: 12px;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	//fixme make this not a fieldset
+	.desktop {
+		border: 0 none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.desktop_component {
+	.help-point {
+		&.administration-client,
+		&.administration-role,
+		&.administration-user {
+			float: right;
+			margin-bottom: 5px;
+		}
+	}
+
+	.tab-content {
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		//general tab
+		> .general {
+			label {
+				width: 130px;
+				display: inline-block;
+			}
+
+			.client_name,
+			.client_programmaticname,
+			.client_description {
+				margin: 5px 0;
+			}
+
+			> .actions {
+				margin-top: 15px;
+			}
+		}
+
+		//sites tab
+		> .sites {
+			> .actions {
+				margin-bottom: 5px;
+			}
+		}
+
+		//issue tracker tab
+		> .projects {
+			> .actions {
+				margin-bottom: 5px;
+			}
+
+			> .heading {
+				@include style-h3;
+				display: block;
+				margin: 15px 0 5px;
+			}
+		}
+
+		//roles tab
+		> .roles {
+			> .actions {
+				margin-bottom: 5px;
+			}
+		}
+
+		//stores tab
+		> .stores {
+			> .actions {
+				margin-bottom: 5px;
+			}
+
+			> .stores {
+				> .heading {
+					@include style-h3;
+					display: block;
+					margin: 15px 0 5px;
+				}
+			}
+		}
+
+		//business processes tab
+		> .businessprocesses {
+			> .actions {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.desktop {
+
+		//create site UI off the sites tab
+		//fixme update html
+		> .createsite {
+			@include style-inline-box();
+
+			.url,
+			.description {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 100px;
+					display: inline-block;
+				}
+
+				.example {
+					margin-left: 100px;
+					font-family: $font-open-sans-italic;
+				}
+			}
+
+			> .heading {
+				@include style-h3;
+				display: block;
+				margin: 15px 0 5px;
+			}
+
+			> .search {
+				> .heading {
+					@include style-h4;
+					display: block;
+					margin: 5px 0;
+				}
+
+				> .constraints,
+				> .actions {
+					display: inline-block;
+					margin-right: 5px;
+				}
+
+				> .search_table {
+					margin: 5px 0;
+				}
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create project UI off projects tab
+		> .createproject {
+			@include style-inline-box();
+
+			> .name,
+			> .description,
+			> .issuetrackername,
+			> .issuename {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 150px;
+					display: inline-block;
+				}
+			}
+
+			//fixme add a class for this
+			> .ctb {
+				margin: 5px 0;
+				margin-left: 150px;
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//addrole UI off roles tab
+		div.addrole {
+			@include style-inline-box();
+
+			> .existing_roles {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+
+			> .roles {
+				.role {
+					margin: 5px 0;
+
+					//fixme add btn class
+					a.remove_role {
+						@include buttonBase;
+						@include buttonStyleRemoveGlyph();
+					}
+				}
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create role UI off roles tab
+		div.createrole {
+			@include style-inline-box();
+
+			.name,
+			.pname,
+			.description,
+			.client,
+			.timeout {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 160px;
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 10px;
+				}
+			}
+
+			//fixme add a class for this
+			.enabled {
+				margin: 5px 0;
+				margin-left: 170px;
+			}
+
+			.actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create store UI off store tab
+		div.createstore {
+			@include style-inline-box();
+
+			.name {
+				label {
+					@include style-form-label;
+					margin-right: 10px;
+				}
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create business process definition off business process tab
+		div.createbpd,
+		> .bpddetails {
+			@include style-inline-box();
+
+			.top_buttons {
+				display: none;
+			}
+
+			.bottom_buttons {
+				margin-top: 10px;
+			}
+
+			.prop,
+			.controller {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 160px;
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 10px;
+				}
+			}
+
+			.pname {
+				.btn {
+					margin-left: 5px;
+				}
+			}
+
+			.export_time {
+				margin-left: 170px;
+
+				.btn {
+					margin-left: 5px;
+				}
+			}
+
+			.controller {
+				//fixme get classes
+				> a {
+					@include buttonBase;
+					margin-left: 170px;
+					margin-top: 15px;
+					margin-bottom: 5px;
+				}
+			}
+
+			.sub_form {
+				.status {
+					> table,
+					> .ctb,
+					> .actions {
+						float: left;
+						margin-right: 10px;
+					}
+
+					> .ctb {
+						display: block;
+						margin-top: 25px;
+					}
+
+					.actions {
+						margin-top: 18px;
+
+						a {
+							@include buttonBase;
+							margin-right: 2px;
+						}
+					}
+				}
+			}
+
+			.add_library {
+				.templates {
+					margin: 5px 0;
+
+					label {
+						@include style-form-label;
+						margin-right: 10px;
+						width: 160px;
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+		div.createbpd {
+			.library_editor {
+				border: 0 none;
+				padding: 0;
+
+				label {
+					display: inline;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		//bpd details tab
+		> .bpddetails {
+			@include style-inline-box();
+
+			.summary {
+
+				> .btn {
+					&.delete {
+						@include buttonGlyphAdd($html-entity-delete);
+					}
+				}
+
+				//fixme add btn class
+				> a.edit {
+					@include buttonBase;
+					@include buttonGlyphAdd($html-entity-edit);
+					margin-left: 2px;
+				}
+
+				> .name,
+				> .programmatic_identifier,
+				> .description,
+				> .library_form {
+					margin: 10px 0;
+
+					label {
+						width: 270px;
+						display: inline-block;
+						vertical-align: top;
+						margin-right: 10px;
+					}
+				}
+
+				.library_selector {
+					display: block;
+					margin-bottom: 10px;
+				}
+
+				.parameters {
+					@include style-inline-box();
+					display: inline-block;
+					margin-left: 30px;
+
+					label {
+						width: 200px;
+					}
+				}
+			}
+
+			.resource_editor {
+				> .heading {
+					@include style-h2;
+				}
+
+				> .name,
+				> .description {
+					margin: 5px 0;
+
+					label {
+						@include style-form-label;
+						width: 160px;
+						display: inline-block;
+						margin-right: 10px;
+					}
+				}
+
+				> .resource_form {
+					margin: 20px 0;
+
+					.actions {
+						margin-left: 5px;
+					}
+				}
+
+				> .actions {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		.operational_report_listing {
+			> .btn.add {
+				margin-bottom: 5px;
+			}
+		}
+
+		.security {
+			//fixme add btn class
+			> a.edit {
+				@include buttonBase;
+			}
+		}
+
+		//fixme fix this crap html
+		> .principaldetail {
+			@include style-inline-box();
+
+			.name,
+			.pname,
+			.description,
+			.client,
+			.timeout {
+				margin: 10px 0;
+
+				label {
+					@include style-form-label;
+					width: 160px;
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 10px;
+				}
+			}
+
+			//fixme add a class for this
+			.enabled {
+				margin: 5px 0;
+				margin-left: 170px;
+			}
+
+			.actions {
+				margin-top: 10px;
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.help-point + .actions {
+				margin-top: 0;
+			}
+
+			.perm_groups {
+				margin-top: 10px;
+			}
+
+			.all_table_title,
+			.set_table_title {
+				@include style-h3;
+				margin-bottom: 5px;
+				display: block;
+			}
+		}
+	}
+
+}
