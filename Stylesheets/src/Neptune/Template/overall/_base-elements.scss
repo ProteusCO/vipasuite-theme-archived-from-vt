@@ -191,8 +191,19 @@ legend {
 		display: block;
 		position: absolute;
 		max-height: 350px;
+		max-width: 350px;
 		overflow-y: auto;
 		min-width: 200px;
+	}
+}
 
+.miwt-collapsable[data-disposition="float"] {
+	.miwt-collapsable-content {
+		@include style-popup-box();
+		display: block;
+		max-height: 350px;
+		max-width: 350px;
+		overflow-y: auto;
+		min-width: 200px;
 	}
 }
