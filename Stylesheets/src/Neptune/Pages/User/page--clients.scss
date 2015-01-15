@@ -1,71 +1,7 @@
 @import "../../Config/base-import";
 
 @import "../../Components/Partials/file-editor";
-
-//fixme update UIs to not use this
-.desktop_component {
-	.desktop_navigation_buttons,
-	.desktop_navigation_button {
-		display: none;
-	}
-
-	.desktop_navigation_area {
-		@include style-inline-box();
-	}
-
-	.search_results {
-		.btn {
-			&.view {
-				@include buttonGlyphOnly($html-entity-view);
-			}
-		}
-	}
-
-	.desktop_breadcrumbs {
-		margin: 15px 0;
-
-		.desktop_breadcrumb {
-			display: inline-block;
-			vertical-align: top;
-			margin-right: 10px;
-			background-color: $color-almost-white;
-			border: 1px solid $color-cloud-grey;
-			font-family: $font-open-sans-semi-bold;
-			padding: 5px;
-
-			&.desktop_breadcrumb_active {
-				border-color: $color-lighter-grey;
-				background-color: $color-white;
-				@include box-shadow(0 0 2px transparentize($color-black, 0.8));
-			}
-
-			.btn {
-				&.close_button {
-					@include buttonStyleCloseGlyph();
-					margin-right: 5px;
-				}
-			}
-
-
-			a.breadcrumb_node_button {
-				text-decoration: none;
-				color: $color-blue;
-				font-size: 12px;
-
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-	}
-
-	//fixme make this not a fieldset
-	.desktop {
-		border: 0 none;
-		margin: 0;
-		padding: 0;
-	}
-}
+@import "../../Components/Partials/desktop";
 
 .desktop_component {
 	.help-point {
