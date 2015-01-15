@@ -183,3 +183,16 @@ legend {
 		}
 	}
 }
+
+//truncating cell renderer for tables
+.truncating-renderer {
+	span.tc-long-text {
+		@include style-popup-box();
+		display: block;
+		position: absolute;
+		max-height: 350px;
+		overflow-y: auto;
+		min-width: 200px;
+
+	}
+}
