@@ -29,6 +29,15 @@
 				@include glyphAdd($html-entity-profile, 28px, $color-grey);
 			}
 		}
+
+		&.password,
+		&.verify-password {
+			.value:before {
+				position: absolute;
+				left: 7px;top: 4px;
+				@include glyphAdd($html-entity-lock, 28px, $color-grey);
+			}
+		}
 	}
 
 	@include textLikeInputs {
@@ -57,6 +66,20 @@
 		@include box-shadow(0 0 7px transparentize($color-dark-blue, 0.3));
 		font-size: 18px;
 		padding: 7px 50px;
+	}
+
+	&.password-reset {
+		.field {
+			&.username {
+				.value {
+					padding: 10px;
+					padding-left: 40px;
+					background-color: $color-light-grey;
+					display: block;
+					color: $color-darker-grey;
+				}
+			}
+		}
 	}
 }
 
