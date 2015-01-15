@@ -333,10 +333,20 @@
 			@include style-inline-box();
 		}
 
+		.editor_header {
+			.btn {
+				margin-left: 5px;
+			}
+		}
+
 		.editor_title {
 			@include style-h2;
-			display: block;
+			display: inline-block;
 			margin-bottom: 15px;
+		}
+
+		.editor_footer {
+			margin-top: 10px;
 		}
 
 		.file_editor {
