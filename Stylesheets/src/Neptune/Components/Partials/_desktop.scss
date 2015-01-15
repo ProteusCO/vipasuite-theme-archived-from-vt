@@ -16,6 +16,9 @@
 			&.view {
 				@include buttonGlyphOnly($html-entity-view);
 			}
+			&.copy {
+				@include buttonGlyphOnly($html-entity-copy);
+			}
 		}
 	}
 
