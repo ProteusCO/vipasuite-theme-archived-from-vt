@@ -122,14 +122,16 @@
 			margin-top: 3px;
 		}
 
-		.collapsible-control {
+		.collapsible-control,
+		.control {
 			background-color: $color-almost-white;
 			border: 1px solid $color-lighter-grey;
 			padding: 2px 5px;
 			@include clearfix;
 			cursor: pointer;
 
-			&.shown {
+			&.shown,
+			&.collapsible-control-show {
 				background-color: $color-dark-grey;
 				border-color: $color-darker-grey;
 				color: $color-white;
@@ -142,6 +144,16 @@
 
 		.collapsible-shown {
 			padding: 5px;
+		}
+	}
+
+	#information_cc {
+		.property {
+			margin: 5px 0;
+		}
+
+		ul {
+			margin: 5px 0;
 		}
 	}
 }
