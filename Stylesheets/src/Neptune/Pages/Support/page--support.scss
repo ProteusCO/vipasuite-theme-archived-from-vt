@@ -1,9 +1,38 @@
 @import "../../Config/base-import";
 
+$color-pending-bg: #e0f1fc;
+$color-pending-font: #1b6592;
+$color-acknowledged-bg: #d8d9da;
+$color-acknowledged-font: #484949;
+$color-assigned-bg: #fdae61;
+$color-assigned-font: #6a252c;
+$color-client-feedback-bg: #fb7c8a;
+$color-client-feedback-font: #6a252c;
+$color-client-review-bg: #4eaae2;
+$color-client-review-font: #0c3e5d;
+$color-resolved-bg: #abdda4;
+$color-resolved-font: #20601f;
+$color-work-order-bg: #fee08b;
+$color-work-order-font: #7d6318;
+
+@mixin legendStatusTableCell($color-font, $color-bg) {
+	border-color: $color-bg;
+	background-color: change_color($color-bg, $lightness: 97%);
+
+	.title {
+		background-color: $color-bg;
+		color: $color-font;
+	}
+}
+
 .support_welcome,
 .status_legend {
 	display: block;
 	margin-bottom: 10px;
+}
+
+.status_legend {
+	@include style-inline-box();
 }
 
 /*link lists */
@@ -48,53 +77,57 @@
 .status_legend {
 	h3 {
 		margin: 0;
-		padding: 5px 10px;
-		background-color: $color-bluegrey;
-		color: $color-white;
 	}
 
 	table {
 		width: 100%;
-		border: 1px solid $color-bluegrey;
+		border-spacing: 5px;
+		border-collapse: separate;
 
 		td {
-			padding: 5px 10px;
 			vertical-align: top;
 			font-size: 12px;
 			line-height: 1.2;
-
-			+ td {
-				border-left: 1px solid $color-grey;
-			}
+			border: 1px solid $color-grey;
+			background-color: $color-white;
 
 			&.status_pending {
-				background-color:#FFA0A0;
+				@include legendStatusTableCell($color-pending-font, $color-pending-bg);
 			}
 			&.status_feedback {
-				background-color:#FF50A8;
+				@include legendStatusTableCell($color-client-feedback-font, $color-client-feedback-bg);
 			}
 			&.status_review {
-				background-color:#CCAFB0;
+				@include legendStatusTableCell($color-client-review-font, $color-client-review-bg);
 			}
 			&.status_resolved {
-				background-color: #CED;
+				@include legendStatusTableCell($color-resolved-font, $color-resolved-bg);
 			}
 			&.status_assigned {
-				background-color:#C8C8FF;
+				@include legendStatusTableCell($color-assigned-font, $color-assigned-bg);
 			}
 			&.status_acknowledged {
-				background-color: #FFD850;
+				@include legendStatusTableCell($color-acknowledged-font, $color-acknowledged-bg);
 			}
 			&.status_wo {
-				background-color: #FFFFB0;
+				@include legendStatusTableCell($color-work-order-font, $color-work-order-bg);
 			}
-
 		}
 
 		.title {
 			display: block;
 			font-family: $font-open-sans-bold;
-			font-size: 14px;
+			font-size: 13px;
+			padding: 5px 10px 2px;
+			text-align: center;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+
+		.content {
+			display: block;
+			padding: 3px 10px 5px;
+			font-family: $font-open-sans-italic;
 		}
 	}
 }
@@ -114,13 +147,32 @@
 		> tr > td {
 			color: $color-charcoal;
 		}
-		> tr.status_new > td { background-color:#FFA0A0; }
-		> tr.status_feedback > td { background-color:#CCAFB0; }
-		> tr.status_resolved > td { background-color:#CED; }
-		> tr.status_assigned > td { background-color:#C8C8FF; }
-		> tr.status_pending > td { background-color: #FFD850; }
-		> tr.status_wo > td { background-color: #FFFFB0; }
-		> tr.status_client_feedback > td { background-color: #FF50A8; }
+		> tr.status_new > td { background-color: $color-pending-bg; }
+		> tr.status_feedback > td { background-color: $color-client-review-bg; }
+		> tr.status_resolved > td { background-color: $color-resolved-bg; }
+		> tr.status_assigned > td { background-color: $color-assigned-bg; }
+		> tr.status_pending > td { background-color: $color-acknowledged-bg; }
+		> tr.status_wo > td { background-color: $color-work-order-bg; }
+		> tr.status_client_feedback > td { background-color: $color-client-feedback-bg; }
+
+		td {
+			a {
+				color: $color-charcoal;
+				text-shadow: transparentize($color-white, 0.7);
+				font-family: $font-open-sans-semi-bold;
+
+				&:before {
+					@include glyphAdd($html-entity-view);
+					margin-right: 5px;
+				}
+
+				&:hover {
+					&:before {
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
 }
 
