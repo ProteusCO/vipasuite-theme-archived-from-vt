@@ -16,7 +16,7 @@ $footer-height: 55px;
 	bottom: 0;
 	width: $app-controls-width;
 	background-color: $color-dark-blue;
-	z-index: 10000;
+	z-index: 200;
 	@include box-shadow(0 0 5px transparentize($color-black, 0.7));
 }
 
