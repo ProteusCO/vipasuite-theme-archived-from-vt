@@ -1,0 +1,75 @@
+@import "../../Config/base-import";
+
+.label_management {
+	.search_results {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.assignment_button {
+				margin: 0 10px;
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+			&.remove {
+				@include buttonStyleRemoveGlyph();
+			}
+		}
+	}
+
+	.label_domains {
+		h3 {
+			margin: 0 0 10px;
+			float: left;
+		}
+	}
+
+	.property_editor {
+		h2 {
+			@include style-h3;
+			margin: 0 0 10px;
+		}
+
+		.prop {
+			label {
+				width: 160px;
+				vertical-align: top;
+			}
+		}
+	}
+
+	.domain-labels {
+		.actions-top {
+			display: none;
+		}
+
+		.actions-bottom {
+			margin-top: 10px;
+		}
+	}
+
+	.assignments {
+		.instructions {
+			@include style-message-warning;
+		}
+	}
+
+	.assignments_title {
+		float: left;
+		margin: 0 0 10px;
+	}
+
+	.selected_sites {
+		caption {
+			@include style-h4;
+			text-align: left;
+			margin-bottom: 5px;
+		}
+
+	}
+
+	.pager-selected_sites + .instructions {
+		@include style-message-warning;
+	}
+}
