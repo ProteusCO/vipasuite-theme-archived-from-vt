@@ -274,6 +274,17 @@
 				padding: 0 5px;
 				width: 100%;
 				font-size: 12px;
+
+				.name {
+					display: block;
+					font-family: $font-open-sans-semi-bold;
+				}
+
+				.type {
+					display: block;
+					font-size: 11px;
+					color: $color-darker-grey;
+				}
 			}
 
 			.help-con {
