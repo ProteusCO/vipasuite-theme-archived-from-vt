@@ -13,7 +13,7 @@
 	}
 }
 
-.message {
+div.message {
   @include style-message-info;
 
 	& + & {
