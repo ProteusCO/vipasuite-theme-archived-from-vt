@@ -179,7 +179,6 @@ legend {
 		&.open {
 			@include buttonBase;
 			@include buttonGlyphOnly($html-entity-calendar, $size: 24px);
-			margin-left: 4px;
 		}
 	}
 }
