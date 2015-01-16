@@ -65,7 +65,10 @@
 
 	function initApp() {
 		$('#l-nav').mCustomScrollbar({
-			scrollInertia: 0
+			scrollInertia: 0,
+			mouseWheel: {
+				scrollAmount: 100
+			}
 		});
 	}
 
