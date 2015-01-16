@@ -41,8 +41,6 @@
 }
 
 @mixin buttonGlyphAdd($html-entity, $size: 13px, $color: "", $spacing: 5px) {
-	white-space: nowrap;
-
 	&:before {
 		@include glyphAdd($html-entity, $size, $color);
 
@@ -93,6 +91,7 @@
 @mixin buttonBase() {
 	display: inline-block;
 	vertical-align: middle;
+	white-space: nowrap;
 	font-family: $font-open-sans-semi-bold;
 	font-size: 12px;
 	padding: 5px 8px;
