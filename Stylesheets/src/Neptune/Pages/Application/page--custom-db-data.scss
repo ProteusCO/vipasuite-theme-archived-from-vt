@@ -1,61 +1,95 @@
 @import "../../Config/base-import";
 
 @import "../../Components/Partials/table-row-editor";
-//
-//.help-point.disabled{display:none;}
-//span.title{
-//	display: block;
-//}
-//.prop label{
-//	display:block;
-//}
-//.prop label.tbl{
-//	display:inline;
-//}
-//div.prop{
-//	margin: .75em 0;
-//}
-//.columns_heading label.title{
-//	display: inline;
-//}
-///** Table Editor */
-//.script_selector label,
-//.script_selector div.scripts{
-//	float: left;
-//}
-//.script_selector div.scripts {
-//	text-indent: .25em;
-//}
-//.table_def_editor div.plugin{
-//	overflow: hidden;
-//}
-//.table_def_editor .import_operations div.richlist{
-//	text-indent: 2em;
-//}
-//.table_def_editor div.columns_heading{
-//	margin-top: 1em;
-//}
-//
-///** Import */
-//.table_data_mgt div.import{
-//	width: 50em;
-//	margin: 0 auto;
-//}
-//.import div.csv_headers {
-//	margin-bottom: 1em;
-//}
-//.import div.csv_header {
-//	text-indent: 2em;
-//	font: normal 1em/1.25 Courier;
-//	margin: .2em 0;
-//	text-decoration: underline;
-//}
-//.import label{
-//	display: inline-block;
-//	width: 8em;
-//}
-//.import_title,
-//.import div.actions,
-//.row_editor div.persistence_actions{
-//	margin:1em 0;
-//}
+
+.table_data_mgt {
+	> .search {
+		> .tables {
+			float: left;
+			margin-bottom: 20px;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			.btn {
+				@include buttonGlyphAdd($html-entity-refresh);
+			}
+		}
+
+		> .entity_actions {
+			.btn {
+				&.export_button {
+					@include buttonGlyphAdd($html-entity-download);
+				}
+				&.import_button {
+					@include buttonGlyphAdd($html-entity-upload);
+				}
+				&.add {
+					@include buttonGlyphAdd($html-entity-add);
+				}
+			}
+		}
+	}
+
+	//import UI
+	> .import {
+		.help-point.disabled {
+			display: none;
+		}
+
+		.import-title {
+			@include style-h2;
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		.csv-headers {
+			margin: 15px 0;
+		}
+		.csv-header {
+			background-color: $color-cloud-grey;
+			border: 1px solid $color-light-grey;
+			font-family: $font-monospace;
+			font-size: 12px;
+			margin: 10px 0;
+			padding: 10px;
+			white-space: pre;
+			overflow-x: auto;
+
+			+ .csv-header {
+				margin-top: 5px;
+			}
+		}
+		label {
+			@include style-form-label;
+			display: inline-block;
+			width: 150px;
+
+			&.tbl {
+				display: inline;
+				width: auto;
+				margin-right: 10px;
+			}
+		}
+
+		.prop {
+			margin: 10px 0;
+		}
+
+		> .actions {
+			margin-top: 15px;
+
+			.btn {
+				//fixme add class
+				&:nth-child(1) {
+					@include buttonGlyphAdd($html-entity-success);
+				}
+				&.cancel {
+					@include buttonGlyphAdd($html-entity-cancel);
+				}
+			}
+		}
+	}
+}
