@@ -424,4 +424,55 @@
 			@include style-message-warning;
 		}
 	}
+
+	&.Article_editor {
+		.main {
+			> .posttime,
+			> .withdrawtime,
+			> .article_heading {
+				margin: 10px 0;
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+
+			//optional properties tab
+			.optional_properties {
+				//fixme get class names added to all of this
+				> div,
+				> .file.field {
+					display: block;
+					margin: 5px 0;
+				}
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+
+				.file.field {
+					.actions {
+						margin-left: 5px;
+					}
+				}
+			}
+
+			//seo tab
+			.seo_metadata {
+				label {
+					width: 90px;
+					vertical-align: top;
+					display: inline-block;
+				}
+			}
+		}
+		//fixme fix classname
+		.ArticleBuilder-Label_Author,
+		.ArticleBuilder-Label_UpdateTime_Format,
+		.ArticleBuilder-Label_PostTime_Format {
+			margin-left: 15px;
+		}
+	}
 }
