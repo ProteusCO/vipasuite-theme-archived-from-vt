@@ -57,6 +57,10 @@
 		}
 	}
 
+	.name + .message {
+		padding-left: 0;
+	}
+
 	.name {
 		.prop {
 			display: inline-block;
