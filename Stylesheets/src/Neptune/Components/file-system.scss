@@ -96,10 +96,6 @@
 		}
 	}
 
-	.fse_details_title {
-		@include style-h3;
-	}
-
 	.file_info_label {
 		@include style-form-label;
 		padding-right: 15px;
@@ -132,14 +128,12 @@
 		}
 	}
 
-	div.fsmd_table,
-	div.version_table {
-		margin-top: 15px;
-
+	.fse_info {
 		.title {
-			@include style-form-label;
-			margin-bottom: 5px;
+			@include style-h3;
 			display: block;
+			margin-top: 15px;
+			margin-bottom: 5px;
 		}
 	}
 
