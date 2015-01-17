@@ -10,4 +10,4 @@ sass_dir = 'src'
 output_style = :expanded
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-line_comments = true
+line_comments = false
