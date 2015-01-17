@@ -213,3 +213,31 @@ legend {
 		min-width: 200px;
 	}
 }
+
+//miwt ajax loading box;
+body > div.miwt-ajax-progress {
+	@include style-popup-box();
+	@include border-radius(0);
+	min-height: 100px;
+
+	.label {
+		@include loading-circle-spinner;
+		font-size: 0;
+		top: 40%;
+	}
+
+	&:after {
+		content: "Loading, please wait...";
+		text-align: center;
+		font-family: $font-open-sans-semi-bold;
+		display: block;
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+	}
+
+	progress {
+		display: none;
+	}
+}
