@@ -2,6 +2,7 @@
 
 .site-locale {
 	margin: 5px 0;
+	min-height: 28px;
 	position: relative;
 
 	.current-selection {
@@ -10,6 +11,26 @@
 		background-color: $color-white;
 		padding: 5px;
 		display: block;
+
+		&::after {
+			@include glyphAdd($html-entity-arrow-right, $size: 20px, $color: $color-grey);
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 25px;
+			height: 28px;
+			line-height: 28px;
+			text-align: center;
+			border-left: 1px solid $color-lighter-grey;
+			background-color: $color-smokey-white;
+		}
+
+		&:hover::after {
+			color: $color-darker-grey;
+			background-color: $color-lighter-grey;
+			border-left-color: $color-light-grey;
+		}
 	}
 
 	.selector {
@@ -88,5 +109,15 @@
 
 	.actions {
 		text-align: right;
+
+		//fixme change these from inputs to buttons
+//		.btn {
+//			&.save {
+//				@include buttonGlyphAdd($html-entity-success);
+//			}
+//			&.cancel {
+//				@include buttonGlyphAdd($html-entity-cancel);
+//			}
+//		}
 	}
 }

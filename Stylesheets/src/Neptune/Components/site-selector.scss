@@ -13,6 +13,18 @@
 			a.hostname {
 				background-color: $color-light-grey;
 
+				&::after {
+					color: $color-dark-grey;
+					background-color: $color-light-grey;
+					border-left-color: $color-grey;
+				}
+
+				&:hover::after {
+					color: $color-dark-grey;
+					background-color: $color-light-grey;
+					border-left-color: $color-grey;
+				}
+
 				span.hostname {
 					color: $color-dark-grey;
 				}
@@ -63,10 +75,13 @@
 				line-height: 28px;
 				text-align: center;
 				border-left: 1px solid $color-lighter-grey;
+				background-color: $color-smokey-white;
 			}
 
 			&:hover::after {
-				color: $color-light-charcoal;
+				color: $color-darker-grey;
+				background-color: $color-lighter-grey;
+				border-left-color: $color-light-grey;
 			}
 		}
 
