@@ -65,7 +65,7 @@
 		init();
 	}
 
-	function initApp() {
+	function init() {
 		$appControlsCon = $('.e-app-controls');
 		$siteLocaleComponent = $appControlsCon.find('.site-locale');
 		$nav = $('.l-nav');
@@ -82,13 +82,9 @@
 		});
 	}
 
-	$(d).on('vs:init-menu', function() {
+	$(d).on('vs:init-controls', function() {
+		init();
 		new Menu('.primary-nav');
-	});
-
-	$(d).ready(function() {
-		initApp();
-		$(this).trigger('vs:init-menu'); //TODO move this to end of DOM;
 	});
 
 })(jQuery, window, document);
