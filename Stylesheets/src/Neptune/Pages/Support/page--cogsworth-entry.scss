@@ -26,7 +26,10 @@
 				min-width: 200px;
 			}
 
-			.search {
+			//fixme add btn class
+			a.search {
+				@include buttonBase;
+				@include buttonGlyphAdd($html-entity-search);
 				float: right;
 				margin-right: 10px;
 			}
