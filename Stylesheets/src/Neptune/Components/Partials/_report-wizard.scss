@@ -1,0 +1,101 @@
+@import "../../Config/base-import";
+
+//fixme fix tables
+.wizard_title {
+	@include style-h2;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.report_wizard {
+	.step_title {
+		@include style-h3;
+	}
+
+	.parameter_group {
+		margin-top: 5px;
+		padding: 10px;
+		background-color: $color-almost-white;
+
+		legend {
+			@include style-h4;
+		}
+	}
+
+	.parameter {
+		margin: 5px 0;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		span.val {
+			@include style-form-input-readonly;
+		}
+	}
+
+	.report_format_step {
+		.prop {
+			margin: 5px 0;
+		}
+
+		.close_question {
+			margin-top: 10px;
+		}
+	}
+
+	.report_schedule_step {
+		.notes {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.users_and_groups {
+		margin-top: 10px;
+
+		.users_title,
+		.groups_title {
+			@include style-h3;
+			display: block;
+			margin-top: 15px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		.constraints {
+			margin-bottom: 5px;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+
+		.pager-top {
+			display: none;
+		}
+
+		.btn {
+			&.add {
+				@include buttonStyleAddGlyph();
+			}
+			&.remove {
+				@include buttonStyleRemoveGlyph();
+			}
+		}
+	}
+
+	.procedure-navigation-bottom {
+		margin-top: 10px;
+
+		td {
+			padding-right: 2px;
+		}
+	}
+}
