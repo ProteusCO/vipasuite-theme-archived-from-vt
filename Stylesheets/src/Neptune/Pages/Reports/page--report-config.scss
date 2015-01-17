@@ -1,0 +1,13 @@
+@import "../../Config/base-import";
+
+@import "../../Components/Partials/report-wizard";
+
+.file_management_component {
+	.validation {
+		.title {
+			@include style-h2;
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+}
