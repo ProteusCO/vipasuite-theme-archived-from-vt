@@ -1,4 +1,7 @@
 (function($, w, d) {
+	var $appControlsCon, $siteLocaleComponent, $nav;
+
+	var CSS_CLASS_HAS_SITE_LOCALE = 'has-site-locale';
 
 	function Menu(target, opts) {
 		var $root;
@@ -62,9 +65,16 @@
 		init();
 	}
 
-
 	function initApp() {
-		$('#l-nav').mCustomScrollbar({
+		$appControlsCon = $('.e-app-controls');
+		$siteLocaleComponent = $appControlsCon.find('.site-locale');
+		$nav = $('.l-nav');
+
+		if ($siteLocaleComponent.length) {
+			$appControlsCon.addClass(CSS_CLASS_HAS_SITE_LOCALE);
+		}
+
+		$nav.mCustomScrollbar({
 			scrollInertia: 0,
 			mouseWheel: {
 				scrollAmount: 100
