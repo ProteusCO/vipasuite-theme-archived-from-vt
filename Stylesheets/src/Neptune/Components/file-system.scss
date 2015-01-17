@@ -37,6 +37,8 @@
 	}
 
 	.quick-actions {
+		white-space: nowrap;
+
 		.btn {
 			@include buttonGlyphOnly($html-entity-nbsp);
 
