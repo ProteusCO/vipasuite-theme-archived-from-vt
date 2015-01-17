@@ -9,11 +9,12 @@
 @include fontFace('GlyphLib', '/GlyphLib', 'neptune-glyph-font');
 
 @import "../Libs/jquery.mCustomScrollbar";
+@import "../Libs/select2";
 
 @import "overall/base-elements";
 @import "overall/structure";
 @import "overall/navigation";
-@import "overall/scrollbar-overrides";
+@import "overall/lib-overrides/scrollbar";
 
 @import "../Components/Partials/calendar-popup";
 @import "../Components/Partials/messages";
