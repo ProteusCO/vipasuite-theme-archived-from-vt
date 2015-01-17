@@ -555,7 +555,7 @@ div.note {
 .issue_view {
 	div.action_group {
 		float: right;
-		width: 120px;
+		width: 140px;
 
 		div.issue_actions {
 			border-top: 1px dashed $color-lighter-grey;
@@ -564,11 +564,14 @@ div.note {
 		}
 
 		.btn {
-			@include buttonGlyphAdd($html-entity-nbsp);
+			@include buttonGlyphAdd($html-entity-nbsp, $size: 16px);
 			display: block;
 			width: 100%;
 			margin: 2px 0;
 			text-align: left;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			font-size: 14px;
 
 			&.edit {
 				@include buttonGlyphOverride($html-entity-edit);
@@ -580,7 +583,7 @@ div.note {
 				@include buttonGlyphOverride($html-entity-success);
 			}
 			&.action_send_message {
-				@include buttonGlyphOverride($html-entity-fixme);
+				@include buttonGlyphOverride($html-entity-mail);
 			}
 			&.action_history {
 				@include buttonGlyphOverride($html-entity-fixme);
