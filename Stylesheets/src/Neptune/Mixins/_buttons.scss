@@ -18,8 +18,8 @@
 @mixin glyphAdd($html-entity, $size: 13px, $color: '') {
 	font-family: $font-glyph-lib;
 	content: $html-entity;
-	width: $size;
-	height: $size;
+//	width: $size;
+//	height: $size;
 	font-size: $size;
 
 	@if ($color != '') {
@@ -77,8 +77,8 @@
 			content: $html-entity;
 		}
 		@if ($size != '') {
-			width: $size;
-			height: $size;
+//			width: $size;
+//			height: $size;
 			font-size: $size;
 		}
 		@if ($color != '') {
