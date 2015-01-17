@@ -44,7 +44,7 @@ div.photos {
 		.edit {
 			//fixme add btn class
 			@include buttonBase;
-			@include buttonGlyphAdd($html-entity-fixme);
+			@include buttonGlyphAdd($html-entity-lock);
 			margin-left: 5px;
 		}
 	}
