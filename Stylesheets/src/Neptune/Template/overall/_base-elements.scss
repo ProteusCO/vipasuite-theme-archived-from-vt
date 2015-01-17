@@ -175,8 +175,8 @@ legend {
 
 //calendar input
 .miwt-calendar {
-	input.val {
-		width: 140px;
+	input {
+		width: 135px;
 	}
 
 	button {
@@ -239,5 +239,32 @@ body > div.miwt-ajax-progress {
 
 	progress {
 		display: none;
+	}
+}
+
+//label selector UI
+.label_selector_hc {
+	.label_selector {
+		> .actions {
+			text-align: right;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+
+		.search_results {
+			caption {
+				@include style-h4;
+				text-align: left;
+			}
+
+			.btn {
+				&.remove {
+					@include buttonStyleRemoveGlyph();
+				}
+			}
+		}
 	}
 }

@@ -197,13 +197,28 @@
 	font-family: $font-open-sans-semi-bold;
 }
 
-@mixin style-message($color-bg, $color-border, $color-text) {
+@mixin style-message($color-bg, $color-border, $color-text, $html-entity-icon: '') {
+	position: relative;
 	background-color: $color-bg;
 	border: 1px solid $color-border;
 	color: $color-text;
-	padding: 5px;
+	padding: 7px;
+	padding-left: 30px;
 	display: block;
 	font-family: $font-open-sans-semi-bold;
+
+	@if ($html-entity-icon != '') {
+		&:before {
+			@include glyphAdd($html-entity-icon, $size: 18px, $color: $color-text);
+			position: absolute;
+			left: 7px;
+			top: 8px;
+		}
+	} @else {
+		&:before {
+			display: none;
+		}
+	}
 
 	a {
 		color: $color-text;
@@ -211,20 +226,20 @@
 	}
 }
 
-@mixin style-message-info() {
-	@include style-message($color-info-light, $color-info-dark, $color-info-dark);
+@mixin style-message-info($html-entity-icon: $html-entity-info) {
+	@include style-message($color-info-light, $color-info-dark, $color-info-dark, $html-entity-icon);
 }
 
-@mixin style-message-error() {
-	@include style-message($color-error-light, $color-error-dark, $color-error-dark);
+@mixin style-message-error($html-entity-icon: $html-entity-error) {
+	@include style-message($color-error-light, $color-error-dark, $color-error-dark, $html-entity-icon);
 }
 
-@mixin style-message-success() {
-	@include style-message($color-success-light, $color-success-dark, $color-success-dark);
+@mixin style-message-success($html-entity-icon: $html-entity-success) {
+	@include style-message($color-success-light, $color-success-dark, $color-success-dark, $html-entity-icon);
 }
 
-@mixin style-message-warning() {
-	@include style-message($color-warning-light, $color-warning-dark, $color-warning-dark);
+@mixin style-message-warning($html-entity-icon: $html-entity-fixme) {
+	@include style-message($color-warning-light, $color-warning-dark, $color-warning-dark, $html-entity-icon);
 }
 
 @mixin style-popup-box($padding: 10px) {
