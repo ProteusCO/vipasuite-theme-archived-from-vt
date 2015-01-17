@@ -55,7 +55,7 @@
 				@include buttonGlyphOverride($html-entity-info);
 			}
 			&.change-permissions-action {
-				@include buttonGlyphOverride($html-entity-fixme, $color: $color-grey);
+				@include buttonGlyphOverride($html-entity-lock, $color: $color-grey);
 			}
 		}
 	}
@@ -64,7 +64,7 @@
 		.quick-actions {
 			.btn {
 				&.change-permissions-action {
-					@include buttonGlyphOverride($html-entity-fixme, $color: $color-gold);
+					@include buttonGlyphOverride($html-entity-lock, $color: $color-gold);
 				}
 			}
 		}
@@ -74,7 +74,7 @@
 		.quick-actions {
 			.btn {
 				&.change-permissions-action {
-					@include buttonGlyphOverride($html-entity-fixme, $color: $color-blue);
+					@include buttonGlyphOverride($html-entity-lock, $color: $color-blue);
 				}
 			}
 		}
