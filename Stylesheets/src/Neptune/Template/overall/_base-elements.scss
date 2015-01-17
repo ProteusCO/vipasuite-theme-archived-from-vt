@@ -175,6 +175,10 @@ legend {
 
 //calendar input
 .miwt-calendar {
+	input.val {
+		width: 140px;
+	}
+
 	button {
 		&.clear {
 			display: none;
