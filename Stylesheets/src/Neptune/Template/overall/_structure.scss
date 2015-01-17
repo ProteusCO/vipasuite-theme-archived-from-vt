@@ -76,7 +76,9 @@ $footer-height: 55px;
 
 		.btn-glyph {
 			&.profile {
-				@include buttonGlyphOnly($html-entity-profile, 24px, $color-white);
+				&:before {
+					@include glyphAdd($html-entity-profile, 24px, $color-white);
+				}
 			}
 		}
 

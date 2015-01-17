@@ -46,7 +46,9 @@
 				}
 
 				> .mil {
-					@include buttonGlyphAdd($html-entity-gear, 32px, $color-white);
+					&:before {
+						@include glyphAdd($html-entity-gear, 32px, $color-white);
+					}
 				}
 			}
 
@@ -79,7 +81,9 @@
 				}
 
 				> .mil {
-					@include buttonGlyphAdd($html-entity-gear, 32px, $color-dark-grey);
+					&:before {
+						@include glyphAdd($html-entity-gear, 32px, $color-dark-grey);
+					}
 				}
 			}
 

@@ -40,9 +40,21 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-@mixin buttonGlyphAdd($html-entity, $size: 13px, $color: "", $spacing: 5px) {
+@mixin buttonGlyphAdd($html-entity, $size: '', $color: '', $spacing: 5px) {
 	&:before {
-		@include glyphAdd($html-entity, $size, $color);
+		display: inline-block;
+		@if ($html-entity != '') {
+			content: $html-entity;
+		}
+		@if ($size != '') {
+//			width: $size;
+//			height: $size;
+			font-size: $size;
+		}
+		@if ($color != '') {
+			color: $color;
+		}
+//		@include glyphAdd($html-entity, $size, $color);
 
 		@if ($spacing != 0) {
 			margin-right: $spacing;
@@ -102,6 +114,23 @@
 
 	&:hover {
 		text-decoration: none;
+	}
+
+	//fixme eventually when i have class, only put this for btns with glyph
+	&:before {
+		font-family: $font-glyph-lib;
+		font-size: 13px;
+		// generated from grunt task
+		display: none;
+		vertical-align: middle;
+		line-height: 1;
+		font-weight: normal;
+		font-style: normal;
+		text-decoration: inherit;
+		text-transform: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 }
 
