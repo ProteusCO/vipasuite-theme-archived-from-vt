@@ -333,6 +333,11 @@
 			@include style-inline-box();
 		}
 
+		.miwt-form .tab-content & {
+			padding: 0;
+			border: 0 none;
+		}
+
 		.editor_header {
 			.btn {
 				margin-left: 5px;
