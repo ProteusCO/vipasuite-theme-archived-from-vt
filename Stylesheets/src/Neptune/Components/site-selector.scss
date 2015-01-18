@@ -125,7 +125,7 @@
 		top: -12px;
 		width: 350px;
 		margin-left: 5px;
-		min-height: 200px;
+		min-height: 130px;
 	}
 
 	.ss-search-form {
@@ -143,6 +143,10 @@
 			span.hostname {
 				text-decoration: underline;
 			}
+		}
+
+		&:focus {
+			outline: none;
 		}
 	}
 
