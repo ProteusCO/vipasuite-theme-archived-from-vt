@@ -364,7 +364,6 @@
 			//fixme add a class for this
 			.enabled {
 				margin: 5px 0;
-				margin-left: 170px;
 			}
 
 			.actions {
@@ -372,6 +371,13 @@
 				margin-bottom: 10px;
 
 				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.miwt-table {
+				.actions {
+					margin-top: 0;
 					margin-bottom: 0;
 				}
 			}

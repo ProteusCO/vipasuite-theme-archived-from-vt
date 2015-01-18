@@ -141,7 +141,11 @@
 			//fixme add a class for this
 			.enabled {
 				margin: 5px 0;
-				margin-left: 170px;
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
 			}
 
 			.actions {
