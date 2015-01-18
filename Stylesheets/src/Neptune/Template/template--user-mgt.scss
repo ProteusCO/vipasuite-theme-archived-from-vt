@@ -170,9 +170,6 @@
 
 }
 
-
-
-
 .principaldetail {
 	.help-point{
 		&.administration-user {
@@ -181,6 +178,17 @@
 		}
 		&.disabled {
 			display: none;
+		}
+	}
+
+	//fixme need fix for this with classes or html updates
+	> div {
+		@include style-inline-box();
+
+		&.tab-container {
+			padding: 0;
+			border: 0 none;
+			background-color: transparent;
 		}
 	}
 
@@ -225,6 +233,15 @@
 		}
 	}
 
+	//fixme remove this once htmnl updated because of cascades
+	.groups,
+	.auth_domains {
+		.all_table,
+		.set_table {
+			margin-top: 0;
+		}
+	}
+
 	.pager-top {
 		display: none;
 	}
@@ -241,6 +258,57 @@
 					@include buttonBase;
 					@include buttonStyleEditGlyph();
 				}
+			}
+		}
+	}
+
+	.all_table,
+	.set_table {
+		margin-top: 10px;
+
+		.constraints {
+			display: inline;
+		}
+
+		.title {
+			@include style-h4;
+		}
+	}
+
+	//fixme give the password token edits better html
+	table {
+		.login,
+		.password,
+		.password_verify {
+			margin-bottom: 5px;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+				display: inline-block;
+				width: 190px;
+			}
+		}
+
+		+ .edit_buttons {
+			margin-top: 10px;
+		}
+	}
+
+	//fixme this is so bad because I have nothing to target
+	// this is meant to be the role edit UI
+	> div > div {
+		.name,
+		.pname,
+		.description,
+		.client,
+		.timeout,
+		.enabled {
+			margin: 5px 0;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
 			}
 		}
 	}
