@@ -1,0 +1,245 @@
+@import "../../Config/base-import";
+
+table.hibernate_search,
+table.layout {
+	width: 100%;
+}
+
+.calendarComponent {
+	.monthHeader {
+		text-align: center;
+		margin-bottom: 10px;
+
+		.dateSelectors {
+			display: inline-block;
+			margin: 0 10px;
+		}
+	}
+
+	.monthTable {
+		width: 100%;
+
+		td {
+			&.monthWeekDayText-con {
+				font-family: $font-open-sans-semi-bold;
+				font-size: 16px;
+				text-align: center;
+				width: 14%;
+				padding: 5px 10px;
+				color: $color-white;
+				background-color: $color-light-bluegrey;
+				border: 1px solid $color-bluegrey;
+
+				&.Wednesday-con {
+					width: 16%;
+				}
+			}
+
+			&.weekends-con,
+			&.weekdays-con {
+				border: 1px solid $color-lighter-grey;
+			}
+
+			&.monthDayHeader-con,
+			&.monthDayHeaderInactive-con {
+				border-bottom: 0 none;
+				text-align: right;
+				font-size: 20px;
+				font-family: $font-open-sans-semi-bold;
+
+				table {
+					width: 100%;
+				}
+
+				td {
+					line-height: 1;
+				}
+
+				.monthDayHeader,
+				.monthDayHeaderInactive {
+					> tbody > tr > td {
+						padding: 5px 10px;
+
+						&.dateActionComponent-con {
+							width: 1px;
+						}
+					}
+				}
+
+				.dateActionComponent {
+					text-align: left;
+
+					a {
+						@include buttonBase;
+						@include buttonGlyphAdd($html-entity-add);
+						@include buttonStyleSmall;
+						vertical-align: bottom;
+					}
+				}
+			}
+
+			&.monthDayBody-con,
+			&.monthDayHeader-con {
+				background-color: $color-white;
+			}
+
+			&.monthDayHeaderInactive-con,
+			&.monthDayBodyInactive-con {
+				background-color: $color-cloud-grey;
+				color: $color-grey;
+			}
+
+			&.monthDayBody-con,
+			&.monthDayBodyInactive-con {
+				border-top: 0 none;
+
+				&.weekends-con,
+				&.weekdays-con {
+					padding: 10px;
+					vertical-align: top;
+				}
+			}
+
+			.entries {
+				min-height: 40px;
+
+				&.emptycell {
+				}
+
+				.entry {
+					+ .entry {
+						margin-top: 5px;
+						padding-top: 5px;
+						border-top: 1px dotted $color-cloud-grey;
+					}
+
+					a {
+						color: $color-default-link;
+						text-decoration: none;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.entryEditor {
+		> .actions {
+			float: right;
+		}
+	}
+}
+
+.entryEditorForm {
+	.types {
+		margin-bottom: 10px;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.startdate,
+	.enddate,
+	.timezone {
+		display: inline-block;
+		margin-right: 10px;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.event_id {
+		margin: 10px 0;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.status {
+		margin: 10px 0;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	> .labels {
+		margin: 10px 0;
+
+		> label {
+			//fixme fix this html
+			@include style-h4;
+			margin-bottom: -20px;
+			display: block;
+		}
+
+		.label_selector {
+			display: inline-block;
+			min-width: 200px;
+		}
+
+		.entity_actions {
+			.btn {
+				@include buttonStyleSmall;
+			}
+		}
+
+		.btn {
+			&.remove {
+				@include buttonStyleRemoveGlyph();
+			}
+		}
+	}
+
+	.link,
+	.recurrence {
+		margin: 5px 0;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.recurrence {
+		margin: 10px 0;
+
+		> .field {
+			@include style-h4;
+		}
+	}
+
+	.extended_details {
+		@include style-inline-box($bgcolor: $color-smokey-white);
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		> div {
+			margin: 10px 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		input[type=text] {
+			width: 300px;
+		}
+	}
+}
