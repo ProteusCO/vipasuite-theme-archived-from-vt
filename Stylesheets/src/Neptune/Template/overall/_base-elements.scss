@@ -212,6 +212,7 @@ legend {
 		overflow-y: auto;
 		min-width: 200px;
 
+		//fixme this happens in client management, need to make sure it doesnt anywhere else
 		span.tc-long-text {
 			padding: 0;
 			position: static;
