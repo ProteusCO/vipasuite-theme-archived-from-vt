@@ -921,8 +921,17 @@
 			margin-top: 10px;
 		}
 
+		//fixme this column is too big with the heading text
+		.file_table {
+			th.action_column {
+				font-size: 0;
+			}
+		}
+
 		.btn {
-			&.add,
+			&.add {
+				@include buttonStyleAddGlyph();
+			}
 			&.attach_nde {
 				@include buttonGlyphAdd($html-entity-add);
 			}
