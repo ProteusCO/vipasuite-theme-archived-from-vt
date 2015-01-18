@@ -194,8 +194,8 @@
 		}
 
 		.editor_tabs {
-			padding: 0 15px;
-			margin: 15px 0;
+			@include style-inline-box();
+			border-top: 0 none;
 		}
 
 		div.content_history {
@@ -529,6 +529,172 @@
 		.ArticleBuilder-Label_UpdateTime_Format,
 		.ArticleBuilder-Label_PostTime_Format {
 			margin-left: 15px;
+		}
+	}
+
+	&.FreeMarkerComponent_editor {
+		.editor_content {
+			padding-top: 0;
+			padding-bottom: 0;
+			border-bottom: 0 none;
+
+			&:before,
+			&:after {
+				content: "";
+				display: table;
+			}
+		}
+
+		.editor_tabs {
+			border-top: 0 none;
+		}
+
+		//fixme get this with better classnames
+		div.variables_collapsible,
+		div.variables,
+		div.request_parameters {
+			margin-top: 10px;
+
+			> .trigger {
+				@include buttonBase;
+				@include buttonGlyphAdd($html-entity-branch-open);
+				margin-bottom: 5px;
+			}
+
+			&.shown {
+				> .trigger {
+					@include buttonGlyphOverride($html-entity-branch-close);
+				}
+			}
+		}
+
+		//fixme get a class name on this button
+		.request_parameters {
+			+ .btn {
+				margin-top: 10px;
+			}
+		}
+
+		.miwt-table {
+			.btn {
+				&.edit {
+					@include buttonStyleEditGlyph();
+				}
+				&.remove {
+					@include buttonStyleRemoveGlyph();
+				}
+			}
+		}
+
+		.template_content {
+			.configuration,
+			.expire_interval,
+			.output_errors {
+				margin-right: 10px;
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+
+			.content {
+				margin: 5px 0 10px;
+			}
+
+			.code_completion_help {
+				@include style-message-info();
+			}
+		}
+
+		.model_settings {
+			h2 {
+				@include style-h3;
+				margin: 0 0 10px;
+			}
+
+			.instructions {
+				//fixme get this to be removed instead
+				//@include style-message-warning();
+				display: block;
+				margin: 5px 0;
+
+				&:empty {
+					display: none;
+				}
+			}
+
+			.new_var_action {
+				margin-bottom: 5px;
+			}
+
+			textarea {
+				width: 100%;
+				font-family: $font-monospace;
+			}
+
+			//fixme get class for last column to be actions
+			.variable_settings {
+				.last-column {
+					width: 1px;
+					text-align: right;
+				}
+			}
+		}
+
+		.link_settings {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			.add_link {
+				margin-bottom: 5px;
+			}
+
+			.var_name,
+			.link {
+				margin-right: 10px;
+			}
+		}
+
+		.file_settings {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			.add_file {
+				margin-bottom: 5px;
+
+				> .file {
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+
+				.actions {
+					margin-left: 5px;
+				}
+			}
+		}
+
+		.macro_libraries {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			.add_macro_library {
+				margin-bottom: 5px;
+
+				.prop {
+					margin-right: 10px;
+				}
+
+				.actions {
+					display: inline;
+				}
+			}
 		}
 	}
 }
