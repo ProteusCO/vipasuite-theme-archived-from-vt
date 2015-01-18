@@ -68,17 +68,24 @@
 
 			.mi {
 				display: inline-block;
+
+				+ .mi {
+					> a {
+						border-left: 0 none;
+					}
+				}
 			}
 
 			.mi-active {
 				a {
-					@include box-shadow(0 0 2px transparentize($color-black, 0.7) inset);
-					color: $color-black;
-					border-color: $color-darker-grey;
-					background-color: $color-grey;
+					border-bottom-color: $color-smokey-white;
+					color: $color-charcoal;
+					background: $color-smokey-white;
 
 					&:hover {
-						background-color: $color-grey;
+						color: $color-white;
+						background-color: $color-blue;
+						border-bottom-color: $color-blue;
 					}
 				}
 			}
@@ -89,15 +96,13 @@
 				display: inline-block;
 				padding: 3px 6px;
 				font-size: 11px;
-				color: $color-charcoal;
-				background: $color-cloud-grey;
+				color: $color-light-charcoal;
+				background: $color-lighter-grey;
 				border: 1px solid $color-grey;
 
 				&:hover {
-					@include box-shadow(0 -1px 2px transparentize($color-black, 0.8) inset);
-					color: $color-black;
-					background: $color-lighter-grey;
-					border-color: $color-darker-grey;
+					color: $color-white;
+					background-color: $color-blue;
 				}
 			}
 		}
