@@ -1,0 +1,345 @@
+<!-- Firefox gives better error messages than google chrome -->
+
+<!--
+There are no required HTML elements.
+
+  @param {object} o the component information.
+-->
+<script type="text/x-js-template" id="tmpl-ptb-component-info">
+    {% if(!CMS_LE_API.page){ %}
+    <table>
+        <tr>
+            <td class="le-icon">
+                <img class="le-icon" width="32" height="32" src="/_resources/dyn/docroot/cms/icons/x32/html_page.png"
+                                     alt="" title="Page">&nbsp;
+            </td>
+            <td class="le-info">
+                <div class="le-name">Page Not Found</div>
+                <div class="le-type">Page</div>
+            </td>
+        </tr>
+    </table>
+    {% }else{ %}
+    <table>
+        <tr>
+            <td class="le-icon"><img class="le-icon" width="32" height="32" src="{%=o.icon%}" alt="{%#o.component_name%}"
+                                     title="{%#o.component_name%}">&nbsp;</td>
+            <td class="le-info">
+                <div class="le-name">{%#(o.title || o.name || '')%}</div>
+                <div class="le-type">{%#o.component_name%}</div>
+            </td>
+        </tr>
+    </table>
+    {% } %}
+</script>
+
+<!--
+HTML structure (sibling order doesn't matter):
+  .le-edit
+  .le-info
+  .le-add
+  .le-delete OR .le-detach
+  .le-move
+  
+  @param {object} o the component information.
+  
+  NOTE: Firefox <= 19 doesn't allow a BUTTON to be dragged and dropped.
+-->
+<script type="text/x-js-template" id="tmpl-ptb-component-actions">
+    {%
+    var isPage = (o.key.indexOf('pg#')==0), isBox = (o.key.indexOf('bx#')==0),
+    api = CMS_LE_API, sectionName = api.page.section?api.page.section.name:'',
+    perm = o.permissions, el = document.querySelector('#cms-le-ptb-info'), infoPanel=(el && el.checked),
+    isEnclosingBox = ((o.children||[]).length > 0 && o.children.every(function(item){return (item.indexOf('bx#')==0);})),
+    peDescriptor;
+    if(o.categories[0].name!='Page'){
+    if(isBox){
+    peDescriptor = o.box_descriptor||'';
+    } else {
+    peDescriptor = o.categories[0].name;
+    }
+    }
+    %}
+    {% if(perm.move && !api.isDynamicComponent(o)){ %}
+    <span class="le-move ficon" title="Move" draggable="true" data-ds_cms_pe="{%#o.key%}" data-op="move">m</span>
+    {% } %}
+    <!-- temp disable edit on page/box -->
+    {% if(perm.edit && !(o.key.indexOf('pg#') == 0 || o.key.indexOf('bx#') == 0)){ %}
+    <button type="button" class="le-edit ficon" title="Edit">e</button>
+    {% } %}
+
+    {% if(perm.add_child && false){ %}
+    <button type="button" class="le-add ficon" title="Add">+</button>
+    {% } %}
+
+    {% if(perm.delete && !api.isDynamicComponent(o)){ %}
+    <button type="button" class="le-detach ficon" title="Remove">x</button>
+    {% } %}
+
+        <!-- button.onclick for Firefox. Label.for doesn't work inside a button.  -->
+    <button type="button" class="le-info ficon" title="Information"
+            onclick="var cb = document.getElementById('cms-le-ptb-info'); cb.checked = !cb.checked; this.blur(); return true;">
+        <label title="Information">i</label>
+    </button>
+    <input accesskey="i" id="cms-le-ptb-info" type="checkbox"{%#(infoPanel?' checked':'')%}>
+    <div class="le-info-panel">
+        <h1>{%#(o.title || o.name || '')%}</h1>
+
+        <h2>{%#o.component_name%} <span title="Category"
+                                        class="le-category le-value">{%#(peDescriptor?('('+peDescriptor+')'):'')%}</span></h2>
+        {% if(!isEnclosingBox && o.content_area_type == 'page_template'){ %}
+        <div class="le-prop le-cat-page-template">On the <span class="le-value">{%#sectionName%}</span> Template</div>
+        {% } else if(!isEnclosingBox && o.content_area_type == 'page'){ %}
+        <div class="le-prop le-cat-page">On the Page Level</div>
+        {% } %}
+        {% if((o.references||[]).length > 1){ %}
+        <div class="le-prop le-shared">Appears on <span class="le-count">{%=(o.references||[]).length%}</span> pages</div>
+        {% } %}
+        {% if(isPage && sectionName){ %}
+        <div class="le-prop le-visibility">
+            <label>Template</label>:
+            <span class="le-value">{%#sectionName%}</span>
+        </div>
+        {% } %}
+        {% if(o.html.id && o.html.class){ %}
+        <div class="le-prop le-html">
+            <label>HTML Info</label>:
+            {% if(o.html.id){ %}
+            <span class="le-value le-id">#{%#o.html.id%}</span>
+            {% } %}
+            {% if(o.html.class){ %}
+            <span class="le-value le-class">.{%#o.html.class%}</span>
+            {% } %}
+        </div>
+        {% } %}
+        {% if(o.visibility_condition){ %}
+        <div class="le-prop le-visibility">
+            <label>Visibility Condition</label>:
+            <span class="le-value">{%=o.visibility_condition%}</span>
+        </div>
+        {% } %}
+        {% if((o.paths||[]).length > 0){ %}
+        <div class="le-prop le-paths">
+            <label>Paths</label>:
+            {% if(o.paths.length > 5){ %}
+            <span class="le-value">Many</span>
+            {% } else { %}
+            <ul class="le-value-list">
+                {% for(var i=0; i < o.paths.length; i++){ %}
+                <li class="le-value{%=(o.paths[i].path==o.primary_path.path?' le-primary':'')%}{%#(o.paths[i].wildcard?' wildcard':'')%}">
+                    <a href="/{%=o.paths[i].path%}" target="_blank">/{%=o.paths[i].path%}</a></li>
+                {% } %}
+            </ul>
+            {% } %}
+        </div>
+        {% } %}
+        {% if((o.labels||[]).length > 0){ %}
+        <div class="le-prop le-labels">
+            <label>Labels</label>:
+            {% if(o.labels.length > 5){ %}
+            <span class="le-value">Many</span>
+            {% } else { %}
+            <ul class="le-value-list">
+                {% for(var i=0; i < o.labels.length; i++){ %}
+                <li class="le-value">{%=o.labels[i]%}</a></li>
+                {% } %}
+            </ul>
+            {% } %}
+        </div>
+        {% } %}
+        <div class="le-prop le-locale">
+            <label>Locale</label>:
+            <span class="le-locale-{%=o.activeLocale%} le-value le-active-locale">{%=o.activeLocale%}</span>
+        </div>
+        <div class="le-prop le-modified">
+            Last modified on {%=new Date(o.modified).format('mmm dd, yyyy hh:MM TT')%} by {%#o.modified_by%}
+        </div>
+        {% if(o.backend_edit_url){ %}
+        <div class="le-prop le-edit-url">
+            <a class="le-value" href="{%#o.backend_edit_url%}" target="vs_backend_tab">Edit in VipaSuite backend</a>
+        </div>
+        {% } %}
+        <!-- Component Identifier = {%#o.component_identifier%} -->
+        <!-- Component Key = {%#o.key%} -->
+    </div>
+
+</script>
+
+<!-- Component Toolbar
+  HTML structure (sibling order doesn't matter):
+  .le-edit
+  .le-info
+  .le-add
+  .le-delete OR .le-detach
+  .le-move
+  .le-component-info
+  
+  @param {object} o the component information.
+  
+  NOTE: Firefox <= 19 doesn't allow a BUTTON to be dragged and dropped.
+-->
+<script type="text/x-js-template" id="tmpl-ctb">
+    <span class="le-component-actions">
+{% var perm = o.permissions, api = CMS_LE_API; %}
+{% if(perm.move && !api.isDynamicComponent(o)){ %}
+  <span class="le-move ficon" title="Move" draggable="true" data-ds_cms_pe="{%#o.key%}" data-op="move">m</span>
+{% } %}
+<!-- temp disable edit on page/box -->
+{% if(perm.edit && !(o.key.indexOf('pg#') == 0 || o.key.indexOf('bx#') == 0)){ %}
+  <button type="button" class="le-edit ficon" title="Edit">e</button>
+{% } %}
+{% if(perm.add_child && false){ %}
+  <button type="button" class="le-add ficon" title="Add">+</button>
+{% } %}
+{% if(perm.delete && !api.isDynamicComponent(o)){ %}
+  <button type="button" class="le-detach ficon" title="Remove">x</button>
+{% } %}
+</span>
+    <span class="le-component-info">
+<img class="le-icon" height="28" src="{%=o.icon%}" alt="{%#o.component_name%}" title="{%#o.component_name%}">&nbsp;
+<span class="le-name">{%#(o.title || o.name || '')%}{%#(o.invisible? ' <span style="color:#999">(not visible)</span>':'')%}</span>
+</span>
+</script>
+
+<!-- Login Message
+  @param {object} o the root API object. Same as CMS_LE_API.
+-->
+<script type="text/x-js-template" id="tmpl-le-login">
+    {%
+    var loginExpired = (!!CMS_LE_API.page);
+    var lp = (CMS_LE_API.login_page + "?ret=" + encodeURIComponent(location.href));
+    %}
+    {% if(loginExpired) { %}
+    <p>Your login session has expired. Click <a href="{%#lp%}">here</a> to login.</p>
+    {% } else { %}
+    <p>You will need to login to Vipa Suite CMS before you can use live edit mode. Click <a href="{%=lp%}">here</a> to login.</p>
+    {% } %}
+    <button type="button" class="le-login" onkeypress="this.click()" onclick=location="{%#lp%}">Login</button>
+    <button type="button" onclick="CMS_LE_API.quitLiveEdit();">Quit</button>
+</script>
+
+<!-- Forbidden Message
+  @param {object} o the root API object. Same as CMS_LE_API.
+-->
+<script type="text/x-js-template" id="tmpl-le-forbidden">
+    <p>You do not have sufficient permissions to edit this page.</p>
+    <button type="button" onclick="CMS_LE_API.quitLiveEdit();">Quit</button>
+</script>
+
+<!-- Generic unable to load message. The name of the "thing" that wasn't loaded is passed in.
+  @param {object} o the thing that wasn't loaded. Has a "name" property.
+-->
+<script type="text/x-js-template" id="tmpl-le-unable-to-load">
+    <p>I am sorry. I was unable to load the {%#o.name%}. If this presents issues using the tool try reloading the page.</p>
+    <button type="button" onclick="CMS_LE_API.closeOverlay();">Close</button>
+</script>
+
+
+<!-- Floating tool to search and DnD components onto page.
+    HTML structure (sibling order doesn't matter):
+    .le-search
+    .le-search-results
+    
+  @param {object} o the search results. Same structure as other component information under "mru", "new_components", and "existing_components" variables (lists).
+    Includes previous search constraints under "search".
+-->
+<script type="text/x-js-template" id="tmpl-le-dnd-component">
+    {%#'<s'%}cript>
+    function _getCharFromEntity(entity){
+    var el = document.createElement('p');
+    el.innerHTML = entity;
+    return el.textContent || el.innerText;
+    }
+    function toggleLESRC(e){
+    var t = e.target, control = t.parentElement, sibling = control.nextElementSibling, title = 'Hide';
+    if(control.classList.contains('hidden')){
+    title = 'Show';
+    }
+    t.setAttribute('title', title);
+    sibling.classList.toggle('hidden');
+    control.classList.toggle('hidden');
+    }
+    {%#'</s'%}cript>
+    <div class="le-component-selector">
+        <div class="le-search-bar">
+            <input type="search" class="le-search" value="{%#o.search.keyword%}" placeholder="Search" results="5"
+                   autosave="le-search" incremental>
+        </div>
+        <div class="le-search-results">
+            {% if(o.new_components.length > 0){ %}
+            <div class="le-search-new-results-control clearfix">
+                <button class="toggle" title="Hide" onclick="toggleLESRC(event);">New</button>
+            </div>
+            {% } %}
+            <div class="le-search-new-results">
+                {% for(var i=0,c; c=o.new_components[i];i++){ %}
+                <div class="le-search-result" draggable="true" data-ds_cms_pe_type="{%#c.component_identifier%}">
+                    <table class="contentelement">
+                        <tr>
+                            <td class="le-icon"><img class="le-icon" width="32" height="32" src="{%=c.icon%}"
+                                                     alt="{%#c.component_name%}" title="{%#c.component_name%}" draggable="false">
+                            </td>
+                            <td>
+                                <div class="le-type">{%#c.component_name%}</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                {% } %}
+            </div>
+            {% if(o.existing_components.length > 0){ %}
+            <div class="le-search-existing-results-control clearfix">
+                <button class="toggle" title="Hide" onclick="toggleLESRC(event);">Existing</button>
+            </div>
+            {% } %}
+            <div class="le-search-existing-results">
+                {% for(var i=0,c; c=o.existing_components[i];i++){ %}
+                <div class="le-search-result" draggable="true" data-ds_cms_pe="{%#c.key%}">
+                    <table class="contentelement">
+                        <tr>
+                            <td class="le-icon"><img class="le-icon" width="32" height="32" src="{%=c.icon%}"
+                                                     alt="{%#c.component_name%}" title="{%#c.component_name%}" draggable="false">
+                            </td>
+                            <td>
+                                <div class="le-name">{%#(c.title || c.name || '')%}{%#(o.invisible? ' <span style="color:#999">(not visible)</span>':'')%}
+                                </div>
+                                <div class="le-type">{%#c.component_name%}</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                {% } %}
+            </div>
+
+        </div>
+    </div>
+</script>
+
+
+<!--
+Actionable items will have to have "special" class names - FIXME : document
+
+
+Templates:
+* Primary Toolbar
+** Component Information Section
+** Component Action Section
+** Toolbar button section: help quit, visibility, location
+
+* Component Toolbar
+
+* Delegating Purpose Menu (e.g. show control / hide control / content)
+
+* DnD Icon template?
+
+* Notifications / Messages (e.g. this is shared content)
+** FIXME : document messages 
+** Deleted Component
+** Saved Component
+** Content Is Shared Warning
+** Moved Component
+** Added Component
+
+
+
+-->​

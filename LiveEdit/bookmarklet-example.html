@@ -1,0 +1,118 @@
+<script type="text/javascript">
+  var htmlDataURI = 'data:text/html;base64,PCFET0NUWVBFIGh0bWw+PGh0bWw+PGhlYWQ+PHRpdGxlPlZpcGEgTGl2ZSBFZGl0PC90aXRsZT48bGluayByZWw9InNob3J0Y3V0IGljb24iIGhyZWY9Imh0dHA6Ly92aXBhc3VpdGUuY29tL2Zhdmljb24uaWNvIiA+PC9oZWFkPjxib2R5PjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij53aW5kb3cub25sb2FkPWZ1bmN0aW9uKCl7d2luZG93LnNldFRpbWVvdXQoZnVuY3Rpb24oKXtoaXN0b3J5LmJhY2soKTt9LDI1MCk7fTs8L3NjcmlwdD48L2JvZHk+PC9odG1sPgo=';
+  var htmlData = ''
+    +'<!DOCTYPE html>'
+    +'<html>'
+      +'<head>'
+        +'<title>Vipa Live Edit</title>'
+        +'<link rel="shortcut icon" href="http://vipasuite.com/favicon.ico" >'
+      +'</head>'
+      +'<body>'
+        +'<script type="text/javascript">'
+          +'window.onload=function(){'
+            +'window.setTimeout(function(){'
+              +'history.back();'
+            +'},250);'
+          +'};'
+        +'</scr'+'ipt>'
+      +'</body>'
+    +'</html>';
+  top["vipa_live_edit"] =  htmlData;
+  ;
+</script>
+
+<p>Add bookmarklet by dragging this link to your bookmark toolbar ->
+
+<a id="bookmarklet" ondragend="this.click();" href="javascript:(function(){function d(c,e){var a=document,d='position:fixed;top:5px;left:5px;z-index:80001;background-color:#F9EDBE;border:1px solid #F0C36D;box-shadow:0 0 4px rgba(0,0,0,.5);padding:15px;color:#333;line-height:19px;-webkit-transition:all 1s;transition:all 1s'.split(';').join(' !important;'),f,b=a.createElement('div');f=a.createElement('img');a=a.createElement('span');b.appendChild(f);b.appendChild(a);a.innerHTML=html;document.body.appendChild(b);b.setAttribute('style',d);f.src='//vipasuite.com/LiveEdit/vipa-icon-19.png'; f.setAttribute('style','vertical-align:bottom;width:19px;height:19px;');e=1E3*(e||9);setTimeout(function(){b.style.left=-b.offsetWidth+'px';b.style.opacity=0},e);setTimeout(function(){b.parentNode.removeChild(b)},e+2E3)}if(top.vipa_live_edit)return top.vipa_live_edit;if('undefined'==typeof CMS_LE_API)if('undefined'==typeof XMLHttpRequest)alert('Your browser does not support the Live Edit bookmarklet.');else{var c=new XMLHttpRequest;c.onreadystatechange=function(){if(4==this.readyState)if(200==this.status||0==this.status)try{this.getResponseHeader('X-CMS-Info')?(top.CMS_LE=JSON.parse(this.responseText),CMS_LE.app_urls.forEach(function(c){var a=document.createElement('script');a.src=c;a.async=!1;a.defer=!0;a.type='text/javascript';document.body.appendChild(a)})):d('This is not a Vipa Suite CMS hosted site. The editor application cannot be loaded.')}catch(c){d('We are unable to determine hosting information at this time. Make sure you are on a Vipa Suite hosted site.'),console.log(c)}else d('We are unable to connect to the server at this time. Make sure you are on a Vipa Suite hosted site.'),console.log('Status: '+this.status),console.log(this.responseText)};c.open('POST',location.href);c.setRequestHeader('X-CMS-Integration','1');c.send()}})();">Vipa Live Edit</a>
+</p>
+<p>
+Copy &amp; Paste for mobile.<br/>
+<textarea id="mobile" rows="4" cols="40">
+</textarea>
+</p>
+<script type="text/javascript">
+document.getElementById("mobile").value = document.getElementById("bookmarklet").getAttribute("href");
+</script>
+
+<!--
+Run The Following Function Through: http://closure-compiler.appspot.com/ on SIMPLE 
+   - then replace double quotes with single quotes, because of this it is a good idea not to add double quotes in the script
+   - prepend "javascript:" to string
+   - put string in HREF of anchor.
+
+(function initLiveEditBM(){
+  if(top['vipa_live_edit']) return top['vipa_live_edit']; // Icon
+  if(typeof CMS_LE_API != 'undefined')return;
+  function isBrowserSupported(){
+    try{
+    if(typeof XMLHttpRequest == 'undefined') return false;
+    }catch(e){console.log(e);return false;}
+    return true;
+  }
+  if(!isBrowserSupported()){
+    alert('Your browser does not support the Live Edit bookmarklet.');
+    return;
+  }
+  /**
+   * Display an alert to the user.
+   * @param {string} msg The message to display.
+   * @param {number|null} to Optional timeout in seconds. 
+   */
+  function displayAlert(msg, to) {
+    var d=document,mel,styles =['position:fixed','top:5px','left:5px','z-index:80001','background-color:#F9EDBE','border:1px solid #F0C36D', 
+    'box-shadow:0 0 4px rgba(0,0,0,.5)','padding:15px','color:#333','line-height:19px','-webkit-transition:all 1s','transition:all 1s']
+	.join(' !important;'),
+      img,
+      node = d.createElement('div');
+    img = d.createElement('img');
+    mel = d.createElement('span');
+    node.appendChild(img);
+    node.appendChild(mel);
+    mel.innerHTML = html;
+    document.body.appendChild(node);
+    node.setAttribute('style',styles);
+    img.src = '//vipasuite.com/LiveEdit/vipa-icon-19.png';
+    img.setAttribute('style','vertical-align:bottom;width:19px;height:19px;');
+    to=(to||9)*1000;
+    setTimeout(function(){node.style.left=-node.offsetWidth+'px';node.style.opacity=0;},to);
+    setTimeout(function(){node.parentNode.removeChild(node);},(to+2000));
+  }
+  
+  var req = new XMLHttpRequest(), makeSure = 'Make sure you are on a Vipa Suite hosted site.';
+    req.onreadystatechange = function(){
+      if(this.readyState != 4) return;
+      if(this.status == 200 || this.status == 0) {
+	try{
+	  var isCMS = !!this.getResponseHeader('X-CMS-Info');
+	  if(isCMS)
+	  {
+	    top.CMS_LE = JSON.parse(this.responseText);
+	    CMS_LE.app_urls.forEach(function(url){
+	      var script = document.createElement('script');
+	      script.src = url;
+	      script.async=false;
+	      script.defer=true;
+	      script.type='text/javascript';
+	      document.body.appendChild(script);
+	    });
+	  }
+	  else
+	    displayAlert('This is not a Vipa Suite CMS hosted site. The editor application cannot be loaded.');
+	}catch(e){
+	  displayAlert('We are unable to determine hosting information at this time. ' + makeSure);
+	  console.log(e);
+	}
+      } else {
+	displayAlert('We are unable to connect to the server at this time. ' + makeSure);
+	console.log('Status: ' + this.status);
+	console.log(this.responseText);
+      }
+    };
+    req.open('POST', location.href);
+    req.setRequestHeader('X-CMS-Integration', '1');
+    req.send();
+})();
+
+
+
+-->

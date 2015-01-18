@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Live Edit Documentation</title>
+        <meta name="viewport" content="width=device-width" />
+        <meta name="author" content="Venture Tech" />
+        <meta name="publisher" content="Venture Tech" />
+        <meta name="copyright" content="Copyright 2013 Venture Tech LLC" />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="//vipasuite.com/favicon.ico" />
+        <link rel="stylesheet" href="//vipasuite.com/LiveEdit/docs/css/normalize.css" />
+        <link rel="stylesheet" href="//vipasuite.com/LiveEdit/docs/css/main.css" />
+    </head>
+    <!--Fancybox-->
+    <script type="text/javascript" src="//vipasuite.com/LiveEdit/docs/js/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" href="//vipasuite.com/LiveEdit/docs/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="//vipasuite.com/LiveEdit/docs/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="//vipasuite.com/LiveEdit/docs/js/popup.js"></script>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="sidebar">
+      <aside id="toc" role="complementary">
+	<hgroup><h1>Table Of Contents</h1></hgroup>
+	<ol>
+	  <li><a href="#overview">Overview</a></li>
+	  <li><a href="#browser-support">Browser Support</a></li>
+	  <li><a href="#video">Video</a></li>
+	  <li><a href="#usage">How To Activate Live Edit</a></li>
+	  <li><a href="#ui">The User Interface</a></li>
+	  <li><a href="#ptb">The Primary Toolbar</a></li>
+	  <li><a href="#ctb">The Component Toolbar</a></li>
+	  <li><a href="#keyboard">Keyboard Shortcuts</a></li>
+	</ol>
+      </aside>
+    </div>
+    <article role="article">
+      <hgroup>
+	<h1>Live Edit Documentation</h1>
+      </hgroup>
+      <section id="overview">
+	<hgroup><h2>Overview</h2></hgroup>
+	<p>
+	Live Edit is a tool that allows editing of your site content directly on your website. 
+	It brings some of the backend content management functions to the frontend.
+	Depending on the Live Edit functionality enabled on the site and your permissions, you can 
+	inspect meta data, edit, rearrange, remove, and add new content on your site.
+	</p>
+      </section>
+	<section id="browser-support">
+	  <hgroup><h2>Browser Support</h2></hgroup>	
+	  <p>Here are the current support browsers:</p>
+	    <ul>
+	    <li>Google Chrome Desktop</li>
+	    <li>Safari Desktop</li>
+	    <li>Safari Mobile (limited functionality)</li>
+	    <li>Firefox Desktop</li>
+	    <li>Internet Explorer 11+ Desktop</li>
+	    <li>Internet Explorer 10 Desktop (limited functionality, unsupported)</li>
+	    </ul>
+	  <p>
+	  Support for other browsers and devices are planned in the future.
+	  </p>
+	</section>
+	<section id="video">
+	<hgroup><h2>Video Walkthrough</h2></hgroup>
+	<p>Video showing how to use Live Edit.</p>
+	<iframe width="560" height="315" src="//www.youtube.com/embed/69uiwIT5gIs?vq=hd1080" frameborder="0" allowfullscreen></iframe>
+      </section>
+      <section id="usage">
+	<hgroup><h2>How To Activate Live Edit</h2></hgroup>
+	<p>
+	  There are two ways you can activate Live Edit. You can be editing a page in VipaSuite and click the Live Edit button in the upper right-hand corner to open the page with Live Edit activated. You can also click the Live Edit button in header of the navigation side-bar, which would open your site's home page and activate Live Edit.
+	</p>
+
+	<figure>
+	  <a class="popup" target="_blank" href="//vipasuite.com/LiveEdit/docs/new-pics/LiveEditButton.png"><img src="//vipasuite.com/LiveEdit/docs/new-pics/LiveEditButton.png" alt="Live Edit Activate Button"/></a>
+	  <figcaption>
+	    The image above is showing you where the Live Edit buttons are located. 
+	    <a class="popup" target="_blank" href="//vipasuite.com/LiveEdit/docs/new-pics/LiveEditButton.png">Click</a> to view full-sized.
+	  </figcaption>
+	</figure>
+
+	<hgroup><h3>Login Required</h3></hgroup>
+
+	<p>
+		If you happen to refresh your page after inactivity (about one hour), while Live Edit is activated, you will get the message in the screenshot below to login into VipaSuite.
+	</p>
+	<figure>
+	  <a target="_blank" class="popup" href="//vipasuite.com/LiveEdit/docs/new-pics/login.png"><img src="//vipasuite.com/LiveEdit/docs/new-pics/login.png" alt="Live Edit Application Login"/></a>
+	  <figcaption>
+	    The image above is showing the popup message that you would receive after inactivity when Live Edit is activated.
+	    <a target="_blank" class="popup" href="//vipasuite.com/LiveEdit/docs/new-pics/login.png">Click</a> to view full-sized.
+	  </figcaption>
+	</figure>
+
+	<hgroup><h3>Toolbar</h3></hgroup>
+
+	<p>
+	  Once you have activated Live Edit you will see the below toolbar at the top of the web page. 
+	</p>
+	<figure>
+	  <a target="_blank" class="popup" href="//vipasuite.com/LiveEdit/docs/new-pics/PrimaryToolbar.png"><img src="//vipasuite.com/LiveEdit/docs/new-pics/PrimaryToolbar.png" alt="Live Edit Application Primary Toolbar"/></a>
+	  <figcaption>
+	    This is called the primary toolbar.
+	    <a target="_blank" class="popup" href="//vipasuite.com/LiveEdit/docs/new-pics/PrimaryToolbar.png">Click</a> to view full-sized.
+	  </figcaption>
+	</figure>
+	
+	<section id="ui">
+	  <hgroup><h2>The User Interface</h2></hgroup>
+	  <p>
+	    The user interface has 3 main interface elements: the primary toolbar, the component toolbar, and the component selector.
+	    The primary toolbar is the main interface for the application. It is used to select CMS components in order
+	    to inspect, edit, and rearrange content. Since the primary toolbar sits on top of the website, it can be 
+	    moved and minimized so you can access the content underneath it. Once a component is selected, a component toolbar is shown next to where the component 
+	    is on the web page. 
+	    </p>
+	  <figure>
+	    <a class="popup" target="_blank" href="//vipasuite.com/LiveEdit/docs/pics/live-edit-text-component-active.png"><img src="//vipasuite.com/LiveEdit/docs/pics/live-edit-text-component-active.png" alt="Live Edit Application Startup"/></a>
+	    <figcaption>
+	      Shows both the primary toolbar on the bottom of the browser and the component toolbar on a selected Text component.
+	      <a class="popup" target="_blank" href="//vipasuite.com/LiveEdit/docs/pics/live-edit-text-component-active.png">Click</a> to view full-sized.
+	    </figcaption>
+	  </figure>
+	  <hgroup><h3>Component Selector</h3></hgroup>
+	  <p>
+	    The component selector is used to search for components to add to the web page.
+	  </p>
+	  <figure>
+	    <a class="popup" target="_blank" href="//vipasuite.com/LiveEdit/docs/pics/live-edit-dnd-add.png"><img src="//vipasuite.com/LiveEdit/docs/pics/live-edit-dnd-add.png" alt="Live Edit Application Startup"/></a>
+	    <figcaption>
+	      Component selector being used to add an Article component to the page.
+	      <a class="popup" target="_blank" href="//vipasuite.com/LiveEdit/docs/pics/live-edit-dnd-add.png">Click</a> to view full-sized.
+	    </figcaption>
+	  </figure>
+	</section>
+	<section id="ptb">
+	  <hgroup><h2>The Primary Toolbar</h2></hgroup>
+	  <p>
+	  <figure>
+	    <img src="//vipasuite.com/LiveEdit/docs/pics/ptb.png" alt="Primary Toolbar"/>
+	  </figure>
+	  The toolbar provides the following functions:
+	  <ul>
+	    <li>
+	    <div><img alt="Component Selector Button" src="//vipasuite.com/LiveEdit/docs/pics/ptb-action-add-component.png"/></div>
+	    Adding content to the page via drag and drop.
+	    </li>
+	    <li>
+	      <div><img alt="Component Navigation Buttons" src="//vipasuite.com/LiveEdit/docs/pics/ptb-nav.png"/></div>
+	      <p>
+	      Navigating through the components on the page: out (to the parent level), previous, and next. Navigation is how you select components
+	      in order to make changes to your website. You can also use the mouse in combination with a modifier key (CTRL, ALT, CMD, or SHIFT)
+	      to directly navigate to a component.
+	      </p>
+	      
+	    </li>
+	    <li>
+	      <div><img alt="Basic Component Information" src="//vipasuite.com/LiveEdit/docs/pics/ptb-component-info.png"/></div>
+	      <p>
+	      View of basic component information: icon, name, and type.
+	      If the component is on the page template or shared, you'll see the template icon, <span class="le-cat-page-template">T</span>, or shared icon, <span class="ficon le-shared">r</span>, as well.
+	      This information is useful when making a decision to move, edit, or remove a component.
+	      </p>
+	    </li>
+	    <li>
+	      <div>
+		<div><img alt="Component Actions" src="//vipasuite.com/LiveEdit/docs/pics/ptb-component-actions.png"/></div>
+		<p>Actions for the selected component.</p>
+		<ul>
+		  <li><span class="ficon">m</span> - move the selected component to another place on the page.</li>
+		  <li><span class="ficon">e</span> - edit the selected component.</li>
+		  <li><span class="ficon">x</span> - remove the selected component from either the page or page template. You can tell which it will be removed from by the <span class="le-cat-page-template">T</span> icon.</li>
+		  <li><span class="ficon">i</span> - view advanced information about the selected component.</li>
+		</ul>
+	      </div>
+	    </li>
+	    <li>
+	      <div>
+		<p>Controls for the toolbar.</p>
+		<ul>
+		  <li><span class="ficon">?</span> - help page.</li>
+		  <li><span class="ficon">t</span> / <span class="ficon">b</span> - location toggle: top or bottom.</li>
+		  <li><span class="ficon">&#x2303;</span> / <span class="ficon">&#x2304;</span> - visibility toggle: shown or hidden.</li>
+		  <li><span class="ficon">q</span> - quit the Live Edit application.</li>
+		</ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+	<section id="ctb">
+	  <hgroup><h2>The Component Toolbar</h2></hgroup>
+	    <div><img alt="Component Toolbar" src="//vipasuite.com/LiveEdit/docs/pics/ctb.png"/></div>
+	    <p>
+	      The component toolbar provides basic information about the selected component as well as buttons for the available 
+	      actions: move, edit, add, and remove. Which actions are available depends on the configuration of the site 
+	      as well as your permissions.
+	    </p>
+	    <p>
+	      The toolbar also shows you where the component is within the page. You can use the navigation buttons in the primary toolbar to 
+	      navigate to a specific component or you can directly navigate with your mouse. Mouse navigation requires that you hold down
+	      a modifier key (CTRL, ALT, CMD, or SHIFT) when clicking on an area of the page.
+	    </p>
+	    <p>
+	      If the component is on the page template or shared, you'll see the template icon, <span class="le-cat-page-template">T</span>, or shared icon, <span class="ficon le-shared">r</span>.
+	      This information is useful when making a decision to move, edit, or remove a component, since these icons indicate that other pages would be affected in addition to the one you 
+	      are viewing.
+	    </p>
+	    <p>
+	      Finally, you can navigate to components that are not currently visible on the page. This commonly occurs with dynamic content that automatically
+	      displays at some interval or due to user interaction like a drop down menu.
+	      When you select a component like this, you'll see some text to indicate that the component was not visible when selected.
+	    </p>
+	</section>
+	<section id="keyboard">
+	  <hgroup><h2>Keyboard Shortcuts</h2></hgroup>
+	  <p>
+	    There are several keyboard shortcuts available for the Live Edit application. Keyboard shortcuts must be combined with a modifier key (CTRL, ALT, CMD, or SHIFT).
+	    Any combination of one or more modifier keys can be used. Sometimes you will need to use more than one modifier if a shortcut conflicts with a browser or desktop shortcut.
+	  </p>
+	  <p>
+	    Commonly used modifiers by operation system and browser:
+	  </p>	
+	  <p><strong>Windows</strong></p>
+	  <ul>
+	    <li>Chrome - ALT.</li>
+	    <li>Firefox - ALT+SHIFT.</li>
+	  </ul>
+	  <p><strong>Mac</strong></p>
+	  <ul>
+	    <li>Chrome - CMD.</li>
+	    <li>Safari - CMD.</li>
+	    <li>Firefox - CMD+ALT. ALT is the same as OPTION.</li>
+	  </ul>
+	  Sometimes you will need to add other modifier keys. For example, CMD+V is a shortcut for paste on the Mac. To toggle visibility you 
+	  could use CMD+ALT+V instead of CMD+V to avoid the conflict
+	  <p><strong>Linux</strong></p>
+	  <ul>
+	    <li>Chrome - CTRL.</li>
+	    <li>Firefox - CTRL+ALT.</li>
+	  </ul>
+	  <strong>Shortcuts</strong>
+	  <p>Must be used with one or more of the modifiers mentioned above. Uppercase or lowercase letters are equivalent (e.g. "x" and "X" work the same).</p>
+	  <ul>
+	    <li>Navigation - Arrow Keys.</li>
+	    <li>Open Add Component Interface - "X".</li>
+	    <li>Toggle Visibility Of Primary Toolbar - "V".</li>
+	    <li>Toggle Location Of Primary Toolbar - "L".</li>
+	    <li>Toggle Information Popup In Primary Toolbar - "I".</li>
+	    <li>Open Help Documentation (This Page) - "H".</li>
+	  </ul>
+	</section>
+      </section>
+    </article>
+    </body>
+</html>

@@ -17,6 +17,7 @@
             <mapping deploy="vip.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/Design/Neptune" web="/" />
             <mapping deploy="vip.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/Javascript/Neptune" web="/" />
             <mapping deploy="vip.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/Stylesheets/build/Neptune" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/LiveEdit" web="/" />
           </mappings>
         </serverdata>
       </paths>
