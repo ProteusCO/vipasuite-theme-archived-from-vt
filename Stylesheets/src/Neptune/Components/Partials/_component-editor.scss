@@ -288,6 +288,52 @@
 	&.MenuBean_editor {
 		table.menu_editor {
 			width: 100%;
+
+			//fixme get class added for this
+			tr:first-child {
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+
+				td {
+					padding-bottom: 5px;
+				}
+			}
+		}
+
+		//fixme get styles removed from component
+		.menuitem {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+			.classname,
+			.tooltip {
+				label {
+					margin-left: 10px;
+				}
+			}
+			.menuitem_form {
+				padding: 0;
+			}
+			.menuitem_actions {
+				margin: 10px 0 0;
+			}
+
+			.additional {
+				.properties {
+					.heading {
+						@include style-h3;
+						font-weight: normal;
+						margin-bottom: 5px;
+
+						.btn {
+							margin-left: 5px;
+						}
+					}
+				}
+			}
 		}
 
 		.sorting {
