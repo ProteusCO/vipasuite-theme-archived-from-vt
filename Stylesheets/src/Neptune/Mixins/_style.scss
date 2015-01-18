@@ -68,11 +68,11 @@
 	&.action_column,
 	&.action-column {
 		white-space: nowrap;
-		width: 1%;
+		width: 1px;
 	}
 
 	&.control {
-		width: 1%;
+		width: 1px;
 		white-space: nowrap;
 
 		.column-label {
@@ -111,7 +111,7 @@
 		&.action-column,
 		&.actions-con {
 			white-space: nowrap;
-			width: 1%;
+			width: 1px;
 
 			&.last-column {
 				text-align: right;
@@ -119,7 +119,7 @@
 		}
 
 		&.control {
-			width: 1%;
+			width: 1px;
 			white-space: nowrap;
 
 			input[type=checkbox] {
