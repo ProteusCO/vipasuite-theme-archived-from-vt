@@ -1,0 +1,15 @@
+@import "../../Config/base-import";
+
+.calendar_data_config_mgt {
+	.search_results {
+		.btn {
+			&.edit_button {
+				@include buttonStyleEditGlyph();
+			}
+			//fixme change this text as it is delete action
+			&.delete_button {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
