@@ -211,6 +211,16 @@ legend {
 		max-width: 350px;
 		overflow-y: auto;
 		min-width: 200px;
+
+		span.tc-long-text {
+			padding: 0;
+			position: static;
+			border: 0 none;
+			max-width: none;
+			max-height: none;
+			min-width: 0;
+			@include box-shadow(none);
+		}
 	}
 }
 
