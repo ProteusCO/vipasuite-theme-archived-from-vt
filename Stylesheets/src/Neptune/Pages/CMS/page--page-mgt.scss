@@ -405,27 +405,46 @@
 			@include box-shadow(0 0 4px transparentize($color-black, 0.8));
 		}
 
-		&.cs-pending span.type {
-			color: $color-green;
+		&.unpublished .contentelement_actions:before {
+			content: "Unpublished";
+			background-color: $color-red;
 		}
 
-		&.unpublished,
-		&.cs-draft {
-			span.type {
-				color: $color-red;
+		&.cs-pending .contentelement_actions:before {
+			content: "Pending";
+			background-color: $color-green;
+		}
+
+		&.cs-draft .contentelement_actions:before {
+			content: "Draft";
+			background-color: $color-red;
+		}
+
+		&.deprecated {
+			.name_type {
+				.name {
+					color: $color-grey;
+					text-decoration: line-through;
+				}
+			}
+
+			.contentelement_actions:before {
+				content: "Deprecated";
+				background-color: $color-darker-grey;
 			}
 		}
-		&.deprecated span.type{
-			color: $color-grey;
-			text-decoration: line-through;
+
+		&.conditional .contentelement_actions:before {
+			content: "Visibility";
+			background-color: $color-light-blue;
 		}
-		&.conditional span.type{
-			color: $color-light-blue;
+
+		&.unconfigured .contentelement_actions:before {
+			content: "Unconfigured";
+			background-color: $color-orange;
 		}
-		&.unconfigured div.name_type{
-			color: $color-orange;
-		}
-		&.configured_fallback span.type{
+
+		&.configured_fallback span.type {
 			color: $color-default-site-font;
 		}
 
@@ -451,19 +470,38 @@
 			width: 100%;
 		}
 
+		.contentelement_actions {
+			position: relative;
+
+			&:before {
+				font-family: $font-open-sans-semi-bold;
+				margin-right: 5px;
+				font-size: 10px;
+				background-color: $color-darker-grey;
+				color: $color-white;
+				padding: 3px 5px;
+				display: inline-block;
+				line-height: 1;
+			}
+		}
+
 		.name {
 			display: block;
 			font-family: $font-open-sans-semi-bold;
 
 			+ .type {
 				font-size: 10px;
+				line-height: 1;
+
+				&:before {
+					display: none;
+				}
 			}
 		}
 
 		.type {
 			display: block;
 			font-size: 12px;
-			line-height: 1;
 		}
 
 		.actions-con {
