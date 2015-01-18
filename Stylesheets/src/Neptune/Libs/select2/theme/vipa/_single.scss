@@ -74,6 +74,17 @@
   }
 }
 
+&.select2-container--disabled {
+  .select2-selection--single {
+    background-color: #ebebe2;
+    cursor: default;
+
+    .select2-selection__clear {
+      display: none;
+    }
+  }
+}
+
 &.select2-container--open {
   .select2-selection--single {
     border: 1px solid $focus-border-color;
@@ -86,16 +97,4 @@
       }
     }
   }
-//
-//  &.select2-container--above {
-//    .select2-selection--single {
-//      border-top: none;
-//    }
-//  }
-//
-//  &.select2-container--below {
-//    .select2-selection--single {
-//      border-bottom: none;
-//    }
-//  }
 }
