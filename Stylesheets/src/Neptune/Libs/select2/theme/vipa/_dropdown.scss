@@ -13,7 +13,6 @@
 .select2-results__option {
   padding: 6px;
   font-size: 12px;
-  border-top: 1px solid $color-smokey-white;
 
   user-select: none;
   -webkit-user-select: none;
@@ -23,6 +22,10 @@
   }
   &:empty:before {
     content: $html-entity-nbsp;
+  }
+
+  + .select2-results__option {
+    border-top: 1px solid $color-smokey-white;
   }
 }
 
