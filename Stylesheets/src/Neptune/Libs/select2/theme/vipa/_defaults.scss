@@ -23,11 +23,11 @@ $container-focus-border-color: $color-dark-grey !default;
 $selection-opened-bg-top-color: $selection-bg-bottom-color !default;
 $selection-opened-bg-bottom-color: $selection-bg-top-color !default;
 
-$dropdown-z-index: 1 !default;
+$dropdown-z-index: 1000 !default;
 
 $dropdown-bg-color: $selection-bg-top-color !default;
 
-$results-max-height: 200px !default;
+$results-max-height: 350px !default;
 $results-nested-padding: 20px !default;
 
 $results-choice-bg-hover-color: $color-blue !default;

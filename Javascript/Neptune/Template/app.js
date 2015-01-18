@@ -152,7 +152,7 @@
 
 	$(d).ready(function() {
 		//need select 2 to be fixed for programmatic init
-		//$(this).trigger('vs:init-content');
+		$(this).trigger('vs:init-content');
 	});
 
 })(jQuery, window, document);

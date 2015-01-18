@@ -63,5 +63,6 @@
   &.select2-container--open .select2-dropdown {
     border-color: $focus-border-color;
     border-top-color: $color-lighter-grey;
+    z-index: $dropdown-z-index;
   }
 }

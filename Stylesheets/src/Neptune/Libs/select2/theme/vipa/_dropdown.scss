@@ -11,13 +11,18 @@
 }
 
 .select2-results__option {
-  padding: 4px 6px;
+  padding: 6px;
+  font-size: 12px;
+  border-top: 1px solid $color-smokey-white;
 
   user-select: none;
   -webkit-user-select: none;
 
   &[aria-selected] {
     cursor: pointer;
+  }
+  &:empty:before {
+    content: $html-entity-nbsp;
   }
 }
 
