@@ -173,7 +173,7 @@ CMS_LE_API = (function ($, w, d) {
     }
 
     function createFloatingPalette() {
-        var node = $.node.create('<div class="cms_le_ clearfix" id="cms-le-float-palette"><div class="le-titlebar" draggable="true"><span class="le-title"></span><span class="le-controls le-close ficon" onclick="CMS_LE_API.closeFloatingPalette();">x</span></div><div id="cms-le-float-palette-content"></div></div>').appendTo('body');
+        var node = $.node.create('<div class="cms_le_ clearfix" id="cms-le-float-palette"><div class="le-titlebar" draggable="true"><span class="le-title"></span><span class="le-controls le-close ficon-glyph-only" onclick="CMS_LE_API.closeFloatingPalette();"></span></div><div id="cms-le-float-palette-content"></div></div>').appendTo('body');
         node.hide();
         // NOTE: using DnD API allows automatic document scrolling
         var pos/*position offset*/, maxY, el = node.one('.le-titlebar')._node;
@@ -263,20 +263,20 @@ CMS_LE_API = (function ($, w, d) {
       var docURL = '//' + CMS_LE_API.backend_host + '/LiveEdit/docs/';
         var node = $.node.create('<div class="cms_le_ clearfix" id="cms-le-ptb">'
             + '<div class="le-branding">'
-            + '<span class="le-title"><span class="le-product">VipaSuite</span><span class="le-app-name"><strong>Live Edit</strong></span></span>'
+            + '<span class="le-title"><span class="le-product">VipaSuite</span><span class="le-app-name">Live Edit</span></span>'
             + '<span class="le-toolbox">'
-            + '<button accesskey="x" type="button" id="cms-le-dnd-component" title="Add Component" class="ficon">Add</button>'
+            + '<button accesskey="x" type="button" id="cms-le-dnd-component" title="Add Component" class="ficon-glyph">Add</button>'
             + '</span>'
             + '<span class="le-nav-actions">'
-            + '<button type="button" id="cms-le-nav-out" title="Out" class="ficon">&#x2196;</button>'
-            + '<button type="button" id="cms-le-nav-up" title="Previous" class="ficon">&#x2191;</button>'
-            + '<button type="button" id="cms-le-nav-down" title="Next" class="ficon">&#x2193;</button>'
+            + '<button type="button" id="cms-le-nav-out" title="Out" class="ficon-glyph-only"></button>'
+            + '<button type="button" id="cms-le-nav-up" title="Previous" class="ficon-glyph-only"></button>'
+            + '<button type="button" id="cms-le-nav-down" title="Next" class="ficon-glyph-only"></button>'
             + '</span>'
             + '</div>'
             + '<div class="le-component"></div><div class="le-component-actions"></div>'
-            + '<div class="toolbar-controls"><a accesskey="h" class="le-help ficon" title="Help" target="help_page" href="'
+            + '<div class="toolbar-controls"><a accesskey="h" class="le-help ficon-glyph-only" title="Help" target="help_page" href="'
             + docURL
-            + '">?</a><span accesskey="l" class="le-location ficon" title="Bottom">b</span><span accesskey="v" class="le-visibility ficon" title="Hide">h</span><span class="le-quit ficon" title="Quit">q</span></div>'
+            + '"></a><span accesskey="l" class="le-location ficon-glyph-only" title="Bottom"></span><span accesskey="v" class="le-visibility ficon-glyph-only" title="Hide"></span><span class="le-quit ficon-glyph-only" title="Quit"></span></div>'
             + '</div>').appendTo('body');
 
         var visBtn = getVisibilityButton(), locBtn = getLocationButton();

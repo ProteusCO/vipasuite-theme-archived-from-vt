@@ -1,0 +1,135 @@
+@mixin glyphAdd($html-entity, $size: 13px, $color: '') {
+	font-family: $font-glyph-lib !important;
+	content: $html-entity !important;
+	font-size: $size !important;
+
+	@if ($color != '') {
+		color: $color !important;
+	}
+
+	// generated from grunt task
+	display: inline-block !important;
+	vertical-align: middle !important;
+	line-height: 1 !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+	text-decoration: inherit !important;
+	text-transform: none !important;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+}
+
+@mixin glyphOverride($html-entity: '', $size: '', $color: '') {
+	@if ($html-entity != '') {
+		content: $html-entity !important;
+	}
+	@if ($size != '') {
+		font-size: $size !important;
+	}
+	@if ($color != '') {
+		color: $color !important;
+	}
+}
+
+@mixin buttonColors($color-bg, $color-text: '', $change-type: 'dark') {
+	background-color: $color-bg !important;
+	@if ($color-text != '') {
+		color: $color-text !important;
+
+		&:before {
+			color: $color-text !important;
+		}
+	}
+
+	&:hover {
+		@if ($change-type == 'dark') {
+			background-color: darken($color-bg, 5%) !important;
+		} @else if ($change-type == 'none') {
+			background-color: $color-bg !important;
+		} @else {
+			background-color: lighten($color-bg, 5%) !important;
+		}
+	}
+}
+
+@mixin buttonGlyphAdd($html-entity, $size: '', $color: '', $spacing: 5px) {
+	&:before {
+		display: inline-block !important;
+		@if ($html-entity != '') {
+			content: $html-entity !important;
+		}
+		@if ($size != '') {
+			font-size: $size !important;
+		}
+		@if ($color != '') {
+			color: $color !important;
+		}
+
+		@if ($spacing != 0) {
+			margin-right: $spacing !important;
+		}
+	}
+}
+
+@mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-light-charcoal, $padding: 0) {
+	background-color: transparent !important;
+	border: 0 none !important;
+	padding: $padding !important;
+	font-size: 0 !important;
+
+	@include buttonGlyphAdd($html-entity, $size, $color, 0);
+
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+@mixin buttonGlyphOverride($html-entity: '', $size: '', $color: '') {
+	&:before {
+		@if ($html-entity != '') {
+			content: $html-entity !important;
+		}
+		@if ($size != '') {
+			font-size: $size !important;
+		}
+		@if ($color != '') {
+			color: $color !important;
+		}
+	}
+}
+
+
+@mixin buttonBase() {
+	display: inline-block !important;
+	vertical-align: middle !important;
+	white-space: nowrap !important;
+	font-family: $font-open-sans-semi-bold !important;
+	font-size: 12px !important;
+	padding: 5px 8px !important;
+	border: 0 none !important;
+	margin: 0 !important;
+	text-decoration: none !important;
+	@include buttonColors($color-blue, $color-white);
+
+	&:hover {
+		text-decoration: none !important;
+	}
+
+	//fixme eventually when i have class, only put this for btns with glyph
+	&:before {
+		font-family: $font-glyph-lib !important;
+		font-size: 13px !important;
+		// generated from grunt task
+		display: none !important;
+		vertical-align: middle !important;
+		line-height: 1 !important;
+		font-weight: normal !important;
+		font-style: normal !important;
+		text-decoration: inherit !important;
+		text-transform: none !important;
+		text-rendering: optimizeLegibility !important;
+		-webkit-font-smoothing: antialiased !important;
+		-moz-osx-font-smoothing: grayscale !important;
+	}
+}

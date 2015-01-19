@@ -1,7 +1,9 @@
+@charset "UTF-8";
+/* Based on Font Squirrel generated files */
 /* Reset */
 .cms_le_ {
   font-size: 14px;
-  font-family: "Trebuchet MS", Arial, sans-serif !important;
+  font-family: OpenSans, Arial, Verdana, sans-serif !important;
   line-height: 1;
   color: #000;
   /* auto generated */
@@ -138,8 +140,7 @@
 }
 .cms_le_ span.ficon.le-close,
 .cms_le_ span.ficon.le-move,
-.cms_le_ label.ficon.le-info,
-.cms_le_ button {
+.cms_le_ label.ficon.le-info {
   background: inherit !important;
   background-color: #fff !important;
   /*IE*/
@@ -181,24 +182,173 @@
   font-weight: normal;
   font-style: normal;
 }
-.cms_le_ .ficon {
-  /*noinspection CssNoGenericFontName*/
-  font-family: 'VipaLiveEditIcons' !important;
-  speak: none !important;
-  font-weight: normal !important;
-  line-height: 1 !important;
-  -webkit-font-smoothing: antialiased !important;
-  display: inline-block !important;
-  font-size: 16px !important;
-  vertical-align: bottom !important;
-  text-transform: none !important;
+@font-face {
+  font-family: "OpenSans";
+  src: url("/theme2/Fonts/OpenSans/opensans-regular-webfont.eot");
+  src: url("/theme2/Fonts/OpenSans/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-regular-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-
-#cms-le-title-icon {
-  padding: 0 5px !important;
-  color: #f9a51a !important;
-  font-size: 28px !important;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6) !important;
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("/theme2/Fonts/OpenSans/opensans-bold-webfont.eot");
+  src: url("/theme2/Fonts/OpenSans/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-bold-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-bold-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSansSemiBold";
+  src: url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.eot");
+  src: url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSansItalic";
+  src: url("/theme2/Fonts/OpenSans/opensans-italic-webfont.eot");
+  src: url("/theme2/Fonts/OpenSans/opensans-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-italic-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-italic-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("/theme2/Fonts/OpenSans/opensans-light-webfont.eot");
+  src: url("/theme2/Fonts/OpenSans/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-light-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GlyphLib";
+  src: url("/theme2/Fonts/GlyphLib/neptune-glyph-font.eot");
+  src: url("/theme2/Fonts/GlyphLib/neptune-glyph-font.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/GlyphLib/neptune-glyph-font.woff") format("woff"), url("/theme2/Fonts/GlyphLib/neptune-glyph-font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.cms_le_ .ficon {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
+  font-size: 12px !important;
+  padding: 5px 8px !important;
+  border: 0 none !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  background-color: #3288bd !important;
+  color: #fff !important;
+}
+.cms_le_ .ficon:before {
+  color: #fff !important;
+}
+.cms_le_ .ficon:hover {
+  background-color: #2d79a9 !important;
+}
+.cms_le_ .ficon:hover {
+  text-decoration: none !important;
+}
+.cms_le_ .ficon:before {
+  font-family: GlyphLib, sans-serif !important;
+  font-size: 13px !important;
+  display: none !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-decoration: inherit !important;
+  text-transform: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+.cms_le_ .ficon-glyph {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
+  font-size: 12px !important;
+  padding: 5px 8px !important;
+  border: 0 none !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  background-color: #3288bd !important;
+  color: #fff !important;
+}
+.cms_le_ .ficon-glyph:before {
+  color: #fff !important;
+}
+.cms_le_ .ficon-glyph:hover {
+  background-color: #2d79a9 !important;
+}
+.cms_le_ .ficon-glyph:hover {
+  text-decoration: none !important;
+}
+.cms_le_ .ficon-glyph:before {
+  font-family: GlyphLib, sans-serif !important;
+  font-size: 13px !important;
+  display: none !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-decoration: inherit !important;
+  text-transform: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+.cms_le_ .ficon-glyph:before {
+  display: inline-block !important;
+  content: "" !important;
+  margin-right: 5px !important;
+}
+.cms_le_ .ficon-glyph-only {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
+  font-size: 12px !important;
+  padding: 5px 8px !important;
+  border: 0 none !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  background-color: #3288bd !important;
+  color: #fff !important;
+  background-color: transparent !important;
+  border: 0 none !important;
+  padding: 0 !important;
+  font-size: 0 !important;
+}
+.cms_le_ .ficon-glyph-only:before {
+  color: #fff !important;
+}
+.cms_le_ .ficon-glyph-only:hover {
+  background-color: #2d79a9 !important;
+}
+.cms_le_ .ficon-glyph-only:hover {
+  text-decoration: none !important;
+}
+.cms_le_ .ficon-glyph-only:before {
+  font-family: GlyphLib, sans-serif !important;
+  font-size: 13px !important;
+  display: none !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-decoration: inherit !important;
+  text-transform: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+.cms_le_ .ficon-glyph-only:before {
+  display: inline-block !important;
+  content: "" !important;
+  font-size: 16px !important;
+  color: #555 !important;
+}
+.cms_le_ .ficon-glyph-only:hover {
+  background-color: transparent !important;
 }
 
 /** Primary Toolbar */
@@ -209,51 +359,21 @@
   min-width: 840px;
   height: 50px !important;
   z-index: 20000 !important;
-  background-color: rgba(250, 250, 250, 0.9) !important;
+  background-color: #f7f7f7 !important;
+  color: #555 !important;
   /* We're targeting the newest browsers - only webkit requires the vendor prefix. */
   -webkit-transition: all 1s cubic-bezier(0, 0.7, 0, 1) !important;
   transition: all 1s cubic-bezier(0, 0.7, 0, 1) !important;
-  font-family: "Trebuchet MS", Arial, sans-serif !important;
+  font-family: OpenSans, Arial, Verdana, sans-serif !important;
 }
 #cms-le-ptb .le-component .name {
-  font-weight: bold !important;
+  font-family: OpenSansBold, Arial, Verdana, sans-serif !important;
 }
 #cms-le-ptb .le-toolbox,
 #cms-le-ptb .le-nav-actions {
-  border-radius: 6px !important;
-  border: 1px solid #1e414c !important;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3) !important;
   display: inline-block !important;
-  vertical-align: bottom !important;
-}
-#cms-le-ptb .le-toolbox button {
-  border-radius: 6px !important;
-}
-#cms-le-ptb .le-nav-actions button:first-child {
-  border-top-left-radius: 6px !important;
-  border-bottom-left-radius: 6px !important;
-}
-#cms-le-ptb .le-component-actions button:last-child,
-#cms-le-ptb .le-nav-actions button:last-child {
-  border-top-right-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-  border-right: 0 !important;
-}
-#cms-le-ptb .le-branding .le-toolbox button {
-  font-size: 18px !important;
-}
-#cms-le-ptb .le-branding button {
-  color: rgba(255, 255, 255, 0.7) !important;
-  background: #146f88 !important;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.6) !important;
-  border-right: 1px solid #1e414c !important;
-}
-#cms-le-ptb .le-branding button:hover {
-  color: #fff !important;
-}
-#cms-le-ptb .le-branding button.active, #cms-le-ptb .le-branding button:active {
-  background: #318aa0 !important;
-  color: #fff !important;
+  vertical-align: top !important;
+  height: 50px;
 }
 #cms-le-ptb .le-info .le-name {
   font-weight: bold !important;
@@ -276,7 +396,7 @@
 #cms-le-ptb .le-component {
   height: 100% !important;
   width: 300px !important;
-  left: 310px !important;
+  left: 424px !important;
   background-color: #fafafa !important;
   border-right: 1px solid #ccc !important;
   padding: 6px !important;
@@ -303,13 +423,6 @@
 }
 #cms-le-ptb .le-component-actions .ficon:first-child {
   border-left: 1px solid #d9d9d9 !important;
-  border-radius: 6px 0 0 6px !important;
-}
-#cms-le-ptb .le-component-actions button:last-of-type {
-  border-radius: 0 6px 6px 0 !important;
-}
-#cms-le-ptb .le-component-actions button:first-of-type:last-of-type {
-  border-radius: 6px !important;
 }
 #cms-le-ptb .le-component-actions button.le-info {
   padding: 0 !important;
@@ -324,9 +437,9 @@
 #cms-le-ptb.top {
   bottom: 100% !important;
   margin-bottom: -50px !important;
-  -webkit-box-shadow: 0 2px 4px rgba(50, 50, 50, 0.75) !important;
-  -moz-box-shadow: 0 2px 4px rgba(50, 50, 50, 0.75) !important;
-  box-shadow: 0 2px 4px rgba(50, 50, 50, 0.75) !important;
+  -moz-box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
+  -webkit-box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
+  box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
 }
 #cms-le-ptb.top.hidden {
   margin-bottom: 0 !important;
@@ -337,9 +450,9 @@
 }
 #cms-le-ptb.bottom {
   bottom: 0 !important;
-  -webkit-box-shadow: 0 -2px 4px rgba(50, 50, 50, 0.5) !important;
-  -moz-box-shadow: 0 -2px 4px rgba(50, 50, 50, 0.5) !important;
-  box-shadow: 0 -2px 4px rgba(50, 50, 50, 0.5) !important;
+  -moz-box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
+  -webkit-box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
+  box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
 }
 #cms-le-ptb.bottom.hidden {
   margin-bottom: -50px !important;
@@ -359,29 +472,82 @@
 }
 #cms-le-ptb .le-branding {
   height: 100% !important;
-  width: 310px !important;
-  background-color: #046380 !important;
-  color: #fff !important;
-  padding: 8px 0 !important;
+  width: 424px !important;
   box-sizing: border-box !important;
   font-size: 18px !important;
 }
 #cms-le-ptb .le-title {
+  background-color: #1a608a !important;
   display: inline-block !important;
-  vertical-align: middle !important;
-  -webkit-font-smoothing: antialiased !important;
-  /*looks terrible on mac w/o this*/
+  vertical-align: top !important;
+  height: 50px !important;
+  position: relative !important;
+  padding: 0 10px !important;
 }
 #cms-le-ptb .le-title .le-product {
-  font-size: 14px !important;
-}
-#cms-le-ptb .le-title .le-product,
-#cms-le-ptb .le-title .le-app-name {
+  background: center center transparent url("/theme2/Overall/vipasuite-neptune-primary-logo.png") no-repeat !important;
+  background-size: contain !important;
+  width: 150px !important;
+  height: 40px !important;
+  font-size: 0 !important;
   display: block !important;
-  color: #fff !important;
+}
+#cms-le-ptb .le-title .le-app-name {
+  position: absolute !important;
+  bottom: 3px !important;
+  right: 16px !important;
+  display: block !important;
+  color: #519ecd !important;
+  text-transform: uppercase !important;
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
 }
 #cms-le-ptb .le-toolbox {
-  margin: 0 10px 0 20px !important;
+  background-color: #68c266 !important;
+  height: 50px !important;
+}
+#cms-le-ptb .le-toolbox button {
+  background-color: #68c266 !important;
+  color: #fff !important;
+  font-size: 17px !important;
+  padding: 12px 15px !important;
+}
+#cms-le-ptb .le-toolbox button:before {
+  color: #fff !important;
+}
+#cms-le-ptb .le-toolbox button:hover {
+  background-color: #56bb54 !important;
+}
+#cms-le-ptb .le-toolbox button:before {
+  font-size: 24px !important;
+}
+#cms-le-ptb .le-nav-actions {
+  background-color: #586771 !important;
+  height: 50px !important;
+}
+#cms-le-ptb .le-nav-actions button {
+  background-color: #586771 !important;
+  color: #fff !important;
+  font-size: 17px !important;
+  padding: 12px 15px !important;
+}
+#cms-le-ptb .le-nav-actions button:before {
+  color: #fff !important;
+}
+#cms-le-ptb .le-nav-actions button:hover {
+  background-color: #4d5a63 !important;
+}
+#cms-le-ptb .le-nav-actions button:before {
+  font-size: 24px !important;
+  color: #fff !important;
+}
+#cms-le-ptb .le-nav-actions button#cms-le-nav-out:before {
+  content: "" !important;
+}
+#cms-le-ptb .le-nav-actions button#cms-le-nav-up:before {
+  content: "" !important;
+}
+#cms-le-ptb .le-nav-actions button#cms-le-nav-down:before {
+  content: "" !important;
 }
 #cms-le-ptb .toolbar-controls {
   right: 0 !important;
@@ -399,18 +565,23 @@
   /*noinspection ALL*/
   perspective: 1000;
 }
-#cms-le-ptb .toolbar-controls a {
-  text-decoration: none !important;
+#cms-le-ptb .toolbar-controls .ficon-glyph-only:before {
+  font-size: 20px !important;
 }
-#cms-le-ptb .toolbar-controls .ficon {
-  display: inline-block !important;
-  font-size: 16px !important;
-  cursor: pointer !important;
-  padding-left: 4px !important;
-  color: #c7c7c7 !important;
+#cms-le-ptb .toolbar-controls .le-location:before {
+  content: "" !important;
 }
-#cms-le-ptb .toolbar-controls .ficon:hover {
-  color: #8f8f8f !important;
+#cms-le-ptb .toolbar-controls .le-visibility:before {
+  content: "" !important;
+}
+#cms-le-ptb .toolbar-controls .le-quit:before {
+  content: "" !important;
+}
+#cms-le-ptb.bottom .toolbar-controls .le-location:before {
+  content: "" !important;
+}
+#cms-le-ptb.hidden .toolbar-controls .le-visibility:before {
+  content: "" !important;
 }
 #cms-le-ptb .le-info-panel .le-shared:before,
 #cms-le-ptb .le-info-panel .le-cat-page-template:before,
@@ -839,70 +1010,66 @@
 #cms-le-float-palette {
   position: absolute !important;
   z-index: 20001 !important;
-  border: 1px #aaa solid !important;
-  border-radius: 6px;
   background: #fff !important;
   width: 250px !important;
   box-sizing: border-box !important;
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
   /*not important*/
   top: 55px;
   left: 10px;
 }
 #cms-le-float-palette .le-titlebar {
   padding: 10px 20px 10px 10px !important;
-  text-align: center !important;
-  background: #318aa0 !important;
+  background: #68c266 !important;
   color: #fff !important;
-  border-radius: 6px 6px 0 0 !important;
+  border-bottom: 1px solid #57944f !important;
 }
-#cms-le-float-palette .le-title {
+#cms-le-float-palette .le-titlebar .le-title {
   font-size: 14px !important;
-  font-weight: bold !important;
-  -webkit-font-smoothing: antialiased !important;
+  font-family: OpenSansBold, Arial, Verdana, sans-serif !important;
 }
 #cms-le-float-palette .le-titlebar .le-controls {
   position: absolute !important;
-  right: 0 !important;
-  top: 0 !important;
-  font-size: 12px !important;
-  color: #444;
+  right: 5px !important;
+  top: 9px !important;
 }
-#cms-le-float-palette .le-titlebar .le-controls.le-close {
-  border: 0 !important;
-  background: transparent !important;
-}
-#cms-le-float-palette .le-titlebar .le-controls:hover {
-  color: #000;
+#cms-le-float-palette .le-titlebar .le-controls.le-close:before {
+  content: "" !important;
+  font-size: 16px !important;
+  color: #fff !important;
 }
 #cms-le-float-palette .le-search-results button.toggle {
   width: 100% !important;
   text-align: left !important;
   margin: 0 !important;
   font-size: 12px !important;
-  font-family: "Trebuchet MS", Arial, sans-serif !important;
-  font-weight: bold !important;
-  border-radius: 6px !important;
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   padding: 8px 10px !important;
-  box-shadow: 1px 1px 0 #fff inset !important;
-  background: #eee !important;
-  border: 1px outset #eee !important;
-  color: #666 !important;
-}
-#cms-le-float-palette .le-search-results button.toggle:active {
-  border-style: solid !important;
+  background: #99a8b1 !important;
+  border: 0 none !important;
+  border-top: 1px solid #baccd7 !important;
+  color: #fff !important;
 }
 #cms-le-float-palette .le-search-results button.toggle:after {
-  content: "\2303";
-  /*noinspection CssNoGenericFontName*/
-  font-family: 'VipaLiveEditIcons' !important;
-  float: right !important;
+  font-family: GlyphLib, sans-serif !important;
+  content: "" !important;
+  font-size: 16px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
   font-weight: normal !important;
+  font-style: normal !important;
+  text-decoration: inherit !important;
+  text-transform: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  float: right !important;
 }
 #cms-le-float-palette .le-search-results .hidden button.toggle:after {
-  content: "\2304";
-}
-#cms-le-float-palette .le-search-existing-results-control {
-  margin-top: 4px !important;
+  content: "" !important;
 }
 #cms-le-float-palette .le-search-new-results,
 #cms-le-float-palette .le-search-existing-results {
@@ -918,23 +1085,37 @@
 }
 #cms-le-float-palette .le-search-result {
   box-sizing: border-box !important;
-  margin: 7px auto !important;
-  /*noinspection CssUnknownTarget*/
-  background: #fff url(/_resources/all/docroot/cms/icons/dnd-drag-handle.png) no-repeat 2px center !important;
-  padding: 2px 2px 7px 14px !important;
-  border: 0 solid #ddd !important;
-  border-bottom-width: 1px !important;
+  padding: 2px 0 !important;
+}
+#cms-le-float-palette .le-search-result + .le-search-result {
+  border-top: 1px solid #f2f2f2 !important;
+}
+#cms-le-float-palette .le-search-result:hover {
+  background-color: #f2f2f2 !important;
 }
 #cms-le-float-palette .le-search-result .contentelement {
-  border: 1px dotted #eee !important;
-  margin: 0 1px !important;
   width: 100% !important;
+  text-align: left !important;
 }
 #cms-le-float-palette .le-search-result .contentelement td {
   padding: 2px !important;
 }
 #cms-le-float-palette .le-search-result .contentelement td.le-icon {
   width: 34px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+#cms-le-float-palette .le-search-result .contentelement .le-name {
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
+  font-size: 12px !important;
+}
+#cms-le-float-palette .le-search-result .contentelement .le-type {
+  font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
+  font-size: 12px !important;
+}
+#cms-le-float-palette .le-search-result .contentelement .le-name + .le-type {
+  font-family: OpenSans, Arial, Verdana, sans-serif !important;
+  font-size: 11px !important;
 }
 
 #cms-le-float-palette-content {
@@ -948,20 +1129,18 @@
 }
 #cms-le-float-palette-content .le-search-bar {
   text-align: center !important;
-  border-bottom: 1px #bbb solid !important;
-  padding: 5px 15px 5px 10px !important;
   box-sizing: border-box !important;
+  border-bottom: 1px solid #baccd7 !important;
 }
 #cms-le-float-palette-content .le-search-bar input.le-search {
   width: 100% !important;
+  padding: 9px 10px !important;
+  border: 0 none !important;
+  margin: 0 !important;
 }
 #cms-le-float-palette-content .le-search-results {
   overflow: auto !important;
-  padding: 4px !important;
   box-sizing: border-box !important;
-}
-#cms-le-float-palette-content .le-search-result .le-name {
-  font-weight: bold !important;
 }
 
 /** End Palette Toolbox */
