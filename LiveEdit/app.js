@@ -263,10 +263,9 @@ CMS_LE_API = (function ($, w, d) {
       var docURL = '//' + CMS_LE_API.backend_host + '/LiveEdit/docs/';
         var node = $.node.create('<div class="cms_le_ clearfix" id="cms-le-ptb">'
             + '<div class="le-branding">'
-            + '<span aria-hidden="true" id="cms-le-title-icon" class="ficon">v</span>'
             + '<span class="le-title"><span class="le-product">VipaSuite</span><span class="le-app-name"><strong>Live Edit</strong></span></span>'
             + '<span class="le-toolbox">'
-            + '<button accesskey="x" type="button" id="cms-le-dnd-component" title="Add Component" class="ficon">&#x21f1;</button>'
+            + '<button accesskey="x" type="button" id="cms-le-dnd-component" title="Add Component" class="ficon">Add</button>'
             + '</span>'
             + '<span class="le-nav-actions">'
             + '<button type="button" id="cms-le-nav-out" title="Out" class="ficon">&#x2196;</button>'
