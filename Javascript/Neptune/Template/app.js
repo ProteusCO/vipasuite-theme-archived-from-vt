@@ -118,9 +118,12 @@
 		}
 
 		//set up scrollbar on menu
+		//need to do this https://github.com/malihu/malihu-custom-scrollbar-plugin/issues/187
 		$navCon.mCustomScrollbar({
 			scrollInertia: 0,
 			mouseWheel: {
+				deltaFactor: 1,
+				normalizeDelta: true,
 				scrollAmount: 100
 			}
 		});
