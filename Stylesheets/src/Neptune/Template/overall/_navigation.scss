@@ -133,10 +133,10 @@
 
 			}
 			&.nav-cogsworth {
-
+				@include navMenuIconOverride($html-entity-clock);
 			}
 			&.nav-cogsworth-projects {
-
+				@include navMenuIconOverride($html-entity-files);
 			}
 
 			//CMS subsection
@@ -213,7 +213,7 @@
 				@include navMenuIconOverride($html-entity-discount);
 			}
 			&.nav-donation {
-				@include navMenuIconOverride($html-entity-discount);
+				@include navMenuIconOverride($html-entity-donation);
 			}
 			&.nav-inventory {
 				@include navMenuIconOverride($html-entity-inventory);
@@ -289,12 +289,16 @@
 				//fixme need icon
 				@include navMenuIconOverride($html-entity-profile);
 			}
-			&.nav-fontend-user {
+			&.nav-frontend-user {
 				//fixme need icon
 				@include navMenuIconOverride($html-entity-profile);
 			}
-			&.nav-client-user {
+			&.nav-client {
 				@include navMenuIconOverride($html-entity-clients);
+			}
+			&.nav-roles {
+				//fixme need icon
+				//@include navMenuIconOverride($html-entity-clients);
 			}
 			&.nav-member-admin {
 				@include navMenuIconOverride($html-entity-member-admin);
