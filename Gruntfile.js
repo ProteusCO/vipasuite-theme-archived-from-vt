@@ -3,8 +3,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		webfont: {
 			icons: {
-				src: 'src/icons/*.svg',
-				dest: 'build/fonts',
+				src: 'FontGlyphs/src/icons/*.svg',
+				dest: 'FontGlyphs/build/fonts',
 				options: {
 					font: 'neptune-glyph-font',
 					syntax: 'bootstrap',
@@ -16,9 +16,9 @@ module.exports = function(grunt) {
 			}
 		},
 		copy: {
-			main: {
-				src: 'build/fonts/_neptune-glyph-font.scss',
-				dest: '../Stylesheets/src/Neptune/Config/_font-glyph-entities.scss',
+			webfontScss: {
+				src: 'FontGlyphs/build/fonts/_neptune-glyph-font.scss',
+				dest: 'Stylesheets/src/Neptune/Config/_font-glyph-entities.scss',
 				options: {
 					process: function (content, srcpath) {
 						//Replace all the extra content and change the CSS to named SCSS variables that reference the unicode content
@@ -28,9 +28,15 @@ module.exports = function(grunt) {
 					}
 				}
 			},
-			fonts: {
-				src: ['build/fonts/*', '!build/fonts/*.{scss,css,html}'],
-				dest: '../Design/Neptune/Fonts/GlyphLib/',
+			webfontFonts: {
+				src: ['FontGlyphs/build/fonts/*', '!FontGlyphs/build/fonts/*.{scss,css,html}'],
+				dest: 'Design/Neptune/Fonts/GlyphLib/',
+				expand: true,
+				flatten: true
+			},
+			liveEdit: {
+				src: 'Stylesheets/build/Neptune/LiveEdit/*.css',
+				dest: 'LiveEdit/',
 				expand: true,
 				flatten: true
 			}
@@ -40,6 +46,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-webfont');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default', ['webfont', 'copy']);
+	grunt.registerTask('Webfonts', ['webfont', 'copy:webfontScss', 'copy:webfontFonts']);
+	grunt.registerTask('LiveEdit', ['copy:liveEdit']);
 
 };
