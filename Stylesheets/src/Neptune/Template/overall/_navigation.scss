@@ -48,16 +48,50 @@
 				> .mil {
 					&:before {
 						@include glyphAdd($html-entity-gear, 32px, $color-white);
+						margin-right: 5px;
 					}
 				}
 			}
 
 
+
 			&.nav-dashboard {
 				@include navMenuIconOverride($html-entity-dashboard);
 			}
+			&.nav-support-group {
+				@include navMenuIconOverride($html-entity-support);
+			}
 			&.nav-cms-group {
 				@include navMenuIconOverride($html-entity-cms);
+			}
+			&.nav-form-group {
+				@include navMenuIconOverride($html-entity-form-process);
+			}
+			&.nav-order-group {
+				@include navMenuIconOverride($html-entity-order-mgt);
+			}
+			&.nav-ecomm-group {
+				@include navMenuIconOverride($html-entity-cart);
+			}
+			&.nav-event-group {
+				@include navMenuIconOverride($html-entity-event-mgt);
+			}
+			&.nav-social-group {
+				//fixme get different icon for this
+				@include navMenuIconOverride($html-entity-customer-requests-mine);
+			}
+			&.nav-app-group {
+				@include navMenuIconOverride($html-entity-monitor);
+			}
+			&.nav-user-group {
+				//fixme get different icon
+				@include navMenuIconOverride($html-entity-profile);
+			}
+			&.nav-report-group {
+				@include navMenuIconOverride($html-entity-report-graph);
+			}
+			&.nav-system-group {
+				@include navMenuIconOverride($html-entity-monitor);
 			}
 		}
 	}
@@ -83,10 +117,29 @@
 				> .mil {
 					&:before {
 						@include glyphAdd($html-entity-gear, 32px, $color-dark-grey);
+						margin-right: 5px;
 					}
 				}
 			}
 
+			//Support subsection
+			&.nav-csr {
+				@include navMenuIconOverride($html-entity-customer-care);
+			}
+			&.nav-my-requests {
+				@include navMenuIconOverride($html-entity-customer-requests-mine);
+			}
+			&.nav-server-traffic {
+
+			}
+			&.nav-cogsworth {
+				@include navMenuIconOverride($html-entity-clock);
+			}
+			&.nav-cogsworth-projects {
+				@include navMenuIconOverride($html-entity-files);
+			}
+
+			//CMS subsection
 			&.nav-site {
 				@include navMenuIconOverride($html-entity-site);
 			}
@@ -112,6 +165,178 @@
 				@include navMenuIconOverride($html-entity-component);
 			}
 
+			//Form Process
+			&.nav-form {
+				@include navMenuIconOverride($html-entity-forms);
+			}
+			&.nav-form-data {
+				@include navMenuIconOverride($html-entity-form-data);
+			}
+			&.nav-process-data {
+				@include navMenuIconOverride($html-entity-process-data);
+			}
+			&.nav-process-task {
+				@include navMenuIconOverride($html-entity-process-task);
+			}
+			&.nav-capacity {
+				@include navMenuIconOverride($html-entity-battery-almost-full);
+			}
+			&.nav-question-bank {
+
+			}
+
+			//Order mgt
+			&.nav-order {
+				@include navMenuIconOverride($html-entity-orders);
+			}
+			&.nav-shipping {
+				@include navMenuIconOverride($html-entity-shipping);
+			}
+			&.nav-order-pickup {
+				@include navMenuIconOverride($html-entity-order-pickup);
+			}
+			&.nav-order-wizard {
+				@include navMenuIconOverride($html-entity-order-entry-wizard);
+			}
+
+			//Ecomm
+			&.nav-store {
+				@include navMenuIconOverride($html-entity-store);
+			}
+			&.nav-paypool {
+				@include navMenuIconOverride($html-entity-paypool);
+			}
+			&.nav-catalog {
+				@include navMenuIconOverride($html-entity-catalog);
+			}
+			&.nav-discount {
+				@include navMenuIconOverride($html-entity-discount);
+			}
+			&.nav-donation {
+				@include navMenuIconOverride($html-entity-donation);
+			}
+			&.nav-inventory {
+				@include navMenuIconOverride($html-entity-inventory);
+			}
+			&.nav-product {
+				@include navMenuIconOverride($html-entity-product);
+			}
+
+			//event mgt
+			&.nav-cal-config {
+				@include navMenuIconOverride($html-entity-calendar-config);
+			}
+			&.nav-cal {
+				@include navMenuIconOverride($html-entity-calendar);
+			}
+
+			//Social
+			&.nav-blog {
+				@include navMenuIconOverride($html-entity-blog);
+			}
+			&.nav-comment-mod {
+				@include navMenuIconOverride($html-entity-comment-moderation);
+			}
+			&.nav-comment-def {
+				@include navMenuIconOverride($html-entity-comment-def-mgt);
+			}
+			&.nav-rating-def {
+				@include navMenuIconOverride($html-entity-star);
+			}
+			&.nav-message {
+				//fixme get different mail message icon
+				@include navMenuIconOverride($html-entity-mail);
+			}
+			&.nav-mail-merge {
+				@include navMenuIconOverride($html-entity-mail-merge);
+			}
+
+			//Application
+			&.nav-projects {
+				@include navMenuIconOverride($html-entity-files);
+			}
+			&.nav-custom-models {
+				@include navMenuIconOverride($html-entity-custom-model-mgt);
+			}
+			&.nav-custom-db {
+				@include navMenuIconOverride($html-entity-custom-db-mgt);
+			}
+			&.nav-custom-db-data {
+				//fixme
+				@include navMenuIconOverride($html-entity-database);
+			}
+			&.nav-data-provider {
+				@include navMenuIconOverride($html-entity-data-provider-mgt);
+			}
+			&.nav-labels {
+				@include navMenuIconOverride($html-entity-label-mgt);
+			}
+			&.nav-plugin-install {
+				@include navMenuIconOverride($html-entity-plugin-install-mgt);
+			}
+			&.nav-plugin {
+				@include navMenuIconOverride($html-entity-plugin-mgt);
+			}
+			&.nav-action-trigger {
+				@include navMenuIconOverride($html-entity-action-trigger-mgt);
+			}
+			&.nav-email-template {
+				@include navMenuIconOverride($html-entity-email-template-mgt);
+			}
+
+			//User Section
+			&.nav-backend-user {
+				//fixme need icon
+				@include navMenuIconOverride($html-entity-profile);
+			}
+			&.nav-frontend-user {
+				//fixme need icon
+				@include navMenuIconOverride($html-entity-profile);
+			}
+			&.nav-client {
+				@include navMenuIconOverride($html-entity-clients);
+			}
+			&.nav-roles {
+				//fixme need icon
+				//@include navMenuIconOverride($html-entity-clients);
+			}
+			&.nav-member-admin {
+				@include navMenuIconOverride($html-entity-member-admin);
+			}
+
+			//reports
+			&.nav-my-reports {
+				@include navMenuIconOverride($html-entity-reports-mine);
+			}
+			&.nav-report-config {
+				@include navMenuIconOverride($html-entity-report-config);
+			}
+
+			//system
+			&.nav-permission {
+				@include navMenuIconOverride($html-entity-lock);
+			}
+			&.nav-text-editor {
+				@include navMenuIconOverride($html-entity-text-editor);
+			}
+			&.nav-help-points {
+				@include navMenuIconOverride($html-entity-help-points);
+			}
+			&.nav-system-info {
+				@include navMenuIconOverride($html-entity-system-info);
+			}
+			&.nav-system-cache {
+				@include navMenuIconOverride($html-entity-system-cache);
+			}
+			&.nav-log4j {
+				@include navMenuIconOverride($html-entity-log4j-mgt);
+			}
+			&.nav-scripts {
+				@include navMenuIconOverride($html-entity-console);
+			}
+			&.nav-component-factory {
+				@include navMenuIconOverride($html-entity-component-factory);
+			}
 		}
 	}
 }
