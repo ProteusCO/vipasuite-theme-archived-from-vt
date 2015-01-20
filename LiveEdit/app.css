@@ -787,11 +787,11 @@
 #cms-le-overlay-content {
   vertical-align: middle !important;
   background-color: #f7f7f7 !important;
-  padding: 10px !important;
+  padding: 20px !important;
   /*Need to ensure we fit in 1024x768*/
   border: 1px solid #777 !important;
-  box-shadow: 1px 1px 2px #646464 !important;
   -moz-box-shadow: 1px 1px 2px #646464 !important;
+  box-shadow: 1px 1px 2px #646464 !important;
 }
 #cms-le-overlay-content iframe {
   /*noinspection CssUnknownTarget*/
@@ -801,36 +801,20 @@
 }
 
 .cms-le-overlay-layout p {
-  margin-bottom: 28px !important;
-  font-family: "Trebuchet MS", Arial, sans-serif !important;
+  margin-bottom: 15px !important;
+  font-family: OpenSans, Arial, Verdana, sans-serif !important;
+}
+.cms-le-overlay-layout p:first-child {
+  margin-top: 0 !important;
 }
 .cms-le-overlay-layout a {
-  color: #146f88 !important;
+  color: #00f !important;
 }
 .cms-le-overlay-layout a:hover {
   text-decoration: none !important;
 }
-.cms-le-overlay-layout button {
-  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6) inset !important;
-  margin: 0 10px !important;
-  font-family: "Trebuchet MS", Arial, sans-serif !important;
-  min-width: 100px !important;
-  font-size: 13px !important;
-  font-weight: normal !important;
-  background: #eee !important;
-  border: 1px solid #ccc !important;
-  color: #666 !important;
-}
-.cms-le-overlay-layout button:hover {
-  color: #222 !important;
-}
-.cms-le-overlay-layout button.le-login {
-  border-color: #1e414c !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-  background: #146f88 !important;
-}
-.cms-le-overlay-layout button.le-login:hover {
-  color: #fff !important;
+.cms-le-overlay-layout .ficon {
+  cursor: pointer !important;
 }
 
 /** End Overlay */

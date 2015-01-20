@@ -764,10 +764,10 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 #cms-le-overlay-content {
   vertical-align: middle !important;
   background-color: $color-almost-white !important;
-  padding: 10px !important; /*Need to ensure we fit in 1024x768*/
+  padding: 20px !important; /*Need to ensure we fit in 1024x768*/
   border: 1px solid $color-darker-grey !important;
-  box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
   -moz-box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
+  box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
 
   iframe {
     /*noinspection CssUnknownTarget*/
@@ -775,46 +775,30 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     -webkit-transition: all .25s ease-in !important;
     transition: all .25s ease-in !important;
   }
+
+
 }
 
 .cms-le-overlay-layout {
   p {
-    margin-bottom: 28px !important;
-    font-family: "Trebuchet MS", Arial, sans-serif !important;
+    &:first-child {
+      margin-top: 0 !important;
+    }
+
+    margin-bottom: 15px !important;
+    font-family: $font-open-sans !important;
   }
 
   a {
-    color: #146f88 !important;
+    color: $color-default-link !important;
 
     &:hover {
       text-decoration: none !important;
     }
   }
 
-  button {
-    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6) inset !important;
-    margin: 0 10px !important;
-    font-family: "Trebuchet MS", Arial, sans-serif !important;
-    min-width: 100px !important;
-    font-size: 13px !important;
-    font-weight: normal !important;
-    background: #eee !important;
-    border: 1px solid #ccc !important;
-    color: #666 !important;
-
-    &:hover {
-      color: #222 !important;
-    }
-
-    &.le-login {
-      border-color: #1e414c !important;
-      color: rgba(255, 255, 255, 0.7) !important;
-      background: #146f88 !important;
-
-      &:hover {
-        color: #fff !important;
-      }
-    }
+  .ficon {
+    cursor: pointer !important;
   }
 }
 /** End Overlay */
