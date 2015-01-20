@@ -103,7 +103,13 @@
 		> .mi {
 			&.mi-active {
 				> .menuitemlabel {
-					background-color: darken($color-smokey-white, 5%);
+					background-color: $color-light-grey;
+					color: $color-charcoal;
+					font-family: $font-open-sans-semi-bold;
+
+					.mil {
+						@include buttonGlyphOverride($color: $color-charcoal);
+					}
 				}
 			}
 
@@ -111,7 +117,7 @@
 				color: $color-default-site-font;
 
 				&:hover {
-					background-color: darken($color-smokey-white, 5%);
+					background-color: $color-lighter-grey;
 				}
 
 				> .mil {
