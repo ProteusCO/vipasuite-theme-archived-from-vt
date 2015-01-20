@@ -2096,16 +2096,17 @@ localnwt.ready = localnwt.event.ready;
    * @param {number|null} to Optional timeout in seconds. 
    */
   w.displayAlert = function displayAlert(msg, to) {
-    var styles =['position:fixed','top:5px','left:5px','z-index:880001','background-color:#F9EDBE','border:1px solid #F0C36D', 
-    'box-shadow:0 0 4px rgba(0,0,0,.5)','padding:15px','color:#333','line-height:19px','-webkit-transition:all 1s','transition:all 1s']
+    var styles =['position:fixed','top:5px','left:5px','z-index:880001','background-color:#1a608a','border:1px solid #333',
+    'box-shadow:0 0 4px rgba(0,0,0,.5)','padding:10px','color:#fff','line-height:19px','-webkit-transition:all 1s','transition:all 1s',
+		'font-family: Arial, Verdana, sans-serif', 'font-size: 12px']
 	.join(' !important;'),
       html = '<img> ' + msg, img,
       node = document.createElement('div');
     node.innerHTML = html;
     document.body.appendChild(node);
     node.setAttribute('style',styles);
-    (img=node.firstChild).src = '//vipasuite.com/LiveEdit/vipa-icon-19.png';
-    img.setAttribute('style','vertical-align:bottom;width:19px;height:19px;');
+    (img=node.firstChild).src = '//vip.vipasuite.com/LiveEdit/vipa-logo.png';
+    img.setAttribute('style','vertical-align:bottom;width:20px;height:20px;');
     to=(to||9)*1000;
     setTimeout(function(){node.style.left=-node.offsetWidth+'px';node.style.opacity=0;},to);
     setTimeout(function(){node.parentNode.removeChild(node);},(to+2000));

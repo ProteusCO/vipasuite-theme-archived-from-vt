@@ -44,11 +44,11 @@
 
 	&:hover {
 		@if ($change-type == 'dark') {
-			background-color: darken($color-bg, 5%) !important;
+			background-color: darken($color-bg, 10%) !important;
 		} @else if ($change-type == 'none') {
 			background-color: $color-bg !important;
 		} @else {
-			background-color: lighten($color-bg, 5%) !important;
+			background-color: lighten($color-bg, 10%) !important;
 		}
 	}
 }

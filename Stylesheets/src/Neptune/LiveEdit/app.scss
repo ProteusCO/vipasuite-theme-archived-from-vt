@@ -5,7 +5,10 @@
 @import "mixins";
 
 $le-bar-height-visible: 50px;
-$le-branding-width: 424px;
+$le-branding-title-width: 170px;
+$le-branding-toolbox-width: 95px;
+$le-branding-nav-actions-width: 162px;
+$le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-branding-nav-actions-width;
 
 /* Reset */
 .cms_le_ {
@@ -278,11 +281,10 @@ $le-branding-width: 424px;
   .le-nav-actions {
     display: inline-block !important;
     vertical-align: top !important;
-    height: $le-bar-height-visible;
   }
 
   .le-info .le-name {
-    font-weight: bold !important;
+    font-family: $font-open-sans-bold !important;
     max-height: 30px !important;
     min-height: 16px !important;
     overflow: hidden !important;
@@ -303,38 +305,43 @@ $le-branding-width: 424px;
   }
 
   .le-component {
-    height: 100% !important;
-    width: 300px !important;
+    height: $le-bar-height-visible !important;
+    width: 250px !important;
     left: $le-branding-width !important;
     background-color: rgba(250, 250, 250, 1) !important;
     border-right: 1px solid #ccc !important;
-    padding: 6px !important;
-    overflow: hidden;
+    padding: 9px 6px !important;
+    overflow: hidden !important;
   }
 
   .le-component-actions {
-    left: 630px !important;
+    left: 690px !important;
     right: 80px !important;
     bottom: auto !important;
     top: 10px !important;
     color: #2199cd !important;
     font-size: 0 !important; /*whitespace removal*/
-    white-space: nowrap;
+    white-space: nowrap !important;
 
-    .ficon,
-    button {
-      &:hover {
-        color: #0cf !important;
+    .ficon-glyph-only {
+      @include buttonGlyphOverride($size: 20px);
+      cursor: pointer !important;
+
+      + .ficon-glyph-only {
+        margin-left: 5px !important;
       }
-    }
 
-    .ficon {
-      border: 1px solid #d9d9d9 !important;
-      border-left: 0 !important;
-      background: #fff !important;
-
-      &:first-child {
-        border-left: 1px solid #d9d9d9 !important;
+      &.le-move {
+        @include buttonGlyphOverride($html-entity-move);
+      }
+      &.le-edit {
+        @include buttonGlyphOverride($html-entity-edit);
+      }
+      &.le-detach {
+        @include buttonGlyphOverride($html-entity-trashcan, $color: $color-error-dark);
+      }
+      &.le-info {
+        @include buttonGlyphOverride($html-entity-info, $color: $color-blue);
       }
     }
 
@@ -375,19 +382,23 @@ $le-branding-width: 424px;
 
     &.hidden {
       margin-bottom: -50px !important;
+
+      .toolbar-controls {
+        top: -40px !important;
+      }
     }
 
     .le-info-panel {
       bottom: 100% !important;
       margin-top: 0 !important;
-      margin-bottom: 16px !important;
+      margin-bottom: 4px !important;
     }
   }
 
   &.hidden {
     .toolbar-controls {
       top: -25px !important;
-      height: 25px !important;
+      height: 40px !important;
     }
 
     #cms-le-ptb-info {
@@ -411,6 +422,7 @@ $le-branding-width: 424px;
     display: inline-block !important;
     vertical-align: top !important;
     height: $le-bar-height-visible !important;
+    width: $le-branding-title-width !important;
     position: relative !important;
     padding: 0 10px !important;
 
@@ -438,24 +450,30 @@ $le-branding-width: 424px;
   .le-toolbox {
     background-color: $color-green !important;
     height: $le-bar-height-visible !important;
+    width: $le-branding-toolbox-width !important;
 
     button {
       @include buttonColors($color-green, $color-white);
       @include buttonGlyphOverride($size: 24px);
+      width: $le-branding-toolbox-width !important;
       font-size: 17px !important;
       padding: 12px 15px !important;
+      cursor: pointer !important;
+      height: $le-bar-height-visible !important;
     }
   }
 
   .le-nav-actions {
     background-color: $color-bluegrey !important;
     height: $le-bar-height-visible !important;
+    width: $le-branding-nav-actions-width !important;
 
     button {
       @include buttonColors($color-bluegrey, $color-white);
       @include buttonGlyphOverride($size: 24px, $color: $color-white);
       font-size: 17px !important;
       padding: 12px 15px !important;
+      cursor: pointer !important;
 
       &#cms-le-nav-out {
         @include buttonGlyphOverride($html-entity-arrow-left);
@@ -471,9 +489,8 @@ $le-branding-width: 424px;
 
   .toolbar-controls {
     right: 0 !important;
-    padding-top: 6px !important;
+    padding: 10px !important;
     height: 100% !important;
-    width: 80px !important;
     background-color: rgba(250, 250, 250, .8) !important;
     -webkit-transition: all .5s .5s !important;
     transition: all .5s .5s !important;
@@ -484,9 +501,11 @@ $le-branding-width: 424px;
     -moz-perspective: 1000;
     /*noinspection ALL*/
     perspective: 1000;
+    white-space: nowrap !important;
 
     .ficon-glyph-only {
       @include buttonGlyphOverride($size: 20px);
+      cursor: pointer !important;
     }
 
     .le-help {
@@ -539,28 +558,26 @@ $le-branding-width: 424px;
       text-align: center !important;
       line-height: 18px !important;
       font-size: 13px !important;
-      -moz-border-radius: 10px !important;
-      border-radius: 10px !important;
     }
   }
 
   .le-info-panel .le-shared,
   .le-component.le-shared {
     &:before {
-      content: "r" !important;
-      /*noinspection CssNoGenericFontName*/
-      font-family: 'VipaLiveEditIcons' !important;
-      background: #090 !important;
+      content: "S" !important;
+      //fixme get icon for this
+      font-family: $font-open-sans-semi-bold !important;
+      background: $color-green !important;
     }
   }
 
   .le-info-panel .le-cat-page-template,
   .le-component.le-cat-page-template {
     &:before {
+      //fixme get icon for this
       content: "T" !important;
-      font-family: arial, sans-serif !important;
       background: #f90 !important;
-      font-weight: bold !important;
+      font-family: $font-open-sans-semi-bold !important;
     }
   }
 
@@ -577,14 +594,14 @@ $le-branding-width: 424px;
   }
 
   .le-component.le-box-locked:after {
-    content: "l" !important;
-    /*noinspection CssNoGenericFontName*/
-    font-family: 'VipaLiveEditIcons' !important;
-    font-size: 18px !important;
+    content: "L" !important;
+    //fixme get icon for this
     color: #999 !important;
     position: absolute !important;
     right: 15px !important;
     top: 14px !important;
+    font-family: $font-open-sans-semi-bold !important;
+    font-size: 14px !important;
   }
 
   .le-component td.le-info {
@@ -597,6 +614,7 @@ $le-branding-width: 424px;
     margin: 0 0 4px !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    line-height: 1.4 !important;
   }
 
   h2 {
@@ -657,12 +675,12 @@ $le-branding-width: 424px;
     min-width: 280px !important;
     max-width: 480px !important;
     padding: 20px !important;
-    background-color: #fff !important;
-    border-radius: 6px !important;
-    border: 1px solid #aaa !important;
-    color: #000 !important;
-    margin-top: 16px !important;
+    background-color: $color-white !important;
+    border: 1px solid $color-grey !important;
+    color: $color-charcoal !important;
+    margin-top: 11px !important;
     font-size: 14px !important;
+    @include box-shadow(2px 2px 5px transparentize($color-black, 0.5) !important);
   }
 
   &:checked {
@@ -680,8 +698,8 @@ $le-branding-width: 424px;
       border-color: rgba(204, 204, 204, 0) !important;
       border-bottom-color: #aaa !important;
       border-width: 11px !important;
-      bottom: -20px !important;
-      left: -28px !important;
+      bottom: -22px !important;
+      left: -22px !important;
       z-index: 999;
     }
 
@@ -689,8 +707,8 @@ $le-branding-width: 424px;
       border-color: rgba(255, 255, 255, 0) !important;
       border-bottom-color: #fff !important;
       border-width: 10px !important;
-      bottom: -20px !important;
-      left: -27px !important;
+      bottom: -22px !important;
+      left: -21px !important;
       z-index: 1000;
     }
 
@@ -709,12 +727,12 @@ $le-branding-width: 424px;
 
       &:before {
         border-top-color: #aaa !important;
-        top: -32px !important;
+        top: -8px !important;
       }
 
       &:after {
         border-top-color: #fff !important;
-        top: -32px !important;
+        top: -8px !important;
       }
     }
   }
@@ -746,10 +764,9 @@ $le-branding-width: 424px;
 
 #cms-le-overlay-content {
   vertical-align: middle !important;
-  background-color: rgb(250, 250, 250) !important;
-  padding: 21px !important; /*Need to ensure we fit in 1024x768*/
-  border: 1px solid rgb(200, 200, 200) !important;
-  border-radius: 4px !important;
+  background-color: $color-almost-white !important;
+  padding: 10px !important; /*Need to ensure we fit in 1024x768*/
+  border: 1px solid $color-darker-grey !important;
   box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
   -moz-box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
 
@@ -782,7 +799,6 @@ $le-branding-width: 424px;
     min-width: 100px !important;
     font-size: 13px !important;
     font-weight: normal !important;
-    border-radius: 6px !important;
     background: #eee !important;
     border: 1px solid #ccc !important;
     color: #666 !important;
@@ -828,17 +844,15 @@ $le-branding-width: 424px;
 /** Component Toolbar */
 #cms-le-ctb {
   white-space: nowrap;
-  padding: 2px !important;
   position: absolute !important;
   z-index: 19999 !important;
-  border: 1px solid #aaa !important;
-  border-radius: 6px !important;
-  background: #fff !important;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid $color-grey !important;
+  background: $color-white !important;
   margin-top: 12px !important;
-  font-family: "Trebuchet MS", Arial, sans-serif !important;
+  font-family: $font-open-sans !important;
   -webkit-transition: all .25s;
   transition: all .25s;
+  @include box-shadow(0 0 5px transparentize($color-black, 0.5) !important);
   /** FYI, you cannot use a drop-shadow filter with a transition - google chrome 25 */
 
   &:after,
@@ -895,11 +909,34 @@ $le-branding-width: 424px;
     color: #2199cd !important;
     -webkit-transition: color .5s !important;
     transition: color .5s !important;
+    padding: 6px 0 !important;
 
-    button,
-    .ficon {
-      &:hover {
-        color: #0cf !important;
+    .ficon-glyph-only {
+      @include buttonGlyphOverride($size: 20px);
+      cursor: pointer !important;
+
+      + .ficon-glyph-only {
+        margin-left: 3px !important;
+      }
+
+      &:first-child {
+        margin-left: 6px !important;
+      }
+      &:last-child {
+        margin-right: 6px !important;
+      }
+
+      &.le-move {
+        @include buttonGlyphOverride($html-entity-move);
+      }
+      &.le-edit {
+        @include buttonGlyphOverride($html-entity-edit);
+      }
+      &.le-detach {
+        @include buttonGlyphOverride($html-entity-trashcan, $color: $color-error-dark);
+      }
+      &.le-info {
+        @include buttonGlyphOverride($html-entity-info, $color: $color-blue);
       }
     }
   }
@@ -907,11 +944,17 @@ $le-branding-width: 424px;
   .le-component-info {
     display: inline-block !important;
     position: relative !important;
-    padding-right: 5px !important;
-    padding-left: 5px !important;
+    padding: 6px !important;
+    border-left: 1px solid $color-lighter-grey !important;
 
-    .name {
-      font-weight: bold !important;
+    .le-icon {
+      height: 20px !important;
+      width: auto !important;
+    }
+
+    .le-name {
+      vertical-align: middle !important;
+      font-size: 12px !important;
     }
   }
 
@@ -927,8 +970,6 @@ $le-branding-width: 424px;
         height: 16px !important;
         color: #fff !important;
         text-align: center !important;
-        -moz-border-radius: 10px !important;
-        border-radius: 10px !important;
         font-size: 12px !important;
         line-height: 17px !important;
       }
@@ -937,27 +978,29 @@ $le-branding-width: 424px;
 
   &.le-shared {
     .le-component-info:before {
-      content: "r" !important;
+      content: "S" !important;
+      //fixme get icon for this
       /*noinspection CssNoGenericFontName*/
-      font-family: 'VipaLiveEditIcons' !important;
-      background: #090 !important;
+      font-family: $font-open-sans-semi-bold !important;
+      background: $color-green !important;
     }
   }
 
   &.le-cat-page-template {
     .le-component-info:before {
+      //fixme get icon for this
       content: "T" !important;
       background: #f90 !important;
-      font-family: arial, sans-serif !important;
-      font-weight: bold !important;
+      font-family: $font-open-sans-semi-bold !important;
     }
   }
 
   &.le-box-locked {
     .le-component-info:after {
-      content: "l" !important;
+      //fixme get icon for this
+      content: "L" !important;
       /*noinspection CssNoGenericFontName*/
-      font-family: 'VipaLiveEditIcons' !important;
+      font-family: $font-open-sans-semi-bold !important;
       font-size: 14px !important;
       color: #999 !important;
     }
@@ -983,7 +1026,6 @@ $le-branding-width: 424px;
     height: 7px !important;
     display: block !important;
     background: #f66 !important;
-    border-radius: 3px !important;
   }
 
   &:before {
@@ -1009,7 +1051,6 @@ $le-branding-width: 424px;
     position: relative !important;
     top: 3px !important;
     border: 1px solid #aaa !important;
-    border-radius: 0 0 4px 4px !important;
     border-top: 0 !important;
     text-transform: capitalize !important;
     padding: 10px 20px !important;
@@ -1029,7 +1070,6 @@ $le-branding-width: 424px;
 
     .le-target {
       margin-top: 8px !important;
-      border-radius: 0 4px 4px 0 !important;
       left: 3px !important;
       border-left: 0 !important;
     }
@@ -1059,16 +1099,20 @@ $le-branding-width: 424px;
   background: $color-white !important;
   width: 250px !important;
   box-sizing: border-box !important;
-  @include box-shadow(1px 1px 2px transparentize($color-black, 0.5) !important);
+  border: 5px solid $color-bluegrey !important;
   /*not important*/
   top: 55px;
   left: 10px;
 
   .le-titlebar {
     padding: 10px 20px 10px 10px !important;
-    background: $color-green !important;
+    background-color: $color-green !important;
     color: $color-white !important;
     border-bottom: 1px solid $color-dark-green !important;
+
+    &:hover {
+      background-color: darken($color-green, 10%) !important;
+    }
 
     .le-title {
       font-size: 14px !important;
@@ -1078,7 +1122,13 @@ $le-branding-width: 424px;
     .le-controls {
       position: absolute !important;
       right: 5px !important;
-      top: 9px !important;
+      top: 4px !important;
+      cursor: pointer !important;
+      padding: 5px !important;
+
+      &:hover {
+        background-color: $color-dark-green !important;
+      }
 
       &.le-close {
         @include buttonGlyphOverride($html-entity-close, $size: 16px, $color: $color-white);
@@ -1098,6 +1148,11 @@ $le-branding-width: 424px;
       border: 0 none !important;
       border-top: 1px solid $color-lighter-bluegrey !important;
       color: $color-white !important;
+      cursor: pointer !important;
+
+      &:hover {
+        background-color: darken($color-light-bluegrey, 10%) !important;
+      }
 
       &:after {
         @include glyphAdd($html-entity-arrow-up, $size: 16px);
@@ -1149,6 +1204,11 @@ $le-branding-width: 424px;
         }
       }
 
+      img.le-icon {
+        width: 28px !important;
+        height: auto !important;
+      }
+
       .le-name {
         font-family: $font-open-sans-semi-bold !important;
         font-size: 12px !important;
@@ -1171,6 +1231,7 @@ $le-branding-width: 424px;
 
   .le-loading & {
     /*noinspection CssUnknownTarget*/
+    //fixme fix loading gif to svg
     background: url(/_resources/all/docroot/cms/preview/loading.gif) no-repeat center !important;
     text-align: center !important;
   }
@@ -1185,6 +1246,7 @@ $le-branding-width: 424px;
       padding: 9px 10px !important;
       border: 0 none !important;
       margin: 0 !important;
+      @include box-sizing(border-box !important);
     }
   }
 

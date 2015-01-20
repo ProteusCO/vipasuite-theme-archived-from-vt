@@ -61,26 +61,24 @@ HTML structure (sibling order doesn't matter):
     }
     %}
     {% if(perm.move && !api.isDynamicComponent(o)){ %}
-    <span class="le-move ficon" title="Move" draggable="true" data-ds_cms_pe="{%#o.key%}" data-op="move"></span>
+    <span class="le-move ficon-glyph-only" title="Move" draggable="true" data-ds_cms_pe="{%#o.key%}" data-op="move"></span>
     {% } %}
     <!-- temp disable edit on page/box -->
     {% if(perm.edit && !(o.key.indexOf('pg#') == 0 || o.key.indexOf('bx#') == 0)){ %}
-    <button type="button" class="le-edit ficon" title="Edit"></button>
+    <button type="button" class="le-edit ficon-glyph-only" title="Edit"></button>
     {% } %}
 
     {% if(perm.add_child && false){ %}
-    <button type="button" class="le-add ficon" title="Add"></button>
+    <button type="button" class="le-add ficon-glyph-only" title="Add"></button>
     {% } %}
 
     {% if(perm.delete && !api.isDynamicComponent(o)){ %}
-    <button type="button" class="le-detach ficon" title="Remove"></button>
+    <button type="button" class="le-detach ficon-glyph-only" title="Remove"></button>
     {% } %}
 
         <!-- button.onclick for Firefox. Label.for doesn't work inside a button.  -->
-    <button type="button" class="le-info ficon" title="Information"
-            onclick="var cb = document.getElementById('cms-le-ptb-info'); cb.checked = !cb.checked; this.blur(); return true;">
-        <label title="Information"></label>
-    </button>
+    <button type="button" class="le-info ficon-glyph-only" title="Information"
+            onclick="var cb = document.getElementById('cms-le-ptb-info'); cb.checked = !cb.checked; this.blur(); return true;"></button>
     <input accesskey="i" id="cms-le-ptb-info" type="checkbox"{%#(infoPanel?' checked':'')%}>
     <div class="le-info-panel">
         <h1>{%#(o.title || o.name || '')%}</h1>
@@ -182,17 +180,17 @@ HTML structure (sibling order doesn't matter):
     <span class="le-component-actions">
 {% var perm = o.permissions, api = CMS_LE_API; %}
 {% if(perm.move && !api.isDynamicComponent(o)){ %}
-  <span class="le-move ficon" title="Move" draggable="true" data-ds_cms_pe="{%#o.key%}" data-op="move"></span>
+  <span class="le-move ficon-glyph-only" title="Move" draggable="true" data-ds_cms_pe="{%#o.key%}" data-op="move"></span>
 {% } %}
 <!-- temp disable edit on page/box -->
 {% if(perm.edit && !(o.key.indexOf('pg#') == 0 || o.key.indexOf('bx#') == 0)){ %}
-  <button type="button" class="le-edit ficon" title="Edit"></button>
+  <button type="button" class="le-edit ficon-glyph-only" title="Edit"></button>
 {% } %}
 {% if(perm.add_child && false){ %}
-  <button type="button" class="le-add ficon" title="Add"></button>
+  <button type="button" class="le-add ficon-glyph-only" title="Add"></button>
 {% } %}
 {% if(perm.delete && !api.isDynamicComponent(o)){ %}
-  <button type="button" class="le-detach ficon" title="Remove"></button>
+  <button type="button" class="le-detach ficon-glyph-only" title="Remove"></button>
 {% } %}
 </span>
     <span class="le-component-info">
