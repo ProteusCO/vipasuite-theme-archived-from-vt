@@ -476,7 +476,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       cursor: pointer !important;
 
       &#cms-le-nav-out {
-        @include buttonGlyphOverride($html-entity-arrow-left);
+        @include buttonGlyphOverride($html-entity-move-out-up);
       }
       &#cms-le-nav-up {
         @include buttonGlyphOverride($html-entity-move-up);
@@ -489,7 +489,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   .toolbar-controls {
     right: 0 !important;
-    padding: 10px !important;
+    padding: 15px 10px !important;
     height: 100% !important;
     background-color: rgba(250, 250, 250, .8) !important;
     -webkit-transition: all .5s .5s !important;
@@ -506,37 +506,36 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     .ficon-glyph-only {
       @include buttonGlyphOverride($size: 20px);
       cursor: pointer !important;
+      margin-left: 5px !important;
     }
 
     .le-help {
-      //fixme change to help icon
-      @include buttonGlyphOverride();
+      @include buttonGlyphOverride($html-entity-support);
     }
     .le-location {
-      @include buttonGlyphOverride($html-entity-move-down);
+      @include buttonGlyphOverride($html-entity-align-bottom);
     }
     .le-visibility {
-      //fixme change icon to visible hidden
       @include buttonGlyphOverride($html-entity-branch-close);
     }
     .le-quit {
-      //fixme change to power off
-      @include buttonGlyphOverride($html-entity-trashcan);
+      @include buttonGlyphOverride($html-entity-power);
     }
   }
 
   &.bottom {
     .toolbar-controls {
       .le-location {
-        @include buttonGlyphOverride($html-entity-move-up);
+        @include buttonGlyphOverride($html-entity-align-top);
       }
     }
   }
 
   &.hidden {
     .toolbar-controls {
+      padding: 10px !important;
+
       .le-visibility {
-        //fixme change icon to visible show
         @include buttonGlyphOverride($html-entity-branch-open);
       }
     }
