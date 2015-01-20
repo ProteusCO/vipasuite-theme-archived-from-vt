@@ -1,4 +1,4 @@
-@import "../../Config/base-import";
+@import "../../Config/_base-import";
 
 /*
 	overall.scss partial -	Base Elements
@@ -29,6 +29,10 @@ h2 {
 
 h3 {
 	@include style-h3;
+}
+
+h4 {
+	@include style-h4;
 }
 
 //click to edit
