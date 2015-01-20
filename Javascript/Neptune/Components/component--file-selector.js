@@ -132,7 +132,7 @@
 			$root = $(root);
 			$input = $root.find('input.file-upload-browse');
 
-			if (!$root.length || !$input.length) {
+			if (!!_self._initfs || !$root.length || !$input.length) {
 				return;
 			}
 
@@ -175,6 +175,8 @@
 
 			_dnd = new cms.file.DnD($input.get(0), dropZoneTarget, $fileList.get(0));
 			_dnd.addListener(filesSelected);
+
+			_self._initfs = true;
 		}
 
 		init();
@@ -297,27 +299,45 @@
 	};
 
 
-
-	function init() {
-		$('.miwt-form div.file-upload-browse').each(function() {
+	function initFileSelectors(con) {
+		$(con).find('div.file-upload-browse').each(function() {
 			new FileSelector(this, {
 				dropZone: $(this).closest('.file_upload_container')
 			});
+		});
 
-			//remove nbsp elements
-			$('.upload_options .ctb input[type=checkbox]').each(function() {
-				if (this.nextSibling.nodeValue == '\u00a0') {
-					this.parentNode.removeChild(this.nextSibling);
+		//remove nbsp elements
+		$('.upload_options .ctb input[type=checkbox]').each(function() {
+			if (this.nextSibling.nodeValue == '\u00a0') {
+				this.parentNode.removeChild(this.nextSibling);
+			}
+		});
+	}
+
+	function init() {
+		$('form.miwt-form').each(function() {
+			var form = this;
+			var oldPostUpdate;
+
+			if (form.submit_options && form.submit_options.postUpdate) {
+				oldPostUpdate = form.submit_options.postUpdate;
+
+				form.submit_options.postUpdate = function() {
+					oldPostUpdate();
+					initFileSelectors(form);
+				};
+			} else {
+				form.submit_options = {
+					postUpdate: function(){ initFileSelectors(form); }
 				}
-			});
+			}
+
+			initFileSelectors(form);
 		});
 
 		d.removeEventListener('DOMContentLoaded', init);
 	}
 
 	d.addEventListener('DOMContentLoaded', init);
-	HTMLFormElement.prototype.submit_options = {
-		postUpdate: init
-	};
 
 })(window, document, jQuery);
