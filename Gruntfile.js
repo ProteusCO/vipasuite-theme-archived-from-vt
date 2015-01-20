@@ -35,10 +35,8 @@ module.exports = function(grunt) {
 				flatten: true
 			},
 			liveEdit: {
-				src: 'Stylesheets/build/Neptune/LiveEdit/*.css',
-				dest: 'LiveEdit/',
-				expand: true,
-				flatten: true
+				src: 'Stylesheets/build/Neptune/LiveEdit/app.css',
+				dest: 'LiveEdit/app.css'
 			}
 		}
 	});
