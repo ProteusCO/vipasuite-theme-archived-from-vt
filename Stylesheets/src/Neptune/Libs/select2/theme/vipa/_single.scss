@@ -10,8 +10,10 @@
   }
 
   .select2-selection__rendered {
+    font-family: $font-open-sans !important; //fixme eventually remove, but fix for bad html css targeting
     color: #444;
     line-height: 28px;
+    white-space: nowrap;
   }
 
   .select2-selection__clear {
