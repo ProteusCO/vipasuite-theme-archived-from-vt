@@ -340,6 +340,16 @@
 
 		.btn {
 			@include buttonGlyphOnly($html-entity-nbsp);
+
+			&.collapse {
+				@include buttonGlyphOverride($html-entity-branch-close);
+			}
+			&.expand {
+				@include buttonGlyphOverride($html-entity-branch-open);
+			}
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
 		}
 	}
 
@@ -939,7 +949,37 @@
 	}
 }
 
+.box_editor {
+	@include style-inline-box();
 
+	.heading {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.instructions {
+		@include style-message-warning();
+
+		p {
+			margin: 0;
+
+			+ p {
+				margin-top: 1em;
+			}
+		}
+	}
+
+	.click_to_edit {
+		margin: 5px 0;
+
+		label {
+			@include style-form-label;
+			display: inline-block;
+			width: 100px;
+		}
+	}
+}
 
 .folder_editor {
 	@include style-inline-box();
