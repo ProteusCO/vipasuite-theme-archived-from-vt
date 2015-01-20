@@ -219,6 +219,16 @@ table.layout {
 		}
 	}
 
+	.recurrence_editor {
+		td {
+			padding: 3px;
+
+			&:empty {
+				padding: 0;
+			}
+		}
+	}
+
 	.extended_details {
 		@include style-inline-box($bgcolor: $color-smokey-white);
 
@@ -240,6 +250,23 @@ table.layout {
 
 		input[type=text] {
 			width: 300px;
+		}
+	}
+}
+
+.delete_events_popup {
+	h2 {
+		margin-top: 0;
+	}
+
+	.del_current,
+	.del_past,
+	.del_future,
+	.del_all {
+		margin: 5px 0;
+
+		.btn {
+			margin-right: 5px;
 		}
 	}
 }
