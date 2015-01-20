@@ -293,11 +293,11 @@
 
     .available {
       float: left;
-      width: 190px;
+      width: 210px;
     }
 
     .selected {
-      margin-left: 200px;
+      margin-left: 220px;
     }
 
     .element {
@@ -319,6 +319,37 @@
     .paging-size {
       .val {
         margin-left: 5px;
+      }
+    }
+
+    .no_data {
+      border: 2px dashed $color-lighter-grey;
+      padding: 5px 10px;
+      background-color: $color-almost-white;
+      color: $color-grey;
+      font-family: $font-open-sans-italic;
+    }
+
+    .dnd-target-active {
+      .no_data {
+        border: 2px solid $color-blue;
+      }
+    }
+
+    tr.dnd-feedback {
+      border: 0 none;
+      background-color: transparent;
+
+      td {
+        border-top: 1px solid $color-grey;
+        border-bottom: 1px solid $color-grey;
+
+        &:first-child {
+          border-left: 1px solid $color-grey;
+        }
+        &:last-child {
+          border-right: 1px solid $color-grey;
+        }
       }
     }
   }
