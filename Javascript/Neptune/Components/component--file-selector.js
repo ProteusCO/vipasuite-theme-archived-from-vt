@@ -319,7 +319,11 @@
 			var form = this;
 			var oldPostUpdate;
 
-			if (form.submit_options && form.submit_options.postUpdate) {
+			if (!form.submit_options) {
+				form.submit_options = {};
+			}
+
+			if (form.submit_options.postUpdate) {
 				oldPostUpdate = form.submit_options.postUpdate;
 
 				form.submit_options.postUpdate = function() {
@@ -327,9 +331,9 @@
 					initFileSelectors(form);
 				};
 			} else {
-				form.submit_options = {
-					postUpdate: function(){ initFileSelectors(form); }
-				}
+				form.submit_options.postUpdate = function(){
+					initFileSelectors(form);
+				};
 			}
 
 			initFileSelectors(form);
