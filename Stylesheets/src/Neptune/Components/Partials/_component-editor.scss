@@ -254,7 +254,7 @@
 
 		label {
 			font-family: $font-open-sans-semi-bold;
-			margin-right: 5px;
+			margin-right: 10px;
 
 			&.tbl {
 				display: block;
@@ -273,6 +273,19 @@
 
 		@include textLikeInputs {
 			width: 300px;
+		}
+	}
+
+	.file.field {
+		margin: 5px 0;
+
+		label {
+			font-family: $font-open-sans-semi-bold;
+			margin-right: 10px;
+		}
+
+		.actions {
+			margin-left: 10px;
 		}
 	}
 
