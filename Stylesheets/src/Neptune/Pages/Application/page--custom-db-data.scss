@@ -28,6 +28,7 @@
 				}
 				&.add {
 					@include buttonGlyphAdd($html-entity-add);
+					margin-left: 15px;
 				}
 			}
 		}
