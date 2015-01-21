@@ -51,7 +51,6 @@
 	.message {
 		&.important {
 			@include style-message-error;
-			padding: 10px;
 		}
 	}
 
