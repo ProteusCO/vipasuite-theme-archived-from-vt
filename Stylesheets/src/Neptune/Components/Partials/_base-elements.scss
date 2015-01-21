@@ -200,6 +200,7 @@ legend {
 		@include style-popup-box();
 		display: block;
 		position: absolute;
+		z-index: 100;
 		max-height: 350px;
 		max-width: 350px;
 		overflow-y: auto;
@@ -211,6 +212,7 @@ legend {
 	.miwt-collapsable-content {
 		@include style-popup-box();
 		display: block;
+		z-index: 100;
 		max-height: 350px;
 		max-width: 350px;
 		overflow-y: auto;
