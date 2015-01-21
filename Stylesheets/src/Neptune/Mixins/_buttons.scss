@@ -148,7 +148,7 @@
 }
 
 @mixin buttonStyleEditGlyph($size: 16px) {
-	@include buttonGlyphOnly($html-entity-edit, $size: $size, $color: $color-success-dark);
+	@include buttonGlyphOnly($html-entity-edit, $size: $size);
 }
 
 @mixin buttonStyleRemoveGlyph($size: 16px) {
