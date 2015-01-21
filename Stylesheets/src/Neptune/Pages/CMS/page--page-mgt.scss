@@ -606,9 +606,10 @@
 	.page {
 		margin: 5px 0;
 
-		> span {
-			@include style-form-input-readonly;
-		}
+		//fixme this needs classes on the span values so that it doesn't target the select2 spans
+//		> span {
+//			@include style-form-input-readonly;
+//		}
 	}
 }
 
