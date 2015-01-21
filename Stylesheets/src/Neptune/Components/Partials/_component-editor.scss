@@ -247,6 +247,22 @@
 	border-top: 0 none;
 	padding: 15px;
 
+	.editor & {
+		.heading {
+			@include style-h2;
+		}
+	}
+
+	.pager-top {
+		display: none;
+	}
+
+	.pageable {
+		> .miwt-table {
+			margin-top: 5px;
+		}
+	}
+
 	.prop {
 		+ .prop {
 			margin-top: 5px;
@@ -274,6 +290,13 @@
 		@include textLikeInputs {
 			width: 300px;
 		}
+
+		.miwt-calendar {
+			//fixme fix this once textlikeinputs isn't so specific
+			@include textLikeInputs {
+				width: 135px;
+			}
+		}
 	}
 
 	.file.field {
@@ -282,6 +305,10 @@
 		label {
 			font-family: $font-open-sans-semi-bold;
 			margin-right: 10px;
+		}
+
+		.file-name {
+			@include anchorUnderlineHover;
 		}
 
 		.actions {
@@ -427,6 +454,12 @@
 
 			> .help-point.disabled {
 				display: none;
+			}
+		}
+
+		.click_to_edit {
+			span.field {
+				max-width: 350px;
 			}
 		}
 
@@ -793,6 +826,229 @@
 				> label {
 					@include style-form-label;
 					margin-right: 5px;
+				}
+			}
+		}
+	}
+
+	&.FormEntryBean_editor {
+		.editor_content {
+			> div {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+
+	&.Audio_editor,
+	&.Video_editor {
+
+		.media_files {
+			.entity_actions {
+				.btn {
+					margin-left: 2px;
+				}
+			}
+		}
+
+		.prop {
+			&.width,
+			&.height {
+				@include textLikeInputs {
+					width: 70px;
+				}
+			}
+		}
+
+		.ctb {
+			label {
+				&.tbl {
+					display: inline;
+				}
+			}
+		}
+	}
+
+	&.ConditionalRedirect_editor {
+		.redirect_listing {
+			.heading {
+				margin-right: 5px;
+			}
+
+			.miwt-table {
+				margin: 10px 0;
+
+				.last-column {
+					width: 1px;
+					white-space: nowrap;
+				}
+
+
+				.btn {
+					@include buttonGlyphOnly($html-entity-nbsp);
+
+					//fixme get classes added to this
+					&:nth-child(1) {
+						@include buttonStyleEditGlyph();
+					}
+					&:nth-child(2) {
+						//fixme get this changed to delete, remove isnt right action?
+						@include buttonStyleDeleteGlyph();
+					}
+					&.action-top {
+						@include buttonGlyphOverride($html-entity-move-top);
+					}
+					&.action-up {
+						@include buttonGlyphOverride($html-entity-move-up);
+					}
+					&.action-down {
+						@include buttonGlyphOverride($html-entity-move-down);
+					}
+					&.action-bottom {
+						@include buttonGlyphOverride($html-entity-move-bottom);
+					}
+				}
+			}
+		}
+
+		.redirect_editor {
+			.link,
+			.condition {
+				margin: 10px 0;
+
+				label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+
+			.entity_label {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&.PhotoAlbumViewer_editor {
+		.pav_editor {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			> div {
+				margin: 5px 0;
+			}
+
+			.dimension {
+				@include textLikeInputs {
+					width: 70px;
+				}
+
+				.dim_sep {
+					margin: 0 5px;
+				}
+			}
+
+			.rtb {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&.LocaleSelector_editor {
+		.editor_content {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			> div {
+				margin: 5px 0;
+			}
+		}
+	}
+
+	&.ArticleView_editor {
+
+		.av_article_properties {
+			border: 0 none;
+
+			.last-column  {
+				width: 1px;
+				white-space: nowrap;
+			}
+
+			.sorting_buttons {
+				.btn {
+					@include buttonGlyphOnly($html-entity-nbsp);
+
+					&.action-top {
+						@include buttonGlyphOverride($html-entity-move-top);
+					}
+					&.action-up {
+						@include buttonGlyphOverride($html-entity-move-up);
+					}
+					&.action-down {
+						@include buttonGlyphOverride($html-entity-move-down);
+					}
+					&.action-bottom {
+						@include buttonGlyphOverride($html-entity-move-bottom);
+					}
+				}
+			}
+		}
+	}
+
+	&.FileServer_editor {
+		.prop {
+			margin: 5px 0;
+		}
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.instructions {
+			@include style-message-info();
+		}
+
+		.filename {
+			margin-right: 5px;
+		}
+	}
+
+	&.ArticleContainer_editor {
+		//fixme html needs many updates, all table based
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.last-column  {
+			width: 1px;
+			white-space: nowrap;
+		}
+
+		.sorting_buttons {
+			.btn {
+				@include buttonGlyphOnly($html-entity-nbsp);
+
+				&.action-top {
+					@include buttonGlyphOverride($html-entity-move-top);
+				}
+				&.action-up {
+					@include buttonGlyphOverride($html-entity-move-up);
+				}
+				&.action-down {
+					@include buttonGlyphOverride($html-entity-move-down);
+				}
+				&.action-bottom {
+					@include buttonGlyphOverride($html-entity-move-bottom);
 				}
 			}
 		}
