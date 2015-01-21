@@ -299,6 +299,18 @@
 		}
 	}
 
+	.library_form {
+		.parameters {
+			.prop {
+				margin: 5px 0;
+
+				textarea {
+					width: 100%;
+				}
+			}
+		}
+	}
+
 	.file.field {
 		margin: 5px 0;
 
