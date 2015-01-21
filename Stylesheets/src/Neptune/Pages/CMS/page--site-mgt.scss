@@ -289,6 +289,21 @@
         display: block;
         margin-bottom: 2px;
       }
+
+      .field-name {
+        font-family: $font-open-sans-semi-bold;
+      }
+      .field-type {
+        margin-left: 10px;
+        font-size: 11px;
+
+        &:before {
+          content: "(";
+        }
+        &:after {
+          content: ")";
+        }
+      }
     }
 
     .available {
