@@ -1,0 +1,254 @@
+@import "../../Config/base-import";
+
+@import "../../Components/Partials/desktop";
+
+.help-point.disabled {
+	display: none;
+}
+
+.miwt-collapsable[data-disposition="float"] {
+	.miwt-collapsable-content {
+		max-width: 500px;
+	}
+}
+
+//fixme get class on the div and fix all the HTML in this UI
+.desktop_breadcrumbs + div {
+	@include style-inline-box();
+}
+
+.search_results {
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+	}
+}
+
+.order_shipment_pending {
+	.search_bar  {
+		margin-bottom: 5px;
+	}
+}
+
+.order_detail_view_workspace {
+	.label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.addresses-con,
+	.order_items-con {
+		@include style-inline-box();
+	}
+
+	.column_heading-con {
+		border-bottom: 1px solid $color-grey;
+	}
+
+	.addresses-con {
+		legend {
+			display: none;
+		}
+
+		.label-con {
+			border-bottom: 1px solid $color-grey;
+		}
+	}
+
+	table.order_detail {
+		td {
+			padding: 5px;
+		}
+	}
+
+	.payment_price_con,
+	.order_subtotal_price-con,
+	.orderitem_price-con,
+	.order_total_price-con {
+		text-align: right;
+	}
+}
+
+.order_return_cancel {
+	.label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	td {
+		padding: 5px;
+	}
+
+	div.journal,
+	table.exchange_payment {
+		margin: 10px 0;
+	}
+}
+
+.order_edit_view {
+	.label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	td {
+		padding: 5px;
+	}
+}
+
+.shippinggroup {
+	.header {
+		margin-bottom: 20px;
+
+		.status,
+		.date,
+		.order_count,
+		.shipment_count {
+			margin: 5px 0;
+
+			label {
+				@include style-form-label;
+				display: inline-block;
+				width: 200px;
+			}
+		}
+
+		.buttons {
+			margin: 10px 0;
+
+			.packingslip {
+				display: inline-block;
+				margin: 0 5px;
+			}
+		}
+	}
+
+	.shipments {
+		margin: 10px 0;
+		width: 100%;
+
+		td {
+			padding: 4px;
+			border-bottom: 1px solid $color-lighter-grey;
+		}
+
+		.shipments_title-con {
+			text-align: center;
+			background-color: $color-bluegrey;
+			color: $color-white;
+		}
+
+		.label-con {
+			@include style-form-label;
+			border-bottom: 1px solid $color-grey;
+		}
+
+		.order_controls {
+			a.value {
+				margin-left: 5px;
+			}
+		}
+
+		.btn {
+			&.remove {
+				@include buttonStyleSmall;
+				@include buttonGlyphAdd($html-entity-delete);
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+.shipments_workspace {
+
+	.header {
+		margin-bottom: 20px;
+
+		.orderId,
+		.item_count,
+		.pending_count,
+		.backorder_count,
+		.pending_shipping_count,
+		.previously_shipped_count,
+		.shipping_method {
+			margin: 5px 0;
+
+			label {
+				@include style-form-label;
+				display: inline-block;
+				width: 200px;
+			}
+		}
+
+		.buttons {
+			margin: 10px 0;
+
+			.packingslip {
+				display: inline-block;
+				margin: 0 5px;
+			}
+		}
+	}
+
+	.footer {
+		margin-top: 20px;
+	}
+}
+
+.shipment_editor {
+	label,
+	.label {
+		@include style-form-label;
+		display: inline-block;
+		margin-right: 5px;
+		width: 150px;
+	}
+
+	.shipping_address,
+	.items {
+		> label {
+			@include style-h3;
+			margin-bottom: 10px;
+			display: block;
+			width: auto;
+		}
+	}
+
+	.part,
+	div.address_line {
+		margin: 5px 0;
+	}
+
+	.name_form,
+	.address_form {
+		margin-bottom: 30px;
+	}
+
+	.properties {
+		.weight,
+		.item_count,
+		.box,
+		.tracking_number {
+			margin: 5px 0;
+		}
+	}
+}
+
+.group_content {
+	.backorder {
+		.summary {
+			.weight,
+			.item_count {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					display: inline-block;
+					margin-right: 5px;
+					width: 150px;
+				}
+			}
+		}
+	}
+}

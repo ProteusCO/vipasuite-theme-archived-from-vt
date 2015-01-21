@@ -1,0 +1,119 @@
+@import "../../Config/base-import";
+
+@import "../../Components/Partials/desktop";
+
+.help-point.disabled {
+	display: none;
+}
+
+.search_results {
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+	}
+}
+
+.order_mgt {
+	.search_bar  {
+		margin-bottom: 5px;
+	}
+
+	.result_actions {
+		text-align: left;
+
+		.btn {
+			&.shipping_address_button {
+				@include buttonGlyphAdd($html-entity-download);
+			}
+		}
+	}
+
+	.export_actions {
+		margin-top: 5px;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		a {
+			@include buttonBase;
+			@include buttonGlyphAdd($html-entity-download);
+			margin-right: $spacing-default-between-buttons;
+		}
+	}
+}
+
+
+//fixme get class on the div and fix all the HTML in this UI
+.desktop_breadcrumbs + div {
+	@include style-inline-box();
+}
+
+.order_detail_view_workspace {
+	.label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.addresses-con,
+	.order_items-con {
+		@include style-inline-box();
+	}
+
+	.column_heading-con {
+		border-bottom: 1px solid $color-grey;
+	}
+
+	.addresses-con {
+		legend {
+			display: none;
+		}
+
+		.label-con {
+			border-bottom: 1px solid $color-grey;
+		}
+	}
+
+	table.order_detail {
+		td {
+			padding: 5px;
+		}
+	}
+
+	.payment_price_con,
+	.order_subtotal_price-con,
+	.orderitem_price-con,
+	.order_total_price-con {
+		text-align: right;
+	}
+}
+
+.order_return_cancel {
+	.label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	td {
+		padding: 5px;
+	}
+
+	div.journal,
+	table.exchange_payment {
+		margin: 10px 0;
+	}
+}
+
+.order_edit_view {
+	.label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	td {
+		padding: 5px;
+	}
+
+}
