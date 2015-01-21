@@ -9,6 +9,7 @@
 			vertical-align: bottom;
 			border: 1px solid $color-lighter-grey;
 			margin-right: 5px;
+			margin-bottom: -1px;
 			font-family: $font-open-sans-semi-bold;
 			background-color: $color-smokey-white;
 			color: $color-blue;
@@ -19,7 +20,11 @@
 				border-bottom-color: $color-white;
 				color: $color-dark-bluegrey;
 				background-color: $color-white;
-				margin-bottom: -1px;
+			}
+
+			&:hover {
+				color: $color-white;
+				background-color: $color-blue;
 			}
 		}
 	}
