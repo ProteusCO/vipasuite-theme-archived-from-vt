@@ -1,0 +1,68 @@
+@import "../../Config/base-import";
+
+@import "../../Components/Partials/table-row-editor";
+
+.l-primary-content {
+	position: relative;
+	margin-top: 40px;
+}
+
+//fixme convert this to real tabs?
+.blog_nav {
+	margin-top: -45px;
+	margin-left: -16px;
+	margin-bottom: 15px;
+
+	ul.menu {
+		@include resetMenu;
+		margin-bottom: -1px;
+
+		.mi {
+			display: inline-block;
+			vertical-align: bottom;
+			border: 1px solid $color-lighter-grey;
+			margin-right: 5px;
+			font-family: $font-open-sans-semi-bold;
+
+			.menuitemlabel {
+				background-color: $color-smokey-white;
+				color: $color-blue;
+				text-decoration: none;
+				display: block;
+				padding: 5px 10px;
+			}
+
+			&.mi-active {
+				border-bottom-color: $color-white;
+
+				.menuitemlabel {
+					color: $color-dark-bluegrey;
+					background-color: $color-white;
+				}
+			}
+
+			&:hover {
+				.menuitemlabel {
+					color: $color-white;
+					background-color: $color-blue;
+				}
+			}
+		}
+	}
+}
+
+.table_data_mgt {
+	> .search {
+		> .entity_actions {
+			.btn {
+				&.export_button {
+					@include buttonGlyphAdd($html-entity-download);
+				}
+				&.add {
+					@include buttonGlyphAdd($html-entity-add);
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+}
