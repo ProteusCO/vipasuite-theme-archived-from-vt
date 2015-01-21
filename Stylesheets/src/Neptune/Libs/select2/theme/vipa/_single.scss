@@ -1,9 +1,8 @@
 .select2-selection--single {
   background-color: $color-white;
-
   border: 1px solid $border-color;
-
   outline: 0;
+  height: $container-height;
 
   &:focus {
     border: 1px solid $focus-border-color;
@@ -12,7 +11,7 @@
   .select2-selection__rendered {
     font-family: $font-open-sans !important; //fixme eventually remove, but fix for bad html css targeting
     color: #444;
-    line-height: 28px;
+    line-height: $container-height;
     white-space: nowrap;
   }
 
