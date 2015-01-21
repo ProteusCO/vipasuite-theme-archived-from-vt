@@ -710,4 +710,91 @@
 			}
 		}
 	}
+
+	&.LogoutBean_editor {
+		.logoutbean_editor {
+			border: 0 none;
+		}
+
+		legend {
+			display: none;
+		}
+
+		.options {
+			margin: 5px 0 10px;
+
+			//fixme get class on div
+			/*+ div {
+				@include style-message-warning();
+				margin: 10px 0;
+			}*/
+
+			.rtb {
+				margin-right: 10px;
+			}
+		}
+
+		.CodeMirror-wrapping {
+			margin: 5px 0;
+		}
+	}
+
+	&.LoginBean_editor {
+		.editor_content {
+			border-bottom: 0 none;
+		}
+
+		.editor_tabs {
+			.tal {
+				@include style-form-label;
+				display: block;
+				margin-bottom: 5px;
+			}
+		}
+
+		.landing_page,
+		.landing_page_pending,
+		.landing_page_suspended,
+		.remember_me,
+		.library_selector {
+			margin: 5px 0;
+
+			> label {
+				margin-right: 5px;
+			}
+		}
+
+		.script.redirect {
+			> label {
+				@include style-h4;
+			}
+		}
+
+		.ctb {
+			margin: 5px 0;
+			display: block;
+		}
+	}
+
+	&.CheckoutNGBean_editor {
+
+		.instructions {
+			@include style-message-info();
+			margin: 10px 0;
+			max-width: 700px;
+			//fixme possibly fix this max width, not sure if im 100% on it
+		}
+
+		//fixme get common class on all of them
+		.tab-content {
+			> div > div {
+				margin: 5px 0;
+
+				> label {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
 }

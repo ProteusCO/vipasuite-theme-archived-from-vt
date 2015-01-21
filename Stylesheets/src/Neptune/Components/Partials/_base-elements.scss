@@ -284,7 +284,21 @@ body > div.miwt-ajax-progress {
 	}
 }
 
+//selected link in combination with link chooser
+.selected-link {
+
+}
+
 //new link chooser UI
 .link-chooser {
+	.search-bar {
+		margin: 5px 0;
+	}
+	.pager-top {
+		display: none;
+	}
 
+	.last-column {
+		width: 1px;
+	}
 }
