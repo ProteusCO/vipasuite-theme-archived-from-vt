@@ -2,12 +2,42 @@
 
 //fixme update UIs to not use this
 .desktop_component {
-	.desktop_navigation_buttons,
-	.desktop_navigation_button {
-		display: none;
+
+	.desktop_navigation_buttons {
+		a {
+			display: inline-block;
+			vertical-align: bottom;
+			border: 1px solid $color-lighter-grey;
+			margin-right: 5px;
+			font-family: $font-open-sans-semi-bold;
+			background-color: $color-smokey-white;
+			color: $color-blue;
+			text-decoration: none;
+			padding: 5px 10px;
+
+			&.desktop_navigation_button_active {
+				border-bottom-color: $color-white;
+				color: $color-dark-bluegrey;
+				background-color: $color-white;
+				margin-bottom: -1px;
+			}
+		}
 	}
 
-	.desktop_navigation_area {
+	.desktop_navigation_button {
+		@include buttonGlyphAdd($html-entity-nbsp);
+		@include buttonStyleSmall;
+		margin-bottom: 3px;
+
+		&.desktop_navigation_visible {
+			@include buttonGlyphOverride($html-entity-branch-close);
+		}
+		&.desktop_navigation_hidden {
+			@include buttonGlyphOverride($html-entity-branch-open);
+		}
+	}
+
+	.desktop_navigation_search {
 		@include style-inline-box();
 	}
 
