@@ -1,6 +1,6 @@
-@import "../../Config/base-import";
+@import "../Config/_base-import";
 
-@import "../../Components/Partials/desktop";
+@import "../Components/Partials/_desktop";
 
 .help-point.disabled {
 	display: none;
@@ -8,13 +8,8 @@
 
 .miwt-collapsable[data-disposition="float"] {
 	.miwt-collapsable-content {
-		max-width: 500px;
+		max-width: 700px;
 	}
-}
-
-//fixme get class on the div and fix all the HTML in this UI
-.desktop_breadcrumbs + div {
-	@include style-inline-box();
 }
 
 .search_results {
@@ -25,13 +20,48 @@
 	}
 }
 
-.order_shipment_pending {
+.order_mgt {
 	.search_bar  {
 		margin-bottom: 5px;
 	}
+
+	.result_actions {
+		text-align: left;
+
+		.btn {
+			&.shipping_address_button {
+				@include buttonGlyphAdd($html-entity-download);
+			}
+		}
+	}
+
+	.export_actions {
+		margin-top: 5px;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		a {
+			@include buttonBase;
+			@include buttonGlyphAdd($html-entity-download);
+			margin-right: $spacing-default-between-buttons;
+		}
+	}
 }
 
-.order_detail_view_workspace {
+
+//fixme get class on the div and fix all the HTML in this UI
+.desktop_breadcrumbs + div {
+	@include style-inline-box();
+}
+
+.order_detail {
+	td {
+		padding: 5px;
+	}
+
 	.label {
 		@include style-form-label;
 		margin-right: 5px;
@@ -53,12 +83,6 @@
 
 		.label-con {
 			border-bottom: 1px solid $color-grey;
-		}
-	}
-
-	table.order_detail {
-		td {
-			padding: 5px;
 		}
 	}
 
@@ -94,6 +118,25 @@
 
 	td {
 		padding: 5px;
+	}
+}
+
+.pickup_order_procedure_step {
+	.order_id {
+		@include style-h3;
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	.pickup_orderitem_field {
+		width: 50px;
+		margin-right: 5px;
+	}
+}
+
+.order_shipment_pending {
+	.search_bar  {
+		margin-bottom: 5px;
 	}
 }
 
