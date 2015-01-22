@@ -287,15 +287,70 @@ body > div.miwt-ajax-progress {
 }
 
 //selected link in combination with link chooser
-.selected-link {
+span.selected-link {
+	display: block;
+	margin: 5px 0;
 
+	> label {
+		@include style-form-label;
+		margin-right: 10px;
+	}
+
+	> a {
+		@include anchorUnderlineHover;
+		color: $color-default-link;
+		margin-right: 10px;
+	}
 }
 
 //new link chooser UI
+//fixme get html updates for UIs
 .link-chooser {
+	margin: 10px 0;
+
+	> .title {
+		@include style-form-label;
+
+
+		> a {
+			@include anchorUnderlineHover;
+			color: $color-default-link;
+			font-family: $font-open-sans;
+			margin-left: 10px;
+		}
+
+		.actions {
+			margin-left: 10px;
+		}
+
+		+ div {
+			@include style-inline-box($bgcolor: $color-almost-white);
+			margin-left: 20px;
+			margin-top: 5px;
+		}
+	}
+
+	div {
+		div {
+			span.actions {
+				margin-left: 10px;
+			}
+		}
+	}
+
+
 	.search-bar {
 		margin: 5px 0;
+
+		input {
+			margin-right: 10px;
+		}
+
+		.btn {
+			margin-left: 10px;
+		}
 	}
+
 	.pager-top {
 		display: none;
 	}
