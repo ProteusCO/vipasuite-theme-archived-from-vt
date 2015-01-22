@@ -704,129 +704,151 @@
 	}
 }
 
-/*
-.title{
- font-size: 1.2em;
- font-weight: bold;
- font-style: italic;
- color: #555;
- display: block;
- text-align: left;
-}
-.rich_dynaform_editor div.copy_data_source,
-.rich_dynaform_editor div.prop{
- margin-top:.5em;
-}
-.prop div.element_editor .prop div.prop,
-.rich_dynaform_editor div.prop div.prop{
-   margin-top:.25em;
-   margin-left:2em;
- }
-.prop div.element_editor div.prop,
-.rich_dynaform_editor .prop .prop_editor > div.prop{
-	margin-left:0;
-}
-.title,
-div.data_template_actions,
-.question_properties div.field,
-.rich_dynaform_editor .content div.prop{
-	margin-top:.75em;
-}
 
+.form_rule_wrapper {
+	padding-top: 20px;
+	padding-bottom: 20px;
 
+	.nodelist_wrapper {
+		@include box-shadow(0 0 3px transparentize($color-black, 0.5));
+	}
 
-// hiding help points
-.element_editor div.disabled,
-.sheet_view div.disabled{
-	display: none;
-}
-// tables
-table.wizard,
-table.pager,
-table.miwt_table{
-	width: 99%;
-	clear: both;
-}
-table.procedure_navigation_bottom{
-	float: right;
-}
-// second level tabs
-.fields div.tab-content{
-	border: 1px #ccc solid;
-	background: #f5f5f5;
-}
-.fields .tab-items li.ti{
-	background: url(/theme/Menu/menu_active.gif) repeat-x left top;
-	border: 1px #ccc solid;
-	border-width: 1px 1px 0px;
-}
-.fields .tab-items a.miwt_submit{
-	color:#fff;
-}
-.fields .tab-items a.miwt_submit:hover{
-	color: #4e4026;
-}
-.fields ul.tab-items li.tab-selected{
-	color: #4e4026;
-	border-bottom: 1px #f5f5f5 solid;
-	background: white url(/theme/Menu/menu_inactive.gif) repeat-x left top;
-}
-.fields .tab-items .tab-selected a.miwt_submit{
-	color:#4e4026;
-}
+	> .actions {
+		margin-top: 15px;
+	}
 
+	div.entity_editor {
+		z-index: 20;
+	}
 
-div.report_name_prompt{
-	text-align:center;
-	line-height:1.5em;
-}
-// Generator
-.expression .results span.result{
-	display:block;
-	color:#85016D;
-}
-.expression .results span.function{
-	color:#0000BF;
-}
-// Field Editors.
-label.tal{
-	display:block;
-}
-.prop input.offset{
-	width:5em;
-}
-.prop span.start_offset,
-.prop span.end_offset{
-	display:block;
-	margin-top:.75em;
-}
-.data_templates div.template_editor,
-.prop div.element_editor{
-	margin:.5em 1em;
-	border: 1px #b9b196 solid;
-	background: #fff;
-	-moz-border-radius:4px;
-	border-radius:4px;
-	padding:8px;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.2);
-	box-shadow: 0 1px 4px rgba(0,0,0,.2);
-}
-.form_content h2 {
-	font-size: 1.3em;
-	font-weight: bold;
-	padding: 1em 0;
-}
-.form_content p {
-	margin-bottom: 1em;
-}
-.fields .prop textarea{
-	width:100%;
-}
+	.node_wrapper {
+		background-color: transparentize($color-grey, 0.9);
+		padding: 10px 15px;
+		border-left: 2px solid transparent;
+		position: relative;
 
-.fields .prompt input.val {
-	min-width: 300px;
-	width: 50%;
-}
+		&.level_0 {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
 
-*/
+		&:hover {
+			border-left-color: $color-blue;
+		}
+
+		+ .level_0 {
+
+			&:before {
+				content: " ";
+				position: absolute;
+				height: 10px;
+				top: -5px;
+				left: -3px;
+				right: 0;
+				background-color: $color-light-grey;
+			}
+		}
+	}
+
+	.node_actions {
+		float: right;
+
+		> .menu_item {
+			@include buttonBase;
+			@include buttonStyleSmall;
+		}
+
+		> span.menu_item {
+			display: none;
+		}
+	}
+
+	.word {
+		font-family: $font-open-sans-bold;
+		font-size: 18px;
+		display: inline-block;
+		margin: 5px 0;
+
+		&.use {
+			margin-right: 5px;
+		}
+		&.to {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		&.with {
+			margin-left: 5px;
+		}
+	}
+
+	.list_editor {
+		position: relative;
+
+		> .menu_component {
+			position: absolute;
+			right: 0;
+			bottom: 100%;
+			z-index: 10;
+
+			> .menu_item {
+				@include buttonBase;
+				@include buttonGlyphOnly($html-entity-add, $size: 16px, $color: $color-white, $padding: 3px);
+				background-color: $color-blue;
+
+				//fixme fix this to use background color for glyph only
+				&:hover {
+					background-color: darken($color-blue, 10%);
+				}
+			}
+
+			> span.menu_item {
+				display: none;
+			}
+		}
+	}
+
+	.condition_wrapper {
+		padding: 0 15px;
+
+		.entity_label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.entity_editor_button {
+			@include buttonStyleSmall;
+		}
+
+		> .expression {
+			display: block;
+			border: 1px solid $color-light-grey;
+			padding: 5px;
+			background-color: $color-almost-white;
+			font-family: $font-monospace;
+			overflow-x: auto;
+			font-size: 13px;
+			margin-top: 5px;
+		}
+	}
+
+	.parameters {
+		display: block;
+		border: 1px solid $color-lighter-grey;
+		padding: 5px;
+		background-color: $color-almost-white;
+		font-family: $font-monospace;
+		font-size: 13px;
+		margin-right: 110px;
+		position: relative;
+		margin-top: 5px;
+
+		.btn {
+			@include buttonStyleSmall;
+			position: absolute;
+			left: 100%;
+			top: 50%;
+			margin-left: 10px;
+			@include transform(translateY(-50%));
+		}
+	}
+}
