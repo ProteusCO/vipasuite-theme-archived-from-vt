@@ -63,7 +63,11 @@
 			$root = $(target);
 			id = $root.attr('id');
 
+			//cache parents
 			$menuParents = $root.find('.mi-parent');
+
+			//remove parents with empty children
+			$menuParents.find(' > .menu:empty').parent().remove();
 
 			$menuParents.on('click', '.menuitemlabel', function(evt) {
 				toggleOpen(this.parentNode);
