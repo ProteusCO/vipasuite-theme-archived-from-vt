@@ -32,6 +32,10 @@ div.message {
 		@include style-message-warning;
 	}
 
+	p:first-child {
+		margin-top: 0;
+	}
+
 	.miwt-collapsable-content {
 		@include style-popup-box();
 		overflow-y: auto;
