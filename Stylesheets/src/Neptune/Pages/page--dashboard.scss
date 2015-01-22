@@ -1,5 +1,9 @@
 @import "../Config/base-import";
 
+h2 {
+	margin-bottom: 5px;
+}
+
 .dashboard-coming {
 	background: center center $color-dark-blue themeDesignResourceUrl('/Dashboard/dashboard-noanalytics-bg.jpg') no-repeat;
 	background-size: cover;
@@ -12,5 +16,61 @@
 		padding-top: 150px;
 		font-family: $font-open-sans-bold;
 		text-shadow: 0 0 3px transparentize($color-black, 0.8);
+	}
+}
+
+.videos {
+	margin: 0 -5px;
+}
+
+.video {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+
+	a {
+		display: block;
+		margin: 0 5px;
+		border: 3px solid $color-dark-grey;
+		@include transition(all 250ms);
+		text-decoration: none;
+
+		&:hover {
+			border-color: $color-blue;
+
+			.info {
+				background-color: $color-blue;
+			}
+		}
+	}
+
+	.thumbnail {
+		width: 100%;
+		height: 180px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: transparent;
+	}
+
+	.info {
+		background-color: $color-charcoal;
+		color: $color-white;
+		padding: 10px;
+		@include transition(all 250ms);
+	}
+
+	.title {
+		font-family: $font-open-sans-semi-bold;
+		font-size: 16px;
+	}
+
+	.length {
+		font-family: $font-open-sans-italic;
+		font-size: 12px;
+	}
+
+	@include breakpoint($bp-desktop) {
+		width: 25%;
 	}
 }
