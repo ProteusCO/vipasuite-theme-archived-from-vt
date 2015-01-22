@@ -11,6 +11,10 @@
 	}
 }
 
+.site-content-menu {
+	display: none;
+}
+
 .primary-nav {
 	.menu {
 		@include resetMenu;
@@ -60,6 +64,9 @@
 			}
 			&.nav-support-group {
 				@include navMenuIconOverride($html-entity-support);
+			}
+			&.nav-site-content {
+				@include navMenuIconOverride($html-entity-component);
 			}
 			&.nav-cms-group {
 				@include navMenuIconOverride($html-entity-cms);
@@ -143,6 +150,21 @@
 			}
 			&.nav-cogsworth-projects {
 				@include navMenuIconOverride($html-entity-files);
+			}
+
+			//Site content icons
+			&.nav-sc-default {
+				@include navMenuIconOverride($html-entity-component);
+			}
+			&.nav-sc-person {
+				@include navMenuIconOverride($html-entity-profile);
+			}
+			&.nav-sc-events {
+				@include navMenuIconOverride($html-entity-calendar);
+			}
+			&.nav-sc-slide {
+				//fixme fix icon
+				@include navMenuIconOverride($html-entity-fixme);
 			}
 
 			//CMS subsection
