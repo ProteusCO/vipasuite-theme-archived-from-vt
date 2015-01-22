@@ -113,6 +113,9 @@
 		$siteLocaleComponent = $appControlsCon.find('.site-locale');
 		$navCon = $('.l-nav');
 
+		//move site content menu
+		$navCon.find('.site-content-menu > .menu > .mi').insertAfter('.primary-nav > .menu > .nav-support-group');
+
 		//set up menu
 		new Menu('.primary-nav');
 
@@ -120,9 +123,6 @@
 		if ($siteLocaleComponent.length) {
 			$appControlsCon.addClass(CSS_CLASS_HAS_SITE_LOCALE);
 		}
-
-		//move site content menu
-		$navCon.find('.site-content-menu > .menu > .mi').insertAfter('.primary-nav > .menu > .nav-support-group');
 
 		//set up scrollbar on menu
 		//need to do this https://github.com/malihu/malihu-custom-scrollbar-plugin/issues/187
