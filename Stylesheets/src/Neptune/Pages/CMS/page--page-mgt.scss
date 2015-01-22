@@ -327,6 +327,15 @@
 	.box_header {
 		width: 100%;
 
+		&.box_header_page_template,
+		&.box_header_page {
+			width: auto;
+
+			.label-con {
+				width: auto;
+			}
+		}
+
 		.label-con {
 			width: 100%;
 			padding: 0 5px;
