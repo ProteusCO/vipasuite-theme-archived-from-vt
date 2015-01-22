@@ -30,7 +30,7 @@ h2 {
 
 	a {
 		display: block;
-		margin: 0 5px;
+		margin: 0 5px 10px;
 		border: 3px solid $color-dark-grey;
 		@include transition(all 250ms);
 		text-decoration: none;
