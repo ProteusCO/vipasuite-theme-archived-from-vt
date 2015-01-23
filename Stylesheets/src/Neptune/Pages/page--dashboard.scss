@@ -38,6 +38,14 @@ h2 {
 		&:hover {
 			border-color: $color-blue;
 
+			.overlay {
+				border-color: $color-blue;
+				background-color: $color-dark-blue;
+				width: 70px;
+				height: 70px;
+				border-width: 10px;
+			}
+
 			.info {
 				background-color: $color-blue;
 			}
@@ -51,6 +59,29 @@ h2 {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-color: transparent;
+		position: relative;
+
+		.overlay {
+			border: 5px solid $color-darker-grey;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			display: block;
+			background-color: $color-light-charcoal;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			@include transform(translateX(-50%) translateY(-50%));
+			@include transition(all 250ms);
+
+			&:before {
+				@include glyphAdd($html-entity-play, $size: 24px, $color: $color-white);
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				@include transform(translateX(-40%) translateY(-50%));
+			}
+		}
 	}
 
 	.info {
