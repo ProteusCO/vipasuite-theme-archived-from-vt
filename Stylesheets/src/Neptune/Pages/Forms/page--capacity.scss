@@ -1,0 +1,57 @@
+@import "../../Config/base-import";
+
+//fixme this needs html restructure
+.search-results,
+.search_results {
+	.btn {
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete {
+			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
+
+.searchui-app-main {
+	> .search {
+		@include style-inline-box();
+	}
+
+	.uitask-manager-con {
+		margin: 15px 0;
+	}
+
+	.task-container {
+		@include style-inline-box();
+	}
+}
+
+.capacity_list_editor {
+	.field_viewer,
+	.field_editor {
+		margin: 5px 0;
+
+		.field-name {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.summary {
+			margin-right: 5px;
+		}
+
+		.actions {
+			margin-left: 5px;
+		}
+	}
+
+	.uses {
+		margin: 5px 0 10px;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+}
