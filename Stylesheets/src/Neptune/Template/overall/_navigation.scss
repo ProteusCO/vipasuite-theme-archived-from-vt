@@ -24,6 +24,8 @@
 		text-decoration: none;
 		display: block;
 		padding: 5px;
+		padding-left: 10px;
+		@include transition(all 200ms);
 	}
 
 	.menu-t1 {
@@ -57,7 +59,33 @@
 				}
 			}
 
+			&.mi-parent {
+				> .menuitemlabel {
+					position: relative;
 
+					> .mil {
+						&:after {
+							@include glyphAdd($html-entity-arrow-right, $size: 16px, $color: $color-lighter-bluegrey);
+							position: absolute;
+							right: 15px;
+							top: 13px;
+							@include transition(all 200ms);
+						}
+					}
+				}
+
+				&.mi-open {
+					> .menuitemlabel {
+						> .mil {
+							&:after {
+								//fixme change to use an actual glyph override
+								color: $color-white;
+								@include transform(rotate(90deg));
+							}
+						}
+					}
+				}
+			}
 
 			&.nav-dashboard {
 				@include navMenuIconOverride($html-entity-dashboard);
