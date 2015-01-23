@@ -1,5 +1,7 @@
 @import "../../Config/base-import";
 
+@import "../../Components/Partials/form-editor";
+
 .help-point.form-mgt-data {
 	float: right;
 	margin-bottom: 5px;
@@ -60,89 +62,10 @@
 			float: right;
 			margin-bottom: 5px;
 		}
-
-		.view_actions {
-			margin-bottom: 10px;
-
-			.btn {
-				&.edit {
-					@include buttonGlyphAdd($html-entity-edit);
-				}
-				&.copy {
-					@include buttonGlyphAdd($html-entity-copy);
-				}
-				&.delete {
-					@include buttonGlyphAdd($html-entity-delete);
-				}
-			}
-		}
 	}
 
-	//fix the html in this area
-	.form_data_detail {
-		> .name,
-		> .form_process_id,
-		> .create_user,
-		> .create_time,
-		> .form_revision_time {
-			margin: 5px 0;
-
-			label {
-				@include style-form-label;
-				display: inline-block;
-				width: 170px;
-			}
-		}
-
-		> .ctb {
-			display: block;
-			margin: 5px 0;
-		}
-
-		> .summary {
-			margin-top: 10px;
-		}
-	}
 }
 
-.form_entry,
-.form_preview,
-.form_extras_summary {
-	span.label {
-		@include style-form-label;
-		display: block;
-	}
-
-	.question {
-		margin: 10px 0;
-
-		&:first-child {
-			margin-top: 0;
-		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	.form_field {
-		+ .form_field {
-			margin-top: 5px;
-		}
-	}
-
-	.address_field {
-		label {
-			@include style-form-label;
-			margin-right: 5px;
-		}
-
-		.part {
-			+ .part {
-				margin-top: 5px;
-			}
-		}
-	}
-}
 
 .form_entry {
 	clear: both;

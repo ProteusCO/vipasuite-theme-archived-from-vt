@@ -180,6 +180,51 @@
 	}
 }
 
+@mixin style-tab-elements {
+	.tab-items {
+		@include resetMenu;
+		margin-bottom: -1px;
+
+		.ti {
+			display: inline-block;
+			vertical-align: bottom;
+			border: 1px solid $color-lighter-grey;
+			margin-right: 5px;
+			font-family: $font-open-sans-semi-bold;
+
+			a {
+				background-color: $color-smokey-white;
+				color: $color-blue;
+				text-decoration: none;
+				display: block;
+				padding: 5px 10px;
+			}
+
+			&.tab-selected {
+				border-bottom-color: $color-white;
+
+				a {
+					color: $color-dark-bluegrey;
+					background-color: $color-white;
+				}
+			}
+
+			&:hover {
+				a {
+					color: $color-white;
+					background-color: $color-blue;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		background-color: $color-white;
+		border: 1px solid $color-lighter-grey;
+		padding: 15px;
+	}
+}
+
 @mixin style-form-input-readonly {
 	display: inline-block;
 	vertical-align: middle;
