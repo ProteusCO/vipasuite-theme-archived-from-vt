@@ -114,7 +114,7 @@
 		$navCon = $('.l-nav');
 
 		//move site content menu
-		$navCon.find('.site-content-menu > .menu > .mi').insertAfter('.primary-nav > .menu > .nav-support-group');
+		$navCon.find('.site-content-menu > .menu > .mi').insertAfter('.primary-nav > .menu > .nav-cms-group');
 
 		//set up menu
 		new Menu('.primary-nav');
