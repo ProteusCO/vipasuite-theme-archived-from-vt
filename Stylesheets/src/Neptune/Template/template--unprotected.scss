@@ -1,0 +1,69 @@
+@import "../Config/base-import";
+
+@include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
+@include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
+@include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
+
+@include fontFace('GlyphLib', '/GlyphLib', 'neptune-glyph-font');
+
+@import "../Libs/normalize";
+
+@import "../Components/Partials/base-elements";
+@import "../Components/Partials/buttons";
+@import "../Components/Partials/messages";
+
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: $color-dark-blue;
+	color: $color-blue-almost-white;
+	font-size: $font-default-size;
+}
+
+h1, h2, h3, h4, h5, h6, caption {
+	color: $color-white;
+}
+
+a {
+	color: $color-blue-almost-white;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.e-app-content {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.l-header,
+.l-footer {
+	text-align: center;
+}
+
+
+.copyright {
+	margin-top: 50px;
+
+	.vipasolutions {
+		width: 139px;
+		height: 31px;
+		display: inline-block;
+		vertical-align: middle;
+		background-image: themeDesignResourceUrl('/Login/vipasolutions-logo.png');
+		margin-bottom: 9px;
+
+		.text {
+			display: none;
+		}
+	}
+}
