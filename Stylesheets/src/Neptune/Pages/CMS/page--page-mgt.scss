@@ -424,6 +424,11 @@
 			@include box-shadow(0 0 4px transparentize($color-black, 0.8));
 		}
 
+		&.conditional .contentelement_actions:before {
+			content: "Visibility";
+			background-color: $color-light-blue;
+		}
+
 		&.unpublished .contentelement_actions:before {
 			content: "Unpublished";
 			background-color: $color-red;
@@ -451,11 +456,6 @@
 				content: "Deprecated";
 				background-color: $color-darker-grey;
 			}
-		}
-
-		&.conditional .contentelement_actions:before {
-			content: "Visibility";
-			background-color: $color-light-blue;
 		}
 
 		&.unconfigured .contentelement_actions:before {
