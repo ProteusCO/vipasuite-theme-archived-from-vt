@@ -1,0 +1,47 @@
+@import "../../Config/base-import";
+
+.search-results {
+	.btn {
+		&.view {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+		&.delete {
+			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
+
+.pager-top {
+	display: none;
+}
+
+.mail_merge_results  {
+	> h2 {
+		margin-top: 0;
+	}
+}
+
+.message_viewer {
+	@include style-inline-box();
+	margin-top: 10px;
+
+	.to,
+	.cc,
+	.from,
+	.subject {
+		margin: 10px 0;
+
+		label {
+			@include style-form-label;
+			display: inline-block;
+			margin-right: 10px;
+			width: 55px;
+		}
+	}
+
+	.body {
+		@include style-inline-box($bgcolor: $color-almost-white);
+		font-family: $font-monospace;
+		margin: 10px 0;
+	}
+}
