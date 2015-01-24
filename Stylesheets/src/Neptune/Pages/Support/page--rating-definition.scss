@@ -1,0 +1,74 @@
+@import "../../Config/base-import";
+
+.pager-top {
+	display: none;
+}
+
+.rating_definition_mgt {
+	.search_results {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
+
+.rating_definition_editor {
+	.prop {
+		margin: 10px 0;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		&.name,
+		&.display_name {
+			input {
+				width: 300px;
+			}
+		}
+	}
+
+	.options,
+	.subratings {
+		margin: 10px 0;
+
+		.control_bar {
+			margin-bottom: 5px;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.subratings {
+		input {
+			width: 100%;
+		}
+	}
+
+	.miwt-table {
+		.btn {
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+
+	.site_assignment {
+		h3 {
+			margin-bottom: 0;
+		}
+
+		.constraint {
+			margin-bottom: 5px;
+		}
+	}
+}
