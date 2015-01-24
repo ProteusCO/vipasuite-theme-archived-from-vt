@@ -72,7 +72,7 @@ h2 {
 			left: 50%;
 			top: 50%;
 			@include transform(translateX(-50%) translateY(-50%));
-			@include transition(all 250ms);
+			@include transition(all 150ms);
 
 			&:before {
 				@include glyphAdd($html-entity-play, $size: 24px, $color: $color-white);
