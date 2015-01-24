@@ -1,0 +1,24 @@
+@import "../../Config/base-import";
+
+.library_management {
+	.librarytype {
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.library_search {
+		.search_results {
+			.btn {
+				&.edit {
+					margin-left: 10px;
+					@include buttonStyleEditGlyph();
+				}
+				&.delete {
+					@include buttonStyleDeleteGlyph();
+				}
+			}
+		}
+	}
+}
