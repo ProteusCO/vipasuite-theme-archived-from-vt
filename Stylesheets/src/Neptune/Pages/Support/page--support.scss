@@ -144,33 +144,37 @@ $color-work-order-font: #7d6318;
 	}
 }
 
-.search_results {
-	> tbody {
-		> tr > td {
-			color: $color-charcoal;
-		}
-		> tr.status_new > td { background-color: $color-pending-bg; }
-		> tr.status_feedback > td { background-color: $color-client-review-bg; }
-		> tr.status_resolved > td { background-color: $color-resolved-bg; }
-		> tr.status_assigned > td { background-color: $color-assigned-bg; }
-		> tr.status_pending > td { background-color: $color-acknowledged-bg; }
-		> tr.status_wo > td { background-color: $color-work-order-bg; }
-		> tr.status_client_feedback > td { background-color: $color-client-feedback-bg; }
-
-		td {
-			a {
+//fixme get class added
+.inlinewindow {
+	> .search,
+	.support {
+		tbody {
+			> tr > td {
 				color: $color-charcoal;
-				text-shadow: transparentize($color-white, 0.7);
-				font-family: $font-open-sans-semi-bold;
+			}
+			> tr.status_new > td { background-color: $color-pending-bg; }
+			> tr.status_feedback > td { background-color: $color-client-review-bg; }
+			> tr.status_resolved > td { background-color: $color-resolved-bg; }
+			> tr.status_assigned > td { background-color: $color-assigned-bg; }
+			> tr.status_pending > td { background-color: $color-acknowledged-bg; }
+			> tr.status_wo > td { background-color: $color-work-order-bg; }
+			> tr.status_client_feedback > td { background-color: $color-client-feedback-bg; }
 
-				&:before {
-					@include glyphAdd($html-entity-view);
-					margin-right: 5px;
-				}
+			td {
+				a {
+					color: $color-charcoal;
+					text-shadow: transparentize($color-white, 0.7);
+					font-family: $font-open-sans-semi-bold;
 
-				&:hover {
 					&:before {
-						text-decoration: none;
+						@include glyphAdd($html-entity-view);
+						margin-right: 5px;
+					}
+
+					&:hover {
+						&:before {
+							text-decoration: none;
+						}
 					}
 				}
 			}
