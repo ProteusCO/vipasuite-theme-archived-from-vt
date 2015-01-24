@@ -1,7 +1,4 @@
 jQuery(function($) {
-	var SELECT_OPTIONS = {
-		width: 'element'
-	};
 	var mousePosition = {x: 0, y: 0};
 	var inputInFocus = false;
 
@@ -18,24 +15,8 @@ jQuery(function($) {
 		}
 	});
 
-	function destroySelectUpdates(context) {
-		var $con = $(context || document);
-		var $selects = $con.hasClass('select2-offscreen') ? $con : $con.find('.select2-offscreen');
-
-		$selects.select2('destroy');
-	}
-
 	function updateMIWT(context) {
 		var $con = $(context || document);
-
-		var $selects = $con.is('select') ? $con : $con.find('select');
-		$selects
-				.select2(SELECT_OPTIONS)
-				.each(function() {
-					if ($(this).hasClass('miwt_watch')) {
-						$(this).on('change', miwt.observerFormSubmit);
-					}
-				});
 
 		$con
 				.find('.time_entry_part.date').filter(':not(.friendly_date)')
@@ -50,29 +31,41 @@ jQuery(function($) {
 	}
 
 	function triggerFormBtn(id) {
-		var miwtForm = $(document.getElementById(id)).closest('form.miwt_form').get(0);
+		var miwtForm = $(document.getElementById(id)).closest('form.miwt-form').get(0);
 		miwtForm.elements['btnhit'].value = id;
 		miwtForm.MIWTSubmit();
 	}
 
-	$('#time_entry form.miwt_form')
+	$('#time_entry')
+			.find('form.miwt-form')
 			.each(function() {
 				var form = this;
-				form.submit_options = {
-					preProcessNode: function(data) {
-						destroySelectUpdates(document.getElementById(data.refid));
-						return data.content;
-					},
-					postProcessNode: function(data) {
+				var oldPostProcessNode;
+
+				if (!form.submit_options) {
+					form.submit_options = {};
+				}
+
+				if (form.submit_options.postProcessNode) {
+					oldPostProcessNode = form.submit_options.postProcessNode;
+
+					form.submit_options.postProcessNode = function(data) {
+						oldPostProcessNode();
 						$.each(data, function(idx, d) {
 							updateMIWT(d.node);
 						});
-					}
-				};
+					};
+				} else {
+					form.submit_options.postProcessNode = function(data){
+						$.each(data, function(idx, d) {
+							updateMIWT(d.node);
+						});
+					};
+				}
 
-				updateMIWT(this);
+				updateMIWT(form);
 			})
-			.on('keydown', 'input.miwt_calendar', function(evt) {
+			.on('keydown', '.miwt-calendar input', function(evt) {
 				var input = this;
 				var inputDate = moment(input.value);
 				var updateDate = true;
@@ -125,7 +118,7 @@ jQuery(function($) {
 						$triggeredCon = $mouseEl.closest('.project');
 
 						if ($triggeredCon.length) {
-							triggerFormBtn($triggeredCon.find('.time_entries_con > .entity_actions a.add_button').attr('id'));
+							triggerFormBtn($triggeredCon.find('.time_entries_con > .entity_actions a.add').attr('id'));
 						}
 						break;
 
@@ -134,7 +127,7 @@ jQuery(function($) {
 						$triggeredCon = $mouseEl.closest('.time_entry');
 
 						if ($triggeredCon.length && !$triggeredCon.hasClass('entry_edit')) {
-							triggerFormBtn($triggeredCon.find('.actions a.edit_button').attr('id'));
+							triggerFormBtn($triggeredCon.find('.actions a.edit').attr('id'));
 						}
 						break;
 				}
