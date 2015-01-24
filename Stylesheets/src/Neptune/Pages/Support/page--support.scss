@@ -1,5 +1,7 @@
 @import "../../Config/base-import";
 
+@import "../../Libs/jquery.fancybox";
+
 $color-pending-bg: #e0f1fc;
 $color-pending-font: #1b6592;
 $color-acknowledged-bg: #fdae61;
@@ -445,6 +447,18 @@ div.note {
 				&:hover {
 					text-decoration: underline;
 				}
+
+				&.preview {
+					&:before {
+						@include glyphAdd($html-entity-view);
+						margin-right: 3px;
+					}
+					&:hover {
+						&:before {
+							text-decoration: none;
+						}
+					}
+				}
 			}
 		}
 
@@ -775,5 +789,24 @@ div.issue_add_note_component {
 				@include buttonGlyphAdd($html-entity-success);
 			}
 		}
+	}
+}
+
+#note-img-title {
+	@include clearfix;
+
+	.cnt {
+		float: left;
+		margin-top: 5px;
+		width: 40%;
+		text-align: left;
+		overflow: hidden;
+	}
+	.note_info  {
+		float: right;
+		margin-top: 5px;
+		text-align: right;
+		width: 60%;
+		overflow: hidden;
 	}
 }
