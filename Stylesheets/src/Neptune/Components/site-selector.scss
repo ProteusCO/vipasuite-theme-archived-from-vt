@@ -35,11 +35,27 @@
 	&.loading {
 		.selector-sites-con {
 			> span {
-				@include loading-circle-spinner;
 				position: absolute;
 				left: 50%;
 				top: 50%;
-				@include transform(translateX(-50%) translateY(-50%));
+				margin-top: -20px;
+				margin-left: -20px;
+			}
+		}
+
+		.smil & {
+			.selector-sites-con {
+				> span {
+					@include loading-circle-spinner;
+				}
+			}
+		}
+
+		.no-smil & {
+			.selector-sites-con {
+				> span {
+					@include loading-circle-spinner-nosmil;
+				}
 			}
 		}
 	}

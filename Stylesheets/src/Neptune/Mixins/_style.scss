@@ -306,3 +306,20 @@
 	height: 40px;
 	background: center center transparent themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat;
 }
+
+@mixin loading-circle-spinner-nosmil() {
+	@include keyframes(loading-circle-spin) {
+		0% {
+			@include transform(rotate(0deg));
+		}
+		100% {
+			@include transform(rotate(360deg));
+		}
+	}
+
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: center center transparent themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat;
+	@include animation(loading-circle-spin 1s infinite linear);
+}

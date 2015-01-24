@@ -245,8 +245,13 @@ body > div.miwt-ajax-progress {
 
 	.progress-con {
 		> span {
-			@include loading-circle-spinner;
 			margin: 10px auto;
+		}
+
+		progress {
+			margin: 5px 0;
+			width: 100%;
+			display: block;
 		}
 
 		&.progress-indeterminate {
@@ -256,6 +261,22 @@ body > div.miwt-ajax-progress {
 
 			progress {
 				display: none;
+			}
+		}
+	}
+
+	.smil & {
+		.progress-con {
+			> span {
+				@include loading-circle-spinner;
+			}
+		}
+	}
+
+	.no-smil & {
+		.progress-con {
+			> span {
+				@include loading-circle-spinner-nosmil;
 			}
 		}
 	}
