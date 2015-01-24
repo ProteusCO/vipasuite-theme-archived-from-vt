@@ -339,7 +339,8 @@ $color-work-order-font: #7d6318;
 
 		.val {
 			padding: 2px;
-			border: 1px solid $color-light-charcoal;
+			border: 1px solid $color-light-grey;
+			background-color: $color-almost-white;
 		}
 	}
 
@@ -362,10 +363,16 @@ $color-work-order-font: #7d6318;
 	.csr_text {
 		label{
 			float: left;
+			margin-right: 5px;
 		}
 
 		textarea {
+			margin-top: 5px;
 			width: 100%;
+		}
+
+		.btn {
+			@include buttonStyleSmall;
 		}
 	}
 
@@ -389,6 +396,14 @@ $color-work-order-font: #7d6318;
 
 	.send_message_actions {
 		margin-top: 15px;
+	}
+
+	.fields {
+		.field_editor {
+			label {
+				margin-right: 5px;
+			}
+		}
 	}
 }
 
@@ -764,6 +779,10 @@ div.issue_add_note_component {
 			width: 100%;
 			margin-left: 0;
 		}
+
+		.file_upload .multi_file_upload {
+			margin-top: 0;
+		}
 	}
 
 	.fields,
@@ -812,5 +831,12 @@ div.issue_add_note_component {
 		text-align: right;
 		width: 60%;
 		overflow: hidden;
+	}
+}
+
+//fixme this should be removed once code no longer outputs collapsible stack trace
+.message {
+	.miwt-collapsable {
+		display: none;
 	}
 }
