@@ -238,13 +238,29 @@ body > div.miwt-ajax-progress {
 	min-height: 100px;
 
 	.label {
-		@include loading-circle-spinner;
-		font-size: 0;
-		top: 40%;
+		text-align: center;
+		font-family: $font-open-sans-semi-bold;
+		display: block;
+	}
+
+	.progress-con {
+		> span {
+			@include loading-circle-spinner;
+			margin: 10px auto;
+		}
+
+		&.progress-indeterminate {
+			> span {
+				margin-bottom: 0;
+			}
+
+			progress {
+				display: none;
+			}
+		}
 	}
 
 	&:after {
-		content: "Loading, please wait...";
 		text-align: center;
 		font-family: $font-open-sans-semi-bold;
 		display: block;
@@ -252,10 +268,6 @@ body > div.miwt-ajax-progress {
 		bottom: 10px;
 		left: 0;
 		right: 0;
-	}
-
-	progress {
-		display: none;
 	}
 }
 

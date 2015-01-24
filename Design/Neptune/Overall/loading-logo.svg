@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+
+	 <!-- polyfill for IE for animations -->
+	 <script type="text/ecmascript" xlink:href="/theme2/Libs/smil.user.js"/>
+
+<g>
+	<!-- yellow outer -->
+	<path fill="#F7B419" d="M20.092,40C9.303,40.067-0.218,31.094,0.004,20.005C0.229,8.742,8.449,0,20.092,0V5.75
+		c-9.99-0.062-16.777,7.067-16.835,16.921c-0.058,9.681,6.897,17.1,16.842,17.202L20.092,40z"/>
+		<animateTransform
+			attributeType="xml"
+			attributeName="transform"
+			type="rotate"
+			from="0 20 20"
+			to="360 20 20"
+			dur="1.5s"
+			repeatCount="indefinite"
+		/>
+</g>
+<g>
+	<!-- red outer -->
+	<path fill="#EC2227" d="M20.104,0c11.807,0.037,19.668,8.957,19.892,20.035C40.225,31.509,31.625,39.73,20.104,40v-5.75
+		c9.991,0.063,16.779-7.066,16.837-16.92c0.058-9.682-6.897-17.1-16.843-17.202L20.104,0z"/>
+		<animateTransform
+			attributeType="xml"
+			attributeName="transform"
+			type="rotate"
+			from="0 20 20"
+			to="360 20 20"
+			dur="1.5s"
+			repeatCount="indefinite"
+		/>
+</g>
+<g>
+	<!-- yellow inner -->
+	<path fill="#F7B419" d="M32.546,19.962c0.042,6.843-5.572,12.881-12.512,12.74c-7.048-0.143-12.519-5.355-12.519-12.74h3.598
+		c-0.04,6.335,4.422,10.641,10.589,10.678c6.061,0.037,10.702-4.374,10.766-10.682L32.546,19.962z"/>
+		<animateTransform
+			attributeType="xml"
+			attributeName="transform"
+			type="rotate"
+			from="0 20 20"
+			to="-360 20 20"
+			dur="1s"
+			keySplines=".25 .1 .25 1"
+			keyTimes="0;1"
+			calcMode="spline"
+			repeatCount="indefinite"
+		/>
+</g>
+<g>
+	<!-- red inner -->
+	<path fill="#EC2227" d="M7.515,19.953c0.023-7.488,5.605-12.474,12.538-12.614c7.181-0.145,12.326,5.309,12.493,12.614h-3.597
+		c0.039-6.335-4.424-10.641-10.589-10.677C12.301,9.239,7.658,13.65,7.595,19.958L7.515,19.953z"/>
+		<animateTransform
+			attributeType="xml"
+			attributeName="transform"
+			type="rotate"
+			from="0 20 20"
+			to="-360 20 20"
+			dur="1s"
+			keySplines=".25 .1 .25 1"
+			keyTimes="0;1"
+			calcMode="spline"
+			repeatCount="indefinite"
+		/>
+</g>
+</svg>
