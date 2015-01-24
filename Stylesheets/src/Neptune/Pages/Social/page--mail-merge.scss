@@ -1,5 +1,45 @@
 @import "../../Config/base-import";
 
+@import "../../Components/Partials/email-template-editor";
+
+//fixme get help_point changed to help-point
+span.help_point {
+	background-color: $color-orange;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: 16px;
+	height: 16px;
+	font-family: $font-open-sans-bold;
+	font-size: 11px;
+	overflow: hidden;
+
+	a {
+		text-decoration: none;
+		color: $color-white;
+
+		&:before {
+			content: "?";
+			float: left;
+			display: block;
+			width: 16px;
+		}
+	}
+
+	&.disabled {
+		background-color: $color-grey;
+		color: $color-lighter-grey;
+		cursor: default;
+
+		&:before {
+			content: "?";
+			float: left;
+			display: block;
+			width: 16px;
+		}
+	}
+}
+
 .search-results {
 	.btn {
 		&.view {
@@ -43,5 +83,33 @@
 		@include style-inline-box($bgcolor: $color-almost-white);
 		font-family: $font-monospace;
 		margin: 10px 0;
+	}
+}
+
+.mail_merge_editor  {
+	> h2 {
+		margin-top: 0;
+	}
+
+	.prop {
+		&.name,
+		&.confirmation_email {
+
+			input {
+				width: 300px;
+			}
+		}
+	}
+
+	.selected_email_template {
+		.selected_template_label {
+			margin-left: 10px;
+		}
+	}
+
+	.persistence_actions {
+		span.help_point {
+			margin-left: 5px;
+		}
 	}
 }
