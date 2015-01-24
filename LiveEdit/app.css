@@ -176,13 +176,6 @@
 /* All rules should be specific and marked !important since this is injected on sites.*/
 /** Fonts. */
 @font-face {
-  font-family: 'VipaLiveEditIcons';
-  src: url("fonts/VipaLiveEditIcons.eot");
-  src: url("fonts/VipaLiveEditIcons.eot?#iefix") format("embedded-opentype"), url("fonts/VipaLiveEditIcons.woff") format("woff"), url("fonts/VipaLiveEditIcons.ttf") format("truetype"), url("fonts/VipaLiveEditIcons.svg#VipaLiveEditIcons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "OpenSans";
   src: url("/theme2/Fonts/OpenSans/opensans-regular-webfont.eot");
   src: url("/theme2/Fonts/OpenSans/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-regular-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-regular-webfont.ttf") format("truetype");
@@ -200,20 +193,6 @@
   font-family: "OpenSansSemiBold";
   src: url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.eot");
   src: url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "OpenSansItalic";
-  src: url("/theme2/Fonts/OpenSans/opensans-italic-webfont.eot");
-  src: url("/theme2/Fonts/OpenSans/opensans-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-italic-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-italic-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "OpenSansLight";
-  src: url("/theme2/Fonts/OpenSans/opensans-light-webfont.eot");
-  src: url("/theme2/Fonts/OpenSans/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-light-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-light-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -795,7 +774,7 @@
 }
 #cms-le-overlay-content iframe {
   /*noinspection CssUnknownTarget*/
-  background: url(/_resources/all/docroot/cms/preview/loading.gif) no-repeat center !important;
+  background: url("/theme2/Overall/loading-logo.svg") no-repeat center !important;
   -webkit-transition: all .25s ease-in !important;
   transition: all .25s ease-in !important;
 }
@@ -1173,7 +1152,7 @@
 }
 .le-loading #cms-le-float-palette-content {
   /*noinspection CssUnknownTarget*/
-  background: url(/_resources/all/docroot/cms/preview/loading.gif) no-repeat center !important;
+  background: url("/theme2/Overall/loading-logo.svg") no-repeat center !important;
   text-align: center !important;
 }
 #cms-le-float-palette-content .le-search-bar {

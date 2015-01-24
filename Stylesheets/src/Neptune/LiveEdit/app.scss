@@ -1,6 +1,5 @@
 @import "../Config/overall";
 @import "compass/css3";
-@import "breakpoint";
 @import "../Mixins/general-mixins";
 @import "mixins";
 
@@ -223,22 +222,9 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
 /* All rules should be specific and marked !important since this is injected on sites.*/
 /** Fonts. */
-@font-face {
-  font-family: 'VipaLiveEditIcons';
-  src: url('fonts/VipaLiveEditIcons.eot');
-  src: url('fonts/VipaLiveEditIcons.eot?#iefix') format('embedded-opentype'),
-  url('fonts/VipaLiveEditIcons.woff') format('woff'),
-  url('fonts/VipaLiveEditIcons.ttf') format('truetype'),
-  url('fonts/VipaLiveEditIcons.svg#VipaLiveEditIcons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
 @include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
 @include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
-@include fontFace('OpenSansItalic', '/OpenSans', 'opensans-italic-webfont');
-@include fontFace('OpenSansLight', '/OpenSans', 'opensans-light-webfont');
 
 @include fontFace('GlyphLib', '/GlyphLib', 'neptune-glyph-font');
 
@@ -497,7 +483,9 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
+    /*noinspection ALL*/
     -webkit-perspective: 1000;
+    /*noinspection ALL*/
     -moz-perspective: 1000;
     /*noinspection ALL*/
     perspective: 1000;
@@ -653,7 +641,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
   }
 
   .le-value.wildcard:after {
-    content: "/*"
+    content: "/*";
   }
 
   .le-modified {
@@ -679,6 +667,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     color: $color-charcoal !important;
     margin-top: 11px !important;
     font-size: 14px !important;
+    /*noinspection ALL*/
     @include box-shadow(2px 2px 5px transparentize($color-black, 0.5) !important);
   }
 
@@ -771,7 +760,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   iframe {
     /*noinspection CssUnknownTarget*/
-    background: url(/_resources/all/docroot/cms/preview/loading.gif) no-repeat center !important;
+    background: themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat center !important;
     -webkit-transition: all .25s ease-in !important;
     transition: all .25s ease-in !important;
   }
@@ -1214,8 +1203,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   .le-loading & {
     /*noinspection CssUnknownTarget*/
-    //fixme fix loading gif to svg
-    background: url(/_resources/all/docroot/cms/preview/loading.gif) no-repeat center !important;
+    background: themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat center !important;
     text-align: center !important;
   }
 
