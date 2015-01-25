@@ -1,0 +1,52 @@
+@import "../../Config/base-import";
+
+.table_view {
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+		&.edit_button {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete_button {
+			@include buttonStyleDeleteGlyph();
+		}
+		&.action_up {
+			@include buttonGlyphOnly($html-entity-move-up);
+		}
+		&.action_down {
+			@include buttonGlyphOnly($html-entity-move-down);
+		}
+	}
+}
+
+.inventory_listing {
+	.layout_group.actions {
+		display: inline-block;
+	}
+}
+
+.inventory_editor {
+	.inventory_control_title {
+		@include style-h2;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.maximum_order_quantity {
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	}
+
+	.on_hand,
+	.back_order {
+		margin-top: 10px;
+
+		td {
+			padding: 5px;
+		}
+	}
+}
