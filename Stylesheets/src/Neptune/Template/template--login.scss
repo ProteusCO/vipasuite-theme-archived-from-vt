@@ -69,6 +69,19 @@ a {
 			display: none;
 		}
 	}
+
+	.made {
+		.nebraska {
+			font-size: 0;
+			display: inline-block;
+			vertical-align: middle;
+			margin-bottom: 4px;
+			width: 30px;
+			height: 15px;
+			background: center center transparent themeDesignResourceUrl('/Overall/nebraska-icon.svg');
+			background-size: contain;
+		}
+	}
 }
 
 
