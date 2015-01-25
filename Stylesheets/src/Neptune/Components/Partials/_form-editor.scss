@@ -722,7 +722,6 @@
 	}
 
 	.node_wrapper {
-		background-color: transparentize($color-grey, 0.9);
 		padding: 10px 15px;
 		border-left: 2px solid transparent;
 		position: relative;
@@ -849,6 +848,53 @@
 			top: 50%;
 			margin-left: 10px;
 			@include transform(translateY(-50%));
+		}
+	}
+}
+
+//process context
+.process_context {
+
+	.editors {
+		margin: 10px 0;
+	}
+
+	.editor {
+		border: 1px solid $color-lighter-grey;
+		background-color: $color-almost-white;
+
+		&:hover {
+			background-color: $color-cornsilk;
+		}
+
+		+ .editor {
+			margin-top: 2px;
+		}
+
+		> div.prop,
+		> .actions {
+			display: inline-block;
+			padding: 2px 5px;
+
+			//fixme get this .val off input
+			input {
+				margin: 0;
+			}
+		}
+
+		.display_name,
+		label {
+			@include style-form-label;
+		}
+
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.remove {
+				//fixme get this changed to delete
+				@include buttonStyleDeleteGlyph();
+			}
 		}
 	}
 }
