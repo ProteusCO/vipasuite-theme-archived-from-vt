@@ -39,6 +39,11 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     /*max-height:none !important; FIXME : this broke the component selector */
   }
 
+  button {
+    text-shadow: none !important;
+    @include box-shadow(none !important);
+  }
+
   article, aside, details, figcaption, figure, footer, header, menu, nav, section {
     display: block !important;
     -moz-box-sizing: border-box !important;
@@ -273,8 +278,14 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     font-family: $font-open-sans-bold !important;
     max-height: 30px !important;
     min-height: 16px !important;
+  }
+
+  .le-info .le-name,
+  .le-info .le-type {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
   }
 
   .le-component,
@@ -460,6 +471,8 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       font-size: 17px !important;
       padding: 12px 14px !important;
       cursor: pointer !important;
+      width: $le-branding-nav-actions-width / 3 !important;
+      height: $le-bar-height-visible !important;
 
       &#cms-le-nav-out {
         @include buttonGlyphOverride($html-entity-move-out-up);
@@ -580,20 +593,33 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     }
   }
 
-  .le-component.le-box-locked:after {
-    content: "L" !important;
-    //fixme get icon for this
-    color: #999 !important;
-    position: absolute !important;
-    right: 15px !important;
-    top: 14px !important;
-    font-family: $font-open-sans-semi-bold !important;
-    font-size: 14px !important;
+  .le-component {
+    table {
+      table-layout: fixed !important;
+      width: 235px !important;
+    }
+
+    &.le-box-locked:after {
+      content: "L" !important;
+      //fixme get icon for this
+      color: #999 !important;
+      position: absolute !important;
+      right: 15px !important;
+      top: 14px !important;
+      font-family: $font-open-sans-semi-bold !important;
+      font-size: 14px !important;
+    }
+
+    td.le-icon {
+      width: 32px !important;
+    }
+
+    td.le-info {
+      padding-left: 4px !important;
+      vertical-align: top !important;
+    }
   }
 
-  .le-component td.le-info {
-    padding-left: 4px !important;
-  }
 }
 
 .le-info-panel {

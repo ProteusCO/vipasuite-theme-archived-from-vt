@@ -30,6 +30,12 @@
   min-height: 0 !important;
   /*max-height:none !important; FIXME : this broke the component selector */
 }
+.cms_le_ button {
+  text-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
 .cms_le_ article, .cms_le_ aside, .cms_le_ details, .cms_le_ figcaption, .cms_le_ figure, .cms_le_ footer, .cms_le_ header, .cms_le_ menu, .cms_le_ nav, .cms_le_ section {
   display: block !important;
   -moz-box-sizing: border-box !important;
@@ -357,8 +363,13 @@
   font-family: OpenSansBold, Arial, Verdana, sans-serif !important;
   max-height: 30px !important;
   min-height: 16px !important;
+}
+#cms-le-ptb .le-info .le-name,
+#cms-le-ptb .le-info .le-type {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
 }
 #cms-le-ptb .le-component,
 #cms-le-ptb .le-component-actions {
@@ -528,6 +539,8 @@
   font-size: 17px !important;
   padding: 12px 14px !important;
   cursor: pointer !important;
+  width: 54px !important;
+  height: 50px !important;
 }
 #cms-le-ptb .le-nav-actions button:before {
   color: #fff !important;
@@ -629,6 +642,10 @@
   position: static !important;
   margin-right: 4px !important;
 }
+#cms-le-ptb .le-component table {
+  table-layout: fixed !important;
+  width: 235px !important;
+}
 #cms-le-ptb .le-component.le-box-locked:after {
   content: "L" !important;
   color: #999 !important;
@@ -638,8 +655,12 @@
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 14px !important;
 }
+#cms-le-ptb .le-component td.le-icon {
+  width: 32px !important;
+}
 #cms-le-ptb .le-component td.le-info {
   padding-left: 4px !important;
+  vertical-align: top !important;
 }
 
 .le-info-panel h1 {
