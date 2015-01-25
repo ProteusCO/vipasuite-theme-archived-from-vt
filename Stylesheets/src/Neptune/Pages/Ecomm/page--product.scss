@@ -1,0 +1,82 @@
+@import "../../Config/base-import";
+
+.table_view {
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+		&.edit_button {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete_button {
+			@include buttonStyleDeleteGlyph();
+		}
+		&.action_up {
+			@include buttonGlyphOnly($html-entity-move-up);
+		}
+		&.action_down {
+			@include buttonGlyphOnly($html-entity-move-down);
+		}
+	}
+}
+
+.element_table {
+	.btn {
+		&.remove {
+			//fixme get classname fixed
+			@include buttonStyleDeleteGlyph();
+		}
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+		&.action-up {
+			@include buttonGlyphOnly($html-entity-move-up);
+		}
+		&.action-down {
+			@include buttonGlyphOnly($html-entity-move-down);
+		}
+	}
+}
+
+.detail_view {
+	@include style-inline-box($bgcolor: $color-almost-white);
+	margin-top: 20px;
+
+	td {
+		padding: 5px;
+
+		.bean_view_label {
+			@include style-form-label;
+		}
+	}
+}
+
+.file_entity_editor {
+	.current_file {
+		margin-right: 10px;
+	}
+}
+
+.product_listing {
+	> .layout {
+		+ div {
+			@include style-inline-box();
+			margin-top: 20px;
+		}
+	}
+
+	> .hibernate_search {
+		@include style-inline-box();
+		margin-top: 20px;
+	}
+}
+
+.product_mgt {
+	.product_title {
+		@include style-h3;
+	}
+
+	.testimonial {
+		margin: 10px 0;
+	}
+}
