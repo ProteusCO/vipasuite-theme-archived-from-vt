@@ -34,3 +34,34 @@
 		}
 	}
 }
+
+.form_details {
+	margin-top: 15px;
+
+	> .title {
+		@include style-h3;
+	}
+
+	> .sites {
+		@include style-form-label;
+		margin-bottom: 10px;
+	}
+
+	.view_selector {
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.form_structure {
+		> .preview {
+			float: right;
+			margin-bottom: 5px;
+		}
+
+		.pager-top {
+			display: none;
+		}
+	}
+}
