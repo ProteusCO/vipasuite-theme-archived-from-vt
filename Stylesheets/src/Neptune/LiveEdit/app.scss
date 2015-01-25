@@ -458,7 +458,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       @include buttonColors($color-bluegrey, $color-white);
       @include buttonGlyphOverride($size: 24px, $color: $color-white);
       font-size: 17px !important;
-      padding: 12px 15px !important;
+      padding: 12px 14px !important;
       cursor: pointer !important;
 
       &#cms-le-nav-out {
