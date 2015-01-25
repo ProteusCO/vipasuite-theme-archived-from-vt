@@ -1,0 +1,58 @@
+@import "../../Config/base-import";
+
+.store_mgt {
+
+}
+
+.table_view {
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+		&.edit_button {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete_button {
+			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
+
+.element_table {
+	.btn {
+		&.remove {
+			//fixme get classname fixed
+			@include buttonStyleDeleteGlyph();
+		}
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+		&.action-up {
+			@include buttonGlyphOnly($html-entity-move-up);
+		}
+		&.action-down {
+			@include buttonGlyphOnly($html-entity-move-down);
+		}
+	}
+}
+
+.detail_view_store {
+	@include style-inline-box();
+	margin-top: 20px;
+
+	td {
+		padding: 5px;
+
+		.bean_view_label {
+			@include style-form-label;
+		}
+	}
+}
+
+
+.credit_card_module_editor-con,
+.echeck_module_editor-con {
+	td {
+		padding: 5px;
+	}
+}
