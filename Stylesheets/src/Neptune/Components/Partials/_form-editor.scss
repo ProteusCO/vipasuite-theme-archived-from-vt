@@ -5,6 +5,24 @@
 		display: none;
 	}
 
+	.element_table {
+		.btn {
+			&.remove {
+				//fixme get classname fixed
+				@include buttonStyleDeleteGlyph();
+			}
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.action-up {
+				@include buttonGlyphOnly($html-entity-move-up);
+			}
+			&.action-down {
+				@include buttonGlyphOnly($html-entity-move-down);
+			}
+		}
+	}
+
 	span.revision_num{
 		padding: 0 5px;
 	}
@@ -44,6 +62,7 @@
 
 	.status_actions {
 		.btn {
+			&.publish,
 			&.create_draft {
 				margin-left: 5px;
 			}
@@ -418,6 +437,12 @@
 			label {
 				@include style-form-label;
 			}
+
+			&.pname {
+				.programmatic_name.val {
+					margin-right: 5px;
+				}
+			}
 		}
 
 		.name_parts {
@@ -674,6 +699,18 @@
 		> table {
 			width: 100%;
 		}
+
+		.expression {
+			.results {
+				.result {
+					display: block;
+
+					+ .result {
+						margin-top: 2px;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -862,6 +899,7 @@
 	.editor {
 		border: 1px solid $color-lighter-grey;
 		background-color: $color-almost-white;
+		position: relative;
 
 		&:hover {
 			background-color: $color-cornsilk;
@@ -995,3 +1033,75 @@
 		}
 	}
 }
+
+.data_templates {
+	.template_editor {
+		@include style-inline-box($bgcolor: $color-almost-white);
+		margin-top: 15px;
+
+		label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.prop {
+			margin: 10px 0;
+		}
+
+		.instructions {
+			margin-top: 5px;
+		}
+	}
+
+	.table_datatemplate {
+		.name,
+		.programmatic_identifier,
+		.count,
+		.table {
+			margin: 10px 0;
+		}
+	}
+}
+
+.view_mgt {
+
+	.miwt-table {
+		margin: 5px 0;
+
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+
+	label {
+		@include style-form-label;
+		margin-right: 10px;
+	}
+
+	.selector_form {
+		.add,
+		.edit {
+			margin: 5px 0;
+		}
+	}
+
+	.view_edit {
+		@include style-inline-box($bgcolor: $color-almost-white);
+		display: inline-block;
+		margin-top: 10px;
+
+		.prop {
+			margin: 5px 0;
+		}
+
+		.programmatic_name.val {
+			margin-right: 5px;
+		}
+	}
+}
+
