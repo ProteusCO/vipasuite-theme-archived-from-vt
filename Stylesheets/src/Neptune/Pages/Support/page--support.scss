@@ -643,6 +643,25 @@ div.note {
 		margin-right: 15px;
 	}
 
+	.property_editor {
+		div.issue_field {
+			//fixme get user_entry_required classes
+			&.field_CONTACTNAME,
+			&.field_CONTACTEMAIL,
+			&.field_CONTACTPHONE,
+			&.field_SUMMARY,
+			&.field_DESCRIPTION {
+				label.field_name {
+					&:before {
+						content: "*";
+						margin-right: 2px;
+						color: $color-red;
+					}
+				}
+			}
+		}
+	}
+
 	div.issue_field {
 		display: table-row;
 
