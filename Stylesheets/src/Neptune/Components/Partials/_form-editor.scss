@@ -1,5 +1,35 @@
 @import "../../Config/base-import";
 
+.user-entry-required {
+	span.label,
+	label {
+		&:before {
+			content: "*";
+			margin-right: 2px;
+			color: $color-red;
+		}
+	}
+
+	.ctb,
+	.rtb,
+	.selectors.extra_value_renderer,
+	.signature {
+		label {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	table.extra_value_renderer td {
+		label {
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
 .rich_dynaform_editor {
 	.help-point.disabled {
 		display: none;
@@ -143,6 +173,24 @@
 		&.userentryrequired {
 			input[type=text] {
 				width: 300px;
+			}
+		}
+
+		.miwt-table {
+			.btn {
+				&.remove {
+					//fixme get classname fixed
+					@include buttonStyleDeleteGlyph();
+				}
+				&.edit {
+					@include buttonStyleEditGlyph();
+				}
+				&.action-up {
+					@include buttonGlyphOnly($html-entity-move-up);
+				}
+				&.action-down {
+					@include buttonGlyphOnly($html-entity-move-down);
+				}
 			}
 		}
 	}
@@ -507,11 +555,21 @@
 
 			&.tab-selected {
 				border-color: $color-light-grey;
-				border-bottom-color: $color-white;
+				border-bottom-color: $color-almost-white;
+				background-color: $color-almost-white;
+
+				a {
+					background-color: $color-almost-white;
+
+					&:hover {
+						background-color: $color-blue;
+					}
+				}
 			}
 		}
 		.tab-content {
 			border-color: $color-light-grey;
+			background-color: $color-almost-white;
 		}
 	}
 
