@@ -42,9 +42,6 @@
 			from="0 20 20"
 			to="360 20 20"
 			dur="1s"
-			keySplines=".25 .1 .25 .8"
-			keyTimes="0;1"
-			calcMode="spline"
 			repeatCount="indefinite"
 		/>
 </g>
@@ -59,9 +56,6 @@
 			from="0 20 20"
 			to="360 20 20"
 			dur="1s"
-			keySplines=".25 .1 .25 .8"
-			keyTimes="0;1"
-			calcMode="spline"
 			repeatCount="indefinite"
 		/>
 </g>
