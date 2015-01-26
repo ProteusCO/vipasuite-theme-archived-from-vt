@@ -10,7 +10,8 @@
 
 .form_data_management {
 	> .selector {
-		margin: 10px 0;
+		margin-bottom: 10px;
+		float: left;
 
 		label {
 			@include style-form-label;
