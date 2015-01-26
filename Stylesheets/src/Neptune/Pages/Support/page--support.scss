@@ -649,7 +649,10 @@ div.note {
 			&.field_CONTACTEMAIL,
 			&.field_CONTACTPHONE,
 			&.field_SUMMARY,
-			&.field_DESCRIPTION {
+			&.field_DESCRIPTION,
+			&.field_CATEGORY,
+			&.field_ADDITIONALINFORMATION,
+			&.field_THIRDPARTYID2 {
 				label.field_name {
 					&:before {
 						content: "*";
