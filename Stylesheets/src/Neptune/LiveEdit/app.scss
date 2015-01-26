@@ -279,6 +279,10 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     font-family: $font-open-sans-bold !important;
     max-height: 30px !important;
     min-height: 16px !important;
+
+    &:empty {
+      display: none !important;
+    }
   }
 
   .le-info .le-name,

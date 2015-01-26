@@ -368,6 +368,9 @@
   max-height: 30px !important;
   min-height: 16px !important;
 }
+#cms-le-ptb .le-info .le-name:empty {
+  display: none !important;
+}
 #cms-le-ptb .le-info .le-name,
 #cms-le-ptb .le-info .le-type {
   overflow: hidden !important;
