@@ -100,16 +100,16 @@ div.photos {
 				@include buttonStyleDeleteGlyph();
 			}
 			&.action-top {
-				@include buttonGlyphOverride($html-entity-arrow-top);
+				@include buttonGlyphOverride($html-entity-move-top);
 			}
 			&.action-up {
-				@include buttonGlyphOverride($html-entity-arrow-up);
+				@include buttonGlyphOverride($html-entity-move-up);
 			}
 			&.action-down {
-				@include buttonGlyphOverride($html-entity-arrow-down);
+				@include buttonGlyphOverride($html-entity-move-down);
 			}
 			&.action-bottom {
-				@include buttonGlyphOverride($html-entity-arrow-bottom);
+				@include buttonGlyphOverride($html-entity-move-bottom);
 			}
 		}
 	}

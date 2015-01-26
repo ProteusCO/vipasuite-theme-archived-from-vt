@@ -619,7 +619,7 @@ div.note {
 				@include buttonGlyphOverride($html-entity-mail);
 			}
 			&.action_history {
-				@include buttonGlyphOverride($html-entity-fixme);
+				@include buttonGlyphOverride($html-entity-clock);
 			}
 			&.action_delete {
 				@include buttonGlyphOverride($html-entity-delete);
