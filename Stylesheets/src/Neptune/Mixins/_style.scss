@@ -45,6 +45,15 @@
 			margin-left: 5px;
 		}
 	}
+
+	.column-visibility {
+		.btn {
+			&.trigger {
+				background-color: transparent;
+				outline: none;
+			}
+		}
+	}
 }
 
 @mixin style-table-heading-row {
