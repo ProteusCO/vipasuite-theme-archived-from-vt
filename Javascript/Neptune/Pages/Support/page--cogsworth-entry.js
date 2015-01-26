@@ -50,7 +50,7 @@ jQuery(function($) {
 					oldPostProcessNode = form.submit_options.postProcessNode;
 
 					form.submit_options.postProcessNode = function(data) {
-						oldPostProcessNode();
+						oldPostProcessNode(data);
 						$.each(data, function(idx, d) {
 							updateMIWT(d.node);
 						});
