@@ -343,6 +343,12 @@
 			font-size: 16px;
 		}
 
+		&.box_header_page_template {
+			.label-con {
+				color: $color-orange;
+			}
+		}
+
 		.actions-con {
 			white-space: nowrap;
 		}
