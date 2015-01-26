@@ -102,7 +102,7 @@
 			$con
 					.select2(DEFAULT_SELECT_OPTIONS)
 					.addClass(CSS_CLASS_SELECT_INIT)
-					.filter('[data-features="watch"]')
+					.filter('[data-features~="watch"]')
 					.on('change', miwt.observerFormSubmit);
 		}
 	}
