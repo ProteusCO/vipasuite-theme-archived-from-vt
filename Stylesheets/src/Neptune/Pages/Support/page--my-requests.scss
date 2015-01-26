@@ -3,3 +3,17 @@
 div.search {
 	@include style-inline-box();
 }
+
+.note {
+	.note_properties {
+		span.note_related {
+			border-right: 0 none;
+		}
+
+		.meta {
+			.principal {
+				display: none;
+			}
+		}
+	}
+}
