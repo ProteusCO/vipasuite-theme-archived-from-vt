@@ -35,6 +35,10 @@
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 .cms_le_ article, .cms_le_ aside, .cms_le_ details, .cms_le_ figcaption, .cms_le_ figure, .cms_le_ footer, .cms_le_ header, .cms_le_ menu, .cms_le_ nav, .cms_le_ section {
   display: block !important;
@@ -560,6 +564,9 @@
 }
 #cms-le-ptb .le-nav-actions button#cms-le-nav-down:before {
   content: "" !important;
+}
+#cms-le-ptb .le-nav-actions button.active, #cms-le-ptb .le-nav-actions button:active {
+  background-color: #424d54 !important;
 }
 #cms-le-ptb .toolbar-controls {
   right: 0 !important;

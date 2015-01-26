@@ -42,6 +42,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
   button {
     text-shadow: none !important;
     @include box-shadow(none !important);
+    @include transition(none !important);
   }
 
   article, aside, details, figcaption, figure, footer, header, menu, nav, section {
@@ -482,6 +483,11 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       }
       &#cms-le-nav-down {
         @include buttonGlyphOverride($html-entity-move-down);
+      }
+
+      &.active,
+      &:active {
+        background-color: darken($color-bluegrey, 10%) !important;
       }
     }
   }
