@@ -4,6 +4,7 @@
 
 	var CSS_CLASS_HAS_SITE_LOCALE = 'has-site-locale';
 	var CSS_CLASS_SELECT_INIT = 'select2-init';
+	var CSS_CLASS_ACTIVE = 'mi-active';
 
 	var DEFAULT_SELECT_OPTIONS = {
 		//width: function() {
@@ -112,9 +113,15 @@
 		$appControlsCon = $('.e-app-controls');
 		$siteLocaleComponent = $appControlsCon.find('.site-locale');
 		$navCon = $('.l-nav');
+		var $siteMenuContent = $navCon.find('.site-content-menu > .menu > .mi');
 
 		//move site content menu
-		$navCon.find('.site-content-menu > .menu > .mi').insertAfter('.primary-nav > .menu > .nav-cms-group');
+		$siteMenuContent.insertAfter('.primary-nav > .menu > .nav-cms-group');
+
+		//remove component selection if any of the site content menu items are active
+		if ($siteMenuContent.has('.' + CSS_CLASS_ACTIVE).length) {
+			$navCon.find('.nav-component').removeClass(CSS_CLASS_ACTIVE);
+		}
 
 		//set up menu
 		new Menu('.primary-nav');
