@@ -21,6 +21,7 @@
 
 .miwt-tree {
 	@include style-table;
+	border: 0 none;
 
 	> thead > tr {
 		> th {
@@ -30,6 +31,24 @@
 
 	> tbody > tr {
 		@include style-table-data-row;
+
+		> td {
+			border-bottom: 1px solid $color-cloud-grey;
+
+			&.leaf,
+			&.parent-sibling-following,
+			&.parent-last-sibling,
+			&.sibling-following,
+			&.last-sibling {
+				background-color: transparent;
+				border: 0 none;
+			}
+
+			&.first-column {
+				border-left: 1px solid $color-cloud-grey;
+				border-top: 1px solid #e7e7e7;
+			}
+		}
 	}
 
 	tr.dnd-source {
