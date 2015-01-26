@@ -1,0 +1,18 @@
+@import "../../Config/base-import";
+
+.error_text {
+	@include style-message-warning();
+	margin-bottom: 10px;
+}
+
+.search {
+	span.constraint {
+		vertical-align: top;
+
+		label {
+			vertical-align: top;
+			padding-top: 5px;
+			display: inline-block;
+		}
+	}
+}
