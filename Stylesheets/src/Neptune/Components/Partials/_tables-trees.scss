@@ -26,6 +26,11 @@
 	> thead > tr {
 		> th {
 			@include style-table-heading;
+			border-bottom: 1px solid $color-cloud-grey;
+
+			&.last-column {
+				border-right: 1px solid #e7e7e7;
+			}
 		}
 	}
 
@@ -47,6 +52,10 @@
 			&.first-column {
 				border-left: 1px solid $color-cloud-grey;
 				border-top: 1px solid #e7e7e7;
+			}
+
+			&.last-column {
+				border-right: 1px solid #e7e7e7;
 			}
 		}
 	}
