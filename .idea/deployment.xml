@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="VipaSuite Migration">
+  <component name="PublishConfigData" serverName="VipaSuite Proteus">
     <serverData>
       <paths name="VipaSuite Live">
         <serverdata>
@@ -21,6 +21,17 @@
             <mapping deploy="vip.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/Stylesheets/build/Neptune" web="/" />
             <mapping deploy="vip.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/LiveEdit" web="/" />
             <mapping deploy="vip.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/FavIcons/Neptune" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="VipaSuite Proteus">
+        <serverdata>
+          <mappings>
+            <mapping deploy="proteus.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/Design/Neptune" web="/" />
+            <mapping deploy="proteus.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/FavIcons/Neptune" web="/" />
+            <mapping deploy="proteus.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/Javascript/Neptune" web="/" />
+            <mapping deploy="proteus.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/Stylesheets/build/Neptune" web="/" />
+            <mapping deploy="proteus.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/LiveEdit" web="/" />
           </mappings>
         </serverdata>
       </paths>
