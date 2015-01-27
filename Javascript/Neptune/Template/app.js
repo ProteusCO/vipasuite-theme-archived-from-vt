@@ -11,6 +11,8 @@
 		minimumResultsForSearch: 10
 	};
 
+	var isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false;
+
 	function Menu(target, opts) {
 		var $root;
 		var CSS_OPEN_CLASS = 'mi-open';
@@ -135,7 +137,7 @@
 			mouseWheel: {
 				deltaFactor: 1,
 				normalizeDelta: true,
-				scrollAmount: 60
+				scrollAmount: isMacLike ? 30 : 60
 			}
 		});
 	}
