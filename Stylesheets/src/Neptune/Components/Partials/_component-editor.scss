@@ -699,6 +699,13 @@
 					width: 1px;
 					text-align: right;
 				}
+
+				.no_data {
+					.last-column {
+						width: auto;
+						text-align: left;
+					}
+				}
 			}
 		}
 
