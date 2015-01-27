@@ -7,9 +7,6 @@
 	var CSS_CLASS_ACTIVE = 'mi-active';
 
 	var DEFAULT_SELECT_OPTIONS = {
-		//width: function() {
-		//	return parseInt(this.element.width(), 10) + 15;
-		//},
 		theme: 'vipa',
 		minimumResultsForSearch: 10
 	};
@@ -138,7 +135,7 @@
 			mouseWheel: {
 				deltaFactor: 1,
 				normalizeDelta: true,
-				scrollAmount: 100
+				scrollAmount: 60
 			}
 		});
 	}
