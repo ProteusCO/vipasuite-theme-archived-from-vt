@@ -276,7 +276,12 @@
 
 	a {
 		color: $color-text;
-		margin-left: 5px;
+		margin-left: 2px;
+		font-family: $font-open-sans-bold;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 

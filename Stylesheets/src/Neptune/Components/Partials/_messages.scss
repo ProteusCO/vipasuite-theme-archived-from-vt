@@ -32,8 +32,13 @@ div.message {
 		@include style-message-warning;
 	}
 
-	p:first-child {
-		margin-top: 0;
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.miwt-collapsable-content {

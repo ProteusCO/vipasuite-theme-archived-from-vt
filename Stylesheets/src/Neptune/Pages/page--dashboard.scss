@@ -4,6 +4,14 @@ h2 {
 	margin-bottom: 5px;
 }
 
+div.message {
+	padding: 15px;
+
+	&:before {
+		display: none;
+	}
+}
+
 .dashboard-coming {
 	background: center center $color-dark-blue themeDesignResourceUrl('/Dashboard/dashboard-noanalytics-bg.jpg') no-repeat;
 	background-size: cover;
