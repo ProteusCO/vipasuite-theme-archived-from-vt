@@ -1,0 +1,104 @@
+@import "../../Config/base-import";
+
+//wizard step 1
+//fixme this really needs html updates
+.order_properties {
+	fieldset {
+		margin-bottom: 15px;
+
+		legend {
+			@include style-h4;
+		}
+	}
+
+	button {
+		@include buttonBase;
+	}
+
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.search {
+		.keywords {
+			display: inline-block;
+
+			input {
+				width: 200px;
+			}
+		}
+
+		> .actions {
+			display: inline-block;
+		}
+	}
+
+	.shoppers {
+		@include style-inline-box($bgcolor: $color-almost-white);
+		margin-top: 10px;
+
+		.shopper {
+			display: block;
+
+			+ .shopper {
+				margin-top: 3px;
+			}
+
+			label {
+				font-family: $font-open-sans;
+			}
+		}
+
+		.collapsible {
+			margin: 10px 0;
+
+			.collapsible-control  {
+				@include buttonBase;
+				@include buttonStyleSmall;
+				cursor: pointer;
+				margin-bottom: 5px;
+
+				&.hidden {
+					@include buttonGlyphAdd($html-entity-branch-open);
+				}
+				&.shown {
+					@include buttonGlyphAdd($html-entity-branch-close);
+				}
+			}
+		}
+	}
+
+	.orders {
+		@include style-inline-box($bgcolor: $color-almost-white);
+		margin-top: 10px;
+
+		.order,
+		.new_order {
+			display: block;
+			margin-top: 3px;
+
+			label {
+				font-family: $font-open-sans;
+			}
+		}
+	}
+
+	.effective_date {
+		margin: 10px 0;
+
+		input {
+			width: 14s0px;
+		}
+		button {
+			&.calendar_open {
+				@include buttonGlyphOnly($html-entity-calendar, $size: 24px);
+			}
+		}
+	}
+}
+
+//step 2
+.itemselection {
+	@include style-tab-elements;
+}
