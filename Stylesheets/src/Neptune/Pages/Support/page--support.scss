@@ -27,6 +27,11 @@ $color-work-order-font: #7d6318;
 	}
 }
 
+@mixin statusTableRowCell($color-bg) {
+	background-color: $color-bg;
+	border-bottom: 1px solid change_color($color-bg, $lightness: 50%);
+}
+
 .support_welcome,
 .status_legend {
 	display: block;
@@ -152,13 +157,13 @@ $color-work-order-font: #7d6318;
 			> tr > td {
 				color: $color-charcoal;
 			}
-			> tr.status_new > td { background-color: $color-pending-bg; }
-			> tr.status_feedback > td { background-color: $color-client-review-bg; }
-			> tr.status_resolved > td { background-color: $color-resolved-bg; }
-			> tr.status_assigned > td { background-color: $color-assigned-bg; }
-			> tr.status_pending > td { background-color: $color-acknowledged-bg; }
-			> tr.status_wo > td { background-color: $color-work-order-bg; }
-			> tr.status_client_feedback > td { background-color: $color-client-feedback-bg; }
+			> tr.status_new > td { @include statusTableRowCell($color-pending-bg) }
+			> tr.status_feedback > td { @include statusTableRowCell($color-client-review-bg) }
+			> tr.status_resolved > td { @include statusTableRowCell($color-resolved-bg) }
+			> tr.status_assigned > td { @include statusTableRowCell($color-assigned-bg) }
+			> tr.status_pending > td { @include statusTableRowCell($color-acknowledged-bg) }
+			> tr.status_wo > td { @include statusTableRowCell($color-work-order-bg) }
+			> tr.status_client_feedback > td { @include statusTableRowCell($color-client-feedback-bg) }
 
 			td {
 				a {
