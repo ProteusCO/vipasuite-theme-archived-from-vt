@@ -229,6 +229,15 @@ legend {
 			@include box-shadow(none);
 		}
 	}
+
+	.message & {
+		.miwt-collapsable-content {
+			font-family: monospace;
+			font-size: 12px;
+			white-space: pre-wrap;
+			max-width: none;
+		}
+	}
 }
 
 //miwt ajax loading box;
