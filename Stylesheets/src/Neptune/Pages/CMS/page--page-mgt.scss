@@ -476,6 +476,11 @@
 			color: $color-default-site-font;
 		}
 
+		&.trashed .contentelement_actions:before {
+			content: "Trashed";
+			background-color: $color-charcoal;
+		}
+
 
 
 		.icon-con,
