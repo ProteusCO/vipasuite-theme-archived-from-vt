@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Based on Font Squirrel generated files */
 /* Reset */
 .cms_le_ {
   font-size: 14px;
@@ -187,29 +186,29 @@
 /** Fonts. */
 @font-face {
   font-family: "OpenSans";
-  src: url("/theme2/Fonts/OpenSans/opensans-regular-webfont.eot");
-  src: url("/theme2/Fonts/OpenSans/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-regular-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-regular-webfont.ttf") format("truetype");
+  src: url("/theme/Fonts/OpenSans/opensans-regular-webfont.eot");
+  src: url("/theme/Fonts/OpenSans/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/theme/Fonts/OpenSans/opensans-regular-webfont.woff") format("woff"), url("/theme/Fonts/OpenSans/opensans-regular-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "OpenSansBold";
-  src: url("/theme2/Fonts/OpenSans/opensans-bold-webfont.eot");
-  src: url("/theme2/Fonts/OpenSans/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-bold-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-bold-webfont.ttf") format("truetype");
+  src: url("/theme/Fonts/OpenSans/opensans-bold-webfont.eot");
+  src: url("/theme/Fonts/OpenSans/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme/Fonts/OpenSans/opensans-bold-webfont.woff") format("woff"), url("/theme/Fonts/OpenSans/opensans-bold-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "OpenSansSemiBold";
-  src: url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.eot");
-  src: url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.woff") format("woff"), url("/theme2/Fonts/OpenSans/opensans-semibold-webfont.ttf") format("truetype");
+  src: url("/theme/Fonts/OpenSans/opensans-semibold-webfont.eot");
+  src: url("/theme/Fonts/OpenSans/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/theme/Fonts/OpenSans/opensans-semibold-webfont.woff") format("woff"), url("/theme/Fonts/OpenSans/opensans-semibold-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "GlyphLib";
-  src: url("/theme2/Fonts/GlyphLib/neptune-glyph-font.eot");
-  src: url("/theme2/Fonts/GlyphLib/neptune-glyph-font.eot?#iefix") format("embedded-opentype"), url("/theme2/Fonts/GlyphLib/neptune-glyph-font.woff") format("woff"), url("/theme2/Fonts/GlyphLib/neptune-glyph-font.ttf") format("truetype");
+  src: url("/theme/Fonts/GlyphLib/neptune-glyph-font.eot");
+  src: url("/theme/Fonts/GlyphLib/neptune-glyph-font.eot?#iefix") format("embedded-opentype"), url("/theme/Fonts/GlyphLib/neptune-glyph-font.woff") format("woff"), url("/theme/Fonts/GlyphLib/neptune-glyph-font.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -496,7 +495,7 @@
   padding: 0 10px !important;
 }
 #cms-le-ptb .le-title .le-product {
-  background: center center transparent url("/theme2/Overall/vipasuite-neptune-primary-logo.png") no-repeat !important;
+  background: center center transparent url("/theme/Overall/vipasuite-neptune-primary-logo.png") no-repeat !important;
   background-size: contain !important;
   width: 150px !important;
   height: 40px !important;
@@ -808,7 +807,7 @@
 }
 #cms-le-overlay-content iframe {
   /*noinspection CssUnknownTarget*/
-  background: url("/theme2/Overall/loading-logo.svg") no-repeat center !important;
+  background: url("/theme/Overall/loading-logo.svg") no-repeat center !important;
   -webkit-transition: all .25s ease-in !important;
   transition: all .25s ease-in !important;
 }
@@ -1186,7 +1185,7 @@
 }
 .le-loading #cms-le-float-palette-content {
   /*noinspection CssUnknownTarget*/
-  background: url("/theme2/Overall/loading-logo.svg") no-repeat center !important;
+  background: url("/theme/Overall/loading-logo.svg") no-repeat center !important;
   text-align: center !important;
 }
 #cms-le-float-palette-content .le-search-bar {

@@ -4,7 +4,7 @@
   "version": "1.0",
   "theme-directory": "Neptune",
   /* Directory where files exist in: Design, Javascript, and Stylesheets */
-  "theme-uri": "theme2",
+  "theme-uri": "theme",
   /* Used To Resolve Resources In Design Folder. FileServer path mapped to "Design/${theme-directory}". */
   "template-configuration": [
     {
