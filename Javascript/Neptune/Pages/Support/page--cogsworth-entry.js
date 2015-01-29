@@ -108,7 +108,7 @@ jQuery(function($) {
 				var $mouseEl = $(document.elementFromPoint(mousePosition.x, mousePosition.y));
 				var $triggeredCon;
 
-				if (inputInFocus || $(evt.target).hasClass('select2-input')) {
+				if (inputInFocus || $(evt.target).hasClass('select2-search__field')) {
 					return;
 				}
 
