@@ -24,17 +24,6 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="VipaSuite Proteus">
-        <serverdata>
-          <mappings>
-            <mapping deploy="proteus.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/Design/Neptune" web="/" />
-            <mapping deploy="proteus.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/FavIcons/Neptune" web="/" />
-            <mapping deploy="proteus.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/Javascript/Neptune" web="/" />
-            <mapping deploy="proteus.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/Stylesheets/build/Neptune" web="/" />
-            <mapping deploy="proteus.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/LiveEdit" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
     </serverData>
   </component>
 </project>
