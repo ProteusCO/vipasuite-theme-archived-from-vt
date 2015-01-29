@@ -1,9 +1,409 @@
 {
-  "name": "Default VipaSuite Backend Theme",
-  "description": "A theme for the VipaSuite backend.",
+  "name": "VipaSuite Neptune Backend Theme",
+  "description": "A theme for the VipaSuite backend. Originally started at the end of 2014.",
   "version": "1.0",
-  "theme-directory": "DefaultTheme",
+  "theme-directory": "Neptune",
   /* Directory where files exist in: Design, Javascript, and Stylesheets */
-  "theme-uri": "theme"
+  "theme-uri": "theme2",
   /* Used To Resolve Resources In Design Folder. FileServer path mapped to "Design/${theme-directory}". */
+  "template-configuration": [
+    {
+      "id": [ "t-neptune-login" ],
+      "description": "Login section",
+      "css": [ "Templates/template--login.css" ]
+    },
+    {
+      "id": [ "t-no-content-styles", "t-neptune-protected" ],
+      "description": "Protected interior pages",
+      "css": [ "Templates/overall.css" ],
+      "js": [
+        "Libs/modernizr.custom.js",
+        "Libs/jquery-2.1.1.min.js",
+        "Libs/jquery.mCustomScrollbar.concat.min.js",
+        "Libs/select2.js",
+        "Templates/app.js"
+      ]
+    },
+    {
+      "id": [ "t-neptune-unprotected" ],
+      "description": "Unprotected interior pages",
+      "css": [ "Templates/template--unprotected.css" ],
+      "js": [ "Libs/modernizr.custom.js" ]
+    }
+  ],
+  "page-configuration": [
+    {
+      "path": [ "account/login" ],
+      "css": [ "Pages/Login/page--login.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Pages/Login/page--login.js"
+      ]
+    },
+    {
+      "path": [ "account/preferences" ],
+      "css": [ "Pages/Login/page--preferences.css" ]
+    },
+    {
+      "path": [ "account/reset-password" ],
+      "css": [ "Pages/Login/page--reset-password.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Pages/Login/page--reset-password.js"
+      ]
+    },
+    {
+      "path": [ "account/reset-password-complete" ],
+      "css": [ "Pages/Login/page--login.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Pages/Login/page--login.js"
+      ]
+    },
+
+
+
+    {
+      "path": [ "config/dashboard" ],
+      "css": [ "Pages/page--dashboard.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/application/action-trigger" ],
+      "css": [ "Pages/Application/page--action-trigger.css" ]
+    },
+    {
+      "path": [ "config/application/custom-db" ],
+      "css": [ "Pages/Application/page--custom-db-mgt.css" ]
+    },
+    {
+      "path": [ "config/application/custom-db-data" ],
+      "css": [ "Pages/Application/page--custom-db-data.css" ]
+    },
+    {
+      "path": [ "config/application/custom-model" ],
+      "css": [ "Pages/Application/page--model-mgt.css" ]
+    },
+    {
+      "path": [ "config/application/data-provider" ],
+      "css": [ "Pages/Application/page--data-provider-mgt.css" ]
+    },
+    {
+      "path": [ "config/application/email-template" ],
+      "css": [ "Pages/Application/page--email-template-mgt.css" ]
+    },
+    {
+      "path": [ "config/application/label" ],
+      "css": [ "Pages/Application/page--label-mgt.css" ]
+    },
+    {
+      "path": [ "config/application/projects" ],
+      "css": [ "Pages/Application/page--project.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/cms/article" ],
+      "css": [ "Pages/CMS/page--article-mgt.css" ]
+    },
+    {
+      "path": [ "config/cms/component" ],
+      "css": [
+        "Pages/CMS/page--page-mgt.css",
+        "Pages/CMS/page--component-mgmt.css"
+      ]
+    },
+    {
+      "path": [ "config/cms/file-system" ],
+      "css": [ "Pages/CMS/page--file-mgt.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Libs/dnd-file-vipa.js",
+        "Components/component--file-selector.js"
+      ]
+    },
+    {
+      "path": [ "config/cms/layout" ],
+      "css": [ "Pages/CMS/page--layout-mgt.css" ]
+    },
+    {
+      "path": [ "config/cms/page" ],
+      "css": [ "Pages/CMS/page--page-mgt.css" ]
+    },
+    {
+      "path": [ "config/cms/photo-album" ],
+      "css": [ "Pages/CMS/page--photo-album-mgt.css" ]
+    },
+    {
+      "path": [ "config/cms/site" ],
+      "css": [ "Pages/CMS/page--site-mgt.css" ]
+    },
+    {
+      "path": [ "config/cms/template" ],
+      "css": [ "Pages/CMS/page--template-mgt.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/ecomm/catalog" ],
+      "css": [ "Pages/Ecomm/page--catalog.css" ]
+    },
+    {
+      "path": [ "config/ecomm/discounts" ],
+      "css": [ "Pages/Ecomm/page--discounts.css" ]
+    },
+    {
+      "path": [ "config/ecomm/donation" ],
+      "css": [ "Pages/Ecomm/page--donation.css" ]
+    },
+    {
+      "path": [ "config/ecomm/inventory" ],
+      "css": [ "Pages/Ecomm/page--inventory.css" ]
+    },
+    {
+      "path": [ "config/ecomm/product" ],
+      "css": [ "Pages/Ecomm/page--product.css" ]
+    },
+    {
+      "path": [ "config/ecomm/store" ],
+      "css": [ "Pages/Ecomm/page--store.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/events/calendar" ],
+      "css": [ "Pages/Events/page--calendar.css" ]
+    },
+    {
+      "path": [ "config/events/calendar-config" ],
+      "css": [ "Pages/Events/page--calendar-config.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/forms/capacity" ],
+      "css": [ "Pages/Forms/page--capacity.css" ]
+    },
+    {
+      "path": [ "config/forms/data" ],
+      "css": [ "Pages/Forms/page--form-data.css" ]
+    },
+    {
+      "path": [ "config/forms/management" ],
+      "css": [ "Pages/Forms/page--form-mgt.css" ]
+    },
+    {
+      "path": [ "config/forms/process-data" ],
+      "css": [ "Pages/Forms/page--process-data.css" ]
+    },
+    {
+      "path": [ "config/forms/process-task" ],
+      "css": [ "Pages/Forms/page--process-task.css" ]
+    },
+    {
+      "path": [ "config/forms/question-bank" ],
+      "css": [ "Pages/Forms/page--question-bank.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/orders/entry-wizard" ],
+      "css": [ "Pages/Orders/page--order-entry-wizard.css" ]
+    },
+    {
+      "path": [ "config/orders/entry-wizard-step2" ],
+      "css": [ "Pages/Orders/page--order-entry-wizard.css" ]
+    },
+    {
+      "path": [ "config/orders/entry-wizard-step3" ],
+      "css": [ "Pages/Orders/page--order-entry-wizard.css" ]
+    },
+    {
+      "path": [ "config/orders/entry-wizard-step4" ],
+      "css": [ "Pages/Orders/page--order-entry-wizard.css" ]
+    },
+    {
+      "path": [ "config/orders/entry-wizard-step5" ],
+      "css": [ "Pages/Orders/page--order-entry-wizard.css" ]
+    },
+    {
+      "path": [ "config/orders/management" ],
+      "css": [ "Templates/template--orders.css" ]
+    },
+    {
+      "path": [ "config/orders/pickup" ],
+      "css": [ "Templates/template--orders.css" ]
+    },
+    {
+      "path": [ "config/orders/shipping" ],
+      "css": [ "Templates/template--orders.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/report/config" ],
+      "css": [ "Pages/Reports/page--report-config.css" ]
+    },
+    {
+      "path": [ "config/report/mine" ],
+      "css": [ "Pages/Reports/page--my-reports.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/social/blog/authors" ],
+      "css": [ "Pages/Social/page--blog.css" ]
+    },
+    {
+      "path": [ "config/social/blog/categories" ],
+      "css": [ "Pages/Social/page--blog.css" ]
+    },
+    {
+      "path": [ "config/social/blog/posts" ],
+      "css": [ "Pages/Social/page--blog.css" ]
+    },
+    {
+      "path": [ "config/social/comment-definition" ],
+      "css": [ "Pages/Social/page--comment-definition.css" ]
+    },
+    {
+      "path": [ "config/social/mail-merge" ],
+      "css": [ "Pages/Social/page--mail-merge.css" ]
+    },
+    {
+      "path": [ "config/social/message" ],
+      "css": [ "Pages/Social/page--message.css" ]
+    },
+    {
+      "path": [ "config/social/rating-definition" ],
+      "css": [ "Pages/Social/page--rating-definition.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/system/help-points" ],
+      "css": [ "Pages/System/page--help-points.css" ]
+    },
+    {
+      "path": [ "config/system/info" ],
+      "css": [ "Pages/System/page--system-info.css" ]
+    },
+    {
+      "path": [ "config/system/log4j" ],
+      "css": [ "Pages/System/page--log4j.css" ]
+    },
+    {
+      "path": [ "config/system/scripts" ],
+      "css": [ "Pages/System/page--scripts.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Libs/dnd-file-vipa.js",
+        "Components/component--file-selector.js"
+      ]
+    },
+    {
+      "path": [ "config/system/text-editor" ],
+      "css": [ "Pages/System/page--text-editor.css" ]
+    },
+
+
+
+    {
+      "path": [ "config/user/backend" ],
+      "css": [
+        "Templates/template--user-mgt.css",
+        "Pages/User/page--backend.css"
+      ]
+    },
+    {
+      "path": [ "config/user/clients" ],
+      "css": [
+        "Templates/template--user-mgt.css",
+        "Pages/User/page--clients.css"
+      ]
+    },
+    {
+      "path": [ "config/user/frontend" ],
+      "css": [
+        "Templates/template--user-mgt.css",
+        "Pages/User/page--frontend.css"
+      ]
+    },
+    {
+      "path": [ "config/user/roles" ],
+      "css": [ "Templates/template--user-mgt.css" ]
+    },
+
+
+
+    {
+      "path": [ "errors/application" ],
+      "css": [ "Pages/Errors/page--error.css" ]
+    },
+    {
+      "path": [ "errors/general" ],
+      "css": [ "Pages/Errors/page--error.css" ]
+    },
+    {
+      "path": [ "errors/not-found" ],
+      "css": [ "Pages/Errors/page--error.css" ]
+    },
+
+
+
+    {
+      "path": [ "support/cogsworth" ],
+      "css": [ "Pages/Support/page--cogsworth-entry.css" ],
+      "js": [
+        "Libs/moment.min.js",
+        "Libs/jquery-2.1.1.min.js",
+        "Pages/Support/page--cogsworth-entry.js"
+      ]
+    },
+    {
+      "path": [ "support/cogsworth-projects" ],
+      "css": [ "Pages/Support/page--cogsworth-projects.css" ]
+    },
+    {
+      "path": [ "support/customer-care" ],
+      "css": [ "Pages/Support/page--support.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Libs/jquery.fancybox.pack.js",
+        "Libs/jquery.linkify.js",
+        "Pages/Support/page--support-tracker.js"
+      ]
+    },
+    {
+      "path": [ "support/mine" ],
+      "css": [
+        "Pages/Support/page--support.css",
+        "Pages/Support/page--my-requests.css"
+      ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Libs/jquery.fancybox.pack.js",
+        "Libs/jquery.linkify.js",
+        "Pages/Support/page--support-tracker.js"
+      ]
+    },
+    {
+      "path": [ "support/traffic" ],
+      "css": [ "Pages/Support/page--server-traffic.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js",
+        "Pages/Support/page--traffic.js"
+      ]
+    }
+  ]
 }
