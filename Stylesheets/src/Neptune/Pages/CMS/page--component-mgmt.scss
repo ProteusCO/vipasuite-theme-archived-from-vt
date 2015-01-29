@@ -106,7 +106,7 @@
 		margin: 10px 0;
 	}
 
-	.action-column {
+	td.action-column {
 		.btn {
 			&.edit {
 				@include buttonStyleEditGlyph();
