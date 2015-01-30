@@ -92,14 +92,14 @@
 		$sourceFiles = $con.find('.source-file');
 		$sourceFileTriggers = $sourceFiles.find('.collapse-trigger');
 
-		//set up sticky menu nav
-		$sourceMenuCon.sticky();
-
 		//move gotoline
 		$con.find('.goto_line').prependTo($sourceMenuCon);
 
 		//add info box
 		$('<div class="message-container"><div class="message info">Alt + click a collapse trigger to toggle all script files</div></div>').appendTo($sourceMenuCon);
+
+		//set up sticky menu nav
+		$sourceMenuCon.sticky();
 
 		//open file and move when you click the go to line button
 		$con.find('.goto_line button').on('click', function() {

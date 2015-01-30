@@ -27,8 +27,9 @@
 
 .source_view,
 .source-view {
+	@include clearfix;
+
 	.source_view_header {
-		@include clearfix;
 		margin-bottom: 20px;
 
 		.btn {
