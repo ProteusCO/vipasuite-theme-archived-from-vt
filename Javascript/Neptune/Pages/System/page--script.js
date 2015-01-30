@@ -98,6 +98,9 @@
 		//move gotoline
 		$con.find('.goto_line').prependTo($sourceMenuCon);
 
+		//add info box
+		$('<div class="message-container"><div class="message info">Alt + click a collapse trigger to toggle all script files</div></div>').appendTo($sourceMenuCon);
+
 		//open file and move when you click the go to line button
 		$con.find('.goto_line button').on('click', function() {
 			//check for highlight
