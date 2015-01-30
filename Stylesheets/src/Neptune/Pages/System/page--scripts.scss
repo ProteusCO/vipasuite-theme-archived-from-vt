@@ -24,3 +24,169 @@
 		}
 	}
 }
+
+.source_view,
+.source-view {
+	.source_view_header {
+		@include clearfix;
+		margin-bottom: 20px;
+
+		.btn {
+			&.close {
+				float: right;
+			}
+		}
+	}
+
+	.source_view_title {
+		@include style-h2;
+		margin-right: 5px;
+	}
+
+	.goto_line {
+		display: none;
+
+		#sv_goto_line {
+			margin: 0 5px;
+			width: 50px;
+		}
+
+		button {
+			@include buttonBase;
+		}
+	}
+
+	h4 {
+		padding: 5px;
+		background-color: $color-darker-grey;
+		margin: 0;
+		color: $color-white;
+		border-bottom: 1px solid $color-charcoal;
+		font-family: $font-open-sans-semi-bold;
+
+		.collapse-trigger {
+			@include buttonGlyphOnly($html-entity-branch-open, $color: $color-white);
+			margin-right: 5px;
+		}
+	}
+
+	.is-sticky {
+		.source-menu {
+			padding-top: 15px;
+		}
+	}
+
+	.source-menu {
+		width: 250px;
+		float: right;
+
+		.goto_line {
+			display: block;
+		}
+
+		.source-menu-list {
+			margin: 15px 0 0;
+			border: 1px solid $color-cloud-grey;
+			background-color: $color-almost-white;
+			padding: 10px;
+			padding-left: 30px;
+		}
+
+		li {
+			&.js-active {
+				font-family: $font-open-sans-bold;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			color: $color-default-site-font;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.source-files {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-right: 270px;
+	}
+
+	.source-file {
+		&.js-opened {
+			.file_source {
+				display: table;
+			}
+
+			.collapse-trigger {
+				@include buttonGlyphOverride($html-entity-branch-close);
+			}
+		}
+	}
+
+	.file_source {
+		border: 1px solid $color-grey;
+		font-size: 12px;
+		font-family: $font-monospace;
+		width: 100%;
+		margin-bottom: 10px;
+		display: none;
+
+		pre {
+			margin: 0;
+			white-space: pre-wrap;
+			word-break: break-word;
+		}
+
+		tr {
+			&:hover,
+			&.highlight {
+				td {
+					&:first-child,
+					&:nth-child(2) {
+						background-color: $color-light-grey;
+						color: $color-light-charcoal;
+					}
+
+					&:last-child {
+						background-color: $color-cornsilk;
+					}
+				}
+			}
+		}
+
+		tr {
+			&:first-child {
+				td {
+					&.total_line_number-con,
+					&.line_number-con,
+					&.source_line-con {
+						font-family: $font-open-sans-semi-bold;
+						text-align: center;
+						background-color: $color-dark-grey;
+						border: 1px solid $color-darker-grey;
+						color: $color-white;
+					}
+				}
+			}
+
+			td {
+				&:first-child,
+				&:nth-child(2) {
+					background-color: $color-cloud-grey;
+					border: 1px solid $color-light-grey;
+					padding: 0 2px;
+					text-align: right;
+					color: $color-darker-grey;
+					width: 1px;
+				}
+				&:last-child {
+					padding: 0 4px;
+					border-top: 1px solid $color-white;
+				}
+			}
+		}
+	}
+}

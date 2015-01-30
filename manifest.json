@@ -307,8 +307,11 @@
       "css": [ "Pages/System/page--scripts.css" ],
       "js": [
         "Libs/jquery-2.1.1.min.js",
+        "Libs/jquery.waypoints.min.js",
+        "Libs/jquery.sticky.js",
         "Libs/dnd-file-vipa.js",
-        "Components/component--file-selector.js"
+        "Components/component--file-selector.js",
+        "Pages/System/page--script.js"
       ]
     },
     {
