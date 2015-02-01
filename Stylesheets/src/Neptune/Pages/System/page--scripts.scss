@@ -46,15 +46,6 @@
 
 	.goto_line {
 		display: none;
-
-		#sv_goto_line {
-			margin: 0 5px;
-			width: 50px;
-		}
-
-		button {
-			@include buttonBase;
-		}
 	}
 
 	h4 {
@@ -64,6 +55,11 @@
 		color: $color-white;
 		border-bottom: 1px solid $color-charcoal;
 		font-family: $font-open-sans-semi-bold;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color-light-charcoal;
+		}
 
 		.collapse-trigger {
 			@include buttonGlyphOnly($html-entity-branch-open, $color: $color-white);
@@ -77,13 +73,16 @@
 		}
 	}
 
+	.goto-line {
+		input {
+			width: 70px;
+			margin: 0 5px;
+		}
+	}
+
 	.source-menu {
 		width: 250px;
 		float: right;
-
-		.goto_line {
-			display: block;
-		}
 
 		.source-menu-list {
 			margin: 15px 0 0;

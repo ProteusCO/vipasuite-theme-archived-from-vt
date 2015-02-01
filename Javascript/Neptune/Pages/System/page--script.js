@@ -11,6 +11,7 @@
 		var $sourceMenuCon = $('<div class="source-menu" />').insertAfter($con.find('.goto_line'));
 		var $sourceMenuList = $('<ul class="source-menu-list" />').appendTo($sourceMenuCon);
 		var $sourceFileTriggers;
+		var $gotoLineInput, $gotoLineRowHighlighted = null, $gotoLineButton;
 
 		function activateMenuItem(id) {
 			$sourceMenuList.find('a[href=#' + id + ']').parent().addClass(CSS_CLASS_ACTIVE).siblings().removeClass(CSS_CLASS_ACTIVE);
@@ -22,15 +23,13 @@
 
 		function openSourceFile($sourceFile) {
 			$sourceFile.addClass(CSS_CLASS_OPENED);
-
-			setTimeout(function() {
-				Waypoint.refreshAll();
-			}, 150);
 		}
 
 		$fileHeadings.each(function() {
 			var fileHeading = this;
-			var $sourceFile = $(fileHeading).add($(fileHeading).next()).wrapAll('<div class="source-file" />').parent();
+			var $fileHeading = $(fileHeading);
+			var $sourceFile = $fileHeading.add($fileHeading.next()).wrapAll('<div class="source-file" />').parent();
+			var $trigger;
 
 			//adding menu items
 			$('<a />')
@@ -41,48 +40,51 @@
 					.text(fileHeading.innerText.substring(fileHeading.innerText.lastIndexOf('/') + 1))
 					.wrap('<li />')
 					.parent()
-					.appendTo($sourceMenuList);
-
-			//adding collapsible
-			$('<a href="#" class="btn btn-glyph-only collapse-trigger" title="Expand" />')
-					.prependTo(fileHeading)
-					.on('click', function(evt) {
-						var isOpened = $sourceFile.hasClass(CSS_CLASS_OPENED);
-						var title = isOpened ? 'Expand' : 'Collapse';
-						evt.preventDefault();
-
-						if (evt.altKey) {
-							if (isOpened) {
-								$sourceFiles.removeClass(CSS_CLASS_OPENED);
-								title = 'Expand';
-							} else {
-								$sourceFiles.addClass(CSS_CLASS_OPENED);
-								title = 'Collapse';
-							}
-							$sourceFileTriggers.attr('title', title).text(title);
-						} else {
-							$sourceFile.toggleClass(CSS_CLASS_OPENED);
-							$(this).attr('title', title).text(title);
-						}
-
-						setTimeout(function() {
-							Waypoint.refreshAll();
-						}, 150);
+					.appendTo($sourceMenuList)
+					.click(function(evt) {
+						openSourceFile($sourceFile);
+						//force redraw
+						$fileHeading.offset();
+						Waypoint.refreshAll();
 					});
 
-			//waypoint for scrolling down
-			$sourceFile.waypoint(function(direction) {
-					if (direction == 'down') {
-						activateMenuItem(fileHeading.id);
+			//adding collapsible icons
+			$trigger = $('<span class="btn btn-glyph-only collapse-trigger" title="Expand" />').prependTo(fileHeading);
+
+			//adding collapsible triggers
+			$fileHeading.on('click', function(evt) {
+				var isOpened = $sourceFile.hasClass(CSS_CLASS_OPENED);
+				var title = isOpened ? 'Expand' : 'Collapse';
+				evt.preventDefault();
+
+				if (evt.altKey) {
+					if (isOpened) {
+						$sourceFiles.removeClass(CSS_CLASS_OPENED);
+						title = 'Expand';
+					} else {
+						$sourceFiles.addClass(CSS_CLASS_OPENED);
+						title = 'Collapse';
 					}
-				}, { offset: 30 });
+					$sourceFileTriggers.attr('title', title).text(title);
+				} else {
+					$sourceFile.toggleClass(CSS_CLASS_OPENED);
+					$trigger.attr('title', title).text(title);
+				}
+
+				//force redraw
+				$fileHeading.offset();
+				Waypoint.refreshAll();
+			});
 
 			//waypoint for scrolling back up
 			$sourceFile.waypoint(function(direction) {
-					if (direction == 'up') {
-						activatePreviousMenuItem(fileHeading.id);
-					}
-				}, { offset: -50 });
+				if (direction == 'up') {
+					activatePreviousMenuItem(fileHeading.id);
+				}
+				if (direction == 'down') {
+					activateMenuItem(fileHeading.id);
+				}
+			}, { offset: 30 });
 		});
 
 		//set initial active menu item
@@ -92,8 +94,10 @@
 		$sourceFiles = $con.find('.source-file');
 		$sourceFileTriggers = $sourceFiles.find('.collapse-trigger');
 
-		//move gotoline
-		$con.find('.goto_line').prependTo($sourceMenuCon);
+		//create gotoline
+		$('<div class="goto-line"><label for="q-goto-line">Go to line</label><input type="number" id="q-goto-line" name="q-goto-line" /><button class="btn go">Go</button></div>').prependTo($sourceMenuCon);
+		$gotoLineInput = $('#q-goto-line');
+		$gotoLineButton = $('.goto-line .btn');
 
 		//add info box
 		$('<div class="message-container"><div class="message info">Alt + click a collapse trigger to toggle all script files</div></div>').appendTo($sourceMenuCon);
@@ -102,15 +106,41 @@
 		$sourceMenuCon.sticky();
 
 		//open file and move when you click the go to line button
-		$con.find('.goto_line button').on('click', function() {
+		$gotoLineButton.on('click', function(evt) {
+			var newScrollTop = 0;
+			var rowNumber;
+			evt.preventDefault();
+
+			rowNumber = parseInt($gotoLineInput.val(), 10);
+
 			//check for highlight
-			$sourceFiles.find('.' + CSS_CLASS_HIGHLIGHT).each(function() {
-				var $highlightRow = $(this);
+			var $highlightRow = $('#sv_tl_' + rowNumber).closest('tr');
+
+			if ($highlightRow.length) {
+				if ($gotoLineRowHighlighted && $gotoLineRowHighlighted.length) {
+					$gotoLineRowHighlighted.removeClass(CSS_CLASS_HIGHLIGHT);
+				}
+
+				$highlightRow.addClass(CSS_CLASS_HIGHLIGHT);
 				openSourceFile($highlightRow.closest('.source-file'));
-				setTimeout(function() {
-					$('html,body').scrollTop($highlightRow.offset().top - 30);
-				}, 150);
-			});
+
+				//force paint redraw
+				newScrollTop = $highlightRow.offset().top - 30;
+				Waypoint.refreshAll();
+				$('html,body').scrollTop(newScrollTop);
+
+				//save old highlight row
+				$gotoLineRowHighlighted = $highlightRow;
+			}
+		});
+
+		//handle enter on input in gotoline
+		$gotoLineInput.on('keydown', function(evt) {
+			//if enter key
+			if (evt.which == 13) {
+				evt.preventDefault();
+				$gotoLineButton.trigger('click');
+			}
 		});
 	}
 
