@@ -218,18 +218,22 @@
   white-space: nowrap !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 12px !important;
+  font-weight: normal !important;
   padding: 5px 8px !important;
   border: 0 none !important;
   margin: 0 !important;
   text-decoration: none !important;
-  background-color: #3288bd !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 !important;
+  background: #3288bd !important;
   color: #fff !important;
 }
 .cms_le_ .ficon:before {
   color: #fff !important;
 }
 .cms_le_ .ficon:hover {
-  background-color: #276b95 !important;
+  background: #276b95 !important;
 }
 .cms_le_ .ficon:hover {
   text-decoration: none !important;
@@ -254,18 +258,22 @@
   white-space: nowrap !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 12px !important;
+  font-weight: normal !important;
   padding: 5px 8px !important;
   border: 0 none !important;
   margin: 0 !important;
   text-decoration: none !important;
-  background-color: #3288bd !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 !important;
+  background: #3288bd !important;
   color: #fff !important;
 }
 .cms_le_ .ficon-glyph:before {
   color: #fff !important;
 }
 .cms_le_ .ficon-glyph:hover {
-  background-color: #276b95 !important;
+  background: #276b95 !important;
 }
 .cms_le_ .ficon-glyph:hover {
   text-decoration: none !important;
@@ -295,13 +303,17 @@
   white-space: nowrap !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 12px !important;
+  font-weight: normal !important;
   padding: 5px 8px !important;
   border: 0 none !important;
   margin: 0 !important;
   text-decoration: none !important;
-  background-color: #3288bd !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 !important;
+  background: #3288bd !important;
   color: #fff !important;
-  background-color: transparent !important;
+  background: transparent !important;
   border: 0 none !important;
   padding: 0 !important;
   font-size: 0 !important;
@@ -310,7 +322,7 @@
   color: #fff !important;
 }
 .cms_le_ .ficon-glyph-only:hover {
-  background-color: #276b95 !important;
+  background: #276b95 !important;
 }
 .cms_le_ .ficon-glyph-only:hover {
   text-decoration: none !important;
@@ -336,7 +348,7 @@
   color: #555 !important;
 }
 .cms_le_ .ficon-glyph-only:hover {
-  background-color: transparent !important;
+  background: transparent !important;
 }
 
 /** Primary Toolbar */
@@ -517,7 +529,7 @@
   width: 95px !important;
 }
 #cms-le-ptb .le-toolbox button {
-  background-color: #68c266 !important;
+  background: #68c266 !important;
   color: #fff !important;
   width: 95px !important;
   font-size: 17px !important;
@@ -529,7 +541,7 @@
   color: #fff !important;
 }
 #cms-le-ptb .le-toolbox button:hover {
-  background-color: #48af46 !important;
+  background: #48af46 !important;
 }
 #cms-le-ptb .le-toolbox button:before {
   font-size: 24px !important;
@@ -540,7 +552,7 @@
   width: 162px !important;
 }
 #cms-le-ptb .le-nav-actions button {
-  background-color: #586771 !important;
+  background: #586771 !important;
   color: #fff !important;
   font-size: 17px !important;
   padding: 12px 14px !important;
@@ -552,7 +564,7 @@
   color: #fff !important;
 }
 #cms-le-ptb .le-nav-actions button:hover {
-  background-color: #424d54 !important;
+  background: #424d54 !important;
 }
 #cms-le-ptb .le-nav-actions button:before {
   font-size: 24px !important;
@@ -1100,6 +1112,9 @@
   font-size: 12px !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   padding: 8px 10px !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0;
+  border-radius: 0 !important;
   background: #99a8b1 !important;
   border: 0 none !important;
   border-top: 1px solid #baccd7 !important;

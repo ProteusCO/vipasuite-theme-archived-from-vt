@@ -1152,6 +1152,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       font-size: 12px !important;
       font-family: $font-open-sans-semi-bold !important;
       padding: 8px 10px !important;
+	    @include border-radius(0 !important);
       background: $color-light-bluegrey !important;
       border: 0 none !important;
       border-top: 1px solid $color-lighter-bluegrey !important;

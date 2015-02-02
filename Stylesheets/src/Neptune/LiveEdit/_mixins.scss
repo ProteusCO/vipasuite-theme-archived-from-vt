@@ -33,7 +33,7 @@
 }
 
 @mixin buttonColors($color-bg, $color-text: '', $change-type: 'dark') {
-	background-color: $color-bg !important;
+	background: $color-bg !important;
 	@if ($color-text != '') {
 		color: $color-text !important;
 
@@ -44,11 +44,11 @@
 
 	&:hover {
 		@if ($change-type == 'dark') {
-			background-color: darken($color-bg, 10%) !important;
+			background: darken($color-bg, 10%) !important;
 		} @else if ($change-type == 'none') {
-			background-color: $color-bg !important;
+			background: $color-bg !important;
 		} @else {
-			background-color: lighten($color-bg, 10%) !important;
+			background: lighten($color-bg, 10%) !important;
 		}
 	}
 }
@@ -73,7 +73,7 @@
 }
 
 @mixin buttonGlyphOnly($html-entity, $size: 16px, $color: $color-light-charcoal, $padding: 0) {
-	background-color: transparent !important;
+	background: transparent !important;
 	border: 0 none !important;
 	padding: $padding !important;
 	font-size: 0 !important;
@@ -81,7 +81,7 @@
 	@include buttonGlyphAdd($html-entity, $size, $color, 0);
 
 	&:hover {
-		background-color: transparent !important;
+		background: transparent !important;
 	}
 }
 
@@ -106,10 +106,12 @@
 	white-space: nowrap !important;
 	font-family: $font-open-sans-semi-bold !important;
 	font-size: 12px !important;
+	font-weight: normal !important;
 	padding: 5px 8px !important;
 	border: 0 none !important;
 	margin: 0 !important;
 	text-decoration: none !important;
+	@include border-radius(0 !important);
 	@include buttonColors($color-blue, $color-white);
 
 	&:hover {
