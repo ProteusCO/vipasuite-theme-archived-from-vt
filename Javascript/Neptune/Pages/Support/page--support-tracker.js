@@ -137,11 +137,12 @@ jQuery(function($) {
 		if(!reload) return;
 		//console.log('Update form');
 		$('#issue_tracker').find('.miwt-form').each(function(i, e){
-			e.MIWTSubmit({serialize:function(form,sv){
+			var submitOptions = {serialize:function(form,sv){
 				var fs = miwt.serialize(form,sv);
 				if(runSearch) fs = fs + '&il2s=1';
 				return fs;
-			}});
+			}};
+			e.MIWTSubmit($.extend({}, this.submit_options ? this.submit_options : {}, submitOptions));
 		});
 		lastAutoUpdate=now;
 	}
