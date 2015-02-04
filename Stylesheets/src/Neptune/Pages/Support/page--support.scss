@@ -29,7 +29,7 @@ $color-work-order-font: #7d6318;
 
 @mixin statusTableRowCell($color-bg) {
 	background-color: $color-bg;
-	border-bottom: 1px solid change_color($color-bg, $lightness: 50%);
+	border-bottom: 1px solid darken($color-bg, 15%);
 }
 
 .support_welcome,
