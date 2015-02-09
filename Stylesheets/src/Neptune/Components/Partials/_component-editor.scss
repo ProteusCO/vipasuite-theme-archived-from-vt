@@ -320,7 +320,7 @@
 			margin-right: 10px;
 		}
 
-		.file-name {
+		a.file-name {
 			@include anchorUnderlineHover;
 			color: $color-default-link;
 		}
