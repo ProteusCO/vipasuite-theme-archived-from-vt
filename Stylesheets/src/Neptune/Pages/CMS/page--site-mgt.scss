@@ -379,7 +379,7 @@
     .file-editor {
       @include style-form-input-readonly;
       font-family: $font-monospace;
-      white-space: pre;
+      white-space: pre-wrap;
       max-height: 300px;
       overflow: auto;
       display: block;
