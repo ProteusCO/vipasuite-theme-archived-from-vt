@@ -119,7 +119,7 @@
 
 		//remove component selection if any of the site content menu items are active
 		if ($siteMenuContent.has('.' + CSS_CLASS_ACTIVE).length) {
-			$navCon.find('.nav-component').removeClass(CSS_CLASS_ACTIVE);
+			$navCon.find('.nav-cms-group .'+CSS_CLASS_ACTIVE).removeClass(CSS_CLASS_ACTIVE);
 		}
 
 		//set up menu
