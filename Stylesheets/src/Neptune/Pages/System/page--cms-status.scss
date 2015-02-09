@@ -1,5 +1,13 @@
 @import "../../Config/base-import";
 
-.l-primary-content div.memory table > caption {
+.l-primary-content {
+	div.memory {
+		table {
+			width: auto;
 
+			td {
+				padding: 2px 5px;
+			}
+		}
+	}
 }
