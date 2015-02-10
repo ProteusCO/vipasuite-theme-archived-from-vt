@@ -16,7 +16,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="compass-library" level="project" />
     <orderEntry type="library" name="vipasuite-theme node_modules" level="project" />
+    <orderEntry type="library" name="compass-library" level="project" />
   </component>
 </module>
