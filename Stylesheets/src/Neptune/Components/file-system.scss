@@ -652,3 +652,12 @@ input.file-upload-browse {
 		}
 	}
 }
+
+.dialog {
+	&.move-files {
+		.file_tree {
+			margin: 10px 0;
+			width: auto;
+		}
+	}
+}
