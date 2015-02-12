@@ -21,4 +21,6 @@ jQuery(function($) {
 	$.each(placeholders, function(idx, placeholder) {
 		$(placeholder.selector).attr('placeholder', placeholder.text);
 	});
+
+	$(document).placeholdr();
 });
