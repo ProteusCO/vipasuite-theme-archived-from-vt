@@ -368,7 +368,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
   &.top {
     bottom: 100% !important;
     margin-bottom: -50px !important;
-    @include box-shadow(0 1px 4px rgba(50, 50, 50, 0.5) !important);
+    @include box-shadow(unquote("0 1px 4px rgba(50, 50, 50, 0.5) !important"));
 
     &.hidden {
       margin-bottom: 0 !important;
@@ -382,7 +382,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   &.bottom {
     bottom: 0 !important;
-    @include box-shadow(0 -1px 4px rgba(50, 50, 50, 0.5) !important);
+    @include box-shadow(unquote("0 -1px 4px rgba(50, 50, 50, 0.5) !important"));
 
     &.hidden {
       margin-bottom: -50px !important;
@@ -706,7 +706,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     margin-top: 11px !important;
     font-size: 14px !important;
     /*noinspection ALL*/
-    @include box-shadow(2px 2px 5px transparentize($color-black, 0.5) !important);
+    @include box-shadow(unquote("2px 2px 5px #{transparentize($color-black, 0.5)} !important"));
   }
 
   &:checked {
@@ -862,7 +862,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
   font-family: $font-open-sans !important;
   -webkit-transition: all .25s;
   transition: all .25s;
-  @include box-shadow(0 0 5px transparentize($color-black, 0.5) !important);
+  @include box-shadow(unquote("0 0 5px #{transparentize($color-black, 0.5)} !important"));
   /** FYI, you cannot use a drop-shadow filter with a transition - google chrome 25 */
 
   &:after,
