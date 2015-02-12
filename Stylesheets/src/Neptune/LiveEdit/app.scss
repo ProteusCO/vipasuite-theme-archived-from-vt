@@ -235,6 +235,8 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 @include fontFace('GlyphLib', '/GlyphLib', 'neptune-glyph-font');
 
 .cms_le_ {
+	text-align: left !important;
+
   .ficon {
     @include buttonBase;
   }
@@ -1254,7 +1256,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       padding: 9px 10px !important;
       border: 0 none !important;
       margin: 0 !important;
-      @include box-sizing(border-box !important);
+      @include box-sizing("border-box !important");
     }
   }
 
