@@ -7,10 +7,6 @@
 (function (global, d, $) {
 	"use strict";
 
-	if (!global.cms || !global.cms.file || !global.cms.file.DnD) {
-		return;
-	}
-
 	function FileSelector(root, opts) {
 		var _defaults = {
 			validPreviewImageTypes: ['jpg', 'jpeg', 'png', 'gif', 'bmp'],
@@ -306,6 +302,10 @@
 			});
 		});
 
+		cleanCheckboxSpacing();
+	}
+
+	function cleanCheckboxSpacing() {
 		//remove nbsp elements
 		$('.upload_options .ctb input[type=checkbox]').each(function() {
 			if (this.nextSibling.nodeValue == '\u00a0') {
@@ -338,10 +338,12 @@
 
 			initFileSelectors(form);
 		});
-
-		d.removeEventListener('DOMContentLoaded', init);
 	}
 
-	d.addEventListener('DOMContentLoaded', init);
+	if (!global.cms || !global.cms.file || !global.cms.file.DnD) {
+		$(d).ready(cleanCheckboxSpacing);
+	} else {
+		$(d).ready(init);
+	}
 
 })(window, document, jQuery);
