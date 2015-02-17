@@ -12,6 +12,93 @@ div.message {
 	}
 }
 
+.dashboard-charts {
+	position: relative;
+	margin-left: -10px;
+	margin-right: -10px;
+	@include clearfix;
+
+	&.loading {
+		min-height: 300px;
+		@include style-inline-box();
+		margin: 0;
+	}
+
+	.dashboard-charts-box {
+		display: none;
+
+		&.visible {
+			display: block;
+		}
+	}
+}
+
+.l-primary-content {
+	.loading {
+		.loading-status {
+			display: block;
+			text-align: left;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			@include transform(translate(-50%, -50%));
+		}
+
+		.loading-status-label + .loading-status-icon {
+			margin-top: 10px;
+		}
+
+		.loading-status-icon {
+			margin: 0 auto;
+
+			.smil & {
+				@include loading-circle-spinner;
+			}
+
+			.no-smil & {
+				@include loading-circle-spinner-nosmil;
+			}
+		}
+	}
+
+	.loading-status {
+		display: none;
+	}
+}
+
+
+.chart {
+	position: relative;
+	padding: 10px;
+
+	&.loading {
+		.chart-inner {
+			min-height: 200px;
+		}
+	}
+
+	&.chart-box-half {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	.chart-inner {
+		@include style-inline-box($padding: 0);
+	}
+
+	.chart-heading {
+		@include style-h3;
+		padding: 5px 10px;
+		background-color: $color-blue;
+		color: $color-white;
+	}
+}
+
 .dashboard-coming {
 	background: center center $color-dark-blue themeDesignResourceUrl('/Dashboard/dashboard-noanalytics-bg.jpg') no-repeat;
 	background-size: cover;

@@ -68,7 +68,10 @@
 
     {
       "path": [ "config/dashboard" ],
-      "css": [ "Pages/page--dashboard.css" ]
+      "css": [ "Pages/page--dashboard.css" ],
+      "js": [
+        "Libs/jquery-2.1.1.min.js"
+      ]
     },
 
 
