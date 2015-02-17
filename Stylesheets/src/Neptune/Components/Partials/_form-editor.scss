@@ -502,7 +502,7 @@
 			margin-top: 10px;
 			position: relative;
 
-			.btn {
+			> .btn {
 				&.delete {
 					@include buttonStyleDeleteGlyph($size: 20px);
 					float: right;
