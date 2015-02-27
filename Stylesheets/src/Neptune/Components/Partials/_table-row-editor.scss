@@ -6,49 +6,63 @@
 		@include style-h2;
 	}
 
-	.table_row {
-		display: table;
-		width: 100%;
+	> .persistence-actions {
+		margin-top: 15px;
 
-		.column {
-			display: table-row;
+		.btn {
+			&.save {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+}
 
-			.cell {
-				display: table-cell;
-				vertical-align: top;
-				text-align: left;
-				padding: 10px;
 
-				&:empty {
-					padding: 0;
-				}
+.table_row {
+	display: table;
+	width: 100%;
 
-				> .field {
-					&.file {
-						.actions {
-							margin-left: 5px;
-						}
+	.column {
+		display: table-row;
+
+		.cell {
+			display: table-cell;
+			vertical-align: top;
+			text-align: left;
+			padding: 10px;
+
+			&:empty {
+				padding: 0;
+			}
+
+			> .field {
+				&.file {
+					.actions {
+						margin-left: 5px;
 					}
 				}
 			}
+		}
 
-			> .label {
-				min-width: 200px;
+		> .label {
+			min-width: 200px;
 
-				label {
-					@include style-form-label;
-				}
+			label {
+				@include style-form-label;
+			}
+		}
+
+		> .val {
+			> input[type=text] {
+				width: 250px;
 			}
 
-			> .val {
-				> input[type=text] {
-					width: 250px;
-				}
-
-				> .rtb {
-					+ .rtb {
-						margin-left: 10px;
-					}
+			> .rtb {
+				+ .rtb {
+					margin-left: 10px;
 				}
 			}
 		}
@@ -65,20 +79,6 @@
 				display: inline-block;
 				vertical-align: top;
 				width: 170px;
-			}
-		}
-
-	}
-
-	> .persistence-actions {
-		margin-top: 15px;
-
-		.btn {
-			&.save {
-				@include buttonGlyphAdd($html-entity-success);
-			}
-			&.cancel {
-				@include buttonGlyphAdd($html-entity-cancel);
 			}
 		}
 	}
