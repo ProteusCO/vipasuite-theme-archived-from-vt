@@ -352,6 +352,10 @@
       "path": [ "config/user/roles" ],
       "css": [ "Templates/template--user-mgt.css" ]
     },
+    {
+      "path": [ "config/user/groups" ],
+      "css": [ "Templates/template--user-mgt.css" ]
+    },
 
 
 
