@@ -69,7 +69,7 @@ jQuery(function($) {
 
 	function it_onSubmit() {
 		var $this = $(this);
-		var $contactEmail = $this.find('.field_contactemail input');
+    var $contactEmail = $this.find('.field_CONTACTEMAIL input');
 		var $mc = $this.find('.message-container');
 
 		if ($contactEmail.length && $contactEmail.val().length && $contactEmail.val().indexOf('@') < 0) {
