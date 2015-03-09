@@ -14,8 +14,6 @@ div.message {
 
 .dashboard-charts {
 	position: relative;
-	margin-left: -10px;
-	margin-right: -10px;
 	@include clearfix;
 
 	&.loading {
@@ -24,8 +22,15 @@ div.message {
 		margin: 0;
 	}
 
+	.loading-status {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
 	.dashboard-charts-box {
 		display: none;
+		margin-left: -10px;
+		margin-right: -10px;
 
 		&.visible {
 			display: block;
@@ -111,6 +116,58 @@ div.message {
 		padding-top: 150px;
 		font-family: $font-open-sans-bold;
 		text-shadow: 0 0 3px transparentize($color-black, 0.8);
+	}
+}
+
+.dashboard-charts {
+	.dashboard-config-ui {
+		background: center center $color-dark-blue themeDesignResourceUrl('/Dashboard/dashboard-noanalytics-bg.jpg') no-repeat;
+		background-size: cover;
+		height: 375px;
+		margin: 0;
+	}
+}
+
+.dashboard-config {
+	text-align: center;
+
+	.dashboard-config-title {
+		color: $color-white;
+		font-size: 24px;
+		text-align: center;
+		padding-top: 150px;
+		font-family: $font-open-sans-bold;
+		text-shadow: 0 0 3px transparentize($color-black, 0.8);
+	}
+
+	.dashboard-config-options {
+		display: inline-block;
+		padding: 10px;
+		white-space: nowrap;
+	}
+
+	.config-option {
+		display: inline-block;
+		margin: 0 5px;
+
+		.btn {
+			font-size: 18px;
+			@include buttonColors($color-bg: $color-green, $color-text: $color-white);
+
+			&.btn-glyph-pdf {
+				@include buttonGlyphAdd($html-entity-page, $size: 20px);
+			}
+			&.btn-glyph-video {
+				@include buttonGlyphAdd($html-entity-play, $size: 20px);
+			}
+		}
+	}
+}
+
+//fix for google visualization table
+.gapi-analytics-data-chart {
+	.gapi-analytics-data-chart-styles-table-th {
+		white-space: nowrap;
 	}
 }
 
