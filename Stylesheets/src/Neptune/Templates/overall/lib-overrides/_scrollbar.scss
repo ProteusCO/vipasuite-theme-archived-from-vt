@@ -15,7 +15,7 @@
 	.mCSB_dragger {
 		&:hover,
 		&:active,
-		.mCSB_dragger_onDrag {
+		&.mCSB_dragger_onDrag {
 			.mCSB_dragger_bar {
 				@include opacity(1);
 				background-color: transparentize($color-black, 0.4);
