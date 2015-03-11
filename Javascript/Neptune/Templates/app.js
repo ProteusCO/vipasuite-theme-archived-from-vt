@@ -49,6 +49,24 @@
 			}
 		}
 
+		function setScrollOffset(offset) {
+			if (typeof localStorage === 'undefined') {
+				return;
+			}
+
+			localStorage.setItem(id + 'scroll', parseInt(offset, 10));
+		}
+
+		function getScrollOffset() {
+			if (typeof localStorage === 'undefined') {
+				return;
+			}
+
+			var scrollPercent = localStorage.getItem(id + 'scroll');
+
+			return (scrollPercent ? scrollPercent : 0);
+		}
+
 		function openParents(parents) {
 			$(parents).addClass(CSS_OPEN_CLASS);
 			saveState();
@@ -77,6 +95,11 @@
 		}
 
 		init();
+
+		return {
+			setScrollOffset: setScrollOffset,
+			getScrollOffset: getScrollOffset
+		};
 	}
 
 	function destroySelectUpdates(context) {
@@ -123,7 +146,7 @@
 		}
 
 		//set up menu
-		new Menu('.primary-nav');
+		var menu = new Menu('.primary-nav');
 
 		//add state information to controls
 		if ($siteLocaleComponent.length) {
@@ -138,8 +161,14 @@
 				deltaFactor: 1,
 				normalizeDelta: true,
 				scrollAmount: isMacLike ? 30 : 60
+			},
+			callbacks: {
+				onScroll: function() {
+					menu.setScrollOffset(this.mcs.top);
+				}
 			}
 		});
+		$navCon.mCustomScrollbar('scrollTo', menu.getScrollOffset() + 'px');
 	}
 
 	function initContent() {
