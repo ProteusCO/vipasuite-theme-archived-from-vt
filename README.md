@@ -3,9 +3,10 @@ vipasuite-theme
 VipaSuite theme for Proteus
 
 
-Needed programs
+Required programs
 -----------------
 - nodejs (0.10.33)
+- bower is needed, to install globally: `npm install -g bower`
 
 
 Setup for new repo
@@ -17,5 +18,3 @@ Setup for new repo
 Compiling SASS
 -----------------
 - Run "node_modules/.bin/gulp styles"
-
-
