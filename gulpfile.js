@@ -7,7 +7,7 @@ gulp.task('default', ['styles']);
 gulp.task('styles', function () {
   return gulp.src('./Stylesheets/src/**/*.scss')
       .pipe(sass({
-			  outputStyle: 'nested'
+			  outputStyle: 'expanded'
 		  }))
       .pipe(autoprefixer({
         browsers: ['> 1%', 'last 2 versions', 'ie >= 9'],
