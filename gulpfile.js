@@ -45,3 +45,8 @@ gulp.task('iconfont', function(){
 			})
 			.pipe(gulp.dest('./Design/Neptune/Fonts/GlyphLib/'));
 });
+
+gulp.task('live-edit', function() {
+	return gulp.src('./Stylesheets/build/Neptune/LiveEdit/app.css')
+			.pipe(gulp.dest('./LiveEdit/'));
+});

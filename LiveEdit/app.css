@@ -9,6 +9,7 @@
   /*noinspection CssOverwrittenProperties*/
   /* end auto generated */
 }
+
 .cms_le_ div, .cms_le_ span, .cms_le_ applet, .cms_le_ object, .cms_le_ iframe, .cms_le_ h1, .cms_le_ h2, .cms_le_ h3, .cms_le_ h4, .cms_le_ h5, .cms_le_ h6, .cms_le_ p, .cms_le_ blockquote, .cms_le_ pre, .cms_le_ a, .cms_le_ abbr,
 .cms_le_ acronym, .cms_le_ address, .cms_le_ big, .cms_le_ cite, .cms_le_ code, .cms_le_ del, .cms_le_ dfn, .cms_le_ em, .cms_le_ img, .cms_le_ ins, .cms_le_ kbd, .cms_le_ q, .cms_le_ s, .cms_le_ samp, .cms_le_ small, .cms_le_ strike,
 .cms_le_ strong, .cms_le_ sub, .cms_le_ sup, .cms_le_ tt, .cms_le_ var, .cms_le_ b, .cms_le_ u, .cms_le_ i, .cms_le_ center, .cms_le_ dl, .cms_le_ dt, .cms_le_ dd, .cms_le_ ol, .cms_le_ ul, .cms_le_ li, .cms_le_ fieldset, .cms_le_ form, .cms_le_ label,
@@ -22,131 +23,156 @@
   font-size: 100% !important;
   color: inherit !important;
   vertical-align: baseline !important;
-  -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
   text-transform: none !important;
   background: none !important;
   min-height: 0 !important;
   /*max-height:none !important; FIXME : this broke the component selector */
 }
+
 .cms_le_ button {
   text-shadow: none !important;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
   -webkit-transition: none !important;
   transition: none !important;
 }
+
 .cms_le_ article, .cms_le_ aside, .cms_le_ details, .cms_le_ figcaption, .cms_le_ figure, .cms_le_ footer, .cms_le_ header, .cms_le_ menu, .cms_le_ nav, .cms_le_ section {
   display: block !important;
-  -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
+
 .cms_le_ ol, .cms_le_ ul {
   padding: 0 0 0 40px !important;
   margin: 14px 0 !important;
   list-style: none !important;
-  -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
+
 .cms_le_ blockquote, .cms_le_ q {
   quotes: none !important;
-  -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
+
 .cms_le_ blockquote:before, .cms_le_ q:before, .cms_le_ blockquote:after, .cms_le_ q {
   content: '' !important;
   content: none !important;
 }
+
 .cms_le_ table {
   border-collapse: collapse !important;
   border-spacing: 0 !important;
 }
+
 .cms_le_ a {
   color: #2199cd !important;
 }
+
 .cms_le_ a:hover {
   text-decoration: none !important;
 }
+
 .cms_le_ a:focus {
   outline: thin dotted !important;
 }
-.cms_le_ a:active, .cms_le_ a:hover {
+
+.cms_le_ a:active,
+.cms_le_ a:hover {
   outline: 0 !important;
 }
+
 .cms_le_ img {
   border: 0 !important;
 }
+
 .cms_le_ img,
 .cms_le_ td {
   vertical-align: middle !important;
 }
+
 .cms_le_ h1 {
   font-size: 16px !important;
   margin: 14px 0 !important;
   color: #000 !important;
 }
+
 .cms_le_ h2 {
   font-size: 15px !important;
   margin: 14px 0 !important;
   color: #000 !important;
 }
+
 .cms_le_ h3 {
   font-size: 14px !important;
   margin: 12px 0 !important;
   color: #000 !important;
 }
+
 .cms_le_ h4 {
   font-size: 13px !important;
   margin: 12px 0 !important;
   color: #000 !important;
 }
+
 .cms_le_ h5 {
   font-size: 12px !important;
   margin: 12px 0 !important;
   color: #000 !important;
 }
+
 .cms_le_ h6 {
   font-size: 11px !important;
   margin: 12px 0 !important;
   color: #000 !important;
 }
+
 .cms_le_ p {
   margin: 14px 0 !important;
 }
+
 .cms_le_ h1, .cms_le_ h2, .cms_le_ h3, .cms_le_ h4, .cms_le_ h5, .cms_le_ h6, .cms_le_ b, .cms_le_ strong {
   font-weight: bold !important;
 }
+
 .cms_le_ blockquote {
   margin: 14px 40px !important;
 }
-.cms_le_ .clearfix:before, .cms_le_ .clearfix:after, .cms_le_.clearfix:before, .cms_le_.clearfix:after {
+
+.cms_le_ .clearfix:before,
+.cms_le_ .clearfix:after,
+.cms_le_.clearfix:before,
+.cms_le_.clearfix:after {
   content: '' !important;
   display: table !important;
 }
-.cms_le_ .clearfix:after, .cms_le_.clearfix:after {
+
+.cms_le_ .clearfix:after,
+.cms_le_.clearfix:after {
   clear: both !important;
 }
+
 .cms_le_ .ir {
   background-color: transparent !important;
   overflow: hidden !important;
 }
+
 .cms_le_ .ir:before {
   content: "" !important;
   display: block !important;
   width: 0 !important;
   height: 150% !important;
 }
+
 .cms_le_ span,
 .cms_le_ label {
   display: inline !important;
 }
+
 .cms_le_ button::-moz-focus-inner {
   border: 0 !important;
   padding: 0 !important;
 }
+
 .cms_le_ span.ficon.le-close,
 .cms_le_ span.ficon.le-move,
 .cms_le_ label.ficon.le-info {
@@ -159,17 +185,21 @@
   margin: 0 !important;
   border: 0 !important;
   border-right: 1px solid #d9d9d9 !important;
-  -webkit-transition-duration: .2s !important;
+  -webkit-transition-duration: 0.2s !important;
   -webkit-transition-property: background, color, opacity !important;
-  transition-duration: .2s !important;
+  -webkit-transition-duration: 0.2s !important;
+  transition-duration: 0.2s !important;
+  -webkit-transition-property: background, color, opacity !important;
   transition-property: background, color, opacity !important;
   box-shadow: none !important;
   text-shadow: none !important;
   border-radius: 0 !important;
 }
+
 .cms_le_ .initializing {
   opacity: 0 !important;
 }
+
 .cms_le_ [draggable="true"] {
   -khtml-user-drag: element !important;
   -webkit-user-drag: element !important;
@@ -177,6 +207,7 @@
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   /*noinspection ALL*/
+  -webkit-user-select: none !important;
   user-select: none !important;
   cursor: move !important;
 }
@@ -191,6 +222,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "OpenSansBold";
   src: url("/theme/Fonts/OpenSans/opensans-bold-webfont.eot");
@@ -198,6 +230,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "OpenSansSemiBold";
   src: url("/theme/Fonts/OpenSans/opensans-semibold-webfont.eot");
@@ -205,6 +238,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "GlyphLib";
   src: url("/theme/Fonts/GlyphLib/neptune-glyph-font.eot");
@@ -212,9 +246,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .cms_le_ {
   text-align: left !important;
 }
+
 .cms_le_ .ficon {
   display: inline-block !important;
   vertical-align: middle !important;
@@ -227,21 +263,23 @@
   margin: 0 !important;
   height: auto !important;
   text-decoration: none !important;
-  -moz-border-radius: 0 !important;
-  -webkit-border-radius: 0;
   border-radius: 0 !important;
   background: #3288bd !important;
   color: #fff !important;
 }
+
 .cms_le_ .ficon:before {
   color: #fff !important;
 }
+
 .cms_le_ .ficon:hover {
   background: #276b95 !important;
 }
+
 .cms_le_ .ficon:hover {
   text-decoration: none !important;
 }
+
 .cms_le_ .ficon:before {
   font-family: GlyphLib, sans-serif !important;
   font-size: 13px !important;
@@ -256,6 +294,7 @@
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
 .cms_le_ .ficon-glyph {
   display: inline-block !important;
   vertical-align: middle !important;
@@ -268,21 +307,23 @@
   margin: 0 !important;
   height: auto !important;
   text-decoration: none !important;
-  -moz-border-radius: 0 !important;
-  -webkit-border-radius: 0;
   border-radius: 0 !important;
   background: #3288bd !important;
   color: #fff !important;
 }
+
 .cms_le_ .ficon-glyph:before {
   color: #fff !important;
 }
+
 .cms_le_ .ficon-glyph:hover {
   background: #276b95 !important;
 }
+
 .cms_le_ .ficon-glyph:hover {
   text-decoration: none !important;
 }
+
 .cms_le_ .ficon-glyph:before {
   font-family: GlyphLib, sans-serif !important;
   font-size: 13px !important;
@@ -297,11 +338,13 @@
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
 .cms_le_ .ficon-glyph:before {
   display: inline-block !important;
   content: "" !important;
   margin-right: 5px !important;
 }
+
 .cms_le_ .ficon-glyph-only {
   display: inline-block !important;
   vertical-align: middle !important;
@@ -314,8 +357,6 @@
   margin: 0 !important;
   height: auto !important;
   text-decoration: none !important;
-  -moz-border-radius: 0 !important;
-  -webkit-border-radius: 0;
   border-radius: 0 !important;
   background: #3288bd !important;
   color: #fff !important;
@@ -324,15 +365,19 @@
   padding: 0 !important;
   font-size: 0 !important;
 }
+
 .cms_le_ .ficon-glyph-only:before {
   color: #fff !important;
 }
+
 .cms_le_ .ficon-glyph-only:hover {
   background: #276b95 !important;
 }
+
 .cms_le_ .ficon-glyph-only:hover {
   text-decoration: none !important;
 }
+
 .cms_le_ .ficon-glyph-only:before {
   font-family: GlyphLib, sans-serif !important;
   font-size: 13px !important;
@@ -347,12 +392,14 @@
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
 .cms_le_ .ficon-glyph-only:before {
   display: inline-block !important;
   content: "" !important;
   font-size: 16px !important;
   color: #555 !important;
 }
+
 .cms_le_ .ficon-glyph-only:hover {
   background: transparent !important;
 }
@@ -372,22 +419,27 @@
   transition: all 1s cubic-bezier(0, 0.7, 0, 1) !important;
   font-family: OpenSans, Arial, Verdana, sans-serif !important;
 }
+
 #cms-le-ptb .le-component .name {
   font-family: OpenSansBold, Arial, Verdana, sans-serif !important;
 }
+
 #cms-le-ptb .le-toolbox,
 #cms-le-ptb .le-nav-actions {
   display: inline-block !important;
   vertical-align: top !important;
 }
+
 #cms-le-ptb .le-info .le-name {
   font-family: OpenSansBold, Arial, Verdana, sans-serif !important;
   max-height: 30px !important;
   min-height: 16px !important;
 }
+
 #cms-le-ptb .le-info .le-name:empty {
   display: none !important;
 }
+
 #cms-le-ptb .le-info .le-name,
 #cms-le-ptb .le-info .le-type {
   overflow: hidden !important;
@@ -395,17 +447,20 @@
   white-space: nowrap !important;
   line-height: 1.2 !important;
 }
+
 #cms-le-ptb .le-component,
 #cms-le-ptb .le-component-actions {
-  -webkit-transition: all .25s !important;
-  transition: all .25s !important;
+  -webkit-transition: all 0.25s !important;
+  transition: all 0.25s !important;
 }
+
 #cms-le-ptb .le-component,
 #cms-le-ptb .le-component-actions,
 #cms-le-ptb .toolbar-controls {
   position: absolute !important;
   bottom: 0;
 }
+
 #cms-le-ptb .le-component {
   height: 50px !important;
   width: 250px !important;
@@ -415,6 +470,7 @@
   padding: 9px 6px !important;
   overflow: hidden !important;
 }
+
 #cms-le-ptb .le-component-actions {
   left: 690px !important;
   right: 80px !important;
@@ -425,84 +481,102 @@
   /*whitespace removal*/
   white-space: nowrap !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only {
   cursor: pointer !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only:before {
   font-size: 20px !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only + .ficon-glyph-only {
   margin-left: 5px !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only.le-move:before {
   content: "" !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only.le-edit:before {
   content: "" !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only.le-detach:before {
   content: "" !important;
   color: #d53e4f !important;
 }
+
 #cms-le-ptb .le-component-actions .ficon-glyph-only.le-info:before {
   content: "" !important;
   color: #3288bd !important;
 }
+
 #cms-le-ptb .le-component-actions button.le-info {
   padding: 0 !important;
 }
+
 #cms-le-ptb .le-component-actions button.le-info label {
   padding: 6px !important;
   display: inline-block !important;
 }
+
 #cms-le-ptb .le-component-actions button label {
   cursor: pointer !important;
 }
+
 #cms-le-ptb.top {
   bottom: 100% !important;
   margin-bottom: -50px !important;
-  -moz-box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
-  -webkit-box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
   box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
 }
+
 #cms-le-ptb.top.hidden {
   margin-bottom: 0 !important;
 }
+
 #cms-le-ptb.top.hidden .toolbar-controls {
   top: 50px !important;
   border: 1px solid #d9d9d9 !important;
 }
+
 #cms-le-ptb.bottom {
   bottom: 0 !important;
-  -moz-box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
-  -webkit-box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
   box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
 }
+
 #cms-le-ptb.bottom.hidden {
   margin-bottom: -50px !important;
 }
+
 #cms-le-ptb.bottom.hidden .toolbar-controls {
   top: -40px !important;
 }
+
 #cms-le-ptb.bottom .le-info-panel {
   bottom: 100% !important;
   margin-top: 0 !important;
   margin-bottom: 4px !important;
 }
+
 #cms-le-ptb.hidden .toolbar-controls {
   top: -25px !important;
   height: 40px !important;
 }
-#cms-le-ptb.hidden #cms-le-ptb-info:checked:before, #cms-le-ptb.hidden #cms-le-ptb-info:checked:after,
+
+#cms-le-ptb.hidden #cms-le-ptb-info:checked:before,
+#cms-le-ptb.hidden #cms-le-ptb-info:checked:after,
 #cms-le-ptb.hidden #cms-le-ptb-info + .le-info-panel {
   display: none !important;
 }
+
 #cms-le-ptb .le-branding {
   height: 100% !important;
   width: 427px !important;
   box-sizing: border-box !important;
   font-size: 18px !important;
 }
+
 #cms-le-ptb .le-title {
   background-color: #1a608a !important;
   display: inline-block !important;
@@ -512,6 +586,7 @@
   position: relative !important;
   padding: 0 10px !important;
 }
+
 #cms-le-ptb .le-title .le-product {
   background: center center transparent url("/theme/Overall/vipasuite-neptune-primary-logo.png") no-repeat !important;
   background-size: contain !important;
@@ -520,6 +595,7 @@
   font-size: 0 !important;
   display: block !important;
 }
+
 #cms-le-ptb .le-title .le-app-name {
   position: absolute !important;
   bottom: 3px !important;
@@ -529,11 +605,13 @@
   text-transform: uppercase !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
 }
+
 #cms-le-ptb .le-toolbox {
   background-color: #68c266 !important;
   height: 50px !important;
   width: 95px !important;
 }
+
 #cms-le-ptb .le-toolbox button {
   background: #68c266 !important;
   color: #fff !important;
@@ -543,20 +621,25 @@
   cursor: pointer !important;
   height: 50px !important;
 }
+
 #cms-le-ptb .le-toolbox button:before {
   color: #fff !important;
 }
+
 #cms-le-ptb .le-toolbox button:hover {
   background: #48af46 !important;
 }
+
 #cms-le-ptb .le-toolbox button:before {
   font-size: 24px !important;
 }
+
 #cms-le-ptb .le-nav-actions {
   background-color: #586771 !important;
   height: 50px !important;
   width: 162px !important;
 }
+
 #cms-le-ptb .le-nav-actions button {
   background: #586771 !important;
   color: #fff !important;
@@ -566,74 +649,91 @@
   width: 54px !important;
   height: 50px !important;
 }
+
 #cms-le-ptb .le-nav-actions button:before {
   color: #fff !important;
 }
+
 #cms-le-ptb .le-nav-actions button:hover {
   background: #424d54 !important;
 }
+
 #cms-le-ptb .le-nav-actions button:before {
   font-size: 24px !important;
   color: #fff !important;
 }
+
 #cms-le-ptb .le-nav-actions button#cms-le-nav-out:before {
   content: "" !important;
 }
+
 #cms-le-ptb .le-nav-actions button#cms-le-nav-up:before {
   content: "" !important;
 }
+
 #cms-le-ptb .le-nav-actions button#cms-le-nav-down:before {
   content: "" !important;
 }
-#cms-le-ptb .le-nav-actions button.active, #cms-le-ptb .le-nav-actions button:active {
+
+#cms-le-ptb .le-nav-actions button.active,
+#cms-le-ptb .le-nav-actions button:active {
   background-color: #424d54 !important;
 }
+
 #cms-le-ptb .toolbar-controls {
   right: 0 !important;
   padding: 15px 10px !important;
   height: 100% !important;
   background-color: rgba(250, 250, 250, 0.8) !important;
-  -webkit-transition: all .5s .5s !important;
-  transition: all .5s .5s !important;
+  -webkit-transition: all 0.5s 0.5s !important;
+  transition: all 0.5s 0.5s !important;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
   /*noinspection ALL*/
   -webkit-perspective: 1000;
   /*noinspection ALL*/
-  -moz-perspective: 1000;
   /*noinspection ALL*/
   perspective: 1000;
   white-space: nowrap !important;
 }
+
 #cms-le-ptb .toolbar-controls .ficon-glyph-only {
   cursor: pointer !important;
   margin-left: 5px !important;
 }
+
 #cms-le-ptb .toolbar-controls .ficon-glyph-only:before {
   font-size: 20px !important;
 }
+
 #cms-le-ptb .toolbar-controls .le-help:before {
   content: "" !important;
 }
+
 #cms-le-ptb .toolbar-controls .le-location:before {
   content: "" !important;
 }
+
 #cms-le-ptb .toolbar-controls .le-visibility:before {
   content: "" !important;
 }
+
 #cms-le-ptb .toolbar-controls .le-quit:before {
   content: "" !important;
 }
+
 #cms-le-ptb.bottom .toolbar-controls .le-location:before {
   content: "" !important;
 }
+
 #cms-le-ptb.hidden .toolbar-controls {
   padding: 10px !important;
 }
+
 #cms-le-ptb.hidden .toolbar-controls .le-visibility:before {
   content: "" !important;
 }
+
 #cms-le-ptb .le-info-panel .le-shared:before,
 #cms-le-ptb .le-info-panel .le-cat-page-template:before,
 #cms-le-ptb .le-info-panel .le-cat-page:before,
@@ -650,18 +750,21 @@
   line-height: 18px !important;
   font-size: 13px !important;
 }
+
 #cms-le-ptb .le-info-panel .le-shared:before,
 #cms-le-ptb .le-component.le-shared:before {
   content: "S" !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   background: #68c266 !important;
 }
+
 #cms-le-ptb .le-info-panel .le-cat-page-template:before,
 #cms-le-ptb .le-component.le-cat-page-template:before {
   content: "T" !important;
   background: #f90 !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
 }
+
 #cms-le-ptb .le-info-panel .le-shared:before,
 #cms-le-ptb .le-info-panel .le-cat-page-template:before,
 #cms-le-ptb .le-info-panel .le-cat-page:before {
@@ -669,10 +772,12 @@
   position: static !important;
   margin-right: 4px !important;
 }
+
 #cms-le-ptb .le-component table {
   table-layout: fixed !important;
   width: 235px !important;
 }
+
 #cms-le-ptb .le-component.le-box-locked:after {
   content: "L" !important;
   color: #999 !important;
@@ -682,9 +787,11 @@
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 14px !important;
 }
+
 #cms-le-ptb .le-component td.le-icon {
   width: 32px !important;
 }
+
 #cms-le-ptb .le-component td.le-info {
   padding-left: 4px !important;
   vertical-align: top !important;
@@ -696,37 +803,47 @@
   text-overflow: ellipsis !important;
   line-height: 1.4 !important;
 }
+
 .le-info-panel h2 {
   font-size: 14px !important;
   margin: 0 0 10px !important;
 }
+
 .le-info-panel label {
   font-weight: bold !important;
 }
+
 .le-info-panel a:hover {
   text-decoration: none !important;
 }
+
 .le-info-panel .le-prop {
   font-size: 14px !important;
   margin: 0 0 7px !important;
 }
+
 .le-info-panel .le-value-list {
   margin: 0 !important;
   padding: 0 !important;
 }
+
 .le-info-panel .le-value-list,
 .le-info-panel .le-visibility .le-value {
   display: inline-block !important;
 }
+
 .le-info-panel .le-value-list li {
   display: inline !important;
 }
+
 .le-info-panel .le-value-list li:not(:last-child):after {
   content: "," !important;
 }
+
 .le-info-panel .le-value.wildcard:after {
   content: "/*";
 }
+
 .le-info-panel .le-modified {
   margin: 15px 0 !important;
   font-size: 13px !important;
@@ -736,6 +853,7 @@
   position: relative !important;
   visibility: hidden !important;
 }
+
 #cms-le-ptb-info + .le-info-panel {
   display: none !important;
   position: absolute !important;
@@ -749,11 +867,11 @@
   margin-top: 11px !important;
   font-size: 14px !important;
   /*noinspection ALL*/
-  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
 }
-#cms-le-ptb-info:checked:before, #cms-le-ptb-info:checked:after {
+
+#cms-le-ptb-info:checked:before,
+#cms-le-ptb-info:checked:after {
   border: solid transparent !important;
   content: " " !important;
   height: 0 !important;
@@ -761,6 +879,7 @@
   position: absolute !important;
   visibility: visible !important;
 }
+
 #cms-le-ptb-info:checked:before {
   border-color: rgba(204, 204, 204, 0) !important;
   border-bottom-color: #aaa !important;
@@ -769,6 +888,7 @@
   left: -22px !important;
   z-index: 999;
 }
+
 #cms-le-ptb-info:checked:after {
   border-color: rgba(255, 255, 255, 0) !important;
   border-bottom-color: #fff !important;
@@ -777,17 +897,26 @@
   left: -21px !important;
   z-index: 1000;
 }
+
 #cms-le-ptb-info:checked + .le-info-panel {
   display: block !important;
 }
-.bottom #cms-le-ptb-info:checked:before, .bottom #cms-le-ptb-info:checked:after {
+
+.bottom #cms-le-ptb-info:checked {
+  /* Firefox doesn't seem to support multiple pseudo elements */
+}
+
+.bottom #cms-le-ptb-info:checked:before,
+.bottom #cms-le-ptb-info:checked:after {
   border-bottom-color: transparent !important;
   bottom: auto !important;
 }
+
 .bottom #cms-le-ptb-info:checked:before {
   border-top-color: #aaa !important;
   top: -8px !important;
 }
+
 .bottom #cms-le-ptb-info:checked:after {
   border-top-color: #fff !important;
   top: -8px !important;
@@ -806,10 +935,12 @@
   -webkit-transition: all 1s !important;
   transition: all 1s !important;
 }
+
 #cms-le-overlay table.cms-le-overlay-layout {
   margin: 30px auto 5px auto !important;
   height: 90% !important;
 }
+
 #cms-le-overlay td.cms-le-overlay-layout {
   text-align: center !important;
 }
@@ -820,29 +951,33 @@
   padding: 20px !important;
   /*Need to ensure we fit in 1024x768*/
   border: 1px solid #777 !important;
-  -moz-box-shadow: 1px 1px 2px #646464 !important;
   box-shadow: 1px 1px 2px #646464 !important;
 }
+
 #cms-le-overlay-content iframe {
   /*noinspection CssUnknownTarget*/
   background: url("/theme/Overall/loading-logo.svg") no-repeat center !important;
-  -webkit-transition: all .25s ease-in !important;
-  transition: all .25s ease-in !important;
+  -webkit-transition: all 0.25s ease-in !important;
+  transition: all 0.25s ease-in !important;
 }
 
 .cms-le-overlay-layout p {
   margin-bottom: 15px !important;
   font-family: OpenSans, Arial, Verdana, sans-serif !important;
 }
+
 .cms-le-overlay-layout p:first-child {
   margin-top: 0 !important;
 }
+
 .cms-le-overlay-layout a {
   color: #00f !important;
 }
+
 .cms-le-overlay-layout a:hover {
   text-decoration: none !important;
 }
+
 .cms-le-overlay-layout .ficon {
   cursor: pointer !important;
 }
@@ -855,10 +990,12 @@
   -webkit-box-shadow: 0 0 20px #0cf !important;
   /*box shadow looks terrible on Firefox 19 */
 }
+
 .le-selected[data-cms_pe^="bx"] {
   outline: 3px #fc0 solid !important;
   -webkit-box-shadow: 0 0 20px #fc0 !important;
 }
+
 .le-selected.le-dnd {
   -webkit-filter: blur(1px) grayscale(1) opacity(0.6);
   -moz-filter: blur(1px) grayscale(1) opacity(0.6);
@@ -876,20 +1013,21 @@
   background: #fff !important;
   margin-top: 12px !important;
   font-family: OpenSans, Arial, Verdana, sans-serif !important;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
   /** FYI, you cannot use a drop-shadow filter with a transition - google chrome 25 */
 }
-#cms-le-ctb:after, #cms-le-ctb:before {
+
+#cms-le-ctb:after,
+#cms-le-ctb:before {
   border: solid transparent !important;
   content: " " !important;
   height: 0 !important;
   width: 0 !important;
   position: absolute !important;
 }
+
 #cms-le-ctb:after {
   border-color: rgba(255, 255, 255, 0) !important;
   border-bottom-color: #fff !important;
@@ -897,6 +1035,7 @@
   top: -20px !important;
   left: 10px !important;
 }
+
 #cms-le-ctb:before {
   border-color: rgba(204, 204, 204, 0) !important;
   border-bottom-color: #aaa !important;
@@ -904,12 +1043,16 @@
   top: -22px !important;
   left: 9px !important;
 }
+
 #cms-le-ctb.outset {
   margin-top: -48px !important;
 }
-#cms-le-ctb.outset:after, #cms-le-ctb.outset:before {
+
+#cms-le-ctb.outset:after,
+#cms-le-ctb.outset:before {
   top: 100% !important;
 }
+
 #cms-le-ctb.outset:after {
   border-color: rgba(255, 255, 255, 0) !important;
   border-top-color: #fff !important;
@@ -917,6 +1060,7 @@
   bottom: 10px !important;
   left: 10px !important;
 }
+
 #cms-le-ctb.outset:before {
   border-color: rgba(204, 204, 204, 0) !important;
   border-top-color: #aaa !important;
@@ -924,56 +1068,71 @@
   bottom: 10px !important;
   left: 9px !important;
 }
+
 #cms-le-ctb .le-component-actions {
   color: #2199cd !important;
-  -webkit-transition: color .5s !important;
-  transition: color .5s !important;
+  -webkit-transition: color 0.5s !important;
+  transition: color 0.5s !important;
   padding: 6px 0 !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only {
   cursor: pointer !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only:before {
   font-size: 20px !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only + .ficon-glyph-only {
   margin-left: 3px !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only:first-child {
   margin-left: 6px !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only:last-child {
   margin-right: 6px !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only.le-move:before {
   content: "" !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only.le-edit:before {
   content: "" !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only.le-detach:before {
   content: "" !important;
   color: #d53e4f !important;
 }
+
 #cms-le-ctb .le-component-actions .ficon-glyph-only.le-info:before {
   content: "" !important;
   color: #3288bd !important;
 }
+
 #cms-le-ctb .le-component-info {
   display: inline-block !important;
   position: relative !important;
   padding: 6px !important;
   border-left: 1px solid #ddd !important;
 }
+
 #cms-le-ctb .le-component-info .le-icon {
   height: 20px !important;
   width: auto !important;
 }
+
 #cms-le-ctb .le-component-info .le-name {
   vertical-align: middle !important;
   font-size: 12px !important;
 }
-#cms-le-ctb.le-shared .le-component-info:before, #cms-le-ctb.le-cat-page-template .le-component-info:before {
+
+#cms-le-ctb.le-shared .le-component-info:before,
+#cms-le-ctb.le-cat-page-template .le-component-info:before {
   display: block !important;
   position: absolute !important;
   bottom: 0 !important;
@@ -985,17 +1144,20 @@
   font-size: 12px !important;
   line-height: 17px !important;
 }
+
 #cms-le-ctb.le-shared .le-component-info:before {
   content: "S" !important;
   /*noinspection CssNoGenericFontName*/
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   background: #68c266 !important;
 }
+
 #cms-le-ctb.le-cat-page-template .le-component-info:before {
   content: "T" !important;
   background: #f90 !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
 }
+
 #cms-le-ctb.le-box-locked .le-component-info:after {
   content: "L" !important;
   /*noinspection CssNoGenericFontName*/
@@ -1011,10 +1173,12 @@
   z-index: 19998 !important;
   background-color: #f66 !important;
   text-align: center !important;
-  -webkit-transition: left .2s, right .2s, top .2s, bottom .2s;
-  transition: left .2s, right .2s, top .2s, bottom .2s;
+  -webkit-transition: left 0.2s, right 0.2s, top 0.2s, bottom 0.2s;
+  transition: left 0.2s, right 0.2s, top 0.2s, bottom 0.2s;
 }
-.le-drop-location:before, .le-drop-location:after {
+
+.le-drop-location:before,
+.le-drop-location:after {
   content: "" !important;
   position: absolute !important;
   width: 7px !important;
@@ -1022,19 +1186,25 @@
   display: block !important;
   background: #f66 !important;
 }
+
 .le-drop-location:before {
   top: -2px !important;
 }
+
 .le-drop-location:after {
   top: -2px !important;
   left: 100% !important;
 }
+
 .le-drop-location.le-alt {
   background-color: blue !important;
 }
-.le-drop-location.le-alt:before, .le-drop-location.le-alt:after {
+
+.le-drop-location.le-alt:before,
+.le-drop-location.le-alt:after {
   background: blue !important;
 }
+
 .le-drop-location .le-target {
   display: inline-block !important;
   position: relative !important;
@@ -1046,13 +1216,16 @@
   background: rgba(255, 255, 255, 0.95) !important;
   white-space: nowrap !important;
 }
+
 .le-drop-location.le-vertical:before {
   left: -2px !important;
 }
+
 .le-drop-location.le-vertical:after {
   left: -2px !important;
   top: 100% !important;
 }
+
 .le-drop-location.le-vertical .le-target {
   margin-top: 8px !important;
   left: 3px !important;
@@ -1066,6 +1239,7 @@
   text-align: center !important;
   font-family: "Trebuchet MS", Arial, sans-serif !important;
 }
+
 .le-dnd [data-cms_pe_empty]:before {
   content: attr(data-cms_pe_empty);
 }
@@ -1083,19 +1257,23 @@
   top: 55px;
   left: 10px;
 }
+
 #cms-le-float-palette .le-titlebar {
   padding: 10px 20px 10px 10px !important;
   background-color: #68c266 !important;
   color: #fff !important;
   border-bottom: 1px solid #57944f !important;
 }
+
 #cms-le-float-palette .le-titlebar:hover {
   background-color: #48af46 !important;
 }
+
 #cms-le-float-palette .le-titlebar .le-title {
   font-size: 14px !important;
   font-family: OpenSansBold, Arial, Verdana, sans-serif !important;
 }
+
 #cms-le-float-palette .le-titlebar .le-controls {
   position: absolute !important;
   right: 5px !important;
@@ -1103,14 +1281,17 @@
   cursor: pointer !important;
   padding: 5px !important;
 }
+
 #cms-le-float-palette .le-titlebar .le-controls:hover {
   background-color: #57944f !important;
 }
+
 #cms-le-float-palette .le-titlebar .le-controls.le-close:before {
   content: "" !important;
   font-size: 16px !important;
   color: #fff !important;
 }
+
 #cms-le-float-palette .le-search-results button.toggle {
   width: 100% !important;
   text-align: left !important;
@@ -1118,8 +1299,6 @@
   font-size: 12px !important;
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   padding: 8px 10px !important;
-  -moz-border-radius: 0 !important;
-  -webkit-border-radius: 0;
   border-radius: 0 !important;
   background: #99a8b1 !important;
   border: 0 none !important;
@@ -1127,9 +1306,11 @@
   color: #fff !important;
   cursor: pointer !important;
 }
+
 #cms-le-float-palette .le-search-results button.toggle:hover {
   background-color: #7c8f9b !important;
 }
+
 #cms-le-float-palette .le-search-results button.toggle:after {
   font-family: GlyphLib, sans-serif !important;
   content: "" !important;
@@ -1146,55 +1327,68 @@
   -moz-osx-font-smoothing: grayscale !important;
   float: right !important;
 }
+
 #cms-le-float-palette .le-search-results .hidden button.toggle:after {
   content: "" !important;
 }
+
 #cms-le-float-palette .le-search-new-results,
 #cms-le-float-palette .le-search-existing-results {
   max-height: 10000px !important;
-  -webkit-transition: all .4s !important;
-  transition: all .4s !important;
+  -webkit-transition: all 0.4s !important;
+  transition: all 0.4s !important;
 }
+
 #cms-le-float-palette .le-search-new-results.hidden,
 #cms-le-float-palette .le-search-existing-results.hidden {
   overflow: hidden !important;
   max-height: 0 !important;
   visibility: hidden !important;
 }
+
 #cms-le-float-palette .le-search-result {
   box-sizing: border-box !important;
   padding: 2px 0 !important;
 }
+
 #cms-le-float-palette .le-search-result + .le-search-result {
   border-top: 1px solid #f2f2f2 !important;
 }
+
 #cms-le-float-palette .le-search-result:hover {
   background-color: #f2f2f2 !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement {
   width: 100% !important;
   text-align: left !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement td {
   padding: 2px !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement td.le-icon {
   width: 34px !important;
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement img.le-icon {
   width: 28px !important;
   height: auto !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement .le-name {
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 12px !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement .le-type {
   font-family: OpenSansSemiBold, Arial, Verdana, sans-serif !important;
   font-size: 12px !important;
 }
+
 #cms-le-float-palette .le-search-result .contentelement .le-name + .le-type {
   font-family: OpenSans, Arial, Verdana, sans-serif !important;
   font-size: 11px !important;
@@ -1204,25 +1398,27 @@
   min-height: 100px !important;
   min-width: 150px !important;
 }
+
 .le-loading #cms-le-float-palette-content {
   /*noinspection CssUnknownTarget*/
   background: url("/theme/Overall/loading-logo.svg") no-repeat center !important;
   text-align: center !important;
 }
+
 #cms-le-float-palette-content .le-search-bar {
   text-align: center !important;
   box-sizing: border-box !important;
   border-bottom: 1px solid #baccd7 !important;
 }
+
 #cms-le-float-palette-content .le-search-bar input.le-search {
   width: 100% !important;
   padding: 9px 10px !important;
   border: 0 none !important;
   margin: 0 !important;
-  -moz-box-sizing: border-box !important;
-  -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
+
 #cms-le-float-palette-content .le-search-results {
   overflow: auto !important;
   box-sizing: border-box !important;
@@ -1233,6 +1429,7 @@
 #cms-le-drop-options h1 {
   margin: 0 0 14px 0 !important;
 }
+
 #cms-le-drop-options button {
   display: block !important;
   vertical-align: middle !important;
@@ -1242,17 +1439,21 @@
   background: #fff !important;
   padding: 14px !important;
 }
+
 #cms-le-drop-options button:hover {
   color: #000 !important;
 }
+
 #cms-le-drop-options button img {
   margin-right: 14px !important;
 }
+
 #cms-le-drop-options button img,
 #cms-le-drop-options button span {
   display: inline-block !important;
   vertical-align: middle !important;
 }
+
 #cms-le-drop-options button.le-cancel-drop {
   display: inline-block !important;
   width: auto !important;
