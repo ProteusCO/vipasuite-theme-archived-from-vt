@@ -321,19 +321,18 @@
 	background: center center transparent themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat;
 }
 
-//move this to @at-root of the loading-circle-spinner-nosmil mixin when issue is fixed in node-sass https://github.com/sass/node-sass/issues/559
-@mixin loading-circle-spin-animation() {
-	@keyframes loading-circle-spin {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
+@mixin loading-circle-spinner-nosmil() {
+	@at-root {
+		@keyframes loading-circle-spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
 		}
 	}
-}
 
-@mixin loading-circle-spinner-nosmil() {
 	display: block;
 	width: 40px;
 	height: 40px;
