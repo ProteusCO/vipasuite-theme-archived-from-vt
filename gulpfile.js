@@ -5,7 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('default', ['styles']);
 
 gulp.task('styles', function () {
-  return gulp.src('./Stylesheets/src/**')
+  return gulp.src('./Stylesheets/src/**/*.scss')
       .pipe(sass({
 			  outputStyle: 'nested'
 		  }))
