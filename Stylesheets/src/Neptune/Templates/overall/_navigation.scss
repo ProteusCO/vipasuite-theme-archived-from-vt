@@ -25,7 +25,7 @@
 		display: block;
 		padding: 5px;
 		padding-left: 10px;
-		@include transition(all 200ms);
+		transition: all 200ms;
 	}
 
 	.menu-t1 {
@@ -75,7 +75,7 @@
 							position: absolute;
 							right: 15px;
 							top: 13px;
-							@include transition(all 200ms);
+							transition: all 200ms;
 							opacity: 0.3;
 						}
 					}
@@ -87,7 +87,7 @@
 							&:after {
 								//fixme change to use an actual glyph override
 								color: $color-white;
-								@include transform(rotate(90deg));
+								transform: rotate(90deg);
 								opacity: 1;
 							}
 						}

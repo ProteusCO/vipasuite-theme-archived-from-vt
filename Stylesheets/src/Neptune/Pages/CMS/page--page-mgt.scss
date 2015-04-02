@@ -63,7 +63,7 @@
 					@include buttonGlyphOverride($color: $color-default-site-font);
 					background-color: $color-almost-white;
 					border: 1px solid $color-lighter-grey;
-					@include box-shadow(0 0 2px transparentize($color-black, 0.85) inset);
+					box-shadow: 0 0 2px transparentize($color-black, 0.85) inset;
 				}
 			}
 		}
@@ -267,7 +267,7 @@
 			}
 
 			&.dnd-feedback {
-				@include box-shadow(0 0 3px transparentize($color-black, 0.75));
+				box-shadow: 0 0 3px transparentize($color-black, 0.75);
 				border: 1px solid $color-grey;
 			}
 
@@ -430,7 +430,7 @@
 			max-width: 500px;
 			background-color: $color-white;
 			border-color: $color-lighter-grey;
-			@include box-shadow(0 0 4px transparentize($color-black, 0.8));
+			box-shadow: 0 0 4px transparentize($color-black, 0.8);
 		}
 
 		&.conditional .contentelement_actions:before {

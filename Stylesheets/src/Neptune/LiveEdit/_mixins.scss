@@ -112,7 +112,7 @@
 	margin: 0 !important;
 	height: auto !important;
 	text-decoration: none !important;
-	@include border-radius(0 !important);
+	border-radius: 0 !important;
 	@include buttonColors($color-blue, $color-white);
 
 	&:hover {

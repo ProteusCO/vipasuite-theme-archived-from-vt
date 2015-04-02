@@ -113,7 +113,7 @@
 	> td {
 		background-color: $color-white;
 		padding: 5px 8px;
-		@include transition(background-color 200ms);
+		transition: background-color 200ms;
 
 		//TODO underscore fix for HTML generation
 		&.action_column,
@@ -305,7 +305,7 @@
 	padding: $padding;
 	background-color: $color-white;
 	border: 1px solid $color-cloud-grey;
-	@include box-shadow(3px 3px 10px transparentize($color-black, 0.55));
+	box-shadow: 3px 3px 10px transparentize($color-black, 0.55);
 }
 
 @mixin style-inline-box($padding: 15px, $bgcolor: $color-white) {
@@ -321,19 +321,22 @@
 	background: center center transparent themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat;
 }
 
-@mixin loading-circle-spinner-nosmil() {
-	@include keyframes(loading-circle-spin) {
+//move this to @at-root of the loading-circle-spinner-nosmil mixin when issue is fixed in node-sass https://github.com/sass/node-sass/issues/559
+@mixin loading-circle-spin-animation() {
+	@keyframes loading-circle-spin {
 		0% {
-			@include transform(rotate(0deg));
+			transform: rotate(0deg);
 		}
 		100% {
-			@include transform(rotate(360deg));
+			transform: rotate(360deg);
 		}
 	}
+}
 
+@mixin loading-circle-spinner-nosmil() {
 	display: block;
 	width: 40px;
 	height: 40px;
 	background: center center transparent themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat;
-	@include animation(loading-circle-spin 1s infinite linear);
+	animation: loading-circle-spin 1s infinite linear;
 }

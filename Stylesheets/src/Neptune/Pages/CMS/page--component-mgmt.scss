@@ -25,7 +25,7 @@
 
 		ul.menu_items {
 			background-color: $color-white;
-			@include box-shadow(1px 1px 4px transparentize($color-black, 0.7));
+			box-shadow: 1px 1px 4px transparentize($color-black, 0.7);
 			padding: 10px 0;
 			top: 100%;
 			border: 1px solid $color-light-grey;

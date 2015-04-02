@@ -1,10 +1,12 @@
 @import "../../Config/_base-import";
 
+@include loading-circle-spin-animation;
+
 /*
 	overall.scss partial -	Base Elements
 */
 *, *:before, *:after {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 html, body, body > .page {
@@ -153,7 +155,7 @@ span.help-point {
 
 	&:focus {
 		border-color: $color-blue;
-		@include box-shadow(0 0 5px transparentize($color-blue, 0.75));
+		box-shadow: 0 0 5px transparentize($color-blue, 0.75);
 	}
 }
 
@@ -165,7 +167,7 @@ textarea {
 
 	&:focus {
 		border-color: $color-blue;
-		@include box-shadow(0 0 5px transparentize($color-blue, 0.75));
+		box-shadow: 0 0 5px transparentize($color-blue, 0.75);
 	}
 }
 
@@ -226,7 +228,7 @@ legend {
 			max-width: none;
 			max-height: none;
 			min-width: 0;
-			@include box-shadow(none);
+			box-shadow: none;
 		}
 	}
 
@@ -243,7 +245,7 @@ legend {
 //miwt ajax loading box;
 body > div.miwt-ajax-progress {
 	@include style-popup-box();
-	@include border-radius(0);
+	border-radius: 0;
 	min-height: 100px;
 
 	.label {

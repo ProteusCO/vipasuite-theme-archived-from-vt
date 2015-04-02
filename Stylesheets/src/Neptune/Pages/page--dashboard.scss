@@ -1,5 +1,7 @@
 @import "../Config/base-import";
 
+@include loading-circle-spin-animation;
+
 h2 {
 	margin-bottom: 5px;
 }
@@ -46,7 +48,7 @@ div.message {
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			@include transform(translate(-50%, -50%));
+			transform: translate(-50%, -50%);
 		}
 
 		.loading-status-label + .loading-status-icon {
@@ -184,7 +186,7 @@ div.message {
 		display: block;
 		margin: 0 5px 10px;
 		border: 3px solid $color-dark-grey;
-		@include transition(all 250ms);
+		transition: all 250ms;
 		text-decoration: none;
 
 		&:hover {
@@ -223,15 +225,15 @@ div.message {
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			@include transform(translateX(-50%) translateY(-50%));
-			@include transition(all 150ms);
+			transform: translateX(-50%) translateY(-50%);
+			transition: all 150ms;
 
 			&:before {
 				@include glyphAdd($html-entity-play, $size: 24px, $color: $color-white);
 				position: absolute;
 				left: 50%;
 				top: 50%;
-				@include transform(translateX(-40%) translateY(-50%));
+				transform: translateX(-40%) translateY(-50%);
 			}
 		}
 	}
@@ -240,7 +242,7 @@ div.message {
 		background-color: $color-light-charcoal;
 		color: $color-white;
 		padding: 10px;
-		@include transition(all 250ms);
+		transition: all 250ms;
 	}
 
 	.title {

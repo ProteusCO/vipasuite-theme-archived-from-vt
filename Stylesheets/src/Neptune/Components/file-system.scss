@@ -459,7 +459,7 @@ input.file-upload-browse {
 	padding: 20px;
 	margin: 15px auto 40px;
 	overflow: hidden;
-	@include transition(all 250ms, max-height 500ms 250ms);
+	transition: all 250ms, max-height 500ms 250ms;
 
 	.file-upload-browse.has-files & {
 		max-height: 90px;
@@ -517,31 +517,31 @@ input.file-upload-browse {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	@include box-shadow(0 0 3px transparentize($color-black, 0.8));
-	@include border-radius(2px);
-	@include translate(-50%, -50%);
-	@include transition(all 200ms);
+	box-shadow: 0 0 3px transparentize($color-black, 0.8);
+	border-radius: 2px;
+	transform: translate(-50%, -50%);
+	transition: all 200ms;
 }
 
 .drop-zone-file1 {
-	@include transform(translateX(-50%) translateY(-50%) rotateZ(-10deg));
+	transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);
 }
 
 .drop-zone-file3 {
-	@include transform(translateX(-50%) translateY(-50%) rotateZ(7deg));
+	transform: translateX(-50%) translateY(-50%) rotateZ(7deg);
 }
 
 .file-upload-drop-zone.zone-active {
 	.drop-zone-file {
-		@include box-shadow(1px 1px 5px transparentize($color-black, 0.6));
+		box-shadow: 1px 1px 5px transparentize($color-black, 0.6);
 	}
 
 	.drop-zone-file1 {
-		@include transform(translateX(-85%) translateY(-45%) rotateZ(-5deg));
+		transform: translateX(-85%) translateY(-45%) rotateZ(-5deg);
 	}
 
 	.drop-zone-file3 {
-		@include transform(translateX(-15%) translateY(-50%) rotateZ(10deg));
+		transform: translateX(-15%) translateY(-50%) rotateZ(10deg);
 	}
 }
 
@@ -595,7 +595,7 @@ input.file-upload-browse {
 		height: 37px;
 		width: 29px;
 		margin: 0 auto;
-		@include box-shadow(1px 1px 2px transparentize($color-black, 0.85));
+		box-shadow: 1px 1px 2px transparentize($color-black, 0.85);
 		border-radius: 2px;
 		border: 1px solid $color-lighter-grey;
 		border-bottom-color: $color-grey;

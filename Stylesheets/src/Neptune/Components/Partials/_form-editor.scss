@@ -252,7 +252,7 @@
 
 	.dnd-feedback {
 		max-width: 500px;
-		@include box-shadow(1px 1px 4px transparentize($color-black, 0.6));
+		box-shadow: 1px 1px 4px transparentize($color-black, 0.6);
 
 		.actions {
 			display: none;
@@ -324,7 +324,7 @@
 			}
 
 			> .name {
-				@include text-shadow(1px 1px 1px transparentize($color-black, 0.5));
+				text-shadow: 1px 1px 1px transparentize($color-black, 0.5);
 			}
 		}
 	}
@@ -349,7 +349,7 @@
 			}
 
 			> .name {
-				@include text-shadow(1px 1px 1px transparentize($color-black, 0.5));
+				text-shadow: 1px 1px 1px transparentize($color-black, 0.5);
 			}
 		}
 	}
@@ -412,7 +412,7 @@
 			color: $color-white;
 			margin-right: 10px;
 			text-decoration: none;
-			@include text-shadow(1px 1px 1px transparentize($color-black, 0.5));
+			text-shadow: 1px 1px 1px transparentize($color-black, 0.5);
 
 			&:before {
 				@include glyphAdd($html-entity-add);
@@ -837,7 +837,7 @@
 	padding-bottom: 20px;
 
 	.nodelist_wrapper {
-		@include box-shadow(0 0 3px transparentize($color-black, 0.5));
+		box-shadow: 0 0 3px transparentize($color-black, 0.5);
 	}
 
 	> .actions {
@@ -974,7 +974,7 @@
 			left: 100%;
 			top: 50%;
 			margin-left: 10px;
-			@include transform(translateY(-50%));
+			transform: translateY(-50%);
 		}
 	}
 }

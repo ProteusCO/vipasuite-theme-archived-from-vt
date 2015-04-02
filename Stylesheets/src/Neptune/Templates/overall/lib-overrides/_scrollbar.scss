@@ -9,7 +9,7 @@
 }
 
 .mCSB_scrollTools {
-	@include opacity(1);
+	opacity: 1;
 	width: 20px;
 
 	.mCSB_dragger {
@@ -17,7 +17,7 @@
 		&:active,
 		&.mCSB_dragger_onDrag {
 			.mCSB_dragger_bar {
-				@include opacity(1);
+				opacity: 1;
 				background-color: transparentize($color-black, 0.4);
 			}
 		}
@@ -33,6 +33,6 @@
 
 	.mCSB_draggerRail {
 		background-color: transparent;
-		@include opacity(1);
+		opacity: 1;
 	}
 }

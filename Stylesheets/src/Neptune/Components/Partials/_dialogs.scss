@@ -10,7 +10,7 @@
 		border: none;
 		padding: 0;
 		background-color: $color-white;
-		@include box-shadow(0 0 15px transparentize($color-black, 0.25));
+		box-shadow: 0 0 15px transparentize($color-black, 0.25);
 	}
 
 	.titlebar {

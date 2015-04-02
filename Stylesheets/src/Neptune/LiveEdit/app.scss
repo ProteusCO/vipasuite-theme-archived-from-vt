@@ -1,5 +1,4 @@
 @import "../Config/overall";
-@import "compass/css3";
 @import "../Mixins/general-mixins";
 @import "mixins";
 
@@ -41,13 +40,12 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   button {
     text-shadow: none !important;
-    @include box-shadow(none !important);
-    @include transition(none !important);
+    box-shadow: none !important;
+    transition: none !important;
   }
 
   article, aside, details, figcaption, figure, footer, header, menu, nav, section {
     display: block !important;
-    -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
   }
 
@@ -55,13 +53,11 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     padding: 0 0 0 40px !important;
     margin: 14px 0 !important;
     list-style: none !important;
-    -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
   }
 
   blockquote, q {
     quotes: none !important;
-    -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
   }
 
@@ -368,7 +364,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
   &.top {
     bottom: 100% !important;
     margin-bottom: -50px !important;
-    @include box-shadow(unquote("0 1px 4px rgba(50, 50, 50, 0.5) !important"));
+    box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
 
     &.hidden {
       margin-bottom: 0 !important;
@@ -382,7 +378,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   &.bottom {
     bottom: 0 !important;
-    @include box-shadow(unquote("0 -1px 4px rgba(50, 50, 50, 0.5) !important"));
+    box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
 
     &.hidden {
       margin-bottom: -50px !important;
@@ -706,7 +702,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
     margin-top: 11px !important;
     font-size: 14px !important;
     /*noinspection ALL*/
-    @include box-shadow(unquote("2px 2px 5px #{transparentize($color-black, 0.5)} !important"));
+    box-shadow: 2px 2px 5px transparentize($color-black, 0.5) !important;
   }
 
   &:checked {
@@ -862,7 +858,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
   font-family: $font-open-sans !important;
   -webkit-transition: all .25s;
   transition: all .25s;
-  @include box-shadow(unquote("0 0 5px #{transparentize($color-black, 0.5)} !important"));
+  box-shadow: 0 0 5px transparentize($color-black, 0.5) !important;
   /** FYI, you cannot use a drop-shadow filter with a transition - google chrome 25 */
 
   &:after,
@@ -1154,7 +1150,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       font-size: 12px !important;
       font-family: $font-open-sans-semi-bold !important;
       padding: 8px 10px !important;
-	    @include border-radius(0 !important);
+	    border-radius: 0 !important;
       background: $color-light-bluegrey !important;
       border: 0 none !important;
       border-top: 1px solid $color-lighter-bluegrey !important;
@@ -1256,7 +1252,7 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
       padding: 9px 10px !important;
       border: 0 none !important;
       margin: 0 !important;
-      @include box-sizing("border-box !important");
+      box-sizing: border-box !important;
     }
   }
 

@@ -70,7 +70,7 @@
 	div.entity_editor {
 		margin: .5em 1em;
 		padding: 8px;
-		@include box-shadow(0 1px 4px transparentize($color-black, 0.8));
+		box-shadow: 0 1px 4px transparentize($color-black, 0.8);
 	}
 
 	.help-point.disabled {

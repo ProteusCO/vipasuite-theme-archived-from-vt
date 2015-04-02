@@ -52,7 +52,7 @@
 		padding: 10px;
 		background-color: $color-white;
 		border: 1px solid $color-cloud-grey;
-		@include box-shadow(3px 3px 7px transparentize($color-black, 0.75));
+		box-shadow: 3px 3px 7px transparentize($color-black, 0.75);
 
 		&.selector-active {
 			display: block;

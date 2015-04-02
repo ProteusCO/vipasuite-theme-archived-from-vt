@@ -163,11 +163,11 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	@include translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	border: 1px solid $color-light-grey;
 	padding: 20px;
 	background-color: $color-white;
-	@include box-shadow(0 0 5px transparentize($color-black, 0.8));
+	box-shadow: 0 0 5px transparentize($color-black, 0.8);
 
 	div.heading {
 		@include style-h3;

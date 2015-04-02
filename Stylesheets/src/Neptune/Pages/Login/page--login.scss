@@ -62,7 +62,7 @@
 
 	.btn {
 		@include buttonColors($color-green);
-		@include box-shadow(0 0 7px transparentize($color-dark-blue, 0.3));
+		box-shadow: 0 0 7px transparentize($color-dark-blue, 0.3);
 		font-size: 18px;
 		padding: 7px 50px;
 	}
