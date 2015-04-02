@@ -741,7 +741,8 @@ $le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-
 
   .bottom & {
     &:checked {
-      &:before, /* Firefox doesn't seem to support multiple pseudo elements */
+	    /* Firefox doesn't seem to support multiple pseudo elements */
+      &:before,
       &:after {
         border-bottom-color: transparent !important;
         bottom: auto !important;
