@@ -3,12 +3,15 @@
 @import "../../../../Mixins/general-mixins";
 
 .select2-container--vipa {
-  @import "dropdown";
-  @import "single";
-  @import "multiple";
+	text-align: left;
 
-  text-align: left;
+	@import "dropdown";
+}
 
+@import "single";
+@import "multiple";
+
+.select2-container--vipa {
   .select2-search--dropdown {
     .select2-search__field {
       border: 1px solid $border-color;
