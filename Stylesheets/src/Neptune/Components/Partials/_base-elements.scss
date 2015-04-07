@@ -36,7 +36,9 @@ h4 {
 }
 
 //click to edit
-.click_to_edit {
+//fixme find all underscore versions and change to dash
+.click_to_edit,
+.click-to-edit {
 	> label {
 		margin-right: 5px;
 	}

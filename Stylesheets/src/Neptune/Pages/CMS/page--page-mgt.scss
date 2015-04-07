@@ -1013,17 +1013,20 @@
 		margin-bottom: 10px;
 	}
 
-	.add_new_page {
+	> .actions {
 		margin: 10px 0 5px;
 
 		.btn {
-			&.action_add {
+			&.add-new-page {
 				@include buttonGlyphAdd($html-entity-add);
+			}
+			&.configure-page-authorization {
+				@include buttonGlyphAdd($html-entity-gear);
 			}
 		}
 	}
 
-	.new_page {
+	.new-page {
 		@include style-inline-box($bgcolor: $color-almost-white);
 		margin: 10px 0;
 
@@ -1059,6 +1062,31 @@
 				//fixme add class to btn
 				@include buttonGlyphAdd($html-entity-delete);
 			}
+		}
+	}
+}
+
+.task {
+	&.prop-wrapper {
+		@include style-inline-box();
+
+		.prop-header-title {
+			@include style-h2;
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		.prop > label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.prop-footer {
+			margin-top: 10px;
+		}
+
+		.pager-top {
+			display: none;
 		}
 	}
 }
