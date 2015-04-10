@@ -290,18 +290,26 @@
         margin-bottom: 2px;
       }
 
-      .field-name {
+      .column-type,
+      .constraint-type {
         font-family: $font-open-sans-semi-bold;
       }
-      .field-type {
-        margin-left: 10px;
-        font-size: 11px;
 
-        &:before {
-          content: "(";
-        }
-        &:after {
-          content: ")";
+      .field-name {
+        font-family: $font-open-sans-semi-bold;
+
+        + .column-type,
+        + .constraint-type {
+          margin-left: 10px;
+          font-size: 11px;
+          font-family: $font-open-sans;
+
+          &:before {
+            content: "(";
+          }
+          &:after {
+            content: ")";
+          }
         }
       }
     }
