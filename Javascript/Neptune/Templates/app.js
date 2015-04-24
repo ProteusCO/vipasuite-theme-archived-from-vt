@@ -13,6 +13,45 @@
 
 	var isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false;
 
+	Handlebars.registerHelper('friendlyDate', function(datetime) {
+		return moment(datetime).calendar();
+	});
+
+	Handlebars.registerHelper('formatDate', function(datetime, format) {
+		return moment(datetime).format(format);
+	});
+
+	Handlebars.registerHelper('formatHtmlClass', function(str) {
+		return $.map(str.split(/\s+/), function(cls, idx) {
+			return '.' + cls;
+		}).join(', ');
+	});
+
+	Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+		switch (operator) {
+			case '==':
+				return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			case '===':
+				return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			case '<':
+				return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			case '<=':
+				return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			case '>':
+				return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			case '>=':
+				return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			case '&&':
+				return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			case '||':
+				return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			case '!=':
+				return (v1 != v2) ? options.fn(this) : options.inverse(this);
+			default:
+				return options.inverse(this);
+		}
+	});
+
 	function Menu(target, opts) {
 		var $root;
 		var CSS_OPEN_CLASS = 'mi-open';
@@ -102,6 +141,205 @@
 		};
 	}
 
+	function ContentElement(target, opts) {
+		var $target;
+		var pageContexts = {};
+		var transformedContext = {};
+		var originalContext = {};
+		var id;
+		var template;
+		var defaults = {
+			template: '/theme/ContentTemplates/page-element-main.hbs',
+			context: {
+				site: {},
+				page: {}
+			}
+		};
+		var settings = {};
+		var contextMessages = [];
+
+		function addContextMessage(message, type) {
+			contextMessages.push({
+				message: message,
+				cls: type
+			});
+		}
+
+		function transformComponentContext(info) {
+			var locales = $.map(settings.context.site.locales, function(locale, idx) {
+				return {
+					key: locale,
+					state: typeof info.state[locale] === 'undefined' ? 'unconfigured' : info.state[locale],
+					published: typeof info.published[locale] !== "undefined",
+					fallback: settings.context.site.fallback_locale == locale
+				};
+			});
+
+			transformedContext = {
+				site: settings.context.site,
+				pe: {
+					backend_edit_url: info.backend_edit_url,
+					component_identifier: info.component_identifier,
+					component_name: info.component_name,
+					html: {
+						id: info.html.id,
+						classes: info.html.class ? info.html.class.split(/\s+/) : []
+					},
+					icon: info.icon,
+					id: id.split('#')[1],
+					key: info.key,
+					labels: info.labels || [],
+					modified: info.modified,
+					modified_by: info.modified_by,
+					name: info.name,
+					locales: locales,
+					references: info.references,
+					visibility_condition: info.visibility_condition
+				}
+			};
+		}
+
+		function addPageContext(id, context) {
+			pageContexts[id] = context;
+		}
+
+		function getPageContext(id) {
+			return pageContexts[id];
+		}
+
+		function loadComponentContext() {
+			var dfd = $.Deferred();
+
+			$.when(liveEditService.loadComponentContext(id))
+				.then(function(data) {
+					originalContext = data;
+					transformComponentContext(originalContext);
+					dfd.resolve();
+				});
+
+			return dfd.promise();
+		}
+
+		function loadPageContext(pid) {
+			var dfd = $.Deferred();
+
+			$.when(liveEditService.loadPageContext(pid))
+				.then(function(data) {
+					originalContext = data;
+					transformComponentContext(originalContext);
+					dfd.resolve();
+				});
+
+			return dfd.promise();
+		}
+
+		function renderContext() {
+			console.log(originalContext.key, originalContext.name, originalContext.component_name, originalContext, transformedContext);
+			$target.after(template(transformedContext));
+
+/*
+				$.each(data.references, function(idx, reference) {
+					$.when(liveEditService.getPageInfo(reference[0]))
+						.then(function(data) {
+							console.log('reference page: ' + data.title + ' | /' + data.primary_path.path);
+
+						});
+				});*/
+		}
+
+		function handleClick(evt) {
+			if (evt.altKey) {
+				$.when(loadComponentContext())
+					.then(renderContext);
+			}
+		}
+
+		function init() {
+			settings = $.extend(true, {}, defaults, opts);
+			$target = $(target);
+			id = $target.data('pe');
+
+			if (typeof settings.template === 'string') {
+				$.get(settings.template, function(content) {
+					template = Handlebars.compile(content);
+					$target.on('click', handleClick);
+				});
+			} else {
+				template = settings.template;
+				$target.on('click', handleClick);
+			}
+
+		}
+
+		init();
+	}
+
+	function LiveEditService() {
+		var defaults = {
+			options: {
+				option: 'all',
+				url: ''
+			},
+			wsUrlBase: '/ws/le/',
+			wsUrlPage: '/ws/le/page'
+		};
+		var settings = {};
+
+		var siteId = "";
+		var siteUrl = "";
+		var dataInit = false;
+		var siteContext = {};
+
+		function loadPageElementContext(id) {
+			return $.get(settings.wsUrlBase + [siteId, 'pe', cleanPageElementId(id)].join('/'), settings.options);
+		}
+
+		function loadSiteContext() {
+			var dfd = $.Deferred();
+
+			if (dataInit) {
+				w.setTimeout(function() {
+					dfd.resolve(siteContext);
+				}, 1);
+			} else {
+				$.get(settings.wsUrlPage, settings.options, function(data) {
+					siteContext = data.site;
+					console.log(siteContext);
+					siteId = siteContext.id;
+					siteUrl = 'http://' + siteContext.default_hostname.name;
+
+					dataInit = true;
+
+					dfd.resolve(siteContext);
+				});
+			}
+
+			return dfd.promise();
+		}
+
+		function getSiteContext() {
+			return siteContext;
+		}
+
+		function cleanPageElementId(id) {
+			return id.replace('#', '');
+		}
+
+		function init(opts) {
+			settings = $.extend(true, {}, defaults, opts);
+
+			return loadSiteContext();
+		}
+
+		return {
+			init: init,
+			getSiteContext: getSiteContext,
+			loadSiteContext: loadSiteContext,
+			loadPageContext: loadPageElementContext,
+			loadComponentContext: loadPageElementContext
+		};
+	}
+
 	function destroySelectUpdates(context) {
 		var $con = $(context || document);
 
@@ -128,6 +366,25 @@
 					.filter('[data-features~="watch"]')
 					.on('change', miwt.observerFormSubmit);
 		}
+	}
+
+	function initContentElements(context) {
+		$.when(liveEditService.init({
+			options: {
+				url: 'http://' + $('.current-site span.hostname').text()
+			}
+		}), $.get('/theme/ContentTemplates/page-element-main.hbs')).then(function(les, templateXhr) {
+			var template = Handlebars.compile(templateXhr[0]);
+			var siteContext = liveEditService.getSiteContext();
+			$(context).find('.contentelement').each(function(idx, el) {
+				new ContentElement(el, {
+					context: {
+						site: siteContext
+					},
+					template: template
+				});
+			});
+		});
 	}
 
 	function initControls() {
@@ -175,9 +432,13 @@
 		//find elements
 		$appContentCon = $('.e-app-content');
 
+		//setup LiveEdit API
+		liveEditService = new LiveEditService();
+
 		//set up miwt interactions
 		$appContentCon.find('form.miwt-form').each(function() {
-			this.submit_options = {
+			var form = this;
+			form.submit_options = {
 				preProcessNode: function(data) {
 					destroySelectUpdates(document.getElementById(data.refid));
 					return data.content;
@@ -186,10 +447,14 @@
 					$.each(data, function(idx, d) {
 						initSelectUpdates(d.node);
 					});
+				},
+				postUpdate: function() {
+					initContentElements(form);
 				}
 			};
 
-			initSelectUpdates(this);
+			initContentElements(form);
+			initSelectUpdates(form);
 		});
 	}
 

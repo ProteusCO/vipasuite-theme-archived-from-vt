@@ -1,0 +1,61 @@
+<div class="page-element-info">
+    {{#if messages}}
+    <div class="message-container">
+        {{#each messages}}
+        <div class="message {{this.class}}">{{this.text}}</div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if pe.visibility_condition}}
+    <div class="pe-visibility-condition">Only visible when {{ pe.visibility_condition }}</div>
+    {{/if}}
+
+    <div class="pe-main-content">
+        <div class="pe-meta">
+            <div class="pe-modified">
+                Last Modified <time class="modified-at" title="{{ pe.modified }}">{{ friendlyDate pe.modified }}</time>
+                by <span class="modified-by">{{#if pe.modified_by}}{{ pe.modified_by }}{{else}}Unknown{{/if}}</span>
+            </div>
+            <div class="pe-id">#{{pe.id}}</div>
+            <div class="pe-permalink"><a href="{{ pe.backend_edit_url }}">Permalink</a></div>
+        </div>
+
+        <div class="pe-summary"></div>
+
+        {{#with pe.html}}
+        <div class="pe-html-attributes">
+            {{#if id}}<span class="html-id">#{{ id }}</span>{{/if}}
+            {{#if classes}}<span class="html-classes">{{#each classes}}<span class="html-class">.{{this}}</span>{{/each}}</span>{{/if}}
+        </div>
+        {{/with}}
+
+        {{#if pe.labels}}
+        <ul class="pe-labels">
+            {{#each pe.labels}}
+            <li class="pe-label">{{this}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+
+        <div class="pe-locales">
+            <span class="pe-info-heading">Locale Content</span>
+            <ul>
+                {{~#each pe.locales~}}
+                <li class="pe-locale pe-locale-state-{{this.state}} {{#if this.published}}pe-locale-published{{/if}}">
+                    {{~#if this.fallback}}<span class="pe-locale-fallback" title="This is the default fallback locale"></span>{{/if~}}
+                    <span class="pe-locale-key" title="Component {{#if this.published}}has{{else}}does not have{{/if}} published content for the '{{this.key}}' locale">{{this.key}}</span>
+                    {{~#if this.state}}<span class="pe-locale-state">{{this.state}}</span>{{/if~}}
+                </li>
+                {{~/each~}}
+            </ul>
+        </div>
+
+        {{#ifCond pe.references.length ">" 1}}
+        <div class="pe-shared">Shared in {{pe.references.length}} place{{#ifCond pe.references.length "!=" 1}}s{{/ifCond}}</div>
+        {{/ifCond}}
+
+        <div class="pe-search"><a href="/config/cms/component/{{ pe.component_identifier }}">View all <span class="pe-name">{{ pe.component_name }}</span> components</a></div>
+    </div>
+</div>

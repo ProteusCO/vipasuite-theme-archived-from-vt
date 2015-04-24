@@ -445,7 +445,7 @@
 
 		&.cs-pending .contentelement_actions:before {
 			content: "Pending";
-			background-color: $color-green;
+			background-color: $color-violet;
 		}
 
 		&.cs-draft .contentelement_actions:before {
@@ -1087,6 +1087,121 @@
 
 		.pager-top {
 			display: none;
+		}
+	}
+}
+
+.page-element-info {
+	@include style-inline-box($bgcolor: $color-almost-white, $padding: 0);
+	border-color: $color-light-grey;
+
+	.pe-info-heading {
+		font-family: $font-open-sans-bold;
+	}
+
+	.pe-locales {
+		ul {
+			@include resetMenu;
+		}
+	}
+
+	.pe-locale {
+		margin-right: 5px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+		width: 75px;
+		position: relative;
+
+		.pe-locale-key {
+			display: inline-block;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			background-color: $color-lighter-grey;
+			color: $color-grey;
+			border: 1px solid $color-grey;
+		}
+
+		.pe-locale-state {
+			margin-top: 5px;
+			padding: 2px 5px;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 10px;
+			line-height: 1.2;
+		}
+	}
+
+	.pe-locale-fallback {
+		&:before {
+			@include glyphAdd($html-entity-star, $size: 24px, $color: $color-gold);
+			position: absolute;
+			top: -3px;
+			right: 5px;
+			text-shadow: -1px 1px 0 $color-white;
+		}
+	}
+
+	.pe-locale-published {
+		.pe-locale-key {
+			background-color: $color-green;
+			color: $color-white;
+			border-color: $color-dark-green;
+		}
+	}
+
+	.pe-locale-state-unconfigured {
+		.pe-locale-state {
+			background-color: $color-orange;
+			color: $color-white;
+		}
+	}
+
+	.pe-locale-state-published {
+		.pe-locale-state {
+			display: none;
+		}
+	}
+
+	.pe-locale-state-draft {
+		.pe-locale-state {
+			background-color: $color-red;
+			color: $color-white;
+		}
+	}
+
+	.pe-locale-state-pending {
+		.pe-locale-state {
+			background-color: $color-violet;
+			color: $color-white;
+		}
+	}
+
+	.pe-main-content {
+		padding: 15px;
+		margin-top: -1px;
+	}
+
+	.pe-visibility-condition {
+		background-color: $color-light-blue;
+		border: 1px solid $color-blue;
+		color: $color-white;
+		margin-top: -1px;
+		padding: 10px;
+	}
+
+	.pe-meta {
+		float: right;
+		font-size: 12px;
+		color: $color-darker-grey;
+		text-align: right;
+	}
+
+	.pe-permalink {
+		a {
+			text-decoration: none;
 		}
 	}
 }
