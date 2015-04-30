@@ -157,6 +157,12 @@ jQuery(function($) {
 				}
 			});
 
+			var xAxisLabels = [];
+			for (var i=0; i < 7;i++) {
+				xAxisLabels.push(moment(dates.start).add(i, 'days').format('dddd, MMM D'))
+			}
+
+
 			$graphTarget.highcharts({
 				chart: {
 					type: 'column',
@@ -168,7 +174,7 @@ jQuery(function($) {
 					text: 'Time records for ' + dates.start.format('MMMM D, YYYY') + ' to ' + dates.end.format('MMMM D, YYYY')
 				},
 				xAxis: {
-					categories: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+					categories: xAxisLabels
 				},
 				yAxis: {
 					title: {
