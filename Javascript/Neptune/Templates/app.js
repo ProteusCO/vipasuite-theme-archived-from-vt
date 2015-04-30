@@ -450,6 +450,7 @@
 				},
 				postUpdate: function() {
 					initContentElements(form);
+					$(form).trigger('vs:miwt-post-update');
 				}
 			};
 
