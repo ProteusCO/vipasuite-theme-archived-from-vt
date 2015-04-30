@@ -424,3 +424,14 @@
 		border: 1px solid $color-lighter-grey;
 	}
 }
+
+.highcharts-legend-item {
+	a {
+		color: $color-blue;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

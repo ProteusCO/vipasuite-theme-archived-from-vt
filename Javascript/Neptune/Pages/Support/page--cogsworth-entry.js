@@ -99,6 +99,9 @@ jQuery(function($) {
 			ws: {
 				records: '',
 				projects: ''
+			},
+			pages: {
+				reporting: ''
 			}
 		};
 		var settings = {};
@@ -132,6 +135,9 @@ jQuery(function($) {
 		}
 
 		function renderOverallGraph($graphTarget, records, dates) {
+			var projects = _.unique(_.map(records, function(record) {
+				return record.project;
+			}));
 			var projectRecordGroups = _.groupBy(records, function(record) {
 				return record.project.id;
 			});
@@ -148,7 +154,10 @@ jQuery(function($) {
 					_.each(dayProjectRecords, function(projectRecord) {
 						dayProjectRecordTotal += projectRecord.duration;
 					});
-					days.push(+(dayProjectRecordTotal / 60).toFixed(2));
+					days.push({
+						project: project,
+						y: +(dayProjectRecordTotal / 60).toFixed(2)
+					});
 				}
 
 				return {
@@ -174,7 +183,8 @@ jQuery(function($) {
 					text: 'Time records for ' + dates.start.format('MMMM D, YYYY') + ' to ' + dates.end.format('MMMM D, YYYY')
 				},
 				xAxis: {
-					categories: xAxisLabels
+					categories: xAxisLabels,
+					crosshair: true
 				},
 				yAxis: {
 					title: {
@@ -183,15 +193,54 @@ jQuery(function($) {
 					max: 10,
 					tickInterval: 2
 				},
+				tooltip: {
+					formatter: function () {
+						var hasTime = false;
+						var s = '<b>' + this.x + '</b>';
+
+						$.each(this.points, function () {
+							if (this.y != 0) {
+								s += '<br /><span style="color:' + this.series.color + ';">\u25CF</span> ' + this.series.name + ': ' + this.y;
+								hasTime = true;
+							}
+						});
+
+						if (!hasTime) {
+							s += '<br />No Records';
+						}
+
+						return s;
+					},
+					shared: true
+				},
 				legend: {
 					align: 'right',
 					verticalAlign: 'top',
 					floating: false,
-					layout: 'vertical'
+					layout: 'vertical',
+					labelFormatter: function() {
+						return [
+							'<a href="',
+							settings.pages.reporting,
+							'?project=',
+							this.userOptions.data[0].project.id,
+							'">',
+							this.name,
+							'</a>'
+						].join('');
+					},
+					useHTML: true
 				},
 				plotOptions: {
 					column: {
 						stacking: 'normal'
+					},
+					series: {
+						events: {
+							legendItemClick: function () {
+								return false;
+							}
+						}
 					}
 				},
 				series: seriesData
@@ -222,6 +271,9 @@ jQuery(function($) {
 			}
 			if (!settings.ws.projects.length) {
 				settings.ws.projects = $target.data('wsProjects');
+			}
+			if (!settings.pages.reporting.length) {
+				settings.pages.reporting = $target.data('reporting');
 			}
 
 			$overallGraph = $(settings.selectors.overallGraph);
