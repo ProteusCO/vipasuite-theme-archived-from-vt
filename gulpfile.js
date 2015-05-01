@@ -50,3 +50,8 @@ gulp.task('live-edit', function() {
 	return gulp.src('./Stylesheets/build/Neptune/LiveEdit/app.css')
 		.pipe(gulp.dest('./LiveEdit/'));
 });
+
+gulp.task('javascript', function() {
+	return gulp.src('./Javascript/src/Neptune/simple/**/*.js')
+		.pipe(gulp.dest('./Javascript/build/Neptune/simple'));
+});
