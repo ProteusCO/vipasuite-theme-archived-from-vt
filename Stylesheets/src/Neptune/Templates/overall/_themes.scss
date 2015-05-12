@@ -22,6 +22,10 @@
 		}
 	}
 
+	.l-nav {
+		background-color: $bg-color-secondary;
+	}
+
 	.primary-nav {
 		.menu-t1 {
 			> .mi {
@@ -32,6 +36,10 @@
 
 				> .menuitemlabel {
 					background-color: $bg-color-secondary;
+
+					&:hover {
+						background-color: lighten($bg-color-secondary, 8%);
+					}
 				}
 			}
 		}
@@ -42,7 +50,7 @@
 	@include style-theme(
 	  $text-server: "QA",
 		$bg-color-primary: darken($color-dark-green, 15%),
-		$bg-color-secondary: $color-green,
+		$bg-color-secondary: $color-dark-green,
 		$font-color-primary: $color-white,
 	  $font-color-secondary: $color-white
 	);
@@ -52,7 +60,7 @@
 	@include style-theme(
 	  $text-server: "Draft",
 	  $bg-color-primary: $color-dark-red,
-	  $bg-color-secondary: lighten($color-dark-red, 20%),
+	  $bg-color-secondary: lighten($color-dark-red, 15%),
 	  $font-color-primary: $color-white,
 	  $font-color-secondary: $color-white
 	);
