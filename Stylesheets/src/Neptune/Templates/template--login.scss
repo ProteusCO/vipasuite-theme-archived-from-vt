@@ -11,6 +11,26 @@
 @import "../Components/Partials/buttons";
 @import "../Components/Partials/messages";
 
+@mixin style-login-theme($text-server, $bg-color-primary, $font-color-primary) {
+	.site-logo {
+		position: relative;
+
+		&:before {
+			content: $text-server;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -120px;
+			background-color: $bg-color-primary;
+			color: $font-color-primary;
+			padding: 3px 7px;
+			font-family: $font-open-sans-bold;
+			transform: rotate(-10deg);
+		}
+	}
+}
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -85,3 +105,18 @@ a {
 }
 
 
+.qa-vipasuite-com {
+	@include style-login-theme(
+	  $text-server: "QA",
+	  $bg-color-primary: darken($color-dark-green, 15%),
+	  $font-color-primary: $color-white
+	);
+}
+
+.draft-vipasuite-com {
+	@include style-login-theme(
+	  $text-server: "Draft",
+	  $bg-color-primary: $color-dark-red,
+	  $font-color-primary: $color-white
+	);
+}

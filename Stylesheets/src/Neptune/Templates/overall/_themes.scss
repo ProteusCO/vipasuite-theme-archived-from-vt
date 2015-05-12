@@ -1,0 +1,59 @@
+@import "../../Config/base-import";
+
+@mixin style-theme($text-server, $bg-color-primary, $bg-color-secondary, $font-color-primary, $font-color-secondary) {
+	.e-app-controls {
+		background-color: $bg-color-primary;
+	}
+
+	.site-logo {
+		position: relative;
+
+		&:before {
+			content: $text-server;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $color-charcoal;
+			color: $color-white;
+			padding: 3px 7px;
+			font-family: $font-open-sans-bold;
+			transform: rotate(-10deg);
+		}
+	}
+
+	.primary-nav {
+		.menu-t1 {
+			> .mi {
+
+				+ .mi {
+					border-top-color: darken($bg-color-secondary, 10%);
+				}
+
+				> .menuitemlabel {
+					background-color: $bg-color-secondary;
+				}
+			}
+		}
+	}
+}
+
+.qa-vipasuite-com {
+	@include style-theme(
+	  $text-server: "QA",
+		$bg-color-primary: darken($color-dark-green, 15%),
+		$bg-color-secondary: $color-green,
+		$font-color-primary: $color-white,
+	  $font-color-secondary: $color-white
+	);
+}
+
+.draft-vipasuite-com {
+	@include style-theme(
+	  $text-server: "Draft",
+	  $bg-color-primary: $color-dark-red,
+	  $bg-color-secondary: $color-red,
+	  $font-color-primary: $color-white,
+	  $font-color-secondary: $color-white
+	);
+}
