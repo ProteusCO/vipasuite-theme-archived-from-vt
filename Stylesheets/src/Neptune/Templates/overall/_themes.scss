@@ -52,7 +52,7 @@
 	@include style-theme(
 	  $text-server: "Draft",
 	  $bg-color-primary: $color-dark-red,
-	  $bg-color-secondary: $color-red,
+	  $bg-color-secondary: lighten($color-dark-red, 20%),
 	  $font-color-primary: $color-white,
 	  $font-color-secondary: $color-white
 	);
