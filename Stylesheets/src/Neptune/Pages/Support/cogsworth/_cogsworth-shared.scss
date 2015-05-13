@@ -1,0 +1,50 @@
+@import "../../../Config/base-import";
+
+.period-chooser {
+	margin-bottom: 10px;
+
+	.period-chooser-box {
+		display: table;
+	}
+
+	.period-action {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 5px;
+
+		&:before {
+			cursor: pointer;
+		}
+	}
+
+	.period-prev {
+		&:before {
+			@include glyphAdd($html-entity-arrow-left, $size: 20px);
+		}
+	}
+
+	.period-next {
+		&:before {
+			@include glyphAdd($html-entity-arrow-right, $size: 20px);
+		}
+	}
+
+	.period-display {
+		display: table-cell;
+		vertical-align: middle;
+		background-color: $color-white;
+		padding: 5px 10px;
+		border: 1px solid $color-lighter-grey;
+	}
+}
+
+.highcharts-legend-item {
+	a {
+		color: $color-blue;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

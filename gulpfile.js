@@ -5,6 +5,12 @@ var autoprefixer = require('gulp-autoprefixer');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
+var merge = require('merge-stream');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var browserify = require('browserify');
+var bulkify = require('bulkify');
+
 
 gulp.task('default', ['styles']);
 
@@ -52,6 +58,36 @@ gulp.task('live-edit', function() {
 });
 
 gulp.task('javascript', function() {
-	return gulp.src('./Javascript/src/Neptune/simple/**/*.js')
-		.pipe(gulp.dest('./Javascript/build/Neptune/simple'));
+	var tasks = [];
+	var BASE_SRC_DIR = './Javascript/src/Neptune';
+	var BASE_BUILD_DIR = './Javascript/build/Neptune';
+
+	function jsSrcPath(path) {
+		return BASE_SRC_DIR + path;
+	}
+
+	function jsBuildPath(path) {
+		return BASE_BUILD_DIR + path;
+	}
+
+	var simpleCopy = gulp.src(jsSrcPath('/simple/**/*.js'))
+		.pipe(gulp.dest(jsBuildPath('/simple')));
+
+
+	var cogsworthReportingUiBrowserify = browserify({
+		entries: jsSrcPath('/complex/cogsworth/reporting.module.js'),
+		debug: true,
+		transform: [bulkify]
+	});
+
+	var cogsworthReportingUi = cogsworthReportingUiBrowserify.bundle()
+		.pipe(source('reporting.bundle.js'))
+		.pipe(buffer())
+		.pipe(gulp.dest(jsBuildPath('/complex/cogsworth')));
+
+
+	tasks.push(simpleCopy);
+	tasks.push(cogsworthReportingUi);
+
+	return merge(tasks);
 });

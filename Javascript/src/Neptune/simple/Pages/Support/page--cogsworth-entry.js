@@ -222,7 +222,7 @@ jQuery(function($) {
 						return [
 							'<a href="',
 							settings.pages.reporting,
-							'?project=',
+							'#project=',
 							this.userOptions.data[0].project.id,
 							'">',
 							this.name,
