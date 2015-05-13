@@ -16,4 +16,10 @@ module
 		});
 
 		periodService.setPeriodDates(moment().startOf('week'));
+
+		$scope.enabled = periodService.isEnabled();
+
+		$scope.enable = function() {
+			periodService.enable($scope.enabled);
+		};
 	}]);

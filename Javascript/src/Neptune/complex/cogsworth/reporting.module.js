@@ -56,12 +56,20 @@ module.exports = angular.module('reporting', [
 		var endDate = null;
 		var DEFAULT_PERIOD_AMOUNT = 6;
 		var DEFAULT_PERIOD_UNIT = 'days';
+		var enabled = false;
 
 		self.getPeriodDates = function() {
-			return {
-				start: startDate,
-				end: endDate
-			};
+			if (self.isEnabled()) {
+				return {
+					start: startDate,
+					end: endDate
+				};
+			} else {
+				return {
+					start: null,
+					end: null
+				};
+			}
 		};
 
 		self.setPeriodDates = function setPeriodDates(newStartDate, newEndDate) {
@@ -75,6 +83,16 @@ module.exports = angular.module('reporting', [
 			//move it 1 extra unit in the direction it is changing to make sure the current unit is not included
 			var changeAmount = (amount > 0 ? 1 : -1) + (DEFAULT_PERIOD_AMOUNT * amount);
 			self.setPeriodDates(self.getPeriodDates().start.add(changeAmount, DEFAULT_PERIOD_UNIT));
+		};
+
+		self.isEnabled = function isEnabled() {
+			return enabled;
+		};
+
+		self.enable = function enable(isEnabled) {
+			enabled = isEnabled;
+
+			$rootScope.$emit(self.events.UPDATE);
 		};
 
 		self.events = {
