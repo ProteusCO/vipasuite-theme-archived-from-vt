@@ -35,12 +35,23 @@ module.exports = angular.module('reporting', [
 	.service('recordService', ['$rootScope', function($rootScope) {
 		var self = this;
 		var records = [];
+		var principals = [];
 
-		self.getRecords = function() {
+		self.getPrincipals = function getPrincipals() {
+			return principals;
+		};
+
+		self.setPrincipals = function setPrincipals(newPrincipals) {
+			principals = newPrincipals;
+
+			$rootScope.$emit(self.events.UPDATE);
+		};
+
+		self.getRecords = function getRecords() {
 			return records;
 		};
 
-		self.setRecords = function(newRecords) {
+		self.setRecords = function setRecords(newRecords) {
 			records = newRecords;
 
 			$rootScope.$emit(self.events.UPDATE);
@@ -108,6 +119,7 @@ module.exports = angular.module('reporting', [
 				var dates = periodService.getPeriodDates();
 				$http.get(WEB_SERVICES.RECORDS, {
 					params: {
+						"principal": recordService.getPrincipals().length ? '' : 'all',
 						"project": $routeParams.project,
 						"dstart": dates.start ? dates.start.format('YYYY-MM-DD') : '',
 						"dend": dates.end ? dates.end.format('YYYY-MM-DD') : ''
