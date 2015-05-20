@@ -227,7 +227,7 @@
 	}
 
 
-	.dnd-target-active {
+	div.dnd-target-active {
 		&:before {
 			content: " ";
 			position: absolute;
@@ -238,13 +238,13 @@
 		}
 	}
 
-	.dnd-target-active-above {
+	div.dnd-target-active-above {
 		&:before {
 			bottom: 100%;
 		}
 	}
 
-	.dnd-target-active-below {
+	div.dnd-target-active-below {
 		&:before {
 			top: 100%;
 		}
@@ -257,6 +257,12 @@
 		.actions {
 			display: none;
 		}
+	}
+
+	tr.dnd-feedback {
+		//Fix me.  This is a temp workaround because of how the DnD feedback element works and changes
+		//the <tr> to display block and it still contains td cells
+		display: table !important;
 	}
 
 	// tabs content
