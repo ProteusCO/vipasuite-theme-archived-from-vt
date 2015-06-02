@@ -76,6 +76,20 @@
 					}
 				}
 
+				&.name,
+				&.displayname,
+				&.schema {
+					input {
+						width: 400px;
+					}
+				}
+
+				&.description {
+					textarea {
+						width: 400px;
+					}
+				}
+
 				&.state {
 					.btn {
 						margin-left: 5px;
