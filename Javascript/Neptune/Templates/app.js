@@ -2,6 +2,7 @@
 	var $appControlsCon, $siteLocaleComponent, $navCon;
 	var $appContentCon;
 
+	var CSS_CLASS_PARENT = 'mi-parent';
 	var CSS_CLASS_HAS_SITE_LOCALE = 'has-site-locale';
 	var CSS_CLASS_SELECT_INIT = 'select2-init';
 	var CSS_CLASS_ACTIVE = 'mi-active';
@@ -15,7 +16,7 @@
 
 	function Menu(target, opts) {
 		var $root;
-		var CSS_OPEN_CLASS = 'mi-open';
+		var CSS_CLASS_OPEN = 'mi-open';
 		var STORAGE_CONCAT_CHAR = '|';
 		var $menuParents;
 		var id;
@@ -25,7 +26,7 @@
 				return;
 			}
 
-			var openParentIds = $menuParents.filter('.' + CSS_OPEN_CLASS)
+			var openParentIds = $menuParents.filter('.' + CSS_CLASS_OPEN)
 					.map(function () {
 						return this.id;
 					})
@@ -68,12 +69,17 @@
 		}
 
 		function openParents(parents) {
-			$(parents).addClass(CSS_OPEN_CLASS);
+			$(parents || $menuParents).addClass(CSS_CLASS_OPEN);
+			saveState();
+		}
+
+		function closeParents(parents) {
+			$(parents || $menuParents).removeClass(CSS_CLASS_OPEN);
 			saveState();
 		}
 
 		function toggleOpen(el) {
-			$(el).toggleClass(CSS_OPEN_CLASS);
+			$(el).toggleClass(CSS_CLASS_OPEN);
 			saveState();
 		}
 
@@ -82,13 +88,22 @@
 			id = $root.attr('id');
 
 			//cache parents
-			$menuParents = $root.find('.mi-parent');
+			$menuParents = $root.find('.' + CSS_CLASS_PARENT);
 
 			//remove parents with empty children
 			$menuParents.find(' > .menu:empty').parent().remove();
 
 			$menuParents.on('click', '.menuitemlabel', function(evt) {
-				toggleOpen(this.parentNode);
+				var $parent = $(this).closest('.' + CSS_CLASS_PARENT);
+				if (evt.altKey) {
+					if ($parent.hasClass(CSS_CLASS_OPEN)) {
+						closeParents();
+					} else {
+						openParents();
+					}
+				} else {
+					toggleOpen(this.parentNode);
+				}
 			});
 
 			loadState();
