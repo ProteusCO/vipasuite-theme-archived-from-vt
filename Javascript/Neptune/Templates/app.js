@@ -95,7 +95,7 @@
 
 			$menuParents.on('click', '.menuitemlabel', function(evt) {
 				var $parent = $(this).closest('.' + CSS_CLASS_PARENT);
-				if (evt.altKey) {
+				if (evt.altKey || evt.ctrlKey) {
 					if ($parent.hasClass(CSS_CLASS_OPEN)) {
 						closeParents();
 					} else {

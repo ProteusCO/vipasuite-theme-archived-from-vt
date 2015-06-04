@@ -57,7 +57,7 @@
 				var title = isOpened ? 'Expand' : 'Collapse';
 				evt.preventDefault();
 
-				if (evt.altKey) {
+				if (evt.altKey || evt.ctrlKey) {
 					if (isOpened) {
 						$sourceFiles.removeClass(CSS_CLASS_OPENED);
 						title = 'Expand';
