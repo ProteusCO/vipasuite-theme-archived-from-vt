@@ -96,7 +96,7 @@
 		}
 	}
 
-	.task_view-con {
+	.task-view-con {
 		vertical-align: top;
 		width: 100%;
 	}
@@ -648,8 +648,8 @@
 
 //style and function management
 .saf-mgt {
-	.se_box {
-		& + .se_box {
+	.se-box {
+		& + .se-box {
 			margin-top: 20px;
 		}
 
@@ -669,14 +669,14 @@
 			.btn {
 				@include buttonGlyphAdd($html-entity-nbsp);
 
-				&.action_upload {
+				&.action-upload {
 					@include buttonGlyphOverride($html-entity-upload);
 				}
-				&.new_file_button {
+				&.new-file-button {
 					@include buttonGlyphOverride($html-entity-add);
 					margin-right: 10px;
 				}
-				&.attach_file_button {
+				&.attach-file-button {
 					@include buttonGlyphOverride($html-entity-attachment);
 				}
 				&.collapse {
@@ -692,23 +692,23 @@
 		.bbl {
 			margin: 10px 0;
 
-			.se_box {
+			.se-box {
 				padding: 10px 10px 10px 20px;
 
-				+ .se_box {
+				+ .se-box {
 					margin-top: 0;
 				}
 			}
 		}
 
-		.bbl_button {
+		.bbl-button {
 			display: block;
 			width: 100%;
 			text-align: left;
 		}
 	}
 
-	.nde_actions {
+	.nde-actions {
 		.btn {
 			@include buttonGlyphOnly($html-entity-nbsp);
 
@@ -718,7 +718,7 @@
 			&.edit {
 				@include buttonStyleEditGlyph;
 			}
-			&.dependency_button {
+			&.dependency-button {
 				@include buttonGlyphOverride($html-entity-fixme);
 			}
 			&.rename {
@@ -824,7 +824,7 @@
 
 
 .page_editor {
-	.page_actions {
+	.page-actions {
 		float: right;
 		margin-top: 4px;
 
