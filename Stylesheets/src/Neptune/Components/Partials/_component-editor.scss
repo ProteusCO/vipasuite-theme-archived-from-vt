@@ -12,7 +12,7 @@
 	}
 
 	.editor {
-		.common_view {
+		.common-view {
 			background-color: $color-cloud-grey;
 			border: 1px solid $color-lighter-grey;
 			border-bottom-color: $color-lighter-grey;
@@ -24,7 +24,7 @@
 				margin-right: 5px;
 			}
 
-			.workflow_state {
+			.workflow-state {
 				margin-left: 10px;
 
 				.separator {
@@ -33,7 +33,7 @@
 			}
 		}
 
-		.editor_actions {
+		.editor-actions {
 			span.help-point {
 				margin-right: 5px;
 				font-size: 12px;
@@ -52,17 +52,17 @@
 			}
 
 			.btn {
-				&.action_save,
-				&.action_save_exit {
+				&.action-save,
+				&.action-save-exit {
 					@include buttonGlyphAdd($html-entity-success);
 				}
-				&.action_cancel {
+				&.action-cancel {
 					@include buttonGlyphAdd($html-entity-cancel);
 				}
 			}
 		}
 
-		.menu_pe_options {
+		.menu-pe-options {
 			@include resetMenu;
 			margin-top: 10px;
 
@@ -107,7 +107,7 @@
 			}
 		}
 
-		.pe_option_view {
+		.pe-option-view {
 			margin: -1px -10px -10px;
 			padding: 10px;
 			background-color: $color-smokey-white;
@@ -193,12 +193,12 @@
 			}
 		}
 
-		.editor_tabs {
+		.editor-tabs {
 			@include style-inline-box();
 			border-top: 0 none;
 		}
 
-		div.content_history {
+		div.content-history {
 			padding: 10px;
 			margin: 0;
 			border: 1px solid $color-cloud-grey;
@@ -216,7 +216,7 @@
 			}
 		}
 
-		a.load_history_action {
+		a.load-history-action {
 			margin: 5px 0 0;
 			border: 0 none;
 			max-width: 550px;
@@ -229,7 +229,7 @@
 			}
 		}
 
-		table.content_history {
+		table.content-history {
 			margin-top: 5px;
 			border: 1px solid $color-lighter-grey;
 		}
@@ -241,7 +241,7 @@
 	}
 }
 
-.editor_content {
+.editor-content {
 	background-color: $color-white;
 	border: 1px solid $color-lighter-grey;
 	border-top: 0 none;
@@ -593,7 +593,7 @@
 	}
 
 	&.FreeMarkerComponent_editor {
-		.editor_content {
+		.editor-content {
 			padding-top: 0;
 			padding-bottom: 0;
 			border-bottom: 0 none;
@@ -605,7 +605,7 @@
 			}
 		}
 
-		.editor_tabs {
+		.editor-tabs {
 			border-top: 0 none;
 		}
 
@@ -794,11 +794,11 @@
 	}
 
 	&.LoginBean_editor {
-		.editor_content {
+		.editor-content {
 			border-bottom: 0 none;
 		}
 
-		.editor_tabs {
+		.editor-tabs {
 			.tal {
 				@include style-form-label;
 				display: block;
@@ -853,7 +853,7 @@
 	}
 
 	&.FormEntryBean_editor {
-		.editor_content {
+		.editor-content {
 			> div {
 				margin: 5px 0;
 
@@ -981,7 +981,7 @@
 	}
 
 	&.LocaleSelector_editor {
-		.editor_content {
+		.editor-content {
 			label {
 				@include style-form-label;
 				margin-right: 5px;

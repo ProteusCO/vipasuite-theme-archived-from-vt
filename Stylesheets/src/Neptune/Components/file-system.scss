@@ -156,7 +156,7 @@
 		@include style-h2;
 	}
 
-	.button_back {
+	.button-back {
 		float: right;
 	}
 }
@@ -204,20 +204,20 @@
 	margin-right: 15px;
 
 	.btn {
-		&.action_updir {
+		&.action-updir {
 			@include buttonGlyphAdd($html-entity-folder-up);
 		}
-		&.action_upload {
+		&.action-upload {
 			@include buttonGlyphAdd($html-entity-upload);
 		}
-		&.action_download {
+		&.action-download {
 			@include buttonGlyphAdd($html-entity-download);
 			margin-right: 5px;
 		}
 	}
 }
 
-.file_tree_extra_toolbar {
+.file-tree-extra-toolbar {
 	display: inline-block;
 	vertical-align: middle;
 	margin-bottom: 5px;
@@ -371,11 +371,11 @@
 
 
 /* file upload UI */
-div.file_upload_container {
+div.file-upload-container {
 	position: relative;
 }
 
-span.file_upload_title {
+span.file-upload-title {
 	@include style-h2;
 	display: block;
 	margin-bottom: 30px;
@@ -386,17 +386,17 @@ span.file_upload_title {
 	}
 }
 
-div.file_upload {
+div.file-upload {
 	margin-right: 340px;
 }
 
-div.file_upload_data {
+div.file-upload-data {
 	label {
 		display: none;
 	}
 }
 
-div.upload_options {
+div.upload-options {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -427,15 +427,15 @@ div.upload_options {
 	}
 }
 
-div.upload_actions {
+div.upload-actions {
 	margin: 30px 340px 0 0;
 	text-align: center;
 
 	.btn {
-		&.button_continue {
+		&.button-continue {
 			@include buttonGlyphAdd($html-entity-success);
 		}
-		&.button_abort {
+		&.button-abort {
 			@include buttonGlyphAdd($html-entity-cancel);
 		}
 	}
@@ -569,7 +569,7 @@ input.file-upload-browse {
 	}
 }
 
-.file-upload {
+.file-upload-file {
 	.file-upload-part {
 		display: table-cell;
 		vertical-align: middle;

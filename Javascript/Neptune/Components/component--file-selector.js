@@ -70,7 +70,7 @@
 				var lm = file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() : 'n/a';
 				var fileExtImg =  _self._settings.imgBase + ext + '.gif';
 
-				var $file = $('<div class="file-upload nopreview" />').appendTo($fileList);
+				var $file = $('<div class="file-upload-file nopreview" />').appendTo($fileList);
 				var $preview = $('<span class="file-preview file-upload-part" />').appendTo($file);
 				var $info = $('<span class="file-info file-upload-part" />').appendTo($file);
 				var $actions = $('<span class="file-actions file-upload-part" />').appendTo($file);
@@ -298,19 +298,8 @@
 	function initFileSelectors(con) {
 		$(con).find('div.file-upload-browse').each(function() {
 			new FileSelector(this, {
-				dropZone: $(this).closest('.file_upload_container')
+				dropZone: $(this).closest('.file-upload-container')
 			});
-		});
-
-		cleanCheckboxSpacing();
-	}
-
-	function cleanCheckboxSpacing() {
-		//remove nbsp elements
-		$('.upload_options .ctb input[type=checkbox]').each(function() {
-			if (this.nextSibling.nodeValue == '\u00a0') {
-				this.parentNode.removeChild(this.nextSibling);
-			}
 		});
 	}
 
@@ -340,9 +329,7 @@
 		});
 	}
 
-	if (!global.cms || !global.cms.file || !global.cms.file.DnD) {
-		$(d).ready(cleanCheckboxSpacing);
-	} else {
+	if (global.cms && global.cms.file && global.cms.file.DnD) {
 		$(d).ready(init);
 	}
 

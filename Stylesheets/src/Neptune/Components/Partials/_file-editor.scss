@@ -1,30 +1,31 @@
 @import "../../Config/base-import";
 
-.file_editor {
+.nde-editor,
+.file-editor {
 	> .help-point.disabled {
 		display: none;
 	}
 
-	.file_editor_title {
+	.file-editor-title {
 		@include style-h2;
 		display: block;
 		margin-right: 5px;
 	}
 
-	.file_editor_controls {
+	.file-editor-controls {
 		text-align: center;
 		margin: 10px 0;
 
 		.btn {
 
-			&.action_save,
-			&.action_save_exit {
+			&.action-save,
+			&.action-save-exit {
 				@include buttonGlyphAdd($html-entity-success);
 			}
-			&.action_save {
+			&.action-save {
 				margin-left: 5px;
 			}
-			&.action_exit {
+			&.action-exit {
 				@include buttonGlyphAdd($html-entity-cancel);
 			}
 		}
