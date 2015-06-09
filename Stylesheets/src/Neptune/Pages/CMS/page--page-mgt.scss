@@ -5,12 +5,16 @@
 
 .pagemanagement {
 	.workspace {
-		width: 100%;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
 	}
 
-	.selection_pane_slider-con {
-		vertical-align: top;
+	.selection-pane-slider {
+		position: relative;
 		padding-right: 10px;
+		-webkit-flex-shrink: 0;
+		flex-shrink: 0;
 
 		.control_bar {
 
@@ -68,40 +72,35 @@
 			}
 		}
 
-		.show_hide-con {
-			vertical-align: top;
+		&.show {
+			border-left: 5px solid $color-light-grey;
+			height: 300px;
+			padding-left: 0;
+			padding-right: 40px;
 
-			&.show-con {
-				border-left: 5px solid $color-light-grey;
-				height: 300px;
-				padding-left: 5px;
-				padding-right: 10px;
+			.show-hide {
+				right: 19px;
+				@include buttonGlyphOverride($html-entity-arrow-right);
 			}
+		}
 
-			.btn {
-				@include buttonGlyphOnly($html-entity-nbsp);
-
-				&.show_hide {
-					margin-top: 21px;
-
-					&.hide {
-						@include buttonGlyphOverride($html-entity-arrow-left);
-						margin-left: -15px;
-					}
-					&.show {
-						@include buttonGlyphOverride($html-entity-arrow-right);
-					}
-				}
-			}
+		.show-hide {
+			position: absolute;
+			top: 21px;
+			right: 10px;
+			@include buttonGlyphOnly($html-entity-arrow-left);
 		}
 	}
 
-	.task-view-con {
-		vertical-align: top;
-		width: 100%;
+	.task-view {
+		-ms-flex: 1 0 auto;
+		-webkit-flex-shrink: 1;
+		flex-shrink: 1;
+		-webkit-flex-grow: 1;
+		flex-grow: 1;
 	}
 
-	.page_selector {
+	.page-selector {
 		min-width: 200px;
 
 		table.page_element_tree {
@@ -116,7 +115,7 @@
 			}
 		}
 
-		.se_selected_site_element{
+		.se_selected_site_element {
 			background-color: $color-cornsilk;
 		}
 
@@ -130,7 +129,7 @@
 
 	.component_selector {
 		&.tab-content {
-			min-width: 250px;
+			width: 250px;
 		}
 
 		&,
