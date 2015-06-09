@@ -3,9 +3,7 @@
   "description": "A theme for the VipaSuite backend. Originally started at the end of 2014.",
   "version": "1.0",
   "theme-directory": "Neptune",
-  /* Directory where files exist in: Design, Javascript, and Stylesheets */
   "theme-uri": "theme",
-  /* Used To Resolve Resources In Design Folder. FileServer path mapped to "Design/${theme-directory}". */
   "template-configuration": [
     {
       "id": [ "t-neptune-login" ],
@@ -16,7 +14,7 @@
       "id": [ "t-no-content-styles", "t-neptune-protected" ],
       "description": "Protected interior pages",
       "css": [ "Templates/overall.css" ],
-      "js": [
+      "javascript": [
         "Libs/modernizr.custom.js",
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.mCustomScrollbar.concat.min.js",
@@ -28,14 +26,14 @@
       "id": [ "t-neptune-unprotected" ],
       "description": "Unprotected interior pages",
       "css": [ "Templates/template--unprotected.css" ],
-      "js": [ "Libs/modernizr.custom.js" ]
+      "javascript": [ "Libs/modernizr.custom.js" ]
     }
   ],
   "page-configuration": [
     {
       "path": [ "account/login" ],
       "css": [ "Pages/Login/page--login.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.placeholdr.js",
         "Pages/Login/page--login.js"
@@ -48,7 +46,7 @@
     {
       "path": [ "account/reset-password" ],
       "css": [ "Pages/Login/page--reset-password.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.placeholdr.js",
         "Pages/Login/page--reset-password.js"
@@ -57,7 +55,7 @@
     {
       "path": [ "account/reset-password-complete" ],
       "css": [ "Pages/Login/page--login.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.placeholdr.js",
         "Pages/Login/page--login.js"
@@ -69,7 +67,7 @@
     {
       "path": [ "config/dashboard" ],
       "css": [ "Pages/page--dashboard.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js"
       ]
     },
@@ -97,10 +95,6 @@
       "css": [ "Pages/Application/page--data-provider-mgt.css" ]
     },
     {
-      "path": [ "config/application/email-template" ],
-      "css": [ "Pages/Application/page--email-template-mgt.css" ]
-    },
-    {
       "path": [ "config/application/label" ],
       "css": [ "Pages/Application/page--label-mgt.css" ]
     },
@@ -110,6 +104,10 @@
     },
 
 
+    {
+      "path": [ "config/email/template" ],
+      "css": [ "Pages/Application/page--email-template-mgt.css" ]
+    },
 
     {
       "path": [ "config/cms/article" ],
@@ -125,7 +123,7 @@
     {
       "path": [ "config/cms/file-system" ],
       "css": [ "Pages/CMS/page--file-mgt.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/dnd-file-vipa.js",
         "Components/component--file-selector.js"
@@ -311,7 +309,7 @@
     {
       "path": [ "config/system/scripts" ],
       "css": [ "Pages/System/page--scripts.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.waypoints.min.js",
         "Libs/jquery.sticky.js",
@@ -377,7 +375,7 @@
     {
       "path": [ "support/cogsworth" ],
       "css": [ "Pages/Support/page--cogsworth-entry.css" ],
-      "js": [
+      "javascript": [
         "Libs/moment.min.js",
         "Libs/jquery-2.1.1.min.js",
         "Pages/Support/page--cogsworth-entry.js"
@@ -390,7 +388,7 @@
     {
       "path": [ "support/customer-care" ],
       "css": [ "Pages/Support/page--support.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.fancybox.pack.js",
         "Libs/jquery.linkify.js",
@@ -403,7 +401,7 @@
         "Pages/Support/page--support.css",
         "Pages/Support/page--my-requests.css"
       ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Libs/jquery.fancybox.pack.js",
         "Libs/jquery.linkify.js",
@@ -413,7 +411,7 @@
     {
       "path": [ "support/traffic" ],
       "css": [ "Pages/Support/page--server-traffic.css" ],
-      "js": [
+      "javascript": [
         "Libs/jquery-2.1.1.min.js",
         "Pages/Support/page--traffic.js"
       ]
