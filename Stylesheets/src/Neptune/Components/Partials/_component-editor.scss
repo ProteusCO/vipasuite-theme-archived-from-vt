@@ -1,5 +1,6 @@
 @import "../../Config/base-import";
 
+@import "email-template-editor";
 /*
 	Component partial -	Component editor
 */
@@ -1071,6 +1072,93 @@
 				&.action-bottom {
 					@include buttonGlyphOverride($html-entity-move-bottom);
 				}
+			}
+		}
+	}
+
+	&.CreateLoginBean_editor {
+		.prop-group {
+			margin: 15px 0;
+
+			.prop {
+				margin-top: 2px;
+
+				label {
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.prop-group-title {
+			@include style-form-label;
+		}
+
+		.prop.html-version {
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+
+		.ctb {
+			input[type=checkbox] {
+				margin: 0 3px;
+			}
+		}
+
+		.instructions {
+			@include style-message-warning;
+			margin: 5px 0;
+		}
+
+		.eula_text,
+		.eula_required_text {
+			label {
+				@include style-form-label;
+				display: block;
+				margin: 5px;
+			}
+		}
+
+		.eula_required_text {
+			margin-top: 15px;
+		}
+
+		.tab-content {
+			> div {
+				> .ctb,
+				> .submit_btn_text,
+				> .landing_link,
+				> .role,
+				> .status,
+				> .selector,
+				> .send_email,
+				> .require_email,
+				> .email-template-selector {
+					margin: 10px 0;
+					display: block;
+
+					> label {
+						@include style-form-label;
+						margin-right: 5px;
+					}
+				}
+
+				> .send_email,
+				> .require_email {
+					> .ctb > label {
+						@include style-form-label;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+
+		.email-template-selector {
+			.actions {
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 5px;
 			}
 		}
 	}
