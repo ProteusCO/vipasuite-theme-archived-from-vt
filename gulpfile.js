@@ -5,10 +5,15 @@ var autoprefixer = require('gulp-autoprefixer');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
+var del = require('del');
 
-gulp.task('default', ['styles']);
+gulp.task('default', ['clean', 'styles']);
 
-gulp.task('styles', function () {
+gulp.task('clean', function(cb) {
+	del(['./Stylesheets/build/**'], cb);
+});
+
+gulp.task('styles', ['clean'], function () {
 	return gulp.src('./Stylesheets/src/**/*.scss')
 		.pipe(sass({
 			outputStyle: 'expanded'
