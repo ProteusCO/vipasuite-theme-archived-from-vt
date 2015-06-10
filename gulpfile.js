@@ -6,14 +6,20 @@ var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
 var del = require('del');
+var zip = require('gulp-zip');
+var streamqueue = require('streamqueue');
 
 gulp.task('default', ['clean', 'styles']);
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', ['clean:styles', 'clean:dist']);
+gulp.task('clean:styles', function(cb) {
 	del(['./Stylesheets/build/**'], cb);
 });
+gulp.task('clean:dist', function(cb) {
+	del(['./dist/**'], cb);
+});
 
-gulp.task('styles', ['clean'], function () {
+gulp.task('styles:build', ['clean:styles'], function () {
 	return gulp.src('./Stylesheets/src/**/*.scss')
 		.pipe(sass({
 			outputStyle: 'expanded'
@@ -24,6 +30,8 @@ gulp.task('styles', ['clean'], function () {
 		}))
 		.pipe(gulp.dest('./Stylesheets/build'));
 });
+
+gulp.task('styles', ['live-edit:build']);
 
 gulp.task('iconfont', function(){
 	return gulp.src('./FontGlyphs/src/icons/*.svg')
@@ -51,7 +59,34 @@ gulp.task('iconfont', function(){
 		.pipe(gulp.dest('./Design/Neptune/Fonts/GlyphLib/'));
 });
 
-gulp.task('live-edit', function() {
+gulp.task('live-edit:build', ['styles:build'], function() {
 	return gulp.src('./Stylesheets/build/Neptune/LiveEdit/app.css')
 		.pipe(gulp.dest('./LiveEdit/'));
+});
+
+gulp.task('dist', ['clean:dist', 'live-edit:build'], function() {
+	var stream = streamqueue({ objectMode: true });
+
+	stream.queue(
+		gulp.src('./manifest.json')
+	);
+
+	stream.queue(
+		gulp.src('./Design/**/*', {base: '.'})
+	);
+
+	stream.queue(
+		gulp.src('./Javascript/**/*', {base: '.'})
+	);
+
+	stream.queue(
+		gulp.src('./Stylesheets/build/**/*', {base: '.'})
+			.pipe(rename({
+				dirname: 'Stylesheets/Neptune'
+			}))
+	);
+
+	return stream.done()
+		.pipe(zip('theme.zip'))
+		.pipe(gulp.dest('./dist/'));
 });
