@@ -68,7 +68,7 @@ gulp.task('dist', ['clean:dist', 'live-edit:build'], function() {
 	var stream = streamqueue({ objectMode: true });
 
 	stream.queue(
-		gulp.src('./manifest.json')
+		gulp.src('./config/manifest.json')
 	);
 
 	stream.queue(
