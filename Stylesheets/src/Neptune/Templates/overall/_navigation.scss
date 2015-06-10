@@ -126,6 +126,9 @@
 			&.nav-app-group {
 				@include navMenuIconOverride($html-entity-monitor);
 			}
+			&.nav-email-group {
+				@include navMenuIconOverride($html-entity-mail);
+			}
 			&.nav-user-group {
 				//fixme get different icon
 				@include navMenuIconOverride($html-entity-profile);
@@ -344,8 +347,22 @@
 			&.nav-action-trigger {
 				@include navMenuIconOverride($html-entity-action-trigger-mgt);
 			}
+
+			//Email
 			&.nav-email-template {
 				@include navMenuIconOverride($html-entity-email-template-mgt);
+			}
+			//fixme add icon
+			&.nav-email-tracking {
+				@include navMenuIconOverride($html-entity-message-mgt);
+			}
+			//fixme add icon
+			&.nav-email-verified-senders {
+				@include navMenuIconOverride($html-entity-message-mgt);
+			}
+			//fixme add icon
+			&.nav-email-blacklist {
+				@include navMenuIconOverride($html-entity-message-mgt);
 			}
 
 			//User Section
