@@ -16,6 +16,7 @@
     "gulp-zip": "^3.0.2",
     "lodash": "^3.6.0",
     "streamqueue": "^1.1.0",
-    "underscore": "^1.8.2"
+    "underscore": "^1.8.2",
+    "vinyl-paths": "^1.0.0"
   }
 }

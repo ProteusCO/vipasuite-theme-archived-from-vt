@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var del = require('del');
 var zip = require('gulp-zip');
 var streamqueue = require('streamqueue');
+var vinylPaths = require('vinyl-paths');
 
 gulp.task('default', ['clean', 'styles']);
 
@@ -61,6 +62,7 @@ gulp.task('iconfont', function(){
 
 gulp.task('live-edit:build', ['styles:build'], function() {
 	return gulp.src('./Stylesheets/build/Neptune/LiveEdit/app.css')
+		.pipe(vinylPaths(del))
 		.pipe(gulp.dest('./LiveEdit/'));
 });
 
