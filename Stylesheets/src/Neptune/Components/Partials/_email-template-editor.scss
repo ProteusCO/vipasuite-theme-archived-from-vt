@@ -1,6 +1,6 @@
 @import "../../Config/base-import";
 
-.email_template_editor {
+.email-template-editor {
 	//fixme there is an inline style that is included that is bad
 	// <style scoped="scoped">.prompt-close .actions, .discard-changes-prompt{text-align:center; line-height:2;}</style>
 
@@ -25,7 +25,7 @@
 			&.cancel {
 				@include buttonGlyphAdd($html-entity-cancel);
 			}
-			&.send_test_email {
+			&.send-test-email {
 				@include buttonGlyphAdd($html-entity-mail);
 			}
 		}
@@ -148,7 +148,7 @@
 		margin: 0 0 10px;
 	}
 
-	.test_actions {
+	.test-actions {
 		.btn {
 			&.send {
 				@include buttonGlyphAdd($html-entity-mail);
