@@ -12,7 +12,7 @@
     "gulp-consolidate": "^0.1.2",
     "gulp-iconfont": "^1.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.0-alpha.1",
+    "gulp-sass": "^2.0.1",
     "gulp-zip": "^3.0.2",
     "lodash": "^3.6.0",
     "streamqueue": "^1.1.0",

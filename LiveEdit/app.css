@@ -185,10 +185,10 @@
   margin: 0 !important;
   border: 0 !important;
   border-right: 1px solid #d9d9d9 !important;
-  -webkit-transition-duration: 0.2s !important;
+  -webkit-transition-duration: .2s !important;
   -webkit-transition-property: background, color, opacity !important;
-  -webkit-transition-duration: 0.2s !important;
-  transition-duration: 0.2s !important;
+  -webkit-transition-duration: .2s !important;
+  transition-duration: .2s !important;
   -webkit-transition-property: background, color, opacity !important;
   transition-property: background, color, opacity !important;
   box-shadow: none !important;
