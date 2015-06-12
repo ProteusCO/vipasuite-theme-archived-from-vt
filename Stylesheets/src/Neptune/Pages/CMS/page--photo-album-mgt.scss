@@ -63,14 +63,14 @@ div.photos {
 		}
 
 		.btn {
-			&.action_upload {
+			&.action-upload {
 				@include buttonGlyphAdd($html-entity-upload);
 			}
-			&.action_save,
-			&.action_save_exit {
+			&.action-save,
+			&.action-save-exit {
 				@include buttonGlyphAdd($html-entity-success);
 			}
-			&.action_exit {
+			&.action-exit {
 				@include buttonGlyphAdd($html-entity-close);
 			}
 		}
@@ -141,7 +141,7 @@ div.photos {
 	}
 }
 
-.file_upload_container {
+.file-upload-container {
 	//fixme needs HTML updates badly
 
 	.albumname {
@@ -155,17 +155,17 @@ div.photos {
 		@include style-message-warning;
 	}
 
-	.file_upload,
+	.file-upload,
 	.publish {
 		margin: 5px 0;
 	}
 
-	.file_upload_label {
+	.file-upload-label {
 		@include style-form-label;
 		margin-right: 5px;
 	}
 
-	.upload_actions {
+	.upload-actions {
 		margin-top: 15px;
 
 		.btn {
