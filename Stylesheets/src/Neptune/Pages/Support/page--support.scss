@@ -285,7 +285,7 @@ $color-work-order-font: #7d6318;
 			margin-top: 5px;
 		}
 
-		.file_upload {
+		.file-upload {
 			margin-top: 5px;
 		}
 	}
@@ -411,7 +411,7 @@ $color-work-order-font: #7d6318;
 	}
 }
 
-.file_upload {
+.file-upload {
 	.btn {
 		&.remove {
 			@include buttonStyleRemoveGlyph();
@@ -729,7 +729,7 @@ div.note {
 		}
 
 		.note_content > div,
-		.file_upload .multi_file_upload {
+		.file-upload .multi-file-upload {
 			margin: 5px 0;
 			margin-left: 30px;
 			width: 80%;
@@ -753,14 +753,14 @@ div.reply_note_component {
 	//fixme have to override since i dont have classes to tell me enough
 	.add_note {
 		.note_content > div,
-		.file_upload .multi_file_upload {
+		.file-upload .multi-file-upload {
 			width: 100%;
 			margin-left: 0;
 		}
 	}
 
 	.fields,
-	.file_upload,
+	.file-upload,
 	.required_permission,
 	.field_editor {
 		display: inline-block;
@@ -801,18 +801,18 @@ div.issue_add_note_component {
 	//fixme have to override since i dont have classes to tell me enough
 	.add_note {
 		.note_content > div,
-		.file_upload .multi_file_upload {
+		.file-upload .multi-file-upload {
 			width: 100%;
 			margin-left: 0;
 		}
 
-		.file_upload .multi_file_upload {
+		.file-upload .multi-file-upload {
 			margin-top: 0;
 		}
 	}
 
 	.fields,
-	.file_upload,
+	.file-upload,
 	.required_permission,
 	.field_editor {
 		display: inline-block;
