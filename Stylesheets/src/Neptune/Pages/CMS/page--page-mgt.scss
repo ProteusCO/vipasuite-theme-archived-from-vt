@@ -860,13 +860,13 @@
 
 
 	//file upload
-	.file_upload_container {
-		.file_upload_title {
+	.file-upload-container {
+		.file-upload-title {
 			@include style-h2;
 			margin-bottom: 15px;
 		}
 
-		.file_upload {
+		.file-upload {
 			margin: 15px 0;
 		}
 
@@ -874,7 +874,7 @@
 			@include style-form-label;
 		}
 
-		.file_upload_data {
+		.file-upload-data {
 			margin: 10px 0;
 
 			label {
@@ -901,7 +901,7 @@
 			@include style-form-label;
 		}
 
-		.upload_options {
+		.upload-options {
 			margin: 15px 0;
 
 			.media_type {
@@ -910,7 +910,7 @@
 				}
 			}
 
-			.option_overwrite,
+			.option-overwrite,
 			.media_type {
 				margin: 5px 0;
 			}
