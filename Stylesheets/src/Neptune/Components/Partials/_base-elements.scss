@@ -78,7 +78,12 @@ h4 {
 //code mirror
 .CodeMirror {
 	border: 1px solid $color-cloud-grey;
+
+	&.CodeMirror-fullscreen {
+		z-index: 9999;
+	}
 }
+
 
 //help points
 span.help-point {
