@@ -364,6 +364,10 @@
 			&.nav-email-blacklist {
 				@include navMenuIconOverride($html-entity-message-mgt);
 			}
+			//fixme add icon
+			&.nav-email-complaint {
+				@include navMenuIconOverride($html-entity-message-mgt);
+			}
 
 			//User Section
 			&.nav-backend-user {
