@@ -83,8 +83,8 @@ gulp.task('dist', ['clean:dist', 'live-edit:build'], function() {
 
 	stream.queue(
 		gulp.src('./Stylesheets/build/**/*', {base: '.'})
-			.pipe(rename({
-				dirname: 'Stylesheets/Neptune'
+			.pipe(rename(function(path) {
+				path.dirname = path.dirname.replace('\\build', '');
 			}))
 	);
 

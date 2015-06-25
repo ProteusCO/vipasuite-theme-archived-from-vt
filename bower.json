@@ -1,6 +1,6 @@
 {
   "name": "neptune-theme",
-  "version": "1.2",
+  "version": "1.2.0",
   "ignore": [
     "**/.*",
     "node_modules",
