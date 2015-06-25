@@ -1,7 +1,7 @@
 {
   "name": "VipaSuite Neptune Backend Theme",
   "description": "A theme for the VipaSuite backend. Originally started at the end of 2014.",
-  "version": 1.2,
+  "version": "1.2.0",
   "theme-directory": "Neptune",
   "theme-uri": "theme",
   "template-configuration": [
