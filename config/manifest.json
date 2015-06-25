@@ -41,7 +41,7 @@
     },
     {
       "path": [ "account/preferences" ],
-      "css": [ "Pages/Login/page--preferences.css" ]
+      "css": [ "Pages/Account/page--preferences.css" ]
     },
     {
       "path": [ "account/reset-password" ],
