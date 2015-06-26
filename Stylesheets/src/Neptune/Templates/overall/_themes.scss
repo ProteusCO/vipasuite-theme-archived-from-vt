@@ -46,7 +46,7 @@
 	}
 }
 
-.qa-vipasuite-com {
+body[class|=qa] {
 	@include style-theme(
 	  $text-server: "QA",
 		$bg-color-primary: darken($color-dark-green, 15%),
@@ -56,11 +56,21 @@
 	);
 }
 
-.draft-vipasuite-com {
+body[class|=draft] {
 	@include style-theme(
 	  $text-server: "Draft",
 	  $bg-color-primary: $color-dark-red,
 	  $bg-color-secondary: lighten($color-dark-red, 15%),
+	  $font-color-primary: $color-white,
+	  $font-color-secondary: $color-white
+	);
+}
+
+body[class$=vdm-vipasuite-com] {
+	@include style-theme(
+	  $text-server: "Dev Box",
+	  $bg-color-primary: $color-charcoal,
+	  $bg-color-secondary: lighten($color-charcoal, 15%),
 	  $font-color-primary: $color-white,
 	  $font-color-secondary: $color-white
 	);
