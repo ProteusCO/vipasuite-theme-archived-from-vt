@@ -810,6 +810,61 @@
 	}
 }
 
+//expression editor
+.expression {
+	> .search {
+		margin: 5px 0;
+
+		.results {
+			max-height: 300px;
+			overflow-y: auto;
+			max-width: 50%;
+			border: 1px solid #ccc;
+			margin-top: 5px;
+			min-width: 500px;
+
+			&:empty {
+				display: none;
+			}
+		}
+
+		.result {
+			display: block;
+			padding: 5px;
+			font-family: $font-open-sans-semi-bold;
+			background-color: $color-white;
+
+			&:after {
+				content: attr(title);
+				display: block;
+				margin-left: 20px;
+				font-family: $font-open-sans-italic;
+			}
+
+			&:before {
+				content: "";
+				display: inline-block;
+				margin-right: 5px;
+				width: 15px;
+				text-align: center;
+				font-family: $font-open-sans;
+			}
+
+			&:nth-child(even) {
+				background-color: $color-almost-white;
+			}
+
+			&.function:before {
+				content: $html-entity-function;
+			}
+
+			&.variable:before {
+				content: "v";
+			}
+		}
+	}
+}
+
 //condition popup
 .new_condition,
 .select_existing_condition {

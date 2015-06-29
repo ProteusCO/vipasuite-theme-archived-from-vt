@@ -66,6 +66,7 @@ $font-default-size: 13px;
 
 $html-entity-nbsp: "\a0";
 $html-entity-rarr: "\2192";
+$html-entity-function: "\192";
 @import "font-glyph-entity-aliases";
 
 $bp-mobile-landscape: (min-width 480px);
