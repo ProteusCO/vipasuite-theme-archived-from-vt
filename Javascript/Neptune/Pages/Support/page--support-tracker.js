@@ -1,4 +1,5 @@
 jQuery(function($) {
+	var waypoint;
 
 	function titleFormat(obj) {
 		var $a = obj.element,
@@ -55,6 +56,20 @@ jQuery(function($) {
 		});
 	}
 
+	function updateWaypoints() {
+		//set up sticky menu nav
+		$('#issue_tracker').find('.action_group').each(function(){
+			var $actionGroup = $(this);
+			if ($actionGroup.data('sticky-init')) {
+				$actionGroup.sticky('update');
+			} else {
+				$actionGroup.sticky();
+				$actionGroup.sticky('update');
+				$actionGroup.data('sticky-init', true);
+			}
+		});
+	}
+
 	function it_postUpdate(data){
 		var nodes = $(data.nodesUpdated);
 		nodes.each(updateAnchors);
@@ -64,6 +79,7 @@ jQuery(function($) {
 				$(this).remove();
 			}
 		});
+		updateWaypoints();
 	}
 
 
@@ -113,6 +129,7 @@ jQuery(function($) {
 		form.submit_options.onSubmit = it_onSubmit;
 
 		updateAnchors();
+		updateWaypoints();
 	});
 
 

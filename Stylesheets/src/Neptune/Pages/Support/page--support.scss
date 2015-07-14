@@ -17,6 +17,8 @@ $color-resolved-font: #20601f;
 $color-work-order-bg: #fee08b;
 $color-work-order-font: #7d6318;
 
+$right-gutter-spacing: 140px + 20px;
+
 @mixin legendStatusTableCell($color-font, $color-bg) {
 	border-color: $color-bg;
 	background-color: change_color($color-bg, $lightness: 97%);
@@ -590,6 +592,15 @@ div.note {
 
 //issue view
 .issue_view {
+
+	.is-sticky {
+		width: 140px;
+
+		div.action_group {
+			padding-top: 10px;
+		}
+	}
+
 	div.action_group {
 		float: right;
 		width: 140px;
@@ -625,7 +636,7 @@ div.note {
 			&.action_history {
 				@include buttonGlyphOverride($html-entity-clock);
 			}
-			&.action_delete {
+			&.action-delete {
 				@include buttonGlyphOverride($html-entity-delete);
 			}
 		}
@@ -647,7 +658,14 @@ div.note {
 		margin-right: 15px;
 	}
 
-	.property_editor {
+	.issue_view_component,
+	.issue_add_note_component,
+	.issue_view_note_component {
+		margin-right: $right-gutter-spacing;
+	}
+
+	.property-editor {
+		margin-right: $right-gutter-spacing;
 		div.issue_field {
 			//fixme get user_entry_required classes
 			&.field_CONTACTNAME,
@@ -696,7 +714,6 @@ div.note {
 			&.field_DESCRIPTION > div {
 				display: block;
 				margin-left: 30px;
-				width: 80%;
 			}
 
 			&.field_DESCRIPTION > div {

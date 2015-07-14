@@ -390,6 +390,8 @@
       "css": [ "Pages/Support/page--support.css" ],
       "javascript": [
         "Libs/jquery-2.1.1.min.js",
+        "Libs/jquery.waypoints.min.js",
+        "Libs/jquery.sticky.js",
         "Libs/jquery.fancybox.pack.js",
         "Libs/jquery.linkify.js",
         "Pages/Support/page--support-tracker.js"
@@ -403,6 +405,8 @@
       ],
       "javascript": [
         "Libs/jquery-2.1.1.min.js",
+        "Libs/jquery.waypoints.min.js",
+        "Libs/jquery.sticky.js",
         "Libs/jquery.fancybox.pack.js",
         "Libs/jquery.linkify.js",
         "Pages/Support/page--support-tracker.js"
