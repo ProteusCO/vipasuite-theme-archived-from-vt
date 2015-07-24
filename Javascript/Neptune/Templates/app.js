@@ -136,7 +136,7 @@
 			$con = $con.find('select');
 		}
 
-		if ($con.length && !$con.closest('tr[data-dnd-source-def]').length) {
+		if ($con.length && !($con.closest('.cke_dialog').length || $con.closest('tr[data-dnd-source-def]').length)) {
 			$con
 					.select2(DEFAULT_SELECT_OPTIONS)
 					.addClass(CSS_CLASS_SELECT_INIT)
@@ -192,6 +192,8 @@
 
 		//set up miwt interactions
 		$appContentCon.find('form.miwt-form').each(function() {
+			var form = this;
+
 			this.submit_options = {
 				preProcessNode: function(data) {
 					destroySelectUpdates(document.getElementById(data.refid));
@@ -201,6 +203,9 @@
 					$.each(data, function(idx, d) {
 						initSelectUpdates(d.node);
 					});
+				},
+				postUpdate: function() {
+					$(form).trigger('vs:miwt-post-update');
 				}
 			};
 
