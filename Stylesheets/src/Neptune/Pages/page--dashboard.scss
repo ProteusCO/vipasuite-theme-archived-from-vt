@@ -4,14 +4,6 @@ h2 {
 	margin-bottom: 5px;
 }
 
-div.message {
-	padding: 15px;
-
-	&:before {
-		display: none;
-	}
-}
-
 .dashboard-charts {
 	position: relative;
 	@include clearfix;
