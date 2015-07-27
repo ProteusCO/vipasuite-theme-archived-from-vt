@@ -287,9 +287,7 @@ $right-gutter-spacing: 140px + 20px;
 			margin-top: 5px;
 		}
 
-		.file-upload {
-			margin-top: 5px;
-		}
+		
 	}
 
 	div.message_line {
@@ -724,16 +722,6 @@ div.note {
 				overflow-y: auto;
 			}
 		}
-		div.field_SUMMARY,
-		div.field_THIRDPARTYID2 {
-		    margin-right: 30px;
-		}
-		
-		div.field_SUMMARY input,
-		div.field_THIRDPARTYID2 input,
-		div.field_THIRDPARTYID2 .instructions {
-		    width: 100%;
-		}
 
 		.instructions {
 			@include style-message-info;
@@ -757,11 +745,8 @@ div.note {
 
 		.note_content > div,
 		.file-upload .multi-file-upload {
-			margin-top: 5px;
+			margin: 5px 0;
 			margin-left: 30px;
-		}
-		.file-upload {
-		    margin-top: 10px;
 		}
 	}
 }
