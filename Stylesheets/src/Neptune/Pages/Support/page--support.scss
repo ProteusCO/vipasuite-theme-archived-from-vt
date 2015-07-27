@@ -287,9 +287,7 @@ $right-gutter-spacing: 140px + 20px;
 			margin-top: 5px;
 		}
 
-		.file-upload {
-			margin-top: 5px;
-		}
+		
 	}
 
 	div.message_line {
@@ -730,7 +728,6 @@ div.note {
 			display: block;
 			margin: 5px 0;
 			margin-left: 30px;
-			width: 80%;
 
 			//really don't want to do this but need to since I won't change HTML til later
 			p {
@@ -740,6 +737,7 @@ div.note {
 	}
 
 	.add_note {
+		margin-right: $right-gutter-spacing;
 		label {
 			padding: 3px;
 			font-family: $font-open-sans-semi-bold;
@@ -749,7 +747,6 @@ div.note {
 		.file-upload .multi-file-upload {
 			margin: 5px 0;
 			margin-left: 30px;
-			width: 80%;
 		}
 	}
 }
