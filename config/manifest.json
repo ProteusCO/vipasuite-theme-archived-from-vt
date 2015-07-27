@@ -106,7 +106,7 @@
 
     {
       "path": [ "config/email/template" ],
-      "css": [ "Pages/Application/page--email-template-mgt.css" ]
+      "css": [ "Pages/Email/page--template-mgt.css" ]
     },
 
     {
