@@ -1,0 +1,28 @@
+@import "../../Config/_base-import";
+
+@import "../../Components/Partials/_email-template-editor";
+
+.searchui-app-hc {
+	.search_suppliers {
+		margin-bottom: 10px;
+
+		> label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+	}
+
+	.search-results {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.copy {
+				@include buttonStyleCopyGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}

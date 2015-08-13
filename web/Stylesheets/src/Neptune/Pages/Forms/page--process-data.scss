@@ -1,0 +1,311 @@
+@import "../../Config/_base-import";
+
+@import "../../Components/Partials/_desktop";
+@import "../../Components/Partials/_form-editor";
+
+.search_results  {
+	.btn {
+		&.view_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+	}
+}
+
+.bpi_details {
+	.help-point.disabled {
+		display: none;
+	}
+
+	.pager-top {
+		display: none;
+	}
+
+	.bpi {
+		.btn {
+			&.refresh {
+				@include buttonGlyphAdd($html-entity-refresh);
+				float: right;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.general {
+		> .btn {
+			&.delete {
+				@include buttonGlyphAdd($html-entity-delete);
+				float: right;
+			}
+		}
+
+		.prop {
+			margin: 10px 0;
+
+			label {
+				@include style-form-label;
+				margin-right:10px;
+			}
+
+			.edit_status {
+				.actions,
+				.status {
+					display: inline-block;
+				}
+
+				.actions {
+					margin-left: 10px;
+				}
+			}
+		}
+
+		.metadata {
+			> label {
+				display: block;
+			}
+
+			> div {
+				@include style-inline-box($padding: 10px, $bgcolor: $color-almost-white);
+				display: inline-block;
+
+				.extra_row {
+					+ .extra_row {
+						margin-top: 5px;
+					}
+				}
+
+				.extra_value_name {
+					@include style-form-label;
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.admin_note_add {
+			margin-top: 5px;
+		}
+
+		.btn {
+			&.change_status {
+				@include buttonStyleSmall;
+				@include buttonGlyphAdd($html-entity-edit);
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.message_viewer {
+		.to,
+		.from,
+		.subject {
+			margin: 10px 0;
+
+			label {
+				@include style-form-label;
+				display: inline-block;
+				margin-right: 10px;
+				width: 55px;
+			}
+		}
+
+		.body {
+			@include style-inline-box($bgcolor: $color-almost-white);
+			font-family: $font-monospace;
+			margin: 10px 0;
+		}
+	}
+}
+
+.bpr_viewer_FormDataBusinessProcessResource {
+	@include style-inline-box();
+}
+
+//fix this ui with tabs
+.bpr_viewer_UserBusinessProcessResource {
+	@include style-tab-elements;
+	width: 100%;
+
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.name_form {
+		margin: 10px 0;
+
+		.part {
+			display: inline-block;
+			margin-right: 5px;
+
+			.label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+		}
+	}
+
+	.gender,
+	.birthdate {
+		margin: 10px 0;
+	}
+
+	fieldset {
+		margin-top: 10px;
+
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.action-up {
+				@include buttonGlyphOnly($html-entity-move-up);
+			}
+			&.action-down {
+				@include buttonGlyphOnly($html-entity-move-down);
+			}
+			&.remove {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
+
+//fixme this is copied from table-row-editor and should be fixed eventually
+.bpr_viewer_TableRowBusinessProcessResource {
+	@include style-inline-box();
+}
+
+.table_row {
+	display: table;
+	width: 100%;
+
+	.column {
+		display: table-row;
+
+		.cell {
+			display: table-cell;
+			vertical-align: top;
+			text-align: left;
+			padding: 10px;
+
+			&:empty {
+				padding: 0;
+			}
+
+			> .field {
+				&.file {
+					.actions {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+
+		> .label {
+			min-width: 200px;
+
+			label {
+				@include style-form-label;
+			}
+		}
+
+		> .val {
+			> input[type=text] {
+				width: 250px;
+			}
+
+			> .rtb {
+				+ .rtb {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+.default_single_ref {
+	> .content {
+		> .table_row {
+			border-collapse: collapse;
+			border: 1px solid $color-light-grey;
+
+			> .column {
+				> .label {
+					width: 15%;
+					background-color: $color-almost-white;
+				}
+
+				> .cell {
+					border: 1px dotted $color-grey;
+				}
+			}
+		}
+
+		> .entity_actions {
+			float: none;
+			padding: 10px;
+			border: 1px solid $color-light-grey;
+			border-bottom: none;
+			background: $color-almost-white;
+			text-align: right;
+		}
+	}
+}
+
+.no_selected_ref,
+.expression_single_ref {
+	> .content {
+		padding: 10px;
+		border: 1px solid $color-light-grey;
+		clear: both;
+		background: $color-almost-white;
+		display: table;
+		width: 100%;
+
+		> .table_row {
+			display: table-row;
+
+			> .row_expression,
+			> .entity_actions {
+				display: table-cell;
+			}
+
+			> .entity_actions {
+				width: 1%;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+.no_selected_ref {
+	> .content {
+		> .table_row {
+			> .no_selection_text {
+				font-family: $font-open-sans-italic;
+			}
+		}
+	}
+}
+
+.row_reference {
+	h2 {
+		@include style-h4;
+		margin: 0 0 10px;
+	}
+}
+
+.check_box_editor {
+	.ctb {
+		display: inline-block;
+		vertical-align: top;
+		width: 200px;
+		margin: 0 0 5px;
+		padding-right: 30px;
+
+		label {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+}

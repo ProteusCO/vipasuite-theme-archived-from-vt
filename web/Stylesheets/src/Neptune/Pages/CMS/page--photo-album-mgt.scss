@@ -1,0 +1,180 @@
+@import "../../Config/_base-import";
+
+.help-point.cms-photo_album {
+	float: right;
+}
+
+.album_listing {
+	.entity_actions {
+		.btn {
+			&.action_add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+
+		margin-bottom: 10px;
+	}
+
+	.pager-albums {
+		margin: 10px 0;
+
+		.action-column {
+			.btn {
+				&.remove {
+					@include buttonStyleDeleteGlyph();
+				}
+			}
+		}
+	}
+}
+
+div.photos {
+	.album_heading {
+		margin-bottom: 10px;
+
+		.label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.value {
+			width: 350px;
+		}
+
+		.edit {
+			//fixme add btn class
+			@include buttonBase;
+			@include buttonGlyphAdd($html-entity-lock);
+			margin-left: 5px;
+		}
+	}
+
+	.album_actions {
+		margin: 10px 0;
+		width: 100%;
+
+		.photo_count {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		.buttons-con {
+			text-align: right;
+		}
+
+		.btn {
+			&.action-upload {
+				@include buttonGlyphAdd($html-entity-upload);
+			}
+			&.action-save,
+			&.action-save-exit {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.action-exit {
+				@include buttonGlyphAdd($html-entity-close);
+			}
+		}
+	}
+
+	.pager-photos {
+		.action-column {
+			select {
+				max-width: 200px;
+			}
+		}
+
+		.published {
+			width: 1%;
+		}
+
+		.name input,
+		.filecomment textarea {
+			width: 100%;
+		}
+
+		.btn {
+			@include buttonGlyphOnly($html-entity-nbsp);
+
+			&.remove {
+				//fixme change this to delete class
+				@include buttonStyleDeleteGlyph();
+			}
+			&.action-top {
+				@include buttonGlyphOverride($html-entity-move-top);
+			}
+			&.action-up {
+				@include buttonGlyphOverride($html-entity-move-up);
+			}
+			&.action-down {
+				@include buttonGlyphOverride($html-entity-move-down);
+			}
+			&.action-bottom {
+				@include buttonGlyphOverride($html-entity-move-bottom);
+			}
+		}
+	}
+}
+
+.user_permissions {
+	//fixme need to update html so actions is before headings
+	h2 {
+		margin: 0;
+	}
+	h3 {
+		margin: 0;
+	}
+
+	.action-column {
+		.btn {
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
+
+.window {
+	&.search {
+		h3.heading {
+			margin-top: 0;
+		}
+	}
+}
+
+.file-upload-container {
+	//fixme needs HTML updates badly
+
+	.albumname {
+		@include style-h2;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.message-container + .heading {
+		margin: 10px 0 15px;
+		@include style-message-warning;
+	}
+
+	.file-upload,
+	.publish {
+		margin: 5px 0;
+	}
+
+	.file-upload-label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.upload-actions {
+		margin-top: 15px;
+
+		.btn {
+			&.ok {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+}

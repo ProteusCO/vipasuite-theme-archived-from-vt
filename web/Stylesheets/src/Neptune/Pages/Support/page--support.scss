@@ -1,0 +1,885 @@
+@import "../../Config/_base-import";
+
+@import "../../Libs/jquery.fancybox";
+
+$color-pending-bg: #e0f1fc;
+$color-pending-font: #1b6592;
+$color-acknowledged-bg: #fdae61;
+$color-acknowledged-font: #6a252c;
+$color-assigned-bg: #4eaae2;
+$color-assigned-font: #0c3e5d;
+$color-client-feedback-bg: #fb7c8a;
+$color-client-feedback-font: #6a252c;
+$color-client-review-bg: #d8d9da;
+$color-client-review-font: #484949;
+$color-resolved-bg: #abdda4;
+$color-resolved-font: #20601f;
+$color-work-order-bg: #fee08b;
+$color-work-order-font: #7d6318;
+
+$right-gutter-spacing: 140px + 20px;
+
+@mixin legendStatusTableCell($color-font, $color-bg) {
+	border-color: $color-bg;
+	background-color: change_color($color-bg, $lightness: 97%);
+
+	.title {
+		background-color: $color-bg;
+		color: $color-font;
+	}
+}
+
+@mixin statusTableRowCell($color-bg) {
+	background-color: $color-bg;
+	border-bottom: 1px solid darken($color-bg, 15%);
+}
+
+.support_welcome,
+.status_legend {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.status_legend {
+	@include style-inline-box();
+}
+
+/*link lists */
+.support_welcome {
+	ul {
+		@include resetMenu;
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	a {
+		display: block;
+		//fixme fix the background reference
+		background: url("/resources/dyn/files/984063zedebc696/_fn/support-icons.png") no-repeat left top transparent;
+		width: 230px;
+		font-size: 12px;
+		margin-bottom: 10px;
+		opacity: 0.7;
+		padding: 3px 0 5px 33px;
+		text-decoration: none;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.faqs {
+			background-position: left -89px;
+		}
+		&.videos {
+			background-position: left -180px;
+		}
+		.download a {
+			background-position: left -265px;
+		}
+	}
+}
+
+/* status legend */
+.status_legend {
+	h3 {
+		margin: 0;
+	}
+
+	table {
+		width: 100%;
+		border-spacing: 5px;
+		border-collapse: separate;
+
+		td {
+			vertical-align: top;
+			font-size: 12px;
+			line-height: 1.2;
+			border: 1px solid $color-grey;
+			background-color: $color-white;
+
+			&.status_pending {
+				@include legendStatusTableCell($color-pending-font, $color-pending-bg);
+			}
+			&.status_feedback {
+				@include legendStatusTableCell($color-client-feedback-font, $color-client-feedback-bg);
+			}
+			&.status_review {
+				@include legendStatusTableCell($color-client-review-font, $color-client-review-bg);
+			}
+			&.status_resolved {
+				@include legendStatusTableCell($color-resolved-font, $color-resolved-bg);
+			}
+			&.status_assigned {
+				@include legendStatusTableCell($color-assigned-font, $color-assigned-bg);
+			}
+			&.status_acknowledged {
+				@include legendStatusTableCell($color-acknowledged-font, $color-acknowledged-bg);
+			}
+			&.status_wo {
+				@include legendStatusTableCell($color-work-order-font, $color-work-order-bg);
+			}
+		}
+
+		.title {
+			display: block;
+			font-family: $font-open-sans-bold;
+			font-size: 13px;
+			padding: 5px 10px 2px;
+			text-align: center;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+
+		.content {
+			display: block;
+			padding: 3px 10px 5px;
+			font-family: $font-open-sans-italic;
+		}
+	}
+}
+
+.search_bar {
+	.constraint {
+		label {
+			display: block;
+			margin-right: 0;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+//fixme get class added
+.inlinewindow {
+	> .search,
+	.support {
+		tbody {
+			> tr > td {
+				color: $color-charcoal;
+			}
+			> tr.status_new > td { @include statusTableRowCell($color-pending-bg) }
+			> tr.status_feedback > td { @include statusTableRowCell($color-client-review-bg) }
+			> tr.status_resolved > td { @include statusTableRowCell($color-resolved-bg) }
+			> tr.status_assigned > td { @include statusTableRowCell($color-assigned-bg) }
+			> tr.status_pending > td { @include statusTableRowCell($color-acknowledged-bg) }
+			> tr.status_wo > td { @include statusTableRowCell($color-work-order-bg) }
+			> tr.status_client_feedback > td { @include statusTableRowCell($color-client-feedback-bg) }
+
+			td {
+				a {
+					color: $color-default-link;
+					font-family: $font-open-sans-semi-bold;
+
+					&:before {
+						@include glyphAdd($html-entity-view);
+						margin-right: 5px;
+					}
+
+					&:hover {
+						&:before {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*Required styles*/
+.property_editor {
+	.people_group {
+		.field_contactname,
+		.field_contactemail,
+		.field_contactphone {
+			label {
+				&:before {
+					content: "*";
+					color: $color-red;
+				}
+			}
+		}
+	}
+
+	.problem_group {
+		.field_summary,
+		.field_description,
+		.field_additionalinformation,
+		.field_thirdpartyid2 {
+			label {
+				&:before {
+					content: "*";
+					color: $color-red;
+				}
+			}
+		}
+	}
+
+	.disposition_group {
+		.field_category {
+			label {
+				&:before {
+					content: "*";
+					color: $color-red;
+				}
+			}
+		}
+	}
+}
+
+.workspace_actions {
+	float: right;
+}
+
+.entity_actions  {
+	.btn {
+		&.add {
+			@include buttonGlyphAdd($html-entity-add);
+		}
+	}
+}
+
+.project_actions {
+	text-align: right;
+	margin-bottom: 5px;
+
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+}
+
+.uitask-manager-con {
+	margin: 10px 0;
+}
+
+.task-container {
+	margin: 10px 0;
+	@include style-inline-box();
+}
+
+/* Send Message UI */
+.send_message {
+	border: 5px solid $color-lighter-grey;
+	padding: 15px;
+	margin-bottom: 20px;
+
+	.heading {
+		@include style-h3;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	label {
+		@include style-form-label;
+	}
+
+	.issue_message {
+		@include clearfix;
+
+		> .fields {
+			margin-top: 25px;
+		}
+
+		.field_editor {
+			margin-top: 5px;
+		}
+
+		.file-upload {
+			margin-top: 5px;
+		}
+	}
+
+	div.message_line {
+		margin-top: 8px;
+	}
+
+	.header_to,
+	.email_template {
+		label {
+			display: inline-block;
+			width: 85px;
+		}
+	}
+
+	.header_to {
+		label {
+			margin-bottom: 5px;
+			display: inline-block;
+		}
+
+		.recipient {
+			display: inline-block;
+			padding: 3px 5px;
+			border: 1px solid $color-cloud-grey;
+			background-color: $color-almost-white;
+			margin-bottom: 5px;
+
+			+ .recipient {
+				margin-left: 10px;
+			}
+		}
+		.address {
+			font-style: $font-open-sans-italic;
+			margin-left: 5px;
+		}
+
+		.btn {
+			&.remove {
+				margin-left: 3px;
+				@include buttonStyleRemoveGlyph(14px);
+			}
+		}
+	}
+
+	.template {
+		&.preview div.val{
+			background-color: $color-almost-white;
+			margin-bottom: 5px;
+			resize: both;
+			height: 350px;
+			overflow: auto;
+		}
+
+		.val {
+			padding: 2px;
+			border: 1px solid $color-light-grey;
+			background-color: $color-almost-white;
+		}
+	}
+
+	.header_subject {
+		label {
+			display: block;
+		}
+
+		span.val {
+			display: inline-block;
+			overflow-x: auto;
+		}
+
+		span.val,
+		input {
+			width: 100%;
+		}
+	}
+
+	.csr_text {
+		label{
+			float: left;
+			margin-right: 5px;
+		}
+
+		textarea {
+			margin-top: 5px;
+			width: 100%;
+		}
+
+		.btn {
+			@include buttonStyleSmall;
+		}
+	}
+
+	.message_body {
+		textarea {
+			width: 100%;
+			height: 200px;
+		}
+	}
+
+	span.update_preview {
+		float: right;
+	}
+
+	div.csr_text,
+	div.message_body {
+		float: left;
+		width: 60%;
+		padding-right: 15px;
+	}
+
+	.send_message_actions {
+		margin-top: 15px;
+	}
+
+	.fields {
+		.field_editor {
+			label {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.file-upload {
+	.btn {
+		&.remove {
+			@include buttonStyleRemoveGlyph();
+			margin-right: 5px;
+		}
+	}
+}
+
+/** notes */
+div.note {
+	border: 1px solid $color-grey;
+	margin: 5px 0;
+	position: relative;
+
+	&.note_selected{
+		background-color: $color-cornsilk;
+	}
+
+	&.my_note {
+		border-left: 10px solid $color-dark-bluegrey;
+	}
+
+	div.content {
+		padding: 15px;
+
+		textarea {
+			margin-top: 15px;
+			width: 100%;
+		}
+	}
+
+	div.files {
+		background-color: $color-cloud-grey;
+		padding: 10px;
+		border-top: 1px solid $color-lighter-grey;
+
+		ul.files {
+			@include resetMenu;
+			padding-left: 15px;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		li.file {
+			display: inline-block;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			padding: 5px 10px;
+			background-color: $color-white;
+			border: 1px solid $color-light-grey;
+
+			a {
+				margin-right: 8px;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&.preview {
+					&:before {
+						@include glyphAdd($html-entity-view);
+						margin-right: 3px;
+					}
+					&:hover {
+						&:before {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+
+		span.label {
+			display: inline-block;
+			font-family: $font-open-sans-semi-bold;
+
+			&:before {
+				@include glyphAdd($html-entity-attachment, $size: 20px);
+				margin-right: 5px;
+			}
+		}
+
+		.btn {
+			&.delete_file {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+
+	.note-actions {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+
+		.btn {
+			@include buttonColors($color-bluegrey, $color-white);
+
+			&.edit {
+				@include buttonGlyphAdd($html-entity-edit);
+			}
+			&.delete {
+				@include buttonGlyphAdd($html-entity-delete);
+			}
+			&.save {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+		}
+	}
+}
+
+.note_properties {
+	padding: 10px 15px;
+	font-size: 12px;
+	background-color: $color-bluegrey;
+	border-bottom: 1px solid $color-dark-bluegrey;
+
+	.meta {
+		color: $color-white;
+
+		.principal {
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.login {
+			margin-left: 5px;
+		}
+
+		.sep_at,
+		.create_time {
+			padding-left: 5px;
+		}
+
+		.modified_time {
+			font-family: $font-open-sans-semi-bold;
+			background-color: $color-blue-almost-white;
+			color: $color-dark-blue;
+			border: 1px solid $color-dark-bluegrey;
+			padding: 1px 7px;
+			margin-left: 5px;
+		}
+
+		.permission {
+			font-family: $font-open-sans-semi-bold;
+			background-color: $color-gold-almost-white;
+			color: $color-red;
+			border: 1px solid $color-dark-bluegrey;
+			padding: 1px 7px;
+			margin-left: 5px;
+
+			.bracket {
+				display: none;
+			}
+		}
+	}
+
+	span.note_related {
+		font-size: 10px;
+		color: $color-cloud-grey;
+		margin-right: 5px;
+		padding-right: 5px;
+		border-right: 1px solid $color-light-bluegrey;
+
+		a[href] {
+			color: $color-blue-almost-white;
+		}
+	}
+}
+
+.note_body {
+	font-size: 12px;
+}
+
+//issue view
+.issue_view {
+
+	.is-sticky {
+		width: 140px;
+
+		div.action_group {
+			padding-top: 10px;
+		}
+	}
+
+	div.action_group {
+		float: right;
+		width: 140px;
+
+		div.issue_actions {
+			border-top: 1px dashed $color-lighter-grey;
+			margin-top: 5px;
+			padding-top: 5px;
+		}
+
+		.btn {
+			@include buttonGlyphAdd($html-entity-nbsp, $size: 16px);
+			display: block;
+			width: 100%;
+			margin: 2px 0;
+			text-align: left;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			font-size: 14px;
+
+			&.edit {
+				@include buttonGlyphOverride($html-entity-edit);
+			}
+			&.cancel {
+				@include buttonGlyphOverride($html-entity-cancel);
+			}
+			&.save {
+				@include buttonGlyphOverride($html-entity-success);
+			}
+			&.action_send_message {
+				@include buttonGlyphOverride($html-entity-mail);
+			}
+			&.action_history {
+				@include buttonGlyphOverride($html-entity-clock);
+			}
+			&.action-delete {
+				@include buttonGlyphOverride($html-entity-delete);
+			}
+		}
+	}
+
+	.field_REPORTER {
+		a {
+			@include buttonBase;
+			@include buttonStyleEditGlyph();
+		}
+	}
+
+	div.people_group,
+	div.disposition_group {
+		display: inline-block;
+		vertical-align: top;
+		min-width: 400px;
+		max-width: 42%;
+		margin-right: 15px;
+	}
+
+	.issue_view_component,
+	.issue_add_note_component,
+	.issue_view_note_component {
+		margin-right: $right-gutter-spacing;
+	}
+
+	.property-editor {
+		margin-right: $right-gutter-spacing;
+		div.issue_field {
+			//fixme get user_entry_required classes
+			&.field_CONTACTNAME,
+			&.field_CONTACTEMAIL,
+			&.field_CONTACTPHONE,
+			&.field_SUMMARY,
+			&.field_DESCRIPTION,
+			&.field_CATEGORY,
+			&.field_ADDITIONALINFORMATION,
+			&.field_THIRDPARTYID2 {
+				label.field_name {
+					&:before {
+						content: "*";
+						margin-right: 2px;
+						color: $color-red;
+					}
+				}
+			}
+		}
+	}
+
+	div.issue_field {
+		display: table-row;
+
+		label.field_name {
+			display: table-cell;
+			white-space: nowrap;
+			padding: 3px;
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.field_value {
+			display: table-cell;
+			padding: 3px;
+		}
+	}
+
+	.problem_group {
+		div.issue_field {
+			display: block;
+			margin-top: 10px;
+
+			//fixme get classes added
+			.field_value,
+			&.field_ADDITIONALINFORMATION > div,
+			&.field_DESCRIPTION > div {
+				display: block;
+				margin-left: 30px;
+			}
+
+			&.field_DESCRIPTION > div {
+				padding: 10px;
+				border: 1px solid $color-light-grey;
+				background-color: $color-smokey-white;
+				max-height: 500px;
+				overflow-y: auto;
+			}
+		}
+
+		.instructions {
+			@include style-message-info;
+			display: block;
+			margin: 5px 0;
+			margin-left: 30px;
+			width: 80%;
+
+			//really don't want to do this but need to since I won't change HTML til later
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	.add_note {
+		label {
+			padding: 3px;
+			font-family: $font-open-sans-semi-bold;
+		}
+
+		.note_content > div,
+		.file-upload .multi-file-upload {
+			margin: 5px 0;
+			margin-left: 30px;
+			width: 80%;
+		}
+	}
+}
+
+div.reply_note_component {
+	@include style-inline-box();
+	margin: 10px;
+
+	.reply_note_title {
+		@include style-h3;
+		margin: 0;
+	}
+
+	label {
+		display: block;
+	}
+
+	//fixme have to override since i dont have classes to tell me enough
+	.add_note {
+		.note_content > div,
+		.file-upload .multi-file-upload {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	.fields,
+	.file-upload,
+	.required_permission,
+	.field_editor {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 10px;
+	}
+
+	.fields {
+		margin-right: 0;
+	}
+
+	.field_editor {
+		select {
+			max-width: 200px;
+		}
+	}
+}
+
+div.issue_add_note_component {
+	border: 1px solid $color-cloud-grey;
+	margin: 15px 0;
+	padding: 10px;
+	position: relative;
+
+	.add_note_title {
+		margin: 0;
+	}
+
+	label {
+		@include style-form-label;
+		display: block;
+	}
+
+	.note_content {
+		margin-bottom: 10px;
+	}
+
+	//fixme have to override since i dont have classes to tell me enough
+	.add_note {
+		.note_content > div,
+		.file-upload .multi-file-upload {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		.file-upload .multi-file-upload {
+			margin-top: 0;
+		}
+	}
+
+	.fields,
+	.file-upload,
+	.required_permission,
+	.field_editor {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 10px;
+	}
+
+	.fields {
+		margin-right: 0;
+	}
+
+	.field_editor {
+		select {
+			max-width: 200px;
+		}
+	}
+
+	.note-actions {
+		margin-top: 10px;
+
+		.btn {
+			&.submit_btn {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+		}
+	}
+}
+
+#note-img-title {
+	@include clearfix;
+
+	.cnt {
+		float: left;
+		margin-top: 5px;
+		width: 40%;
+		text-align: left;
+		overflow: hidden;
+	}
+	.note_info  {
+		float: right;
+		margin-top: 5px;
+		text-align: right;
+		width: 60%;
+		overflow: hidden;
+	}
+}
+
+//fixme this should be removed once code no longer outputs collapsible stack trace
+.message {
+	.miwt-collapsable {
+		display: none;
+	}
+}

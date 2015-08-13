@@ -1,0 +1,9 @@
+@import "../../Config/_base-import";
+
+/*
+	Component partial -	Tab Containers
+*/
+
+.tab-container {
+	@include style-tab-elements;
+}

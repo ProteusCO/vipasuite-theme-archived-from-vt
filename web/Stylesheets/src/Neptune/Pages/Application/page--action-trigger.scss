@@ -1,0 +1,31 @@
+@import "../../Config/_base-import";
+
+.table_view {
+	width: 100%;
+
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+		&.edit_button {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete_button {
+			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
+
+.bpm_action_trigger_search {
+	.pager-top {
+		display: none;
+	}
+
+	.table_view {
+		margin: 5px 0;
+	}
+}
+
+table.bpm_action_trigger_search_basic {
+	width: 100%;
+}

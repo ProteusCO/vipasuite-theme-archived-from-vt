@@ -1,0 +1,55 @@
+@import "../../Config/_base-import";
+
+/*
+	Component partial -	Dialogs
+*/
+
+.miwt-form {
+	.window {
+		z-index: 5000;
+		border: none;
+		padding: 0;
+		background-color: $color-white;
+		box-shadow: 0 0 15px transparentize($color-black, 0.25);
+	}
+
+	.titlebar {
+		background-color: $color-blue;
+	}
+
+	.activewindowtitle {
+		color: $color-white;
+		text-align: left;
+		font-weight: normal;
+		font-family: $font-open-sans-semi-bold;
+		padding: 5px;
+	}
+
+	.inactivewindowtitle {
+		color: $color-lighter-grey;
+		text-align: left;
+		font-weight: normal;
+		font-family: $font-open-sans-semi-bold;
+		padding: 5px;
+	}
+
+	.windowcontent {
+		padding: 10px;
+		border: none;
+		background-color: $color-white;
+		top: 28px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		&:before,
+		&:after {
+			content: " ";
+			display: table;
+		}
+
+		> .actions:last-child {
+			margin-top: 10px;
+		}
+	}
+}

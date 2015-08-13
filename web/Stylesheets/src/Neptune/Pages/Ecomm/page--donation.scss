@@ -1,0 +1,55 @@
+@import "../../Config/_base-import";
+
+.table_view {
+	.btn {
+		&.details_button {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+		&.edit_button {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete_button {
+			@include buttonStyleDeleteGlyph();
+		}
+	}
+}
+
+.element_table {
+	.btn {
+		&.remove {
+			//fixme get classname fixed
+			@include buttonStyleDeleteGlyph();
+		}
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+		&.action-up {
+			@include buttonGlyphOnly($html-entity-move-up);
+		}
+		&.action-down {
+			@include buttonGlyphOnly($html-entity-move-down);
+		}
+	}
+}
+
+.donation_editor {
+	.prop_name {
+		input {
+			width: 300px;
+		}
+	}
+
+	.prop_briefDesc,
+	.prop_proseDesc {
+		input {
+			width: 50%;
+			min-width: 300px;
+		}
+	}
+
+	.file_entity_editor {
+		.current_file {
+			margin-right: 10px;
+		}
+	}
+}

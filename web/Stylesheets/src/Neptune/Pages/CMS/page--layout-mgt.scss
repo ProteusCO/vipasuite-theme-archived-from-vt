@@ -1,0 +1,238 @@
+@import "../../Config/_base-import";
+
+.layout_mgt_main {
+	.entity_actions {
+		.btn {
+			&.action_add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
+}
+
+.layoutmanagement {
+	.entity_actions {
+		.btn{
+			&.action_add {
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+	}
+
+	.layout_listing {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+			&.copy {
+				@include buttonStyleCopyGlyph();
+			}
+			&.edit_layout_img_button {
+				@include buttonGlyphOnly($html-entity-layout);
+			}
+		}
+	}
+}
+
+.add_layout {
+	.heading {
+		@include style-h2;
+		margin-bottom: 15px;
+		display: block;
+	}
+
+	.continue-con {
+		padding-right: 2px;
+	}
+}
+
+.layout_editor_view {
+	position: relative;
+
+	#le_box_actions,
+	.le_actions {
+		.action {
+			@include buttonBase;
+
+			+ .action {
+				margin-left: 3px;
+			}
+		}
+	}
+}
+
+.layout_editor {
+	width: 100%;
+
+	.le_preview {
+		padding-right: 20px;
+
+		span.help-point {
+			float: right;
+			margin-top: 5px;
+			margin-right: 5px;
+		}
+	}
+
+	.le_control {
+		background-color: $color-cloud-grey;
+		border: 1px solid $color-lighter-grey;
+		padding: 10px;
+		margin-bottom: 10px;
+
+		#le_layout_name {
+			width: 300px;
+		}
+
+		.box_list {
+			display: block;
+			margin-top: 5px;
+		}
+
+		#le_layout_height100percent-con {
+			margin-left: 10px;
+		}
+	}
+}
+
+
+.le_box_properties {
+	.box_name {
+		@include style-h3;
+	}
+
+	#le_box_actions {
+		.action {
+			margin-bottom: 3px;
+			font-size: 11px;
+		}
+	}
+
+	label {
+		@include style-form-label;
+		width: 100px;
+		display: inline-block;
+	}
+
+	.collapsible {
+		+ .collapsible {
+			margin-top: 3px;
+		}
+
+		.collapsible-control,
+		.control {
+			background-color: $color-almost-white;
+			border: 1px solid $color-lighter-grey;
+			padding: 2px 5px;
+			@include clearfix;
+			cursor: pointer;
+
+			&.shown,
+			&.collapsible-control-show {
+				background-color: $color-dark-grey;
+				border-color: $color-darker-grey;
+				color: $color-white;
+			}
+
+			.help-point {
+				float: right;
+			}
+		}
+
+		.collapsible-shown {
+			padding: 5px;
+		}
+	}
+
+	#information_cc {
+		.property {
+			margin: 5px 0;
+		}
+
+		ul {
+			margin: 5px 0;
+		}
+	}
+}
+
+#add_enclosing_inline_ui {
+	width: 350px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid $color-light-grey;
+	padding: 20px;
+	background-color: $color-white;
+	box-shadow: 0 0 5px transparentize($color-black, 0.8);
+
+	div.heading {
+		@include style-h3;
+	}
+
+	.instructions {
+		@include style-message-info;
+		margin: 10px 0;
+	}
+
+	.boxes {
+		margin: 15px 0;
+	}
+
+	.box {
+		margin: 5px 0;
+	}
+
+	.actions {
+		.action {
+			@include buttonBase;
+
+			+ .action {
+				margin-left: 3px;
+			}
+		}
+	}
+}
+
+.layout_image_editor {
+	h2 {
+		margin-top: 0;
+	}
+
+	.pager-top {
+		display: none;
+	}
+
+	.richlist {
+		text-align: center;
+	}
+
+	.element {
+		display: inline-block;
+		vertical-align: top;
+		min-height: 230px;
+		margin-right: 20px;
+
+		.no_preview_image {
+			line-height: 230px;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+	}
+
+	.download_template,
+	.upload {
+		margin: 15px 0;
+	}
+
+	.download_template {
+		a {
+			margin-left: 5px;
+		}
+	}
+}

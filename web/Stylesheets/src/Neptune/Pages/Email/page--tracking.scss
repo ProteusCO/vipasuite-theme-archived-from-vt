@@ -1,0 +1,18 @@
+@import "../../Config/_base-import";
+
+
+.email-tracking {
+
+	&.fuzzy-search {
+		&:before {
+			display: inline-block;
+			margin-bottom: 5px;
+			content: "You are currently in a fuzzy search";
+			background-color: $color-warning-light;
+			color: $color-warning-dark;
+			border: 1px solid $color-warning-dark;
+			padding: 7px;
+			font-family: $font-open-sans-semi-bold;
+		}
+	}
+}

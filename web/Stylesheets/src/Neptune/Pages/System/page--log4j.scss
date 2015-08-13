@@ -1,0 +1,22 @@
+@import "../../Config/_base-import";
+
+.search {
+	.constraint {
+		input {
+			+ label {
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+.create_logger {
+	label {
+		@include style-form-label;
+		margin-right: 5px;
+	}
+
+	.btn {
+		margin-left: 5px;
+	}
+}

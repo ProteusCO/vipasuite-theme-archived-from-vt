@@ -1,0 +1,1309 @@
+@import "../Config/_overall";
+@import "../Mixins/_general-mixins";
+@import "mixins";
+
+$le-bar-height-visible: 50px;
+$le-branding-title-width: 170px;
+$le-branding-toolbox-width: 95px;
+$le-branding-nav-actions-width: 162px;
+$le-branding-width: $le-branding-title-width + $le-branding-toolbox-width + $le-branding-nav-actions-width;
+
+/* Reset */
+.cms_le_ {
+  font-size: 14px;
+  font-family: $font-open-sans !important;
+  line-height: 1;
+  color: #000;
+
+
+  /* auto generated */
+  div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+  acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike,
+  strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+  legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+  embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time,
+  mark, audio, video {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font: inherit !important;
+    font-size: 100% !important;
+    color: inherit !important;
+    vertical-align: baseline !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    text-transform: none !important;
+    background: none !important;
+    min-height: 0 !important;
+    /*max-height:none !important; FIXME : this broke the component selector */
+  }
+
+  button {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  ol, ul {
+    padding: 0 0 0 40px !important;
+    margin: 14px 0 !important;
+    list-style: none !important;
+    box-sizing: border-box !important;
+  }
+
+  blockquote, q {
+    quotes: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /*noinspection CssOverwrittenProperties*/
+  blockquote:before, q:before, blockquote:after, q {
+    content: '' !important;
+    content: none !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+  }
+
+  /* end auto generated */
+  a {
+    color: #2199cd !important;
+
+    &:hover {
+      text-decoration: none !important;
+    }
+
+    &:focus {
+      outline: thin dotted !important;
+    }
+
+    &:active,
+    &:hover {
+      outline: 0 !important;
+    }
+  }
+
+  img {
+    border: 0 !important;
+  }
+
+  img,
+  td {
+    vertical-align: middle !important;
+  }
+
+  h1 {
+    font-size: 16px !important;
+    margin: 14px 0 !important;
+    color: #000 !important;
+  }
+
+  h2 {
+    font-size: 15px !important;
+    margin: 14px 0 !important;
+    color: #000 !important;
+  }
+
+  h3 {
+    font-size: 14px !important;
+    margin: 12px 0 !important;
+    color: #000 !important;
+  }
+
+  h4 {
+    font-size: 13px !important;
+    margin: 12px 0 !important;
+    color: #000 !important;
+  }
+
+  h5 {
+    font-size: 12px !important;
+    margin: 12px 0 !important;
+    color: #000 !important;
+  }
+
+  h6 {
+    font-size: 11px !important;
+    margin: 12px 0 !important;
+    color: #000 !important;
+  }
+
+  p {
+    margin: 14px 0 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: bold !important;
+  }
+
+  blockquote {
+    margin: 14px 40px !important;
+  }
+
+  .clearfix,
+  &.clearfix {
+    &:before,
+    &:after {
+      content: '' !important;
+      display: table !important;
+    }
+  }
+
+  .clearfix,
+  &.clearfix {
+    &:after {
+      clear: both !important;
+    }
+  }
+
+  .ir {
+    background-color: transparent !important;
+    overflow: hidden !important;
+
+    &:before {
+      content: "" !important;
+      display: block !important;
+      width: 0 !important;
+      height: 150% !important;
+    }
+  }
+
+  span,
+  label {
+    display: inline !important;
+  }
+
+  button::-moz-focus-inner {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+
+  span.ficon.le-close,
+  span.ficon.le-move,
+  label.ficon.le-info {
+    background: inherit !important;
+    background-color: #fff !important; /*IE*/
+    color: inherit !important;
+    padding: 6px !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-right: 1px solid #d9d9d9 !important;
+    -webkit-transition-duration: .2s !important;
+    -webkit-transition-property: background, color, opacity !important;
+    transition-duration: .2s !important;
+    transition-property: background, color, opacity !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .initializing {
+    opacity: 0 !important;
+  }
+
+  [draggable="true"] {
+    -khtml-user-drag: element !important;
+    -webkit-user-drag: element !important;
+    -webkit-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    /*noinspection ALL*/
+    user-select: none !important;
+    cursor: move !important;
+  }
+}
+/** End Reset */
+
+/* All rules should be specific and marked !important since this is injected on sites.*/
+/** Fonts. */
+@include fontFace('OpenSans', '/OpenSans', 'opensans-regular-webfont');
+@include fontFace('OpenSansBold', '/OpenSans', 'opensans-bold-webfont');
+@include fontFace('OpenSansSemiBold', '/OpenSans', 'opensans-semibold-webfont');
+
+@include fontFace('GlyphLib', '/GlyphLib', 'neptune-glyph-font');
+
+.cms_le_ {
+	text-align: left !important;
+
+  .ficon {
+    @include buttonBase;
+  }
+
+  .ficon-glyph {
+    @include buttonBase;
+    @include buttonGlyphAdd($html-entity-fixme);
+  }
+
+  .ficon-glyph-only {
+    @include buttonBase;
+    @include buttonGlyphOnly($html-entity-fixme);
+  }
+}
+
+/** Primary Toolbar */
+#cms-le-ptb {
+  position: fixed !important;
+  left: 0 !important;
+  width: 100%;
+  min-width: 840px;
+  height: 50px !important;
+  z-index: 20000 !important;
+  background-color: $color-almost-white !important;
+  color: $color-default-site-font !important;
+  /* We're targeting the newest browsers - only webkit requires the vendor prefix. */
+  -webkit-transition: all 1s cubic-bezier(0, 0.7, 0, 1) !important;
+  transition: all 1s cubic-bezier(0, 0.7, 0, 1) !important;
+  font-family: $font-open-sans !important;
+
+  .le-component .name {
+    font-family: $font-open-sans-bold !important;
+  }
+
+  .le-toolbox,
+  .le-nav-actions {
+    display: inline-block !important;
+    vertical-align: top !important;
+  }
+
+  .le-info .le-name {
+    font-family: $font-open-sans-bold !important;
+    max-height: 30px !important;
+    min-height: 16px !important;
+
+    &:empty {
+      display: none !important;
+    }
+  }
+
+  .le-info .le-name,
+  .le-info .le-type {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+  }
+
+  .le-component,
+  .le-component-actions {
+    -webkit-transition: all .25s !important;
+    transition: all .25s !important;
+  }
+
+  .le-component,
+  .le-component-actions,
+  .toolbar-controls {
+    position: absolute !important;
+    bottom: 0;
+  }
+
+  .le-component {
+    height: $le-bar-height-visible !important;
+    width: 250px !important;
+    left: $le-branding-width !important;
+    background-color: rgba(250, 250, 250, 1) !important;
+    border-right: 1px solid #ccc !important;
+    padding: 9px 6px !important;
+    overflow: hidden !important;
+  }
+
+  .le-component-actions {
+    left: 690px !important;
+    right: 80px !important;
+    bottom: auto !important;
+    top: 10px !important;
+    color: #2199cd !important;
+    font-size: 0 !important; /*whitespace removal*/
+    white-space: nowrap !important;
+
+    .ficon-glyph-only {
+      @include buttonGlyphOverride($size: 20px);
+      cursor: pointer !important;
+
+      + .ficon-glyph-only {
+        margin-left: 5px !important;
+      }
+
+      &.le-move {
+        @include buttonGlyphOverride($html-entity-move);
+      }
+      &.le-edit {
+        @include buttonGlyphOverride($html-entity-edit);
+      }
+      &.le-detach {
+        @include buttonGlyphOverride($html-entity-trashcan, $color: $color-error-dark);
+      }
+      &.le-info {
+        @include buttonGlyphOverride($html-entity-info, $color: $color-blue);
+      }
+    }
+
+    button {
+      &.le-info {
+        padding: 0 !important;
+
+        label {
+          padding: 6px !important;
+          display: inline-block !important;
+        }
+      }
+
+      label {
+        cursor: pointer !important;
+      }
+    }
+  }
+
+  &.top {
+    bottom: 100% !important;
+    margin-bottom: -50px !important;
+    box-shadow: 0 1px 4px rgba(50, 50, 50, 0.5) !important;
+
+    &.hidden {
+      margin-bottom: 0 !important;
+
+      .toolbar-controls {
+        top: 50px !important;
+        border: 1px solid #d9d9d9 !important;
+      }
+    }
+  }
+
+  &.bottom {
+    bottom: 0 !important;
+    box-shadow: 0 -1px 4px rgba(50, 50, 50, 0.5) !important;
+
+    &.hidden {
+      margin-bottom: -50px !important;
+
+      .toolbar-controls {
+        top: -40px !important;
+      }
+    }
+
+    .le-info-panel {
+      bottom: 100% !important;
+      margin-top: 0 !important;
+      margin-bottom: 4px !important;
+    }
+  }
+
+  &.hidden {
+    .toolbar-controls {
+      top: -25px !important;
+      height: 40px !important;
+    }
+
+    #cms-le-ptb-info {
+      &:checked:before,
+      &:checked:after,
+      + .le-info-panel {
+        display: none !important;
+      }
+    }
+  }
+
+  .le-branding {
+    height: 100% !important;
+    width: $le-branding-width !important;
+    box-sizing: border-box !important;
+    font-size: 18px !important;
+  }
+
+  .le-title {
+    background-color: $color-dark-blue !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+    height: $le-bar-height-visible !important;
+    width: $le-branding-title-width !important;
+    position: relative !important;
+    padding: 0 10px !important;
+
+
+    .le-product {
+      background: center center transparent themeDesignResourceUrl('/Overall/vipasuite-neptune-primary-logo.png') no-repeat !important;
+      background-size: contain !important;
+      width: 150px !important;
+      height: 40px !important;
+      font-size: 0 !important;
+      display: block !important;
+    }
+
+    .le-app-name {
+      position: absolute !important;
+      bottom: 3px !important;
+      right: 16px !important;
+      display: block !important;
+      color: $color-light-blue !important;
+      text-transform: uppercase !important;
+      font-family: $font-open-sans-semi-bold !important;
+    }
+  }
+
+  .le-toolbox {
+    background-color: $color-green !important;
+    height: $le-bar-height-visible !important;
+    width: $le-branding-toolbox-width !important;
+
+    button {
+      @include buttonColors($color-green, $color-white);
+      @include buttonGlyphOverride($size: 24px);
+      width: $le-branding-toolbox-width !important;
+      font-size: 17px !important;
+      padding: 12px 15px !important;
+      cursor: pointer !important;
+      height: $le-bar-height-visible !important;
+    }
+  }
+
+  .le-nav-actions {
+    background-color: $color-bluegrey !important;
+    height: $le-bar-height-visible !important;
+    width: $le-branding-nav-actions-width !important;
+
+    button {
+      @include buttonColors($color-bluegrey, $color-white);
+      @include buttonGlyphOverride($size: 24px, $color: $color-white);
+      font-size: 17px !important;
+      padding: 12px 14px !important;
+      cursor: pointer !important;
+      width: $le-branding-nav-actions-width / 3 !important;
+      height: $le-bar-height-visible !important;
+
+      &#cms-le-nav-out {
+        @include buttonGlyphOverride($html-entity-move-out-up);
+      }
+      &#cms-le-nav-up {
+        @include buttonGlyphOverride($html-entity-move-up);
+      }
+      &#cms-le-nav-down {
+        @include buttonGlyphOverride($html-entity-move-down);
+      }
+
+      &.active,
+      &:active {
+        background-color: darken($color-bluegrey, 10%) !important;
+      }
+    }
+  }
+
+  .toolbar-controls {
+    right: 0 !important;
+    padding: 15px 10px !important;
+    height: 100% !important;
+    background-color: rgba(250, 250, 250, .8) !important;
+    -webkit-transition: all .5s .5s !important;
+    transition: all .5s .5s !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /*noinspection ALL*/
+    -webkit-perspective: 1000;
+    /*noinspection ALL*/
+    -moz-perspective: 1000;
+    /*noinspection ALL*/
+    perspective: 1000;
+    white-space: nowrap !important;
+
+    .ficon-glyph-only {
+      @include buttonGlyphOverride($size: 20px);
+      cursor: pointer !important;
+      margin-left: 5px !important;
+    }
+
+    .le-help {
+      @include buttonGlyphOverride($html-entity-support);
+    }
+    .le-location {
+      @include buttonGlyphOverride($html-entity-align-bottom);
+    }
+    .le-visibility {
+      @include buttonGlyphOverride($html-entity-branch-close);
+    }
+    .le-quit {
+      @include buttonGlyphOverride($html-entity-power);
+    }
+  }
+
+  &.bottom {
+    .toolbar-controls {
+      .le-location {
+        @include buttonGlyphOverride($html-entity-align-top);
+      }
+    }
+  }
+
+  &.hidden {
+    .toolbar-controls {
+      padding: 10px !important;
+
+      .le-visibility {
+        @include buttonGlyphOverride($html-entity-branch-open);
+      }
+    }
+  }
+
+  .le-info-panel .le-shared,
+  .le-info-panel .le-cat-page-template,
+  .le-info-panel .le-cat-page,
+  .le-component.le-shared,
+  .le-component.le-cat-page-template {
+    &:before {
+      display: block !important;
+      position: absolute !important;
+      left: 2px !important;
+      bottom: 12px !important;
+      width: 18px !important;
+      height: 18px !important;
+      color: #fff !important;
+      text-align: center !important;
+      line-height: 18px !important;
+      font-size: 13px !important;
+    }
+  }
+
+  .le-info-panel .le-shared,
+  .le-component.le-shared {
+    &:before {
+      content: "S" !important;
+      //fixme get icon for this
+      font-family: $font-open-sans-semi-bold !important;
+      background: $color-green !important;
+    }
+  }
+
+  .le-info-panel .le-cat-page-template,
+  .le-component.le-cat-page-template {
+    &:before {
+      //fixme get icon for this
+      content: "T" !important;
+      background: #f90 !important;
+      font-family: $font-open-sans-semi-bold !important;
+    }
+  }
+
+  .le-info-panel {
+    .le-shared,
+    .le-cat-page-template,
+    .le-cat-page {
+      &:before {
+        display: inline-block !important;
+        position: static !important;
+        margin-right: 4px !important;
+      }
+    }
+  }
+
+  .le-component {
+    table {
+      table-layout: fixed !important;
+      width: 235px !important;
+    }
+
+    &.le-box-locked:after {
+      content: "L" !important;
+      //fixme get icon for this
+      color: #999 !important;
+      position: absolute !important;
+      right: 15px !important;
+      top: 14px !important;
+      font-family: $font-open-sans-semi-bold !important;
+      font-size: 14px !important;
+    }
+
+    td.le-icon {
+      width: 32px !important;
+    }
+
+    td.le-info {
+      padding-left: 4px !important;
+      vertical-align: top !important;
+    }
+  }
+
+}
+
+.le-info-panel {
+  h1 {
+    margin: 0 0 4px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.4 !important;
+  }
+
+  h2 {
+    font-size: 14px !important;
+    margin: 0 0 10px !important;
+  }
+
+  label {
+    font-weight: bold !important;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  .le-prop {
+    font-size: 14px !important;
+    margin: 0 0 7px !important;
+  }
+
+  .le-value-list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .le-value-list,
+  .le-visibility .le-value {
+    display: inline-block !important;
+  }
+
+  .le-value-list li {
+    display: inline !important;
+
+    &:not(:last-child):after {
+      content: "," !important;
+    }
+  }
+
+  .le-value.wildcard:after {
+    content: "/*";
+  }
+
+  .le-modified {
+    margin: 15px 0 !important;
+    font-size: 13px !important;
+  }
+}
+
+
+#cms-le-ptb-info {
+  position: relative !important;
+  visibility: hidden !important;
+
+  + .le-info-panel {
+    display: none !important;
+    position: absolute !important;
+    left: -100px !important;
+    min-width: 280px !important;
+    max-width: 480px !important;
+    padding: 20px !important;
+    background-color: $color-white !important;
+    border: 1px solid $color-grey !important;
+    color: $color-charcoal !important;
+    margin-top: 11px !important;
+    font-size: 14px !important;
+    /*noinspection ALL*/
+    box-shadow: 2px 2px 5px transparentize($color-black, 0.5) !important;
+  }
+
+  &:checked {
+    &:before,
+    &:after {
+      border: solid transparent !important;
+      content: " " !important;
+      height: 0 !important;
+      width: 0 !important;
+      position: absolute !important;
+      visibility: visible !important;
+    }
+
+    &:before {
+      border-color: rgba(204, 204, 204, 0) !important;
+      border-bottom-color: #aaa !important;
+      border-width: 11px !important;
+      bottom: -22px !important;
+      left: -22px !important;
+      z-index: 999;
+    }
+
+    &:after {
+      border-color: rgba(255, 255, 255, 0) !important;
+      border-bottom-color: #fff !important;
+      border-width: 10px !important;
+      bottom: -22px !important;
+      left: -21px !important;
+      z-index: 1000;
+    }
+
+    + .le-info-panel {
+      display: block !important;
+    }
+  }
+
+  .bottom & {
+    &:checked {
+	    /* Firefox doesn't seem to support multiple pseudo elements */
+      &:before,
+      &:after {
+        border-bottom-color: transparent !important;
+        bottom: auto !important;
+      }
+
+      &:before {
+        border-top-color: #aaa !important;
+        top: -8px !important;
+      }
+
+      &:after {
+        border-top-color: #fff !important;
+        top: -8px !important;
+      }
+    }
+  }
+}
+
+/** End Primary Toolbar */
+
+/** Overlay */
+#cms-le-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: rgba(0, 0, 0, .4) !important;
+  z-index: 20002 !important;
+  -webkit-transition: all 1s !important;
+  transition: all 1s !important;
+
+  table.cms-le-overlay-layout {
+    margin: 30px auto 5px auto !important;
+    height: 90% !important;
+  }
+
+  td.cms-le-overlay-layout {
+    text-align: center !important;
+  }
+}
+
+#cms-le-overlay-content {
+  vertical-align: middle !important;
+  background-color: $color-almost-white !important;
+  padding: 20px !important; /*Need to ensure we fit in 1024x768*/
+  border: 1px solid $color-darker-grey !important;
+  -moz-box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
+  box-shadow: 1px 1px 2px rgb(100, 100, 100) !important;
+
+  iframe {
+    /*noinspection CssUnknownTarget*/
+    background: themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat center !important;
+    -webkit-transition: all .25s ease-in !important;
+    transition: all .25s ease-in !important;
+  }
+
+
+}
+
+.cms-le-overlay-layout {
+  p {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+
+    margin-bottom: 15px !important;
+    font-family: $font-open-sans !important;
+  }
+
+  a {
+    color: $color-default-link !important;
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  .ficon {
+    cursor: pointer !important;
+  }
+}
+/** End Overlay */
+
+/** Selection */
+.le-selected {
+  outline: 3px #0cf solid !important;
+  /** Verify Box Shadow Does Not Cause Stacking Context Issue  */
+  -webkit-box-shadow: 0 0 20px #0cf !important;
+  /*box shadow looks terrible on Firefox 19 */
+
+  &[data-cms_pe^="bx"] {
+    outline: 3px #fc0 solid !important;
+    -webkit-box-shadow: 0 0 20px #fc0 !important;
+  }
+
+  &.le-dnd {
+    -webkit-filter: blur(1px) grayscale(1) opacity(0.6);
+    -moz-filter: blur(1px) grayscale(1) opacity(0.6);
+    /*noinspection ALL*/
+    filter: blur(1px) grayscale(1) opacity(0.6);
+  }
+}
+/** End Selection */
+
+/** Component Toolbar */
+#cms-le-ctb {
+  white-space: nowrap;
+  position: absolute !important;
+  z-index: 19999 !important;
+  border: 1px solid $color-grey !important;
+  background: $color-white !important;
+  margin-top: 12px !important;
+  font-family: $font-open-sans !important;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  box-shadow: 0 0 5px transparentize($color-black, 0.5) !important;
+  /** FYI, you cannot use a drop-shadow filter with a transition - google chrome 25 */
+
+  &:after,
+  &:before {
+    border: solid transparent !important;
+    content: " " !important;
+    height: 0 !important;
+    width: 0 !important;
+    position: absolute !important;
+  }
+
+  &:after {
+    border-color: rgba(255, 255, 255, 0) !important;
+    border-bottom-color: #fff !important;
+    border-width: 10px !important;
+    top: -20px !important;
+    left: 10px !important;
+  }
+
+  &:before {
+    border-color: rgba(204, 204, 204, 0) !important;
+    border-bottom-color: #aaa !important;
+    border-width: 11px !important;
+    top: -22px !important;
+    left: 9px !important;
+  }
+
+  &.outset {
+    margin-top: -48px !important;
+
+    &:after,
+    &:before {
+      top: 100% !important;
+    }
+
+    &:after {
+      border-color: rgba(255, 255, 255, 0) !important;
+      border-top-color: #fff !important;
+      border-width: 10px !important;
+      bottom: 10px !important;
+      left: 10px !important;
+    }
+
+    &:before {
+      border-color: rgba(204, 204, 204, 0) !important;
+      border-top-color: #aaa !important;
+      border-width: 11px !important;
+      bottom: 10px !important;
+      left: 9px !important;
+    }
+  }
+
+  .le-component-actions {
+    color: #2199cd !important;
+    -webkit-transition: color .5s !important;
+    transition: color .5s !important;
+    padding: 6px 0 !important;
+
+    .ficon-glyph-only {
+      @include buttonGlyphOverride($size: 20px);
+      cursor: pointer !important;
+
+      + .ficon-glyph-only {
+        margin-left: 3px !important;
+      }
+
+      &:first-child {
+        margin-left: 6px !important;
+      }
+      &:last-child {
+        margin-right: 6px !important;
+      }
+
+      &.le-move {
+        @include buttonGlyphOverride($html-entity-move);
+      }
+      &.le-edit {
+        @include buttonGlyphOverride($html-entity-edit);
+      }
+      &.le-detach {
+        @include buttonGlyphOverride($html-entity-trashcan, $color: $color-error-dark);
+      }
+      &.le-info {
+        @include buttonGlyphOverride($html-entity-info, $color: $color-blue);
+      }
+    }
+  }
+
+  .le-component-info {
+    display: inline-block !important;
+    position: relative !important;
+    padding: 6px !important;
+    border-left: 1px solid $color-lighter-grey !important;
+
+    .le-icon {
+      height: 20px !important;
+      width: auto !important;
+    }
+
+    .le-name {
+      vertical-align: middle !important;
+      font-size: 12px !important;
+    }
+  }
+
+  &.le-shared,
+  &.le-cat-page-template {
+    .le-component-info {
+      &:before {
+        display: block !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 3px !important;
+        width: 16px !important;
+        height: 16px !important;
+        color: #fff !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        line-height: 17px !important;
+      }
+    }
+  }
+
+  &.le-shared {
+    .le-component-info:before {
+      content: "S" !important;
+      //fixme get icon for this
+      /*noinspection CssNoGenericFontName*/
+      font-family: $font-open-sans-semi-bold !important;
+      background: $color-green !important;
+    }
+  }
+
+  &.le-cat-page-template {
+    .le-component-info:before {
+      //fixme get icon for this
+      content: "T" !important;
+      background: #f90 !important;
+      font-family: $font-open-sans-semi-bold !important;
+    }
+  }
+
+  &.le-box-locked {
+    .le-component-info:after {
+      //fixme get icon for this
+      content: "L" !important;
+      /*noinspection CssNoGenericFontName*/
+      font-family: $font-open-sans-semi-bold !important;
+      font-size: 14px !important;
+      color: #999 !important;
+    }
+  }
+}
+
+/** End Component Toolbar */
+
+/** Drag And Drop */
+.le-drop-location {
+  position: absolute !important;
+  z-index: 19998 !important;
+  background-color: #f66 !important;
+  text-align: center !important;
+  -webkit-transition: left .2s, right .2s, top .2s, bottom .2s;
+  transition: left .2s, right .2s, top .2s, bottom .2s;
+
+  &:before,
+  &:after {
+    content: "" !important;
+    position: absolute !important;
+    width: 7px !important;
+    height: 7px !important;
+    display: block !important;
+    background: #f66 !important;
+  }
+
+  &:before {
+    top: -2px !important;
+  }
+
+  &:after {
+    top: -2px !important;
+    left: 100% !important;
+  }
+
+  &.le-alt {
+    background-color: blue !important;
+
+    &:before,
+    &:after {
+      background: blue !important;
+    }
+  }
+
+  .le-target {
+    display: inline-block !important;
+    position: relative !important;
+    top: 3px !important;
+    border: 1px solid #aaa !important;
+    border-top: 0 !important;
+    text-transform: capitalize !important;
+    padding: 10px 20px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    white-space: nowrap !important;
+  }
+
+  &.le-vertical {
+    &:before {
+      left: -2px !important;
+    }
+
+    &:after {
+      left: -2px !important;
+      top: 100% !important;
+    }
+
+    .le-target {
+      margin-top: 8px !important;
+      left: 3px !important;
+      border-left: 0 !important;
+    }
+  }
+}
+
+.le-dnd {
+  [data-cms_pe_empty] {
+    min-height: 40px !important;
+    min-width: 40px !important;
+    outline: 2px #888 dashed !important;
+    text-align: center !important;
+    font-family: "Trebuchet MS", Arial, sans-serif !important;
+
+    &:before {
+      content: attr(data-cms_pe_empty);
+    }
+  }
+}
+
+/** End Drag And Drop */
+
+/** Palette Toolbox */
+#cms-le-float-palette {
+  position: absolute !important;
+  z-index: 20001 !important;
+  background: $color-white !important;
+  width: 250px !important;
+  box-sizing: border-box !important;
+  border: 5px solid $color-bluegrey !important;
+  /*not important*/
+  top: 55px;
+  left: 10px;
+
+  .le-titlebar {
+    padding: 10px 20px 10px 10px !important;
+    background-color: $color-green !important;
+    color: $color-white !important;
+    border-bottom: 1px solid $color-dark-green !important;
+
+    &:hover {
+      background-color: darken($color-green, 10%) !important;
+    }
+
+    .le-title {
+      font-size: 14px !important;
+      font-family: $font-open-sans-bold !important;
+    }
+
+    .le-controls {
+      position: absolute !important;
+      right: 5px !important;
+      top: 4px !important;
+      cursor: pointer !important;
+      padding: 5px !important;
+
+      &:hover {
+        background-color: $color-dark-green !important;
+      }
+
+      &.le-close {
+        @include buttonGlyphOverride($html-entity-close, $size: 16px, $color: $color-white);
+      }
+    }
+  }
+
+  .le-search-results {
+    button.toggle {
+      width: 100% !important;
+      text-align: left !important;
+      margin: 0 !important;
+      font-size: 12px !important;
+      font-family: $font-open-sans-semi-bold !important;
+      padding: 8px 10px !important;
+	    border-radius: 0 !important;
+      background: $color-light-bluegrey !important;
+      border: 0 none !important;
+      border-top: 1px solid $color-lighter-bluegrey !important;
+      color: $color-white !important;
+      cursor: pointer !important;
+
+      &:hover {
+        background-color: darken($color-light-bluegrey, 10%) !important;
+      }
+
+      &:after {
+        @include glyphAdd($html-entity-arrow-up, $size: 16px);
+        float: right !important;
+      }
+    }
+
+    .hidden button.toggle:after {
+      @include glyphOverride($html-entity-arrow-down);
+    }
+  }
+
+  .le-search-new-results,
+  .le-search-existing-results {
+    max-height: 10000px !important;
+    -webkit-transition: all .4s !important;
+    transition: all .4s !important;
+
+    &.hidden {
+      overflow: hidden !important;
+      max-height: 0 !important;
+      visibility: hidden !important;
+    }
+  }
+
+  .le-search-result {
+    box-sizing: border-box !important;
+    padding: 2px 0 !important;
+
+    + .le-search-result {
+      border-top: 1px solid $color-smokey-white !important;
+    }
+
+    &:hover {
+      background-color: $color-smokey-white !important;
+    }
+
+    .contentelement {
+      width: 100% !important;
+      text-align: left !important;
+
+      td {
+        padding: 2px !important;
+
+        &.le-icon {
+          width: 34px !important;
+          padding-left: 5px !important;
+          padding-right: 5px !important;
+        }
+      }
+
+      img.le-icon {
+        width: 28px !important;
+        height: auto !important;
+      }
+
+      .le-name {
+        font-family: $font-open-sans-semi-bold !important;
+        font-size: 12px !important;
+      }
+      .le-type {
+        font-family: $font-open-sans-semi-bold !important;
+        font-size: 12px !important;
+      }
+      .le-name + .le-type {
+        font-family: $font-open-sans !important;
+        font-size: 11px !important;
+      }
+    }
+  }
+}
+
+#cms-le-float-palette-content {
+  min-height: 100px !important;
+  min-width: 150px !important;
+
+  .le-loading & {
+    /*noinspection CssUnknownTarget*/
+    background: themeDesignResourceUrl('/Overall/loading-logo.svg') no-repeat center !important;
+    text-align: center !important;
+  }
+
+  .le-search-bar {
+    text-align: center !important;
+    box-sizing: border-box !important;
+    border-bottom: 1px solid $color-lighter-bluegrey !important;
+
+    input.le-search {
+      width: 100% !important;
+      padding: 9px 10px !important;
+      border: 0 none !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+  }
+
+  .le-search-results {
+    overflow: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/** End Palette Toolbox */
+
+/** Drop Options. */
+#cms-le-drop-options {
+  h1 {
+    margin: 0 0 14px 0 !important;
+  }
+
+  button {
+    display: block !important;
+    vertical-align: middle !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin: 7px 0 !important;
+    background: #fff !important;
+    padding: 14px !important;
+
+    &:hover {
+      color: #000 !important;
+    }
+
+    img {
+      margin-right: 14px !important;
+    }
+
+    img,
+    span {
+      display: inline-block !important;
+      vertical-align: middle !important;
+    }
+
+    &.le-cancel-drop {
+      display: inline-block !important;
+      width: auto !important;
+      text-align: center !important;
+      background: #eee !important;
+      color: #666 !important;
+      margin: 14px 0 0 0 !important;
+      padding: 6px !important;
+    }
+  }
+}
+
+/** End Drop Options. */

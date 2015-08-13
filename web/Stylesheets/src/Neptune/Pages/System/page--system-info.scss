@@ -1,0 +1,12 @@
+@import "../../Config/_base-import";
+
+.form_content {
+	> table,
+	.tab-content > table {
+		width: 100%;
+	}
+
+	.pager-top {
+		display: none;
+	}
+}

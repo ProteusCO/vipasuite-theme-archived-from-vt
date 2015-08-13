@@ -1,0 +1,578 @@
+@import "../../Config/_base-import";
+
+.site_editor {
+  .site_actions {
+    float: right;
+
+    .locale {
+      margin-right: 5px;
+    }
+
+    .btn {
+      &.action_reload {
+        @include buttonGlyphAdd($html-entity-refresh);
+      }
+      &.delete {
+        @include buttonGlyphAdd($html-entity-delete);
+      }
+    }
+  }
+
+  //fixme make this consistent across tabs
+  .entity_actions,
+  .entity-actions {
+    .btn {
+      &.add {
+        @include buttonGlyphAdd($html-entity-add);
+      }
+    }
+  }
+
+  .tab-content > div > .help-point,
+  .current_branding > .help-point {
+    float: right;
+    margin-left: 10px;
+    margin-top: 3px;
+  }
+
+  label {
+    @include style-form-label;
+
+    &.tbl {
+      font-family: $font-open-sans;
+    }
+  }
+
+  .prop > label.tbl {
+    @include style-form-label;
+  }
+
+  .label-con {
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .pager-top {
+    display: none;
+  }
+
+  .rtb + .btn {
+    margin-left: 5px;
+  }
+
+  .btn {
+    &.ok,
+    &.save {
+      @include buttonGlyphAdd($html-entity-success);
+    }
+    &.cancel {
+      @include buttonGlyphAdd($html-entity-cancel);
+    }
+  }
+
+  // general tab
+  .site-general {
+    .tab-content-wrapper > tbody > tr > td {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    label.tbl {
+      @include style-form-label;
+    }
+
+    .btn {
+      margin-left: 5px;
+
+      &.edit {
+        @include buttonStyleEditGlyph();
+      }
+    }
+  }
+
+  //hostname tab
+  .hostname-view_container {
+    .destination-welcome {
+      margin-bottom: 5px;
+    }
+  }
+
+  .site-hostnames {
+    .pager-search-results {
+      .btn {
+        &.edit {
+          @include buttonStyleEditGlyph();
+        }
+        &.delete {
+          @include buttonStyleDeleteGlyph();
+        }
+      }
+    }
+  }
+
+  //component assignment tab
+  .component_assignment_editor {
+    position: relative;
+
+    h1 {
+      @include style-h2;
+      margin: 0;
+    }
+
+    > hgroup,
+    > .actions.top {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    > hgroup {
+      margin-right: 5px;
+    }
+
+    .header-title {
+      margin-bottom: 10px;
+      h2 {
+        margin: 0;
+        @include style-h3;
+      }
+    }
+
+    .top.actions {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
+    .contentelement {
+      .icon-con {
+        img {
+          max-width: 24px;
+          max-height: 24px;
+          display: block;
+        }
+      }
+
+      .name_type-con {
+        padding: 0 5px;
+      }
+    }
+
+    .btn {
+      &.add {
+        @include buttonGlyphAdd($html-entity-add);
+      }
+      &.configure {
+        @include buttonGlyphOnly($html-entity-gear);
+
+        //fixme get class added
+        &:nth-child(1) {
+          @include buttonGlyphOverride($html-entity-search);
+        }
+      }
+      &.remove {
+        @include buttonStyleRemoveGlyph;
+      }
+    }
+
+    //fixme get classes added to wrapper
+    fieldset {
+      margin: 10px 0;
+
+      legend {
+        @include style-h3;
+      }
+
+      .btn {
+        &.edit {
+          float: right;
+          margin-bottom: 5px;
+          @include buttonGlyphAdd($html-entity-edit);
+        }
+      }
+    }
+
+    //fixme get classes added to wrapper for field editor
+    .prop-editor {
+      .prop-header-actions {
+        display: none;
+      }
+
+      .prop-body {
+        margin: 10px 0;
+      }
+    }
+
+    .prop {
+      margin: 5px 0;
+
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+
+      &.name,
+      &.programmatic_name {
+        input {
+          width: 250px;
+        }
+      }
+
+      &.icon {
+        .actions {
+          margin-left: 5px;
+        }
+      }
+
+      &.fields {
+        .title {
+          @include style-h3;
+        }
+
+        .type-long {
+          width: 1%;
+        }
+
+        .entity_actions {
+          margin-bottom: 5px;
+        }
+
+        .type-localized-object-key {
+          width: 280px;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //component config
+  .model-definition-editor {
+
+    .prop-footer-actions {
+      margin-top: 10px;
+    }
+
+    .available_fields {
+      h1 {
+        @include style-h3;
+      }
+
+      .type-int {
+        width: 1%;
+      }
+
+      .actions {
+        text-align: right;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .search-configuration-editor {
+    .search-constraints,
+    .search-columns {
+      @include clearfix;
+      margin: 10px 0;
+
+      label {
+        @include style-h3;
+        display: block;
+      }
+    }
+
+    .available,
+    .selected {
+      label {
+        @include style-h4;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .column-type,
+      .constraint-type {
+        font-family: $font-open-sans-semi-bold;
+      }
+
+      .field-name {
+        font-family: $font-open-sans-semi-bold;
+
+        + .column-type,
+        + .constraint-type {
+          margin-left: 10px;
+          font-size: 11px;
+          font-family: $font-open-sans;
+
+          &:before {
+            content: "(";
+          }
+          &:after {
+            content: ")";
+          }
+        }
+      }
+    }
+
+    .available {
+      float: left;
+      width: 210px;
+    }
+
+    .selected {
+      margin-left: 220px;
+    }
+
+    .element {
+      margin: 2px 0;
+      padding: 3px;
+      border: 1px solid $color-cloud-grey;
+      background-color: $color-almost-white;
+
+      &:hover {
+        background-color: $color-lighter-grey;
+        border-color: $color-grey;
+      }
+
+      .selector {
+        display: none;
+      }
+    }
+
+    .paging-size {
+      .val {
+        margin-left: 5px;
+      }
+    }
+
+    .no_data {
+      border: 2px dashed $color-lighter-grey;
+      padding: 5px 10px;
+      background-color: $color-almost-white;
+      color: $color-grey;
+      font-family: $font-open-sans-italic;
+    }
+
+    .dnd-target-active {
+      .no_data {
+        border: 2px solid $color-blue;
+      }
+    }
+
+    tr.dnd-feedback {
+      border: 0 none;
+      background-color: transparent;
+
+      td {
+        border-top: 1px solid $color-grey;
+        border-bottom: 1px solid $color-grey;
+
+        &:first-child {
+          border-left: 1px solid $color-grey;
+        }
+        &:last-child {
+          border-right: 1px solid $color-grey;
+        }
+      }
+    }
+  }
+
+  .html_expression {
+
+    .expression_type {
+      @include style-form-label;
+      margin-bottom: 5px;
+    }
+
+    .file-editor {
+      @include style-form-input-readonly;
+      font-family: $font-monospace;
+      white-space: pre-wrap;
+      max-height: 300px;
+      overflow: auto;
+      display: block;
+      margin-bottom: 10px;
+
+      //fixme output normal html
+      &:empty {
+        padding: 10px;
+        font-family: $font-open-sans-italic;
+        background-color: $color-almost-white;
+        color: $color-grey;
+
+        &::before {
+          content: "No Template Content Defined";
+        }
+      }
+    }
+
+    .domain_model_tree {
+      margin: 10px 0;
+
+      .show_deprecated {
+        text-align: right;
+        display: block;
+
+        label {
+          width: auto;
+        }
+      }
+    }
+
+    .instructions {
+      @include style-message-info;
+    }
+  }
+
+  //error pages tab
+  .site_error_pages {
+    .resource-not-found-con,
+    .cms-error-con,
+    .general-error-con {
+      padding: 3px 0;
+    }
+
+    .btn {
+      &.edit {
+        @include buttonGlyphAdd($html-entity-edit);
+      }
+    }
+
+    .actions-con {
+      padding-left: 175px;
+      padding-top: 5px;
+    }
+
+    .save-con {
+      padding-right: 2px;
+    }
+  }
+
+  //file storage tab
+  .file-storage {
+    .entity_actions {
+      padding-top: 5px;
+      margin-bottom: 5px;
+      text-align: right;
+      clear: both;
+
+      .btn {
+        @include buttonGlyphAdd($html-entity-nbsp);
+
+        &.add {
+          @include buttonGlyphOverride($html-entity-add);
+        }
+        &.edit {
+          @include buttonGlyphOverride($html-entity-edit);
+          margin-left: 10px;
+        }
+        &.remove {
+          @include buttonGlyphOverride($html-entity-remove);
+        }
+      }
+    }
+
+    .add_file_storage {
+      float: left;
+    }
+
+    //fixme update the classname so it doesnt collide with component editor
+    .editor {
+      border: 0 none;
+
+      .content-con {
+        padding: 3px 0;
+      }
+
+      .actions {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  //analytics tab
+  .site-analytics {
+    span.val {
+      margin-right: 5px;
+    }
+
+    .btn {
+      &.edit {
+        @include buttonStyleEditGlyph();
+      }
+    }
+  }
+
+  //SEO/Meta data tab
+  .site_meta_data {
+    .btn {
+      &.add {
+        @include buttonGlyphAdd($html-entity-add);
+      }
+      &.delete {
+        @include buttonStyleDeleteGlyph();
+      }
+    }
+
+    .metadata {
+      .items {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  //branding tab
+  .branding_config {
+    .heading {
+      @include style-h2;
+      margin-bottom: 15px;
+    }
+
+    .prop.name {
+      margin: 10px 0;
+
+      label {
+        margin-right: 5px;
+      }
+    }
+
+    .logo_section {
+      h3 {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      .prop {
+        margin: 5px 0;
+
+        label {
+          width: 70px;
+          display: inline-block;
+        }
+      }
+    }
+
+    fieldset {
+      margin: 10px 0;
+    }
+
+    .css_section {
+      textarea {
+        width: 100%;
+        font-family: $font-monospace;
+      }
+    }
+  }
+
+  .current_branding {
+    label {
+      margin-right: 10px;
+    }
+
+    .actions {
+      margin-left: 5px;
+    }
+
+    //fixme add classes to buttons
+  }
+}

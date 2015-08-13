@@ -1,0 +1,208 @@
+@import "../Config/_base-import";
+
+.site-selector {
+	position: relative;
+	margin: 5px 0;
+
+	&.selector-open {
+		.selector-sites-con {
+			display: block;
+		}
+
+		.current-site {
+			a.hostname {
+				background-color: $color-light-grey;
+
+				&::after {
+					color: $color-dark-grey;
+					background-color: $color-light-grey;
+					border-left-color: $color-grey;
+				}
+
+				&:hover::after {
+					color: $color-dark-grey;
+					background-color: $color-light-grey;
+					border-left-color: $color-grey;
+				}
+
+				span.hostname {
+					color: $color-dark-grey;
+				}
+			}
+		}
+	}
+
+	&.loading {
+		.selector-sites-con {
+			> span {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -20px;
+				margin-left: -20px;
+			}
+		}
+
+		.smil & {
+			.selector-sites-con {
+				> span {
+					@include loading-circle-spinner;
+				}
+			}
+		}
+
+		.no-smil & {
+			.selector-sites-con {
+				> span {
+					@include loading-circle-spinner-nosmil;
+				}
+			}
+		}
+	}
+
+	.current-site {
+		a.hostname {
+			background-color: $color-almost-white;
+			height: 28px;
+			padding: 5px 30px 5px 25px;
+			position: relative;
+			text-decoration: none;
+			display: block;
+			margin-bottom: 5px;
+
+			span.hostname {
+				color: $color-default-site-font;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.favicon {
+				position: absolute;
+				left: 5px;
+				top: 6px;
+			}
+
+			&::after {
+				@include glyphAdd($html-entity-arrow-right, $size: 20px, $color: $color-grey);
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 25px;
+				height: 28px;
+				line-height: 28px;
+				text-align: center;
+				border-left: 1px solid $color-lighter-grey;
+				background-color: $color-smokey-white;
+			}
+
+			&:hover::after {
+				color: $color-darker-grey;
+				background-color: $color-lighter-grey;
+				border-left-color: $color-light-grey;
+			}
+		}
+
+		.site-actions {
+			margin-top: 5px;
+
+			.btn {
+				font-size: 14px;
+				text-transform: uppercase;
+				font-family: $font-open-sans-bold;
+				text-align: center;
+
+				& + .btn {
+					margin-left: 5px;
+				}
+
+				&.live-view {
+					@include buttonColors($color-green);
+					@include buttonGlyphAdd($html-entity-preview, $size: 16px);
+					width: 112px;
+				}
+				&.live-edit {
+					@include buttonColors($color-orange);
+					@include buttonGlyphAdd($html-entity-live-edit, $size: 16px);
+					width: 113px;
+				}
+			}
+		}
+	}
+
+	input[type=search] {
+		width: 160px;
+	}
+
+	.selector-sites-con {
+		@include style-popup-box;
+		display: none;
+		position: absolute;
+		z-index: 5000;
+		left: 100%;
+		top: -12px;
+		width: 350px;
+		margin-left: 5px;
+		min-height: 130px;
+	}
+
+	.ss-search-form {
+		margin-bottom: 15px;
+	}
+
+	.ss-site-search {
+		margin-right: 5px;
+	}
+
+	.ssg-site-btn {
+		text-decoration: none;
+
+		&:hover {
+			span.hostname {
+				text-decoration: underline;
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.selector-sites {
+		.heading {
+			font-family: $font-open-sans-semi-bold;
+			font-size: 14px;
+			margin: 5px 0;
+		}
+
+		hr {
+			display: none;
+		}
+	}
+
+	.results {
+		max-height: 300px;
+		overflow-y: auto;
+	}
+
+	.site-info {
+		.favicon {
+			vertical-align: middle;
+		}
+
+		.site-actions {
+			margin-left: 5px;
+		}
+
+		.btn {
+			&.live-view {
+				@include buttonGlyphOnly($html-entity-preview);
+			}
+			&.live-edit {
+				@include buttonGlyphOnly($html-entity-live-edit);
+			}
+		}
+	}
+}

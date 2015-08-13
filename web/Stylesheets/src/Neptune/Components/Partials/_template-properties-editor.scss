@@ -1,0 +1,203 @@
+@import "../../Config/_base-import";
+
+.template_properties_editor {
+	> .heading {
+		display: none;
+	}
+
+	.pages {
+		.trashed {
+			td {
+				text-decoration: line-through;
+			}
+		}
+	}
+
+	.click_to_edit {
+		.btn {
+			&.edit {
+				@include buttonGlyphAdd($html-entity-edit);
+			}
+		}
+	}
+
+	.edit_template {
+		> .click_to_edit,
+		> .available-locales,
+		> .inherited-locales,
+		> .layout {
+			margin: 5px 0;
+		}
+
+		.name,
+		.css_id {
+			label {
+				display: inline-block;
+				width: 60px;
+			}
+
+			.field {
+				width: 250px;
+			}
+		}
+
+		.inherited-locales {
+			a[data-features=submit] {
+				margin-left: 10px;
+			}
+		}
+
+		> .layout {
+			float: right;
+			margin-top: -26px; //FIXME I really don't want to do this, but time and HTML makes me set float this way
+
+			label {
+				display: none;
+			}
+
+			.field {
+				margin-right: 5px;
+			}
+		}
+
+		> .template_tabs {
+			margin: 15px 0;
+		}
+
+		.pages {
+			.page-actions {
+				float: right;
+			}
+
+			.pager-top {
+				display: none;
+			}
+
+			> .actions {
+				margin-bottom: 5px;
+			}
+
+			.btn {
+				&.create_pages {
+					@include buttonGlyphAdd($html-entity-add);
+				}
+			}
+		}
+	}
+
+	.switch_layout_wizard,
+	.move_pages_wizard {
+		margin-bottom: 15px;
+
+		> .heading {
+			@include style-h2;
+		}
+
+		.layout_selector,
+		.template_selector {
+			margin: 10px 0;
+		}
+
+		.heading {
+			margin: 0;
+		}
+
+		.select_template {
+			> .heading {
+				@include style-h3;
+			}
+		}
+
+		.search_bar {
+			margin: 10px 0;
+		}
+
+		.box_mapping_component {
+			margin: 10px 0;
+
+			td.source-con {
+				padding-right: 10px;
+				@include style-form-label;
+			}
+
+			td.destination-con {
+				padding: 2px 0;
+			}
+		}
+
+		.override_template_content {
+			margin: 10px 0;
+		}
+
+		.confirm_layout_switch,
+		.confirm_template_switch {
+			margin: 10px 0;
+
+			.pager {
+				margin: 5px 0;
+			}
+		}
+
+		.btn {
+			&.back {
+				@include buttonGlyphAdd($html-entity-arrow-left);
+			}
+			&.continue {
+				@include buttonGlyphAdd($html-entity-arrow-right);
+			}
+			&.cancel {
+				@include buttonGlyphAdd($html-entity-cancel);
+			}
+			&.save,
+			&.finish {
+				@include buttonGlyphAdd($html-entity-success);
+			}
+		}
+	}
+
+	.create_pages {
+		margin-bottom: 15px;
+
+		.heading {
+			@include style-h2;
+			margin-bottom: 15px;
+		}
+
+		.new_pages {
+			margin-bottom: 10px;
+		}
+
+		.example {
+			margin: 10px 0;
+		}
+
+		input.prop_name,
+		input.prop_value {
+			width: 100%;
+		}
+
+		.btn {
+			&.add {
+				@include buttonGlyphAdd($html-entity-add);
+				margin-left: 10px;
+			}
+			&.remove {
+				@include buttonStyleDeleteGlyph;
+			}
+		}
+	}
+
+	.secondary_navigation_wizard {
+		> h3 {
+			margin-top: 0;
+		}
+
+		> .box {
+			margin: 10px 0;
+		}
+
+		.editor {
+			margin: 10px 0;
+		}
+	}
+}

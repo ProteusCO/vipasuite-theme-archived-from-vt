@@ -1,0 +1,376 @@
+@import "../../Config/_base-import";
+
+.time_entry_app {
+
+	.get_to_work {
+		padding: 10px;
+		background-color: $color-almost-white;
+		margin: 20px 0 0;
+		border: 1px solid $color-lighter-grey;
+	}
+
+	.time_entry_component {
+		> .entity_actions {
+			padding-left: 20px;
+			position: relative;
+
+			.action {
+				margin-right: 10px;
+
+				label {
+					margin-right: 5px;
+				}
+			}
+
+			select {
+				min-width: 200px;
+			}
+
+			//fixme add btn class
+			a.search {
+				@include buttonBase;
+				@include buttonGlyphAdd($html-entity-search);
+				float: right;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	a.project_link {
+		text-decoration: none;
+		color: $color-charcoal;
+		display: inline-block;
+		line-height: 16px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:before {
+			content: " ";
+			width: 16px;
+			height: 16px;
+			background: 0 0 transparent url(/resources/dyn/docroot/cms/filesystem/icons/extension/txt.gif) no-repeat;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		+ a.project_link {
+			margin-left: 15px;
+		}
+	}
+
+	.project {
+		margin: 20px 0;
+		transition: all 100ms;
+		border: 1px solid transparent;
+		border-left-width: 5px;
+		padding: 10px;
+
+		&:hover {
+			border-color: #ccc;
+			box-shadow: 1px 1px 3px rgba(100,100,100,0.3);
+			background-color: $color-smokey-white;
+
+			> .header {
+				.extras {
+					opacity: 1;
+				}
+			}
+
+			.time_entries_con {
+				> .actions {
+					opacity: 1;
+				}
+
+				> .show_daily {
+					opacity: 1;
+				}
+
+				.time_entry .actions {
+					opacity: 1;
+				}
+			}
+		}
+
+		> .header {
+			position: relative;
+
+			.header_title {
+				display: inline-block;
+				vertical-align: middle;
+				font-family: $font-open-sans-semi-bold;
+				margin: 0;
+			}
+
+			.extras {
+				vertical-align: middle;
+				display: inline-block;
+				transition: opacity 100ms;
+				font-size: 12px;
+				padding: 5px 10px;
+				opacity: 0;
+			}
+
+			.site-name {
+				font-size: 12px;
+				background-color: $color-almost-white;
+				border: 1px solid $color-cloud-grey;
+				padding: 5px 10px;
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.project-name {
+				font-size: 22px;
+				margin-right: 10px;
+				vertical-align: middle;
+				display: inline-block;
+
+				a {
+					text-decoration: none;
+					color: $color-charcoal;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.permalink {
+				position: absolute;
+				right: 0;
+				top: 5px;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&:before {
+					content: "(";
+				}
+
+				&:after {
+					content: ")";
+				}
+			}
+
+			.project_links {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+
+	.time_entries_con {
+		clear: both;
+		margin: 0 0;
+
+		> .actions {
+			float: left;
+			opacity: 0;
+			margin: 5px 0;
+
+			a.add {
+				@include buttonBase;
+				@include buttonGlyphAdd($html-entity-add);
+			}
+		}
+
+		> .show_daily {
+			float: right;
+			opacity: 0;
+		}
+
+		.time_entries {
+			clear: both;
+			display: table;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		.time_entries .header,
+		.time_entry {
+			display: table-row;
+		}
+
+		.header_part,
+		.time_entry_part {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 5px 10px;
+		}
+
+		.time_entry {
+			&:hover {
+				.time_entry_part {
+					background-color: $color-cornsilk;
+				}
+			}
+
+			.actions {
+				white-space: nowrap;
+				opacity: 0.3;
+
+			}
+
+			a {
+				@include buttonBase;
+				@include buttonGlyphOnly($html-entity-nbsp, $size: 20px);
+
+				+ a {
+					margin-left: 5px;
+				}
+
+				&.edit {
+					@include buttonStyleEditGlyph();
+				}
+				&.delete {
+					@include buttonStyleDeleteGlyph();
+				}
+				&.save {
+					@include buttonGlyphOverride($html-entity-success, $color: $color-dark-green);
+				}
+				&.cancel {
+					@include buttonGlyphOverride($html-entity-cancel);
+				}
+				&.add {
+					@include buttonStyleAddGlyph();
+				}
+				&.start {
+					@include buttonGlyphOverride($html-entity-fixme);
+				}
+			}
+
+			.time_range_entry {
+				input {
+					vertical-align: middle;
+					width: 119px;
+				}
+
+				.actions {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			.time_range_list {
+				display: table;
+				width: 100%;
+				margin: 5px 0;
+
+				.time_range {
+					display: table-row;
+
+					.range,
+					.actions {
+						display: table-cell;
+						padding: 2px 0;
+					}
+
+					.range {
+						padding: 2px 5px;
+					}
+
+					.actions {
+						white-space: nowrap;
+						width: 1px;
+					}
+				}
+			}
+
+			.time_range,
+			.current_time_range > span,
+			.duration label,
+			&.entry_edit .duration {
+				display: none;
+			}
+
+			.time_range_duration {
+				border-top: 1px solid $color-light-grey;
+				padding: 5px 5px;
+
+				label {
+					@include style-form-label;
+				}
+			}
+
+		}
+
+		.entry_edit {
+			textarea {
+				width: 100%;
+				resize: vertical;
+				height: 28px;
+				padding: 5px;
+			}
+
+			.time_entry_part {
+				padding: 5px;
+
+				.time_entry_part.actions {
+					padding: 10px 10px 5px;
+				}
+			}
+		}
+
+		.header_part {
+			font-size: 13px;
+			border-bottom: 1px solid $color-grey;
+			font-family: $font-open-sans-semi-bold;
+			color: $color-charcoal;
+
+			&.actions {
+				text-align: right;
+			}
+		}
+
+		.time_entry_part {
+			border-bottom: 1px dotted $color-light-grey;
+			color: $color-darker-grey;
+
+			&.date {
+				width: 120px;
+			}
+
+			&.category {
+				width: 155px;
+			}
+
+			&.time_ranges {
+				width: 170px;
+			}
+
+			&.actions {
+				width: 50px;
+			}
+		}
+
+		select,
+		textarea,
+		input {
+			border: 1px solid $color-light-grey;
+			padding: 5px;
+			margin: 0;
+		}
+
+		.cal {
+			white-space: nowrap;
+
+			input {
+				width: 80px;
+				margin-right: 5px;
+			}
+		}
+
+		.category select {
+			width: 100%;
+		}
+
+		.notes input {
+			width: 100%;
+		}
+	}
+}

@@ -13,15 +13,15 @@ var vinylPaths = require('vinyl-paths');
 gulp.task('default', ['clean', 'styles']);
 
 gulp.task('clean', ['clean:styles', 'clean:dist']);
-gulp.task('clean:styles', function(cb) {
-	del(['./Stylesheets/build/**'], cb);
+gulp.task('styles:clean', function(cb) {
+	del(['./web/Stylesheets/build/**'], cb);
 });
-gulp.task('clean:dist', function(cb) {
+gulp.task('dist:clean', function(cb) {
 	del(['./dist/**'], cb);
 });
 
-gulp.task('styles:build', ['clean:styles'], function () {
-	return gulp.src('./Stylesheets/src/**/*.scss')
+gulp.task('styles:build', ['styles:clean'], function () {
+	return gulp.src('./web/Stylesheets/src/**/*.scss')
 		.pipe(sass({
 			outputStyle: 'expanded'
 		}))
@@ -29,13 +29,13 @@ gulp.task('styles:build', ['clean:styles'], function () {
 			browsers: ['> 1%', 'last 2 versions', 'ie >= 9'],
 			cascade: false
 		}))
-		.pipe(gulp.dest('./Stylesheets/build'));
+		.pipe(gulp.dest('./web/Stylesheets/build'));
 });
 
 gulp.task('styles', ['live-edit:build']);
 
 gulp.task('iconfont', function(){
-	return gulp.src('./FontGlyphs/src/icons/*.svg')
+	return gulp.src('./fontglyphs/src/icons/*.svg')
 		.pipe(iconfont({
 			fontName: 'neptune-glyph-font', // required
 			appendCodepoints: true, // recommended option
@@ -50,23 +50,23 @@ gulp.task('iconfont', function(){
 				};
 			});
 
-			gulp.src('./FontGlyphs/src/templates/_iconfont.scsstpl')
+			gulp.src('./fontglyphs/src/templates/_iconfont.scsstpl')
 				.pipe(consolidate('lodash', {
 					glyphs: codepoints
 				}))
 				.pipe(rename('_font-glyph-entities.scss'))
-				.pipe(gulp.dest('./Stylesheets/src/Neptune/Config/'));
+				.pipe(gulp.dest('./web/Stylesheets/src/Neptune/Config/'));
 		})
-		.pipe(gulp.dest('./Design/Neptune/Fonts/GlyphLib/'));
+		.pipe(gulp.dest('./web/Design/Neptune/Fonts/GlyphLib/'));
 });
 
 gulp.task('live-edit:build', ['styles:build'], function() {
-	return gulp.src('./Stylesheets/build/Neptune/LiveEdit/app.css')
+	return gulp.src('./web/Stylesheets/build/Neptune/LiveEdit/app.css')
 		.pipe(vinylPaths(del))
-		.pipe(gulp.dest('./LiveEdit/'));
+		.pipe(gulp.dest('./liveedit/'));
 });
 
-gulp.task('dist', ['clean:dist', 'live-edit:build'], function() {
+gulp.task('dist', ['dist:clean', 'styles'], function() {
 	var stream = streamqueue({ objectMode: true });
 
 	stream.queue(
@@ -74,15 +74,15 @@ gulp.task('dist', ['clean:dist', 'live-edit:build'], function() {
 	);
 
 	stream.queue(
-		gulp.src('./Design/**/*', {base: '.'})
+		gulp.src('./web/Design/**/*', {base: './web'})
 	);
 
 	stream.queue(
-		gulp.src('./Javascript/**/*', {base: '.'})
+		gulp.src('./web/Javascript/**/*', {base: './web'})
 	);
 
 	stream.queue(
-		gulp.src('./Stylesheets/build/**/*', {base: '.'})
+		gulp.src('./web/Stylesheets/build/**/*', {base: './web'})
 			.pipe(rename(function(path) {
 				path.dirname = path.dirname.replace('\\build', '');
 			}))

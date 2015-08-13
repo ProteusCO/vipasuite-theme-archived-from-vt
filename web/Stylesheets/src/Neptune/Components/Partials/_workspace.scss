@@ -1,0 +1,114 @@
+@import "../../Config/_base-import";
+
+/*
+	Component partial -	Workspace UI that includes task manager
+*/
+
+.workspace {
+	.uitask-manager-con {
+		margin-bottom: 15px;
+	}
+
+	.tasks {
+		margin-top: 15px;
+	}
+}
+
+.uitask {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 10px;
+	margin-top: 1px;
+	margin-bottom: 2px;
+	background-color: $color-almost-white;
+	border: 1px solid $color-cloud-grey;
+	font-family: $font-open-sans-semi-bold;
+	padding: 5px;
+
+	&.selected {
+		border-color: $color-grey;
+		background-color: $color-white;
+
+		a.uitask-label {
+			color: $color-default-site-font;
+		}
+	}
+
+	span.uitask-type {
+		display: none;
+	}
+
+	.uitask-type-con {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	img.uitask-type {
+		width: auto;
+		max-height: 16px;
+		margin-right: 5px;
+		display: block;
+	}
+
+	a.uitask-label {
+		text-decoration: none;
+		color: $color-blue;
+		font-size: 12px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.uitask-actions {
+		margin-left: 5px;
+
+		.btn {
+			&.info {
+				@include buttonGlyphOnly($html-entity-info, 12px, $color-btn-info);
+			}
+			&.close {
+				@include buttonStyleCloseGlyph(12px);
+			}
+		}
+	}
+
+	.uitask-info {
+		position: absolute;
+		z-index: 15;
+		background-color: $color-white;
+		border: 1px solid $color-lighter-grey;
+		font-family: $font-open-sans;
+		font-size: 12px;
+		padding: 10px;
+		max-width: 450px;
+		box-shadow: 0 0 5px transparentize($color-black, 0.8);
+		@include clearfix;
+
+		label {
+			font-family: $font-open-sans-semi-bold;
+			width: 110px;
+			margin-right: 5px;
+			float: left;
+		}
+
+		a.close {
+			float: right;
+			@include buttonBase;
+			@include buttonGlyphAdd($html-entity-close, 13px);
+		}
+
+		.l10n-btn + .l10n-btn {
+			margin-left: 5px;
+		}
+
+		//fixme fix it so it has a class for the containers of the labels
+		> div {
+			@include clearfix;
+
+			+ div {
+				margin-top: 5px;
+			}
+		}
+	}
+}

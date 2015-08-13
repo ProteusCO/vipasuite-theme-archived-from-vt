@@ -1,0 +1,129 @@
+@import "../../Config/_base-import";
+
+/*
+	Component partial -	Tables and trees
+*/
+.miwt-table {
+	@include style-table;
+
+	> thead > tr {
+		> th {
+			@include style-table-heading;
+		}
+	}
+
+	> tbody > tr {
+		@include style-table-data-row;
+	}
+}
+
+/* MIWT Trees. */
+
+.miwt-tree {
+	@include style-table;
+	border: 0 none;
+
+	> thead > tr {
+		> th {
+			@include style-table-heading;
+			border-bottom: 1px solid $color-cloud-grey;
+
+			&.last-column {
+				border-right: 1px solid $color-cloud-grey;
+				border-top: 1px solid $color-cloud-grey;
+			}
+		}
+	}
+
+	> tbody > tr {
+		@include style-table-data-row;
+
+		> td {
+			border-bottom: 1px solid $color-cloud-grey;
+
+			&.leaf,
+			&.parent-sibling-following,
+			&.parent-last-sibling,
+			&.sibling-following,
+			&.last-sibling {
+				background-color: transparent;
+				border: 0 none;
+			}
+
+			&.first-column {
+				border-left: 1px solid $color-cloud-grey;
+				border-top: 1px solid $color-cloud-grey;
+			}
+
+			&.last-column {
+				border-right: 1px solid $color-cloud-grey;
+				border-top: 1px solid $color-cloud-grey;
+			}
+		}
+	}
+
+	tr.dnd-source {
+		td.first-column {
+			padding: 5px 8px;
+			background-image: none;
+		}
+
+		&:hover {
+			td.first-column {
+				background-image: none;
+			}
+		}
+	}
+
+	.parent-sibling-following,
+	.last-sibling,
+	.sibling-following {
+		img.tpi {
+			width: 14px;
+		}
+	}
+
+	td.parent-sibling-following,
+	td.sibling-following {
+		background-image: url(/_resources/all/docroot/cms/icons/tree/vline.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		border: 0 none;
+		padding: 0;
+	}
+
+	td.first {
+		width: 1px;
+	}
+
+	.last-sibling,
+	td.sibling-following {
+		width: 16px;
+	}
+
+	td.parent-last-sibling {
+		border: 0 none;
+		background: transparent;
+		padding: 0;
+	}
+
+	td.sibling-following.leaf {
+		background-image: url(/_resources/all/docroot/cms/icons/tree/tn.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		border: 0 none;
+		padding: 0;
+	}
+
+	td.last-sibling {
+		background-image: url(/_resources/all/docroot/cms/icons/tree/ln.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		border: 0 none;
+		padding: 0;
+	}
+
+	div.column-visibility {
+		padding-left: 0;
+	}
+}

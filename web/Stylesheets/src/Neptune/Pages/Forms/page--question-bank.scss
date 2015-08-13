@@ -1,0 +1,25 @@
+@import "../../Config/_base-import";
+
+@import "../../Components/Partials/_form-editor";
+
+.help-point.disabled {
+	display: none;
+}
+
+//fixme this needs html restructure
+.search_results {
+	.btn {
+		&.edit {
+			@include buttonStyleEditGlyph();
+		}
+		&.delete {
+			@include buttonStyleDeleteGlyph();
+		}
+		&.copy {
+			@include buttonGlyphOnly($html-entity-copy);
+		}
+		&.details {
+			@include buttonGlyphOnly($html-entity-view);
+		}
+	}
+}

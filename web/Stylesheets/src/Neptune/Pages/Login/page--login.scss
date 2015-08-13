@@ -1,0 +1,156 @@
+@import "../../Config/_base-import";
+
+
+.login {
+	.title,
+	.label {
+		display: none;
+	}
+
+	.field {
+		+ .field {
+			margin-top: 10px;
+		}
+
+		.value {
+			display: block;
+			position: relative;
+		}
+
+		input {
+			width: 100%;
+		}
+
+		&.username {
+			.value:before {
+				position: absolute;
+				left: 7px;
+				top: 4px;
+				@include glyphAdd($html-entity-profile, 28px, $color-grey);
+			}
+		}
+
+		&.password,
+		&.verify-password {
+			.value:before {
+				position: absolute;
+				left: 7px;top: 4px;
+				@include glyphAdd($html-entity-lock, 28px, $color-grey);
+			}
+		}
+	}
+
+	@include textLikeInputs {
+		border: 1px solid $color-cloud-grey;
+		padding: 10px;
+		padding-left: 40px;
+		margin: 0;
+		color: $color-default-site-font;
+	}
+
+	.message {
+		&.important {
+			@include style-message-error;
+		}
+	}
+
+	.retrieve-password,
+	.actions {
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	.btn {
+		@include buttonColors($color-green);
+		box-shadow: 0 0 7px transparentize($color-dark-blue, 0.3);
+		font-size: 18px;
+		padding: 7px 50px;
+	}
+
+	&.password-reset {
+		.field {
+			&.username {
+				.value {
+					padding: 10px;
+					padding-left: 40px;
+					background-color: $color-light-grey;
+					display: block;
+					color: $color-darker-grey;
+				}
+			}
+		}
+	}
+}
+
+.login-process {
+	border-bottom: 1px solid $color-dark-blue;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+
+	.already-logged {
+		text-align: center;
+		padding: 10px;
+	}
+}
+
+.follow,
+.downloadables {
+	display: inline-block;
+	vertical-align: top;
+
+	h2 {
+		margin: 0 0 10px;
+		font-family: $font-open-sans-bold;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+
+	ul {
+		@include resetMenu;
+	}
+}
+
+.follow {
+	text-align: left;
+	width: 30%;
+}
+
+.social-menu {
+	margin-left: -5px;
+
+	.mi {
+		display: inline-block;
+		vertical-align: top;
+
+		+ .mi {
+			margin-left: 5px;
+		}
+	}
+
+	.menuitemlabel {
+		@include buttonBase;
+		@include buttonGlyphOnly($html-entity-nbsp, 20px, $color-blue-almost-white);
+	}
+
+	.facebook .menuitemlabel {
+		@include buttonGlyphOverride($html-entity-social-facebook);
+	}
+
+	.twitter .menuitemlabel {
+		@include buttonGlyphOverride($html-entity-social-twitter);
+	}
+
+	.linkedin .menuitemlabel {
+		@include buttonGlyphOverride($html-entity-social-linkedin);
+	}
+}
+
+.downloadables {
+	text-align: right;
+	width: 70%;
+
+	li + li {
+		margin-top: 5px;
+	}
+}

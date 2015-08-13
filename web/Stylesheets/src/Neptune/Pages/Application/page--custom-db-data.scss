@@ -1,0 +1,96 @@
+@import "../../Config/_base-import";
+
+@import "../../Components/Partials/_table-row-editor";
+
+.table_data_mgt {
+	> .search {
+		> .tables {
+			float: left;
+			margin-bottom: 20px;
+
+			label {
+				@include style-form-label;
+				margin-right: 5px;
+			}
+
+			.btn {
+				@include buttonGlyphAdd($html-entity-refresh);
+			}
+		}
+
+		> .entity_actions {
+			.btn {
+				&.export_button {
+					@include buttonGlyphAdd($html-entity-download);
+				}
+				&.import_button {
+					@include buttonGlyphAdd($html-entity-upload);
+				}
+				&.add {
+					@include buttonGlyphAdd($html-entity-add);
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+
+	//import UI
+	> .import {
+		.help-point.disabled {
+			display: none;
+		}
+
+		.import-title {
+			@include style-h2;
+			display: block;
+			margin-bottom: 15px;
+		}
+
+		.csv-headers {
+			margin: 15px 0;
+		}
+		.csv-header {
+			background-color: $color-cloud-grey;
+			border: 1px solid $color-light-grey;
+			font-family: $font-monospace;
+			font-size: 12px;
+			margin: 10px 0;
+			padding: 10px;
+			white-space: pre;
+			overflow-x: auto;
+
+			+ .csv-header {
+				margin-top: 5px;
+			}
+		}
+		label {
+			@include style-form-label;
+			display: inline-block;
+			width: 150px;
+
+			&.tbl {
+				display: inline;
+				width: auto;
+				margin-right: 10px;
+			}
+		}
+
+		.prop {
+			margin: 10px 0;
+		}
+
+		> .actions {
+			margin-top: 15px;
+
+			.btn {
+				//fixme add class
+				&:nth-child(1) {
+					@include buttonGlyphAdd($html-entity-success);
+				}
+				&.cancel {
+					@include buttonGlyphAdd($html-entity-cancel);
+				}
+			}
+		}
+	}
+}

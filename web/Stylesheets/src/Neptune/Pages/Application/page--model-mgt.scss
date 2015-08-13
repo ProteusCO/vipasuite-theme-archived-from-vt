@@ -1,0 +1,70 @@
+@import "../../Config/_base-import";
+
+.searchui-app-main {
+
+	//fixme fix css class
+	.search-results {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+}
+
+.prop-wrapper {
+	.prop-header-title {
+		h1 {
+			@include style-h2;
+			margin: 0 0 10px;
+		}
+	}
+
+	.prop-header-actions {
+		display: none;
+	}
+
+	.prop {
+		+ .prop {
+			margin-top: 10px;
+		}
+
+		> label {
+			@include style-form-label;
+			margin-right: 5px;
+		}
+
+		&.name,
+		&.description {
+			input {
+				width: 300px;
+			}
+		}
+	}
+
+	.prop-footer {
+		margin-top: 10px;
+	}
+
+	.search_results {
+		.btn {
+			&.edit {
+				@include buttonStyleEditGlyph();
+			}
+			&.delete {
+				@include buttonStyleDeleteGlyph();
+			}
+		}
+	}
+
+	&.prop-editor {
+		.prop {
+			span.val {
+				@include style-form-input-readonly;
+			}
+		}
+	}
+}

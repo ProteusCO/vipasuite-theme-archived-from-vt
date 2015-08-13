@@ -1,0 +1,58 @@
+@import "../../Config/_base-import";
+
+
+//article containers tab table
+.pager-articlecontainer_table {
+
+	.action_edit {
+		@include buttonBase;
+		@include buttonStyleEditGlyph();
+	}
+}
+
+.help-point.cms-article-mgt {
+	float: right;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+.article_mgt_tabs {
+	.search_fields {
+		margin-bottom: 10px;
+
+		td {
+			padding-top: 2px;
+			padding-bottom: 2px;
+			padding-right: 10px;
+		}
+	}
+
+	.search {
+		> .actions {
+			margin: 5px 0;
+
+			td {
+				padding-right: 3px;
+			}
+		}
+	}
+
+	.article_table_pager {
+		td.actions {
+			a {
+				@include buttonBase;
+
+				&.action_edit {
+					@include buttonStyleEditGlyph;
+				}
+				&.action_remove {
+					//change class name to reflect what it really does
+					@include buttonStyleDeleteGlyph;
+				}
+				&.action_showpages {
+					@include buttonGlyphOnly($html-entity-page);
+				}
+			}
+		}
+	}
+}

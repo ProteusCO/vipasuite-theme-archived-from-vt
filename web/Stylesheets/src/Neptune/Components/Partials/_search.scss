@@ -1,0 +1,64 @@
+@import "../../Config/_base-import";
+
+.search {
+	.entity-actions,
+	.entity_actions {
+		float: right;
+		margin-bottom: 5px;
+	}
+
+	> .search_bar {
+		clear: both;
+		margin-bottom: 5px;
+	}
+
+	.search-actions,
+	.search_actions{
+		display: inline-block;
+	}
+
+	span.result-limit,
+	span.result_limit,
+	span.constraint {
+		display: inline-block;
+		margin: 0 10px 5px 0;
+	}
+
+	.constraint {
+		label {
+			padding-right: 5px;
+		}
+
+		&.combo select {
+			max-width: 22em;
+		}
+	}
+
+	span.result-limit,
+	span.result_limit {
+		label {
+			padding-right: 5px;
+		}
+	}
+
+	table.search-results,
+	table.search_results {
+		width: 100%;
+		clear: both;
+	}
+
+	> table.search-results,
+	> table.search_results {
+		margin: 5px 0;
+	}
+
+	.result-actions,
+	.result_actions {
+		text-align: right;
+		margin-top: 5px;
+	}
+
+	.pager-top {
+		display: none;
+	}
+}

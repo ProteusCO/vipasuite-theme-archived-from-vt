@@ -1,0 +1,23 @@
+@import "../../Config/_base-import";
+
+div.search {
+	@include style-inline-box();
+}
+
+.note {
+	.note_properties {
+		span.note_related {
+			border-right: 0 none;
+		}
+
+		.sep_at {
+			display: none;
+		}
+
+		.meta {
+			.principal {
+				display: none;
+			}
+		}
+	}
+}

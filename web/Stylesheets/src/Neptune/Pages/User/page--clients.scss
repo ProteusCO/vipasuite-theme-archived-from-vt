@@ -1,0 +1,401 @@
+@import "../../Config/_base-import";
+
+@import "../../Components/Partials/_file-editor";
+
+
+.desktop_component {
+	.desktop {
+		//create site UI off the sites tab
+		//fixme update html
+		> .createsite {
+			@include style-inline-box();
+
+			.url,
+			.description {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 100px;
+					display: inline-block;
+				}
+
+				.example {
+					margin-left: 100px;
+					font-family: $font-open-sans-italic;
+				}
+			}
+
+			> .heading {
+				@include style-h3;
+				display: block;
+				margin: 15px 0 5px;
+			}
+
+			> .search {
+				> .heading {
+					@include style-h4;
+					display: block;
+					margin: 5px 0;
+				}
+
+				> .constraints,
+				> .actions {
+					display: inline-block;
+					margin-right: 5px;
+				}
+
+				> .search_table {
+					margin: 5px 0;
+				}
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create project UI off projects tab
+		> .createproject {
+			@include style-inline-box();
+
+			> .name,
+			> .description,
+			> .issuetrackername,
+			> .issuename {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 150px;
+					display: inline-block;
+				}
+			}
+
+			//fixme add a class for this
+			> .ctb {
+				margin: 5px 0;
+				margin-left: 150px;
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create store UI off store tab
+		div.createstore {
+			@include style-inline-box();
+
+			.name {
+				label {
+					@include style-form-label;
+					margin-right: 10px;
+				}
+			}
+
+			> .actions {
+				margin-top: 10px;
+			}
+		}
+
+		//create business process definition off business process tab
+		div.createbpd,
+		> .bpddetails {
+			@include style-inline-box();
+
+			.top_buttons {
+				display: none;
+			}
+
+			.bottom_buttons {
+				margin-top: 10px;
+			}
+
+			.prop,
+			.controller {
+				margin: 5px 0;
+
+				label {
+					@include style-form-label;
+					width: 160px;
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 10px;
+				}
+			}
+
+			.pname {
+				.btn {
+					margin-left: 5px;
+				}
+			}
+
+			.export_time {
+				margin-left: 170px;
+
+				.btn {
+					margin-left: 5px;
+				}
+			}
+
+			.controller {
+				//fixme get classes
+				> a {
+					@include buttonBase;
+					margin-left: 170px;
+					margin-top: 15px;
+					margin-bottom: 5px;
+				}
+			}
+
+			.sub_form {
+				.status {
+					> table,
+					> .ctb,
+					> .actions {
+						float: left;
+						margin-right: 10px;
+					}
+
+					> .ctb {
+						display: block;
+						margin-top: 25px;
+					}
+
+					.actions {
+						margin-top: 18px;
+
+						a {
+							@include buttonBase;
+							margin-right: 2px;
+						}
+					}
+				}
+			}
+
+			.add_library {
+				.templates {
+					margin: 5px 0;
+
+					label {
+						@include style-form-label;
+						margin-right: 10px;
+						width: 160px;
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+		div.createbpd {
+			.library_editor {
+				border: 0 none;
+				padding: 0;
+
+				label {
+					display: inline;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		//bpd details tab
+		> .bpddetails {
+			@include style-inline-box();
+
+			.summary {
+				> .btn {
+					&.delete {
+						@include buttonGlyphAdd($html-entity-delete);
+					}
+				}
+
+				//fixme add btn class
+				> a.edit {
+					@include buttonBase;
+					@include buttonGlyphAdd($html-entity-edit);
+					margin-left: 2px;
+				}
+
+				> .name,
+				> .programmatic_identifier,
+				> .description,
+				> .library_form {
+					margin: 10px 0;
+
+					label {
+						width: 270px;
+						display: inline-block;
+						vertical-align: top;
+						margin-right: 10px;
+					}
+				}
+
+				.library_selector {
+					display: block;
+					margin-bottom: 10px;
+				}
+
+				.parameters {
+					@include style-inline-box();
+					display: inline-block;
+					margin-left: 30px;
+
+					label {
+						width: 200px;
+					}
+				}
+			}
+
+			.sub_form {
+				.miwt-table {
+					.btn {
+						&.edit {
+							@include buttonStyleEditGlyph();
+						}
+					}
+				}
+			}
+
+			.resource_editor {
+				> .heading {
+					@include style-h2;
+				}
+
+				> .name,
+				> .description {
+					margin: 5px 0;
+
+					label {
+						@include style-form-label;
+						width: 160px;
+						display: inline-block;
+						margin-right: 10px;
+					}
+				}
+
+				> .resource_form {
+					margin: 20px 0;
+
+					.actions {
+						margin-left: 5px;
+					}
+
+					.html_body {
+						margin-top: 20px;
+					}
+				}
+
+				> .actions {
+					margin-top: 10px;
+				}
+
+				//email fields inside the resource editor
+				.email_fields {
+
+					label {
+						@include style-form-label;
+						margin-right: 5px;
+					}
+
+					textarea {
+						width: 100%;
+					}
+
+					.to,
+					.cc,
+					.from,
+					.reply_to,
+					.subject,
+					.amazonses,
+					.html_body,
+					.text_body,
+					.body_css {
+						margin: 5px 0;
+					}
+
+
+					.to,
+					.cc,
+					.from,
+					.reply_to,
+					.subject {
+						label {
+							display: inline-block;
+							width: 80px;
+						}
+
+						input {
+							width: 400px;
+						}
+					}
+
+					.amazonses,
+					.html_body,
+					.text_body,
+					.body_css {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+
+		//fixme fix this crap html
+		> .principaldetail {
+			@include style-inline-box();
+
+			.name,
+			.pname,
+			.description,
+			.client,
+			.timeout {
+				margin: 10px 0;
+
+				label {
+					@include style-form-label;
+					width: 160px;
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 10px;
+				}
+			}
+
+			//fixme add a class for this
+			.enabled {
+				margin: 5px 0;
+			}
+
+			.actions {
+				margin-top: 10px;
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.miwt-table {
+				.actions {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+			}
+
+			.help-point + .actions {
+				margin-top: 0;
+			}
+
+			.perm_groups {
+				margin-top: 10px;
+			}
+
+			.all_table_title,
+			.set_table_title {
+				@include style-h3;
+				margin-bottom: 5px;
+				display: block;
+			}
+		}
+	}
+}

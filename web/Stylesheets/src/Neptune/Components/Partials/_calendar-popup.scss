@@ -1,0 +1,136 @@
+@import "../../Config/_base-import";
+
+body > .calendar {
+	@include style-popup-box($padding: 0);
+
+	td {
+		text-align: center;
+	}
+
+	thead td.button,
+	.daynames td,
+	tbody td {
+		cursor: pointer;
+	}
+
+	thead td.wn,
+	tbody td.wn {
+		cursor: default;
+	}
+
+	thead {
+		tr {
+			&:first-child {
+				td {
+					background-color: $color-blue;
+					color: $color-white;
+					padding: 8px 10px;
+					font-family: $font-open-sans-bold;
+					font-size: 16px
+				}
+			}
+		}
+
+		td {
+			background-color: $color-blue;
+			color: $color-white;
+			padding: 5px 10px;
+
+			&.button {
+				&:hover {
+					background-color: $color-dark-blue;
+				}
+			}
+		}
+	}
+
+	.daynames {
+		td {
+			&.name {
+				font-family: $font-open-sans-semi-bold;
+				text-transform: uppercase;
+				color: $color-bluegrey;
+				padding: 5px;
+				font-size: 10px;
+				background-color: $color-smokey-white;
+				border-bottom: 1px solid $color-lighter-grey;
+			}
+
+			&.day {
+				&:hover {
+					background-color: $color-lighter-grey;
+				}
+			}
+
+			&.wn {
+				border-right: 1px solid $color-lighter-grey;
+			}
+		}
+	}
+
+	.daysrow {
+		td {
+			padding: 6px 8px;
+
+			&.wn {
+				background-color: $color-almost-white;
+				border-right: 1px solid $color-cloud-grey;
+				color: $color-bluegrey;
+			}
+
+			&.othermonth {
+				color: $color-light-grey;
+			}
+
+			&.hilite {
+				background-color: $color-grey;
+				color: $color-white;
+			}
+
+			&.today {
+				background-color: $color-blue;
+				color: $color-white;
+
+				&:hover {
+					background-color: $color-dark-blue;
+				}
+			}
+
+			&.selected {
+				background-color: $color-green;
+				color: $color-white;
+
+				&:hover {
+					background-color: $color-dark-green;
+				}
+			}
+		}
+	}
+
+	.footrow {
+		.ttip {
+			padding: 8px;
+			border-top: 1px solid $color-lighter-grey;
+		}
+	}
+
+	> .combo {
+		width: 255px;
+		border-top: 1px solid $color-lighter-grey;
+		display: none;
+
+		.label {
+			//have to have import for inline style issues
+			display: inline-block !important;
+			width: 25%;
+			padding: 5px 10px;
+			text-align: center;
+			cursor: pointer;
+
+			&.hilite {
+				background-color: $color-grey;
+				color: $color-white;
+			}
+		}
+	}
+}
