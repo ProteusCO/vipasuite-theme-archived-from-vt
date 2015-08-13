@@ -108,6 +108,10 @@
       "path": [ "config/email/template" ],
       "css": [ "Pages/Email/page--template-mgt.css" ]
     },
+    {
+      "path": [ "config/email/tracking" ],
+      "css": [ "Pages/Email/page--tracking.css" ]
+    },
 
     {
       "path": [ "config/cms/article" ],
