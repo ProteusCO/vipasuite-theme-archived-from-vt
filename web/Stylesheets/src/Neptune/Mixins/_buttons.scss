@@ -40,6 +40,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@mixin glyphOverride($html-entity: '', $size: '', $color: '') {
+	@if ($html-entity != '') {
+		content: $html-entity;
+	}
+	@if ($size != '') {
+		font-size: $size;
+	}
+	@if ($color != '') {
+		color: $color;
+	}
+}
+
 @mixin buttonGlyphAdd($html-entity, $size: '', $color: '', $spacing: 5px) {
 	&:before {
 		display: inline-block;
