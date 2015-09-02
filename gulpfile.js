@@ -9,6 +9,7 @@ var del = require('del');
 var zip = require('gulp-zip');
 var streamqueue = require('streamqueue');
 var vinylPaths = require('vinyl-paths');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('default', ['clean', 'styles']);
 
@@ -18,6 +19,14 @@ gulp.task('styles:clean', function(cb) {
 });
 gulp.task('dist:clean', function(cb) {
 	del(['./dist/**'], cb);
+});
+
+gulp.task('design:optimize', function() {
+	return gulp.src(['./web/Design/**/*.{png,jpg,jpeg,gif}'])
+		.pipe(imagemin({
+			progressive: true
+		}))
+		.pipe(gulp.dest('./web/Design/build'));
 });
 
 gulp.task('styles:build', ['styles:clean'], function () {
