@@ -5,44 +5,44 @@
       <paths name="VipaSuite Draft">
         <serverdata>
           <mappings>
-            <mapping deploy="draft.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/Design/Neptune" web="/" />
-            <mapping deploy="draft.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/Javascript/Neptune" web="/" />
-            <mapping deploy="draft.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/Stylesheets/build/Neptune" web="/" />
-            <mapping deploy="draft.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/liveedit" web="/" />
-            <mapping deploy="draft.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/FavIcons/Neptune" web="/" />
+            <mapping deploy="draft.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/build/Design" web="/" />
+            <mapping deploy="draft.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/build/Javascript" web="/" />
+            <mapping deploy="draft.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/build/Stylesheets" web="/" />
+            <mapping deploy="draft.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/LiveEdit" web="/" />
+            <mapping deploy="draft.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/build/FavIcons" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="VipaSuite Live">
         <serverdata>
           <mappings>
-            <mapping deploy="vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/Design/Neptune" web="/" />
-            <mapping deploy="vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/Javascript/Neptune" web="/" />
-            <mapping deploy="vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/Stylesheets/build/Neptune" web="/" />
+            <mapping deploy="vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/build/Design" web="/" />
+            <mapping deploy="vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/build/Javascript" web="/" />
+            <mapping deploy="vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/build/Stylesheets" web="/" />
             <mapping deploy="vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/liveedit" web="/" />
-            <mapping deploy="vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/FavIcons/Neptune" web="/" />
+            <mapping deploy="vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/build/FavIcons" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="VipaSuite Migration">
         <serverdata>
           <mappings>
-            <mapping deploy="vip.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/Design/Neptune" web="/" />
-            <mapping deploy="vip.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/Javascript/Neptune" web="/" />
-            <mapping deploy="vip.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/Stylesheets/build/Neptune" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/build/Design" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/build/Javascript" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/build/Stylesheets" web="/" />
             <mapping deploy="vip.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/liveedit" web="/" />
-            <mapping deploy="vip.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/FavIcons/Neptune" web="/" />
+            <mapping deploy="vip.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/build/FavIcons" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="VipaSuite QA">
         <serverdata>
           <mappings>
-            <mapping deploy="qa.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/Design/Neptune" web="/" />
-            <mapping deploy="qa.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/Javascript/Neptune" web="/" />
-            <mapping deploy="qa.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/Stylesheets/build/Neptune" web="/" />
+            <mapping deploy="qa.vipasuite.com\Web\Design\Neptune" local="$PROJECT_DIR$/web/build/Design" web="/" />
+            <mapping deploy="qa.vipasuite.com\Web\Javascript\Neptune" local="$PROJECT_DIR$/web/build/Javascript" web="/" />
+            <mapping deploy="qa.vipasuite.com\Web\Stylesheets\Neptune" local="$PROJECT_DIR$/web/build/Stylesheets" web="/" />
             <mapping deploy="qa.vipasuite.com\Web\LiveEdit" local="$PROJECT_DIR$/liveedit" web="/" />
-            <mapping deploy="qa.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/FavIcons/Neptune" web="/" />
+            <mapping deploy="qa.vipasuite.com\Web\FavIcons\Neptune" local="$PROJECT_DIR$/web/build/FavIcons" web="/" />
           </mappings>
         </serverdata>
       </paths>

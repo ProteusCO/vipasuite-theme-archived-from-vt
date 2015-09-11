@@ -11,26 +11,41 @@ var streamqueue = require('streamqueue');
 var vinylPaths = require('vinyl-paths');
 var imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['clean', 'styles']);
+gulp.task('default', ['build']);
 
-gulp.task('clean', ['clean:styles', 'clean:dist']);
-gulp.task('styles:clean', function(cb) {
-	del(['./web/Stylesheets/build/**'], cb);
+gulp.task('build', ['styles', 'design', 'javascript', 'favicons']);
+gulp.task('clean', ['styles:clean', 'dist:clean', 'design:clean', 'javascript:clean', 'favicons:clean']);
+
+gulp.task('design', ['design:build']);
+gulp.task('design:build', ['design:clean'], function() {
+	var stream = streamqueue({ objectMode: true });
+
+	stream.queue(
+		gulp.src(['./web/src/Design/**/*.{png,jpg,jpeg,gif}'])
+			.pipe(imagemin({
+				progressive: true
+			}))
+	);
+
+	stream.queue(
+		gulp.src(['./web/src/Design/**/*', '!./web/src/Design/**/*.{png,jpg,jpeg,gif}'])
+	);
+
+	return stream.done()
+		.pipe(gulp.dest('./web/build/Design'));
 });
-gulp.task('dist:clean', function(cb) {
-	del(['./dist/**'], cb);
+gulp.task('design:clean', function(callback) {
+	del(['./web/build/Design'], callback);
 });
 
-gulp.task('design:optimize', function() {
-	return gulp.src(['./web/Design/**/*.{png,jpg,jpeg,gif}'])
-		.pipe(imagemin({
-			progressive: true
-		}))
-		.pipe(gulp.dest('./web/Design/build'));
+gulp.task('styles', ['styles:live-edit']);
+gulp.task('styles:live-edit', ['styles:build'], function() {
+	return gulp.src('./web/build/Stylesheets/LiveEdit/app.css')
+		.pipe(vinylPaths(del))
+		.pipe(gulp.dest('./LiveEdit/'));
 });
-
 gulp.task('styles:build', ['styles:clean'], function () {
-	return gulp.src('./web/Stylesheets/src/**/*.scss')
+	return gulp.src('./web/src/Stylesheets/**/*.scss')
 		.pipe(sass({
 			outputStyle: 'expanded'
 		}))
@@ -38,10 +53,29 @@ gulp.task('styles:build', ['styles:clean'], function () {
 			browsers: ['> 1%', 'last 2 versions', 'ie >= 9'],
 			cascade: false
 		}))
-		.pipe(gulp.dest('./web/Stylesheets/build'));
+		.pipe(gulp.dest('./web/build/Stylesheets'));
+});
+gulp.task('styles:clean', function(callback) {
+	del(['./web/build/Stylesheets'], callback);
 });
 
-gulp.task('styles', ['live-edit:build']);
+gulp.task('javascript', ['javascript:build']);
+gulp.task('javascript:build', ['javascript:clean'], function() {
+	return gulp.src('./web/src/Javascript/**/*.js')
+		.pipe(gulp.dest('./web/build/Javascript'));
+});
+gulp.task('javascript:clean', function(callback) {
+	del(['./web/build/Javascript'], callback);
+});
+
+gulp.task('favicons', ['favicons:build']);
+gulp.task('favicons:build', ['favicons:clean'], function() {
+	return gulp.src('./web/src/FavIcons/**/*')
+		.pipe(gulp.dest('./web/build/FavIcons'));
+});
+gulp.task('favicons:clean', function(callback) {
+	del(['./web/build/FavIcons'], callback);
+});
 
 gulp.task('iconfont', function(){
 	return gulp.src('./fontglyphs/src/icons/*.svg')
@@ -69,13 +103,8 @@ gulp.task('iconfont', function(){
 		.pipe(gulp.dest('./web/Design/Neptune/Fonts/GlyphLib/'));
 });
 
-gulp.task('live-edit:build', ['styles:build'], function() {
-	return gulp.src('./web/Stylesheets/build/Neptune/LiveEdit/app.css')
-		.pipe(vinylPaths(del))
-		.pipe(gulp.dest('./liveedit/'));
-});
-
-gulp.task('dist', ['dist:clean', 'styles'], function() {
+gulp.task('dist', ['dist:build', 'build']);
+gulp.task('dist:build', ['dist:clean'], function() {
 	var stream = streamqueue({ objectMode: true });
 
 	stream.queue(
@@ -83,21 +112,30 @@ gulp.task('dist', ['dist:clean', 'styles'], function() {
 	);
 
 	stream.queue(
-		gulp.src('./web/Design/**/*', {base: './web'})
-	);
-
-	stream.queue(
-		gulp.src('./web/Javascript/**/*', {base: './web'})
-	);
-
-	stream.queue(
-		gulp.src('./web/Stylesheets/build/**/*', {base: './web'})
+		gulp.src('./web/build/Design/**/*', {base: './web/build'})
 			.pipe(rename(function(path) {
-				path.dirname = path.dirname.replace('\\build', '');
+				path.dirname = path.dirname.replace('Design', 'Design\\Neptune');
+			}))
+	);
+
+	stream.queue(
+		gulp.src('./web/build/Javascript/**/*', {base: './web/build'})
+			.pipe(rename(function(path) {
+				path.dirname = path.dirname.replace('Javascript', 'Javascript\\Neptune');
+			}))
+	);
+
+	stream.queue(
+		gulp.src('./web/build/Stylesheets/**/*', {base: './web/build'})
+			.pipe(rename(function(path) {
+				path.dirname = path.dirname.replace('Stylesheets', 'Stylesheets\\Neptune');
 			}))
 	);
 
 	return stream.done()
 		.pipe(zip('theme.zip'))
 		.pipe(gulp.dest('./dist/'));
+});
+gulp.task('dist:clean', function(callback) {
+	del(['./dist'], callback);
 });

@@ -693,7 +693,7 @@ define('select2/utils',[], function () {
 });
 
 define('select2/results',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './utils'
 ], function ($, Utils) {
   function Results ($element, options, dataAdapter) {
@@ -1207,7 +1207,7 @@ define('select2/keys',[
 });
 
 define('select2/selection/base',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   '../utils',
   '../keys'
 ], function ($, Utils, KEYS) {
@@ -1336,7 +1336,7 @@ define('select2/selection/base',[
 });
 
 define('select2/selection/single',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './base',
   '../utils',
   '../keys'
@@ -1427,7 +1427,7 @@ define('select2/selection/single',[
 });
 
 define('select2/selection/multiple',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './base',
   '../utils'
 ], function ($, BaseSelection, Utils) {
@@ -1752,7 +1752,7 @@ define('select2/selection/search',[
 });
 
 define('select2/selection/eventRelay',[
-  'jquery.sticky'
+  'jquery.sticky.js'
 ], function ($) {
   function EventRelay () { }
 
@@ -2725,7 +2725,7 @@ define('select2/data/base',[
 define('select2/data/select',[
   './base',
   '../utils',
-  'jquery.sticky'
+  'jquery.sticky.js'
 ], function (BaseAdapter, Utils, $) {
   function SelectAdapter ($element, options) {
     this.$element = $element;
@@ -2993,7 +2993,7 @@ define('select2/data/select',[
 define('select2/data/array',[
   './select',
   '../utils',
-  'jquery.sticky'
+  'jquery.sticky.js'
 ], function (SelectAdapter, Utils, $) {
   function ArrayAdapter ($element, options) {
     var data = options.get('data') || [];
@@ -3071,7 +3071,7 @@ define('select2/data/array',[
 define('select2/data/ajax',[
   './array',
   '../utils',
-  'jquery.sticky'
+  'jquery.sticky.js'
 ], function (ArrayAdapter, Utils, $) {
   function AjaxAdapter ($element, options) {
     this.ajaxOptions = options.get('ajax');
@@ -3620,7 +3620,7 @@ define('select2/dropdown/hidePlaceholder',[
 });
 
 define('select2/dropdown/infiniteScroll',[
-  'jquery.sticky'
+  'jquery.sticky.js'
 ], function ($) {
   function InfiniteScroll (decorated, $element, options, dataAdapter) {
     this.lastParams = {};
@@ -3963,7 +3963,7 @@ define('select2/i18n/en',[],function () {
 });
 
 define('select2/defaults',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './results',
 
   './selection/single',
@@ -4311,7 +4311,7 @@ define('select2/defaults',[
 });
 
 define('select2/options',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './defaults'
 ], function ($, Defaults) {
   function Options (options, $element) {
@@ -4446,7 +4446,7 @@ define('select2/options',[
 });
 
 define('select2/core',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './options',
   './utils',
   './keys'
@@ -4933,7 +4933,7 @@ define('select2/core',[
 });
 
 define('jquery.select2',[
-  'jquery.sticky',
+  'jquery.sticky.js',
   './select2/core'
 ], function ($, Select2) {
   // Force jQuery.mousewheel to be loaded if it hasn't already
