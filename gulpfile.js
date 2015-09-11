@@ -103,7 +103,7 @@ gulp.task('iconfont', function(){
 		.pipe(gulp.dest('./web/Design/Neptune/Fonts/GlyphLib/'));
 });
 
-gulp.task('dist', ['dist:build', 'build']);
+gulp.task('dist', ['dist:build']);
 gulp.task('dist:build', ['dist:clean'], function() {
 	var stream = streamqueue({ objectMode: true });
 
