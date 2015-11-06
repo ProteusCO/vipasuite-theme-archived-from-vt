@@ -21,3 +21,49 @@ div.search {
 		}
 	}
 }
+
+.popup-notification {
+	h1 {
+		margin: 0;
+	}
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.faq {
+		margin: 20px 0;
+	}
+
+	.faq-question {
+		font-family: $font-open-sans-bold;
+		font-size: 14px;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.notification-actions {
+		text-align: center;
+		margin-top: 30px;
+
+		.btn {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.close {
+			color: $color-default-link;
+		}
+
+		.action + .action{
+			margin-left: 10px;
+		}
+	}
+}
