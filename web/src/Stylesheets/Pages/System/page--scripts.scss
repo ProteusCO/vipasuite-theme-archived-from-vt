@@ -68,6 +68,10 @@
 		}
 	}
 
+	.sticky-wrapper {
+		width: 250px;
+	}
+
 	.is-sticky {
 		.source-menu {
 			padding-top: 15px;
@@ -90,7 +94,8 @@
 			border: 1px solid $color-cloud-grey;
 			background-color: $color-almost-white;
 			padding: 10px;
-			padding-left: 30px;
+			padding-left: 20px;
+			list-style-position: inside;
 		}
 
 		li {
@@ -102,6 +107,10 @@
 		a {
 			text-decoration: none;
 			color: $color-default-site-font;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+			white-space: nowrap;
 
 			&:hover {
 				text-decoration: underline;
