@@ -183,7 +183,7 @@
 					max-width: 35%;
 				}
 			}
-			.logic_editor div.add > a.menu_item {
+			.logic_editor div.add > a.menu-item {
 				@include buttonBase;
 				@include buttonGlyphAdd($html-entity-add);
 			}
