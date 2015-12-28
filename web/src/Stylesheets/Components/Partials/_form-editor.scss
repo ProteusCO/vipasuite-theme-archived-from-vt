@@ -412,9 +412,9 @@
 		}
 	}
 
-	div.menu_component {
+	div.menu-component {
 		//fixme this
-		&.add_question > .menu_item {
+		&.add_question > .menu-item {
 			color: $color-white;
 			margin-right: 10px;
 			text-decoration: none;
@@ -429,7 +429,7 @@
 			}
 		}
 
-		ul.menu_items {
+		ul.menu-items {
 			border: 1px solid $color-lighter-grey;
 			right: 0;
 			left: auto;
@@ -439,7 +439,7 @@
 			width: 150px;
 		}
 
-		a.menu_item {
+		a.menu-item {
 			width: auto;
 		}
 	}
@@ -940,12 +940,12 @@
 	.node_actions {
 		float: right;
 
-		> .menu_item {
+		> .menu-item {
 			@include buttonBase;
 			@include buttonStyleSmall;
 		}
 
-		> span.menu_item {
+		> span.menu-item {
 			display: none;
 		}
 	}
@@ -971,13 +971,13 @@
 	.list_editor {
 		position: relative;
 
-		> .menu_component {
+		> .menu-component {
 			position: absolute;
 			right: 0;
 			bottom: 100%;
 			z-index: 10;
 
-			> .menu_item {
+			> .menu-item {
 				@include buttonBase;
 				@include buttonGlyphOnly($html-entity-add, $size: 16px, $color: $color-white, $padding: 3px);
 				background-color: $color-blue;
@@ -988,7 +988,7 @@
 				}
 			}
 
-			> span.menu_item {
+			> span.menu-item {
 				display: none;
 			}
 		}
