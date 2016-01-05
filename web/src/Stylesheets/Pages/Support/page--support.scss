@@ -34,20 +34,21 @@ $right-gutter-spacing: 140px + 20px;
 	border-bottom: 1px solid darken($color-bg, 15%);
 }
 
-.support_welcome,
-.status_legend {
-	display: block;
-	margin-bottom: 10px;
-}
-
 .status_legend {
 	@include style-inline-box();
+}
+
+#support_welcome {
+	p {
+		font-size: 15px;
+	}
 }
 
 /*link lists */
 .support_welcome {
 	ul {
 		@include resetMenu;
+		margin-top: 15px;
 	}
 
 	li {
@@ -59,12 +60,12 @@ $right-gutter-spacing: 140px + 20px;
 		display: block;
 		//fixme fix the background reference
 		background: url("/resources/dyn/files/984063zedebc696/_fn/support-icons.png") no-repeat left top transparent;
-		width: 230px;
 		font-size: 12px;
 		margin-bottom: 10px;
 		opacity: 0.7;
 		padding: 3px 0 5px 33px;
 		text-decoration: none;
+		margin-right: 20px;
 
 		&:hover {
 			opacity: 1;
@@ -80,6 +81,14 @@ $right-gutter-spacing: 140px + 20px;
 			background-position: left -265px;
 		}
 	}
+
+	p, a {
+		font-size: 15px;
+	}
+}
+
+.resources {
+	margin-top: 25px;
 }
 
 /* status legend */
@@ -714,6 +723,7 @@ div.note {
 			&.field_DESCRIPTION > div {
 				display: block;
 				margin-left: 30px;
+				width: 80%;
 			}
 
 			&.field_DESCRIPTION > div {
@@ -749,10 +759,11 @@ div.note {
 		.file-upload .multi-file-upload {
 			margin: 5px 0;
 			margin-left: 30px;
-			width: 80%;
+			width: 72%;
 		}
 	}
 }
+
 
 div.reply_note_component {
 	@include style-inline-box();
