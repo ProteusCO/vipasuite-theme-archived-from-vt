@@ -18,3 +18,8 @@ Setup for new repo
 Compiling SASS
 -----------------
 - Run "node_modules/.bin/gulp styles"
+
+Creating new theme zip distribution
+-----------------
+- Run "node_modules/.bin/gulp build"
+- Run "node_modules/.bin/gulp dist"
