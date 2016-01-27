@@ -27,11 +27,11 @@
 			}
 
 			var openParentIds = $menuParents.filter('.' + CSS_CLASS_OPEN)
-					.map(function () {
-						return this.id;
-					})
-					.get()
-					.join(STORAGE_CONCAT_CHAR);
+				.map(function () {
+					return this.id;
+				})
+				.get()
+				.join(STORAGE_CONCAT_CHAR);
 
 			localStorage.setItem(id, openParentIds);
 		}
@@ -93,7 +93,7 @@
 			//remove parents with empty children
 			$menuParents.find(' > .menu:empty').parent().remove();
 
-			$menuParents.on('click', '.menuitemlabel', function(evt) {
+			$root.on('click', '.menu-t1 > .mi-parent > .menuitemlabel', function(evt) {
 				var $parent = $(this).closest('.' + CSS_CLASS_PARENT);
 				if (evt.altKey || evt.ctrlKey) {
 					if ($parent.hasClass(CSS_CLASS_OPEN)) {
@@ -102,7 +102,7 @@
 						openParents();
 					}
 				} else {
-					toggleOpen(this.parentNode);
+					toggleOpen($parent);
 				}
 			});
 
@@ -138,10 +138,10 @@
 
 		if ($con.length && !($con.closest('.cke_dialog').length || $con.closest('tr[data-dnd-source-def]').length)) {
 			$con
-					.select2(DEFAULT_SELECT_OPTIONS)
-					.addClass(CSS_CLASS_SELECT_INIT)
-					.filter('[data-features~="watch"]')
-					.on('change', miwt.observerFormSubmit);
+				.select2(DEFAULT_SELECT_OPTIONS)
+				.addClass(CSS_CLASS_SELECT_INIT)
+				.filter('[data-features~="watch"]')
+				.on('change', miwt.observerFormSubmit);
 		}
 	}
 
